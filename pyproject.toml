@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "procedural-stories"
+version = "0.1.0"
+description = "Generating interactive fictions with LLMs"
+authors = ["Florian Rieder <florian.rieder@unil.ch>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain = "^0.2.14"
+langchain-openai = "^0.1.22"
+langchain-huggingface = "^0.0.3"
+transformers = "^4.44.2"
+mlx-lm = "^0.17.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
