@@ -10,54 +10,55 @@ from langchain.memory import (
 
 from langchain_community.vectorstores import Chroma
 
-from langchain_openai import ChatOpenAI
-from langchain_openai import OpenAIEmbeddings
-from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace, HuggingFacePipeline
+from langchain_community.llms.mlx_pipeline import MLXPipeline
+from langchain_community.chat_models.mlx import ChatMLX
+# from langchain_openai import ChatOpenAI
+# from langchain_openai import OpenAIEmbeddings
+# from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace, HuggingFacePipeline
 
 from config import *
 
 
-template = """Tu es le moteur d'une fiction interactive qui se déroule dans un contexte médiéval réaliste (9ème siècle).
 
-The setting is: {setting}
 
-Conversation history:
+llm = MLXPipeline.from_model_id(
+    #"mlx-community/Mixtral-8x7B-Instruct-v0.1",
+    #"mlx-community/mixtral-8x22b-4bit",
+    "mlx-community/Meta-Llama-3-8B-Instruct-4bit",
+    pipeline_kwargs={"max_tokens": 512, "temp": 0.2, "repetition_penalty":1.0},
+)
+
+
+template = """Tu es le moteur d'une fiction interactive qui se déroule dans un contexte médiéval réaliste (9ème siècle, actuelle Normandie).
+Tu ne dois pas explicitement donner des options à choix au joueur. Il doit formuler ce qu'il veut faire en language naturel, et tu dois les exécuter, dans la limite du raisonnable.
+Tu peux refuser de faire une action si c'est en dehors du contexte du jeu.
+Tu devrais ajouter des indices subtiles d'interactions possibles dans les descriptions des scènes.
+
+Commence avec une description du contexte pour le joueur: où est-il, qui est-il ?
+
+Utilise toujours le Français !
+N'ajoute aucun texte supplémentaire hors des descriptions que tu fais au joueur.
+
+Historique de la conversation:
 {history}
 
-Player: {input}
-Assistant:"""
+Joueur: {input}
+Jeu:"""
 
 CONVERSATION_PROMPT = PromptTemplate(
-    input_variables=["setting", "history", "input"],
+    input_variables=["history", "input"],
     template=template
 )
 
 
-def get_chain() -> ConversationChain:
+def get_chain(stream_handler) -> ConversationChain:
 
     # Used for streaming
-    # manager = AsyncCallbackManager([])
-    # stream_manager = AsyncCallbackManager([stream_handler])
+    manager = AsyncCallbackManager([])
+    stream_manager = AsyncCallbackManager([stream_handler])
 
     # ChatLLM whose responses are streamed to the client
-    stream_llm = ChatOpenAI(
-        model=CHAT_MODEL_NAME,
-        temperature=CHAT_MODEL_TEMPERATURE,
-        #streaming=True,
-        # callback_manager=stream_manager
-    )
-
-    # Workhorse LLM
-    background_llm = ChatOpenAI(
-        model=WORKHORSE_MODEL_NAME,
-        temperature=WORKHORSE_MODEL_TEMPERATURE
-    )
-
-    # Embedding function to be used by vector stores
-    embeddings = OpenAIEmbeddings(
-        model=EMBEDDING_MODEL_NAME,
-        show_progress_bar=False
-    )
+    chat_model = ChatMLX(llm=llm)
 
     # Regular conversation window memory
     conversation_memory = ConversationBufferWindowMemory(
@@ -68,14 +69,10 @@ def get_chain() -> ConversationChain:
     )
 
     conversation = ConversationChain(
-        llm=stream_llm,
+        llm=chat_model,
         prompt=CONVERSATION_PROMPT,
-        memory=CombinedMemory(
-            memories=[
-                conversation_memory
-            ]
-        ),
-        #callback_manager=manager,  # used for streaming
+        memory=conversation_memory,
+        callback_manager=manager,  # used for streaming
         verbose=True
     )
 

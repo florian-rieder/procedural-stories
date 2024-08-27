@@ -1,16 +1,18 @@
 from langchain_core.prompts import PromptTemplate
-from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
+# from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 from langchain_community.llms.mlx_pipeline import MLXPipeline
 from langchain_community.chat_models.mlx import ChatMLX
 
 
 llm = MLXPipeline.from_model_id(
-    #"mlx-community/Mixtral-8x7B-Instruct-v0.1",
-    #"mlx-community/mixtral-8x22b-4bit",
+    # "mlx-community/Mixtral-8x7B-Instruct-v0.1",
+    # "mlx-community/mixtral-8x22b-4bit",
     "mlx-community/Meta-Llama-3-8B-Instruct-4bit",
     pipeline_kwargs={"max_tokens": 128, "temp": 0.1},
 )
+
+chat_model = ChatMLX(llm=llm)
 
 # messages = [
 #     HumanMessage(
@@ -23,7 +25,6 @@ template = """Question: {question}
 Answer: Let's think step by step."""
 prompt = PromptTemplate.from_template(template)
 
-chat_model = ChatMLX(llm=llm)
 
 chain = prompt | chat_model
 
