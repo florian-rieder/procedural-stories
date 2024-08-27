@@ -8,10 +8,12 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 langchain = "^0.2.14"
+langchain-community = "^0.2.12"
 langchain-openai = "^0.1.22"
 langchain-huggingface = "^0.0.3"
 transformers = "^4.44.2"
 mlx-lm = "^0.17.1"
+
 
 
 [build-system]

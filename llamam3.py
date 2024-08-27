@@ -5,7 +5,9 @@ Run Llama3 8B locally on Apple Silicon neural engine
 from mlx_lm import load, generate
 
 # Define your model to import
-model_name = "mlx-community/Meta-Llama-3-8B-Instruct-4bit"
+model_name = "mlx-community/Mixtral-8x7B-Instruct-v0.1"
+    #"mlx-community/mixtral-8x22b-4bit",
+    #"mlx-community/Meta-Llama-3-8B-Instruct-4bit",
 
 # Loading model
 model, tokenizer = load(model_name)

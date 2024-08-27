@@ -17,9 +17,7 @@ from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace, HuggingF
 from config import *
 
 
-
-template = """You are a Dungeon Master in an interactive fiction 
-The following is a transcript of the current state of the interactive fiction.
+template = """Tu es le moteur d'une fiction interactive qui se déroule dans un contexte médiéval réaliste (9ème siècle).
 
 The setting is: {setting}
 
@@ -45,7 +43,7 @@ def get_chain() -> ConversationChain:
     stream_llm = ChatOpenAI(
         model=CHAT_MODEL_NAME,
         temperature=CHAT_MODEL_TEMPERATURE,
-        streaming=True,
+        #streaming=True,
         # callback_manager=stream_manager
     )
 
@@ -74,8 +72,7 @@ def get_chain() -> ConversationChain:
         prompt=CONVERSATION_PROMPT,
         memory=CombinedMemory(
             memories=[
-                conversation_memory,
-                long_term_memory
+                conversation_memory
             ]
         ),
         #callback_manager=manager,  # used for streaming
