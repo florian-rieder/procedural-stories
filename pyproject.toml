@@ -13,6 +13,10 @@ langchain-openai = "^0.1.22"
 langchain-huggingface = "^0.0.3"
 transformers = "^4.44.2"
 mlx-lm = "^0.17.1"
+fastapi = "^0.112.2"
+jinja2 = "^3.1.4"
+uvicorn = "^0.30.6"
+websockets = "^13.0"
 
 
 

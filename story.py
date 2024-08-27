@@ -2,11 +2,10 @@
 chat model with long term memory"""
 
 from langchain.chains import ConversationChain
+from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain.prompts import PromptTemplate
-from langchain.callbacks.manager import AsyncCallbackManager
-from langchain.memory import (
-    CombinedMemory, ConversationBufferWindowMemory
-)
+
+from langchain.memory.buffer_window import ConversationBufferWindowMemory
 
 from langchain_community.vectorstores import Chroma
 
@@ -21,23 +20,26 @@ from config import *
 
 
 
+print('Loading model...')
 llm = MLXPipeline.from_model_id(
     #"mlx-community/Mixtral-8x7B-Instruct-v0.1",
     #"mlx-community/mixtral-8x22b-4bit",
     "mlx-community/Meta-Llama-3-8B-Instruct-4bit",
     pipeline_kwargs={"max_tokens": 512, "temp": 0.2, "repetition_penalty":1.0},
 )
-
+print('Model loaded.')
 
 template = """Tu es le moteur d'une fiction interactive qui se déroule dans un contexte médiéval réaliste (9ème siècle, actuelle Normandie).
 Tu ne dois pas explicitement donner des options à choix au joueur. Il doit formuler ce qu'il veut faire en language naturel, et tu dois les exécuter, dans la limite du raisonnable.
 Tu peux refuser de faire une action si c'est en dehors du contexte du jeu.
 Tu devrais ajouter des indices subtiles d'interactions possibles dans les descriptions des scènes.
 
-Commence avec une description du contexte pour le joueur: où est-il, qui est-il ?
+Commence avec une description du contexte pour le joueur (où est-il, qui est-il ?) ainsi qu'un évènement perturbateur
 
 Utilise toujours le Français !
 N'ajoute aucun texte supplémentaire hors des descriptions que tu fais au joueur.
+Chaque message devrait faire un ou deux paragraphes au plus. Reste concis, et laisse à la curiosité du joueur de révéler plus de choses.
+Termine toujours avec "Que voulez-vous faire?"
 
 Historique de la conversation:
 {history}
@@ -50,12 +52,7 @@ CONVERSATION_PROMPT = PromptTemplate(
     template=template
 )
 
-
-def get_chain(stream_handler) -> ConversationChain:
-
-    # Used for streaming
-    manager = AsyncCallbackManager([])
-    stream_manager = AsyncCallbackManager([stream_handler])
+def get_chain() -> ConversationChain:
 
     # ChatLLM whose responses are streamed to the client
     chat_model = ChatMLX(llm=llm)
@@ -72,7 +69,6 @@ def get_chain(stream_handler) -> ConversationChain:
         llm=chat_model,
         prompt=CONVERSATION_PROMPT,
         memory=conversation_memory,
-        callback_manager=manager,  # used for streaming
         verbose=True
     )
 
