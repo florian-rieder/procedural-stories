@@ -19,12 +19,13 @@ from config import *
 
 
 
-
 print('Loading model...')
 llm = MLXPipeline.from_model_id(
+    #"mlx-community/Mistral-7B-Instruct-v0.3",
     #"mlx-community/Mixtral-8x7B-Instruct-v0.1",
-    #"mlx-community/mixtral-8x22b-4bit",
-    "mlx-community/Meta-Llama-3-8B-Instruct-4bit",
+    #"mlx-community/Meta-Llama-3-8B-Instruct-4bit",
+    "mlx-community/Meta-Llama-3-8B-Instruct-8bit",
+    #"mlx-community/Meta-Llama-3-8B-Instruct-bf16",
     pipeline_kwargs={"max_tokens": 512, "temp": 0.2, "repetition_penalty":1.0},
 )
 print('Model loaded.')
@@ -36,7 +37,7 @@ Tu devrais ajouter des indices subtiles d'interactions possibles dans les descri
 
 Commence avec une description du contexte pour le joueur (où est-il, qui est-il ?) ainsi qu'un évènement perturbateur
 
-Utilise toujours le Français !
+Utilise toujours le Français ! Limite toi à 1 paragraphe.
 N'ajoute aucun texte supplémentaire hors des descriptions que tu fais au joueur.
 Chaque message devrait faire un ou deux paragraphes au plus. Reste concis, et laisse à la curiosité du joueur de révéler plus de choses.
 Termine toujours avec "Que voulez-vous faire?"
@@ -54,12 +55,13 @@ CONVERSATION_PROMPT = PromptTemplate(
 
 def get_chain() -> ConversationChain:
 
+
     # ChatLLM whose responses are streamed to the client
     chat_model = ChatMLX(llm=llm)
 
     # Regular conversation window memory
     conversation_memory = ConversationBufferWindowMemory(
-        k=4,
+        k=12,
         human_prefix='Player',
         ai_prefix='Game',
         input_key='input'

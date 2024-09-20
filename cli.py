@@ -20,28 +20,47 @@ from langchain.callbacks import StdOutCallbackHandler
 
 from story import get_chain
 
-loop = asyncio.get_event_loop()
+from typing import Any
+
+from langchain_core.callbacks import StdOutCallbackHandler, BaseCallbackHandler, StreamingStdOutCallbackHandler
+
+
+
+class StreamingLLMCallbackHandler(BaseCallbackHandler):
+    """Callback handler for streaming LLM responses token by token."""
+
+    def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
+        print('t')
+        print(token, end='', flush=True)
+    
+    async def on_chat_model_start(*args: Any, **kwards: Any):
+        # Implementation of on_chat_model_start is necessary !
+        # But we don't need it.
+        pass
+
 
 
 def main(args):
-    conversation = get_chain()
+    
+    callback = StreamingStdOutCallbackHandler()
+    conversation = get_chain(callback)
 
     print("Welcome to Interactive fiction procedural generation command line interface !"
           " Type your message to start chatting."
           " Type 'exit' to end the conversation.")
 
-    # see https://stackoverflow.com/a/68372199
-    loop.run_until_complete(do_conversation(conversation))
+    do_conversation(conversation)
 
-async def do_conversation(conversation_chain):
+def do_conversation(conversation_chain):
     # Run the chat loop
     while True:
         user_input = input("Player: ")
         if user_input.lower() == 'exit':
             return
 
-        async for chunk in conversation_chain.astream(user_input):
-            print(chunk['response'], end='', flush=True)
+        conversation_chain.invoke(user_input)
+        # for chunk in conversation_chain.stream(user_input):
+        #     print(chunk['response'], end='', flush=True)
         print('\n')
 
 

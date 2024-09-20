@@ -59,20 +59,6 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
     # Initialize conversation chain
     conversation = get_chain()
 
-    def end_conversation(conversation: ConversationChain):
-        """
-        At the end of the conversation
-        """
-        
-        timestamp = datetime.today().strftime('%Y-%m-%d_%H:%M:%S')
-
-        if len(conversation.memory.buffer_as_str) == 0:
-            print('No history to save')
-            return
-
-        with open(f"logs/{timestamp}_{client_id}.log", "w") as f:
-            f.write(conversation.memory.buffer_as_str)
-
     while True:
         # Mostly lifted out of https://github.com/pors/langchain-chat-websockets
         try:
@@ -81,7 +67,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
             message_type = data.get("type")
             
             if message_type == 'end_conversation':
-                end_conversation(conversation)
+                #end_conversation(conversation)
                 return
 
             # Handle unknown message types
@@ -93,6 +79,8 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
 
             resp = ChatResponse(
                 sender="human", message=user_msg, type="stream")
+            
+            write_log_entry(client_id, "user", user_msg)
 
             await websocket.send_json(resp.dict())
 
@@ -100,28 +88,30 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
             start_resp = ChatResponse(sender="bot", message="", type="start")
             await websocket.send_json(start_resp.dict())
 
+            ai_message = ''
             # Send the message to the chain and feed the response back to the client
             # the stream handler will send chunks as they come
             async for chunk in conversation.astream(user_msg):
                 msg = chunk['response']
+                ai_message += msg
                 fragment = ChatResponse(sender="bot", message=msg, type="stream")
+
                 await websocket.send_json(fragment.dict())
 
             # Send the end-response back to the client
             end_resp = ChatResponse(sender="bot", message="", type="end")
+            write_log_entry(client_id, "bot", ai_message)
             await websocket.send_json(end_resp.dict())
 
         except WebSocketDisconnect:
             logging.info("WebSocketDisconnect")
             # TODO try to reconnect with back-off
             manager.disconnect(websocket)
-            end_conversation(conversation)
             break
 
         except ConnectionClosedOK:
             logging.info("ConnectionClosedOK")
             # TODO handle this?
-            end_conversation(conversation)
             break
 
         except Exception as e:
@@ -138,3 +128,10 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
 async def health():
     """Check the api is running"""
     return {"status": "🤙"}
+
+
+def write_log_entry(session_id, sender, entry):
+        timestamp = datetime.today().strftime('%Y-%m-%d_%H:%M:%S')
+
+        with open(f"logs/{session_id}.log", "w+") as f:
+            f.write(f'[{timestamp}] {sender}: {entry}')
