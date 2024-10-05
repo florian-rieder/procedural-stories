@@ -2,7 +2,7 @@ from typing import List
 
 from langchain_core.prompts import PromptTemplate
 
-from generator.models import Location
+from generator.models import LocationData
 from generator.prompts.world import LOCATION_GENERATION_PROMPT
 from generator.parsers.locations import LocationsParser
 
@@ -22,7 +22,7 @@ def generate_world(setting: str, model):
         location.items = items
 
 
-def generate_locations(setting: str, model) -> List[Location]:
+def generate_locations(setting: str, model) -> List[LocationData]:
     # Generate locations
     location_prompt = PromptTemplate(
         input_variables=["setting"],
@@ -37,7 +37,7 @@ def generate_locations(setting: str, model) -> List[Location]:
     
     return locations
 
-def generate_characters_at_location(location: Location, setting: str, model):
+def generate_characters_at_location(location: LocationData, setting: str, model):
     #     # Generate locations
     # prompt = PromptTemplate(
     #     input_variables=["setting"],
@@ -53,5 +53,5 @@ def generate_characters_at_location(location: Location, setting: str, model):
     # return locations
     pass
 
-def generate_items_at_location(location: Location, setting: str, model):
+def generate_items_at_location(location: LocationData, setting: str, model):
     pass

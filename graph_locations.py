@@ -3,10 +3,10 @@ from typing import List
 import networkx as nx
 import matplotlib.pyplot as plt
 
-from generator.models import Location
+from generator.models import LocationData
 
 
-def display_location_relationships(locations: List[Location]):
+def display_location_relationships(locations: List[LocationData]):
     # Create a graph
     G = nx.Graph()
 

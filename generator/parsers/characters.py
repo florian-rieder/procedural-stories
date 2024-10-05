@@ -2,11 +2,10 @@ import re
 from typing import List
 
 from langchain.schema import BaseOutputParser
-from generator.models import Character
+from generator.models import CharacterData
 
-
-class CharactersParser(BaseOutputParser[List[Location]]):
-    def parse(self, text: str) -> List[Location]:
+class CharactersParser(BaseOutputParser[List[CharacterData]]):
+    def parse(self, text: str) -> List[CharacterData]:
         """
         Parses the markdown list of characters into a list of Character objects.
         """
@@ -20,5 +19,5 @@ class CharactersParser(BaseOutputParser[List[Location]]):
         return "A list of Characters objects with name, description, and relationships."
 
 
-def parse_characters(characters_string: str) -> List[Character]:
+def parse_characters(characters_string: str) -> List[CharacterData]:
     pass

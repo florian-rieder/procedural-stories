@@ -2,6 +2,12 @@ from generator.parsers.locations import parse_locations
 
 from graph_locations import display_location_relationships
 
+from ontology import *
+from ontology_manager import add_locations
+
+from generator.utils.serializers import json2llmready
+
+
 
 text = """**Création du monde**
 
@@ -26,9 +32,29 @@ Voici la liste des lieux :
 Ces lieux créent un monde cohérent et narrativement intéressant, où les Vikings se rassemblent pour commercer, se ravitailler et se préparer pour les batailles à venir. Les lieux de transition relient les lieux majeurs et créent des chemins pour les personnages."""
 
 
-locs = parse_locations(text)
+# locs = parse_locations(text)
 
-for loc in locs:
-    print(loc)
+# for loc in locs:
+#     print(loc)
 
-display_location_relationships(locs)
+# add_locations(onto, locs)
+
+
+# with onto:
+#     player = Player("Hero")
+#     player.isAtLocation = Location("ForêtDeLaHague")
+
+#     #sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
+#     sync_reasoner(infer_property_values=True)
+#     onto.save(file="story_ontology2.owl", format="rdfxml")
+    
+# print(onto.Location('ForêtDeLaHague').INDIRECT_containsCharacter)
+
+
+#display_location_relationships(locs)
+
+# Convert ontology to JSON-LD
+with onto:
+    graph = default_world.as_rdflib_graph()
+    serialized_json = graph.serialize(format="json-ld")
+    simplified_json = json2llmready(serialized_json)

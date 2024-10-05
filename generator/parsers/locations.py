@@ -2,15 +2,15 @@ import re
 from typing import List, Optional
 
 from langchain.schema import BaseOutputParser
-from generator.models import Location
+from generator.models import LocationData
 
 from graph_locations import display_location_relationships
 
 
-class LocationsParser(BaseOutputParser[List[Location]]):
-    def parse(self, text: str) -> List[Location]:
+class LocationsParser(BaseOutputParser[List[LocationData]]):
+    def parse(self, text: str) -> List[LocationData]:
         """
-        Parses the markdown list of locations into a list of Location objects.
+        Parses the markdown list of locations into a list of LocationData objects.
         """
 
         locations = parse_locations(text)
@@ -21,16 +21,17 @@ class LocationsParser(BaseOutputParser[List[Location]]):
 
     @property
     def output_format(self) -> str:
-        return "A list of Location objects with name, description, and relationships."
+        return "A list of LocationData objects with name, description, and relationships."
 
 
-def parse_locations(locations_string: str) -> List[Location]:
+def parse_locations(locations_string: str) -> List[LocationData]:
+    print(locations_string)
+    
+    # https://regex101.com/r/a6rOlG/1
     pattern = r'\s*-\s*\*\*(.*?)\*\*\s*\[(.*)\]:\s*(.*?)\s*\((.*)\)'
 
     locations = list()
     
-    print(locations_string)
-
     lines = locations_string.strip().split('\n')
     for line in lines:
         match = re.search(pattern, line)
@@ -45,12 +46,12 @@ def parse_locations(locations_string: str) -> List[Location]:
         relationships = match.group(4)  # Comma-separated relationships
 
         # Split and clean the relationships
-        relationships = [rel.strip().strip('*') for rel in relationships.split(',')]
+        relationships = [rel.strip().strip('<').strip('>') for rel in relationships.split(',')]
         
         # Remove empty locations
         relationships = list(filter(len, relationships))
 
-        location = Location(
+        location = LocationData(
             name=name,
             stance=stance,
             description=description,
