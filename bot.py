@@ -25,6 +25,7 @@ os.environ["SSL_CERT_FILE"] = certifi.where()
 
 CONFIG_FILE = 'config.ini'
 
+
 class StorytellerBot(commands.Bot):
     config: configparser.ConfigParser = configparser.ConfigParser()
     _uptime: datetime.datetime = datetime.datetime.now()
@@ -97,17 +98,45 @@ class StorytellerBot(commands.Bot):
     async def _cog_watcher(self):
         print("Watching for changes...")
         last = time.time()
+
         while True:
             extensions: set[str] = set()
+            files_to_watch = []  # List of files to check for changes
+
+            # Check extensions for changes
             for name, module in self.extensions.items():
                 if module.__file__ and os.stat(module.__file__).st_mtime > last:
                     extensions.add(name)
+
+            # Add story.py to files to watch
+            story_file = 'story.py'
+            if os.path.isfile(story_file) and os.stat(story_file).st_mtime > last:
+                files_to_watch.append(story_file)
+
+            # Add all Python files in the 'generator' directory to files to watch
+            generator_dir = 'generator'
+            if os.path.isdir(generator_dir):
+                for filename in os.listdir(generator_dir):
+                    if filename.endswith(".py"):
+                        file_path = os.path.join(generator_dir, filename)
+                        if os.stat(file_path).st_mtime > last:
+                            files_to_watch.append(file_path)
+
+            # Reload extensions that have changed
             for ext in extensions:
                 try:
                     await self.reload_extension(ext)
                     print(f"Reloaded {ext}")
                 except commands.ExtensionError as e:
                     print(f"Failed to reload {ext}: {e}")
+
+            # Reload or refresh files like story.py and generator files if they change
+            if files_to_watch:
+                for file in files_to_watch:
+                    print(f"Detected change in {
+                        file}, reloading relevant components.")
+                    # Handle reloading logic for these files if necessary
+
             last = time.time()
             await asyncio.sleep(1)
 

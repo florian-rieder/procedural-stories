@@ -19,6 +19,9 @@ uvicorn = "^0.30.6"
 websockets = "^13.0"
 chromadb = "^0.5.5"
 discord = "^2.3.2"
+matplotlib = "^3.9.2"
+networkx = "^3.3"
+owlready2 = "^0.46"
 
 
 
