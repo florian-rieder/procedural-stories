@@ -1,4 +1,4 @@
-STORY_GENERATION_PROMPT = """
+OUTLINE_GENERATION_PROMPT = """
 [INST]
 # Ontologie
 {ontology}
@@ -8,70 +8,57 @@ STORY_GENERATION_PROMPT = """
 
 # Instructions pour la génération
 Sur la base de l'ontologie et du contexte narratif ci-dessus, générez les grandes lignes d'une histoire possible avec les éléments suivants :
-- Factions : Définissez au moins 2 factions qui mèneront le conflit de l'histoire.
 - Lieux : Définissez les lieux clés pertinents pour le contexte et la construction du monde.
 - Personnages : Inclure au moins 6 personnages avec des rôles et des factions divers et leurs relations.
 - Joueur: Etablir la position du joueur dans l'histoire.
 - Objectif : définir l'objectif global du joueur. Le problème à résoudre de manière créative.
-- Événements : Décrire les événements importants qui alimentent la narration.
+- Événements : Décrire les événements importants qui alimentent l'histoire.
 - Objets : Générer uniquement les éléments IMPORTANTS absolument nécessaires pour compléter l'histoire et qui s'inscrivent dans ce cadre.
 
 
 # Format de sortie
-Fournir les éléments dans un fichier json structuré selon le format suivant :
+D'abord, raisonner sur le contexte narratif donné et son importance pour la cohérence du monde et de l'histoire.
+Fournir les éléments dans un fichier json structuré selon le format suivant (entre triple backticks "```"):
 {{
-    "Factions": [
-        {{
-            "name": "Nom de la faction 1",
-            "description": "Description en une phrase de la faction"
-        }},
-        ...
-    ],
     "Locations": [
         {{
             "name": "Nom du lieu 1",
-            "description": "Description en une phrase du lieu",
-            "isControlledByFaction": "Nom de la faction 1"
+            "description": "Description en une phrase du lieu"
         }},
         ...
     ],
     "Characters": [
         {{
-            "name": "Nom du personnage 1",
+            "name": "Nom propre du personnage 1",
             "description": "description en une phrase du personnage",
-            "isMemberOfFaction": "Nom de la faction 1",
             "isAtLocation": "Nom du lieu où se trouve le personnage",
-            "hasRelationshipWith": "Nom du personnage 2",
-            "hasPersonalityTrait": "Hâtif",
-            "hasPersonalityTrait": "Aggressif",
-            "hasPersonalityTrait": "Stratégique",
+            "hasPersonalityTrait": "Un trait de personnalité",
+            "hasPersonalityTrait": "Un autre trait de personnalité",
         }},
         {{
-            "name": "Nom du personnage 2",
+            "name": "Nom propre du personnage 2",
             "description": "description en une phrase du personnage",
-            "isMemberOfFaction": "Neutre",
+            "hasStanceTowardsPlayer": "Description de l'attitude du personnage par rapport au joueur"
             "isAtLocation": "Nom du lieu où se trouve le personnage",
-            "hasPersonalityTrait": "Sage",
-            "hasPersonalityTrait": "Intelligent",
+            "hasPersonalityTrait": "Un trait de personnalité",
         }},
         ...
     ],
     "Player": {{
         "name": "Donner un nom personnage qu'incarne le joueur",
         "description": "Description en deux phrases du personnage qu'incarne le joueur",
-        "isMemberOfFaction": "Nom de la faction du joueur (Peut être 'Neutre')",
         "isAtLocation": "Nom du lieu de départ de l'histoire"
     }}
     "Goal": {{
-        "description": "description du problème ou de l'enjeu que le joueur doit résoudre pour 'gagner'"
-        "requiresItem": "S'il un objet qui est le centre de l'histoire et doit être récupéré pour gagner, l'indiquer ici. Sinon, omettre ce champs."
+        "description": "description du problème ou de l'enjeu qui motive le joueur"
+        "requiresItem": "(FACULTATIF) S'il un objet qui est le centre de l'histoire et doit être récupéré pour gagner, l'indiquer ici. Sinon, omettre ce champs."
     }},
     "Events": [
         {{
             "name": "Evènement 1",
             "description": "description de l'évènement",
             "condition": "description de la condition qui déclenche l'évènement (devrait être déclenché par l'action du joueur !)",
-            "consequences": ["Une ou plusieurs conséquences à l'évènement", "deuxième évènement]
+            "consequences": ["Une ou plusieurs conséquences à l'évènement", "deuxième conséquence possible"]
         }},
         ...
     ],
@@ -79,12 +66,12 @@ Fournir les éléments dans un fichier json structuré selon le format suivant :
         {{
             "name": "Nom de l'objet",
             "description": "description courte de l'objet et de sa fonction dans le récit",
-            "isAtLocation": "Nom du lieu qui contient l'objet"
+            "isAtLocation": "(OBLIGATOIRE) Nom du lieu qui contient l'objet"
         }},
         ...
     ],
     "Comments": [
-        "Tout commentaire que tu voudrais ajouter pour guider la génération de détails supplémentaires et pendant le jeu. Sois précis plus que général: donne des commentaires qui peuvent être exploités"
+        "Tout commentaire que tu voudrais ajouter pour guider la génération de détails supplémentaires et pendant le jeu. Sois précis plus que général: donne des commentaires qui peuvent être exploités. Des éléments importants de l'histoire"
     ]
 }}
 
@@ -92,6 +79,46 @@ Fournir les éléments dans un fichier json structuré selon le format suivant :
 [/INST]
 
 Output:
+"""
+
+INTERMEDIATE_LOCATIONS_GENERATION_PROMPT = """
+Contexte de l'histoire:
+
+{{ setting }}
+
+Voici une liste de lieux importants dans le monde de l'histoire :
+
+{%- for location in locations %}
+    - "{{ location.name }}": {{ location.description }}
+{%- endfor %}
+
+Je voudrais que vous génériez trois à cinq lieux intermédiaires qui pourraient exister entre ces lieux majeurs. Ces lieux intermédiaires doivent avoir une fonction pratique ou narrative, comme des endroits que le joueur pourrait visiter au cours de son voyage, des repères naturels, des zones dangereuses ou des petits villages. Chaque lieu doit être relié à au moins un autre lieu, et ces relations doivent être indiquées dans la propriété `isLinkedToLocation`.
+
+Veuillez fournir les résultats au format JSON, où chaque lieu est une entrée avec les propriétés suivantes :
+
+    name : Le nom du lieu.
+    description : Une courte description du lieu.
+    isLinkedToLocation : Une liste des noms d'autres lieux liés à ce lieu.
+
+Le résultat doit être en français et chaque lieu doit s'intégrer logiquement dans ce monde.
+Exemple de sortie JSON :
+
+```json
+[
+  {
+    "name": "nom propre du lieu",
+    "description": "Description en une phrase du lieu",
+    "isLinkedToLocation": ["Nom du lieu lié 1", "Nom du lieu lié 2"]
+  },
+  ...
+]
+```
+
+Lieux majeurs :
+{%- for location in locations %}
+    - "{{ location.name }}"
+{%- endfor %}
+
 """
 
 LOCATION_GENERATION_PROMPT = """[INST]
@@ -123,4 +150,36 @@ Génère entre 0 et 4 personnages ou entités qui se trouvent dans le lieu suiva
 [/INST]
 
 Sortie:
+"""
+
+
+ENTITY_EXTRACTION_PROMPT = """
+### CONTEXT ###
+The following information defines the context of the game world:
+
+- You are currently located at: "{{ current_location }}"
+- Nearby locations you are aware of: 
+{%- for location in nearby_locations %}
+    - "{{ location.name }}": {{ location.description }}
+{%- endfor %}
+
+### PREVIOUS GAME RESPONSE ###
+"{{ previous_game_response }}"
+
+### USER MESSAGE ###
+"{{ user_message }}"
+
+### TASK ###
+Based on the provided context, previous game response, and the current user message, identify the entity names referred to in the user's message by its name in the context. The entity name to extract should be one of the names in quotes from the context. Return a short reasoning (one paragraph) and a JSON object with the following format:
+```
+{
+    "user_intent": "<describe the player's action: move, pick up, talk>",
+    "resolved_entities": [
+        {
+            "type": "<entity type: e.g., location, character, item>",
+            "name": "<resolved entity name: e.g. Paris>"
+        }
+    ]
+}
+```
 """

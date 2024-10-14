@@ -5,7 +5,7 @@ from langchain.schema import BaseOutputParser
 from generator.models import ItemData
 
 
-class CharactersParser(BaseOutputParser[List[ItemData]]):
+class ItemsParser(BaseOutputParser[List[ItemData]]):
     def parse(self, text: str) -> List[ItemData]:
         """
         Parses the markdown list of items into a list of Item objects.

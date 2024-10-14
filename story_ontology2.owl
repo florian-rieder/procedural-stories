@@ -12,61 +12,73 @@
   <rdfs:domain rdf:resource="#Location"/>
   <rdfs:range rdf:resource="#Character"/>
   <owl:inverseOf rdf:resource="#isAtLocation"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contient le personnage</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#containsItem">
   <rdfs:domain rdf:resource="#Location"/>
   <rdfs:range rdf:resource="#Item"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contient l'objet</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasActionPlan">
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#Action"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planifie</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasConsequences">
   <rdfs:domain rdf:resource="#Event"/>
   <rdfs:range rdf:resource="#Consequence"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a comme conséquence</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasEffectOn">
   <rdfs:domain rdf:resource="#Action"/>
   <rdfs:range rdf:resource="#Entity"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a un effet sur</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasEmotionalState">
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#Emotion"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a l'état emotionnel</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasGoal">
   <rdfs:domain rdf:resource="#Entity"/>
   <rdfs:range rdf:resource="#Goal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a comme objectif</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasPersonalityTrait">
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#PersonalityTrait"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a le trait de personnalité</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasRelationshipWith">
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a une relation avec</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasRole">
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#Role"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a le rôle de</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#hasTrigger">
   <rdfs:domain rdf:resource="#Event"/>
   <rdfs:range rdf:resource="#Condition"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">est déclenché par</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#involvesCharacter">
   <rdfs:domain rdf:resource="#Event"/>
   <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">implique le personnage</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#isAtLocation">
@@ -74,79 +86,86 @@
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#Location"/>
   <owl:inverseOf rdf:resource="#containsCharacter"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">est situé à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasVisited">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Location"/>
+  <owl:inverseOf rdf:resource="#wasVisitedBy"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a visité</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#wasVisitedBy">
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <owl:inverseOf rdf:resource="#hasVisited"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a été visité par</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#knows">
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">connaît</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#knowsInformation">
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#Information"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">connaît l'information</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#isLinkedToLocation">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
   <rdfs:domain rdf:resource="#Location"/>
   <rdfs:range rdf:resource="#Location"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">est connecté à</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#ownedByCharacter">
   <rdfs:domain rdf:resource="#Item"/>
   <rdfs:range rdf:resource="#Character"/>
   <owl:inverseOf rdf:resource="#ownsItem"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">est possédé par</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#ownsItem">
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#Item"/>
   <owl:inverseOf rdf:resource="#ownedByCharacter"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">possède</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#performedByCharacter">
   <rdfs:domain rdf:resource="#Action"/>
   <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">est exécuté par</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#requiresItem">
   <rdfs:domain rdf:resource="#Action"/>
   <rdfs:range rdf:resource="#Item"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#isFactionMember">
-  <rdfs:domain rdf:resource="#Character"/>
-  <rdfs:range rdf:resource="#Faction"/>
-  <owl:inverseOf rdf:resource="#hasMember"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasMember">
-  <rdfs:domain rdf:resource="#Faction"/>
-  <rdfs:range rdf:resource="#Character"/>
-  <owl:inverseOf rdf:resource="#isFactionMember"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#isControlledByFaction">
-  <rdfs:domain rdf:resource="#Location"/>
-  <rdfs:range rdf:resource="#Faction"/>
-  <owl:inverseOf rdf:resource="#hasControlofLocation"/>
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about="#hasControlofLocation">
-  <rdfs:domain rdf:resource="#Faction"/>
-  <rdfs:range rdf:resource="#Location"/>
-  <owl:inverseOf rdf:resource="#isControlledByFaction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">requiert l'objet</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about="#hasStanceTowardsPlayer">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a une attitude envers le joueur</rdfs:label>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#hasName">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">est nommé</rdfs:label>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="#hasDescription">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">est décrit comme</rdfs:label>
 </owl:DatatypeProperty>
 
 <owl:Class rdf:about="#Entity">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Entité</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Character">
@@ -182,107 +201,43 @@
 
 <owl:Class rdf:about="#Event">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Evènement</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Consequence">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conséquence</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Emotion">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emotion</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Goal">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Objectif</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#PersonalityTrait">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trait de personnalité</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Role">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Role</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Condition">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Condition</rdfs:label>
 </owl:Class>
 
 <owl:Class rdf:about="#Information">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information</rdfs:label>
 </owl:Class>
-
-<owl:NamedIndividual rdf:about="#Neutre">
-  <rdf:type rdf:resource="#Faction"/>
-  <hasStanceTowardsPlayer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neutre</hasStanceTowardsPlayer>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Rouen">
-  <rdf:type rdf:resource="#Location"/>
-  <isLinkedToLocation rdf:resource="#Bayeux"/>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rouen</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La ville côtière la plus importante de la Normandie, où les Vikings se rassemblent pour commercer et se ravitailler.</hasDescription>
-  <hasStanceTowardsPlayer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ami</hasStanceTowardsPlayer>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#ForêtDeLaHague">
-  <rdf:type rdf:resource="#Location"/>
-  <isLinkedToLocation rdf:resource="#Rouen"/>
-  <isLinkedToLocation rdf:resource="#Cherbourg"/>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forêt de la Hague</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une forêt dense et mystérieuse où les Vikings se cachent pour se protéger de leurs ennemis.</hasDescription>
-  <hasStanceTowardsPlayer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neutre</hasStanceTowardsPlayer>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#CampementDeLaRivière">
-  <rdf:type rdf:resource="#Location"/>
-  <isLinkedToLocation rdf:resource="#Rouen"/>
-  <isLinkedToLocation rdf:resource="#ForêtDeLaHague"/>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Campement de la Rivière</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un campement viking situé près d'une rivière, où les Vikings se rassemblent pour préparer les batailles à venir.</hasDescription>
-  <hasStanceTowardsPlayer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ami</hasStanceTowardsPlayer>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un campement viking situé près d\'une rivière, où les Vikings se rassemblent pour préparer les batailles à venir.</hasDescription>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Bayeux">
-  <rdf:type rdf:resource="#Location"/>
-  <isLinkedToLocation rdf:resource="#Cherbourg"/>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bayeux</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une ville côtière importante, où les Vikings se rassemblent pour commercer et se ravitailler.</hasDescription>
-  <hasStanceTowardsPlayer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neutre</hasStanceTowardsPlayer>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Cherbourg">
-  <rdf:type rdf:resource="#Location"/>
-  <isLinkedToLocation rdf:resource="#Rouen"/>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cherbourg</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une ville côtière ennemie, où les Vikings se battent pour conquérir et contrôler les routes maritimes.</hasDescription>
-  <hasStanceTowardsPlayer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hostile</hasStanceTowardsPlayer>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#RouteDeLaCôte">
-  <rdf:type rdf:resource="#Location"/>
-  <isLinkedToLocation rdf:resource="#Rouen"/>
-  <isLinkedToLocation rdf:resource="#Bayeux"/>
-  <isLinkedToLocation rdf:resource="#Cherbourg"/>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Route de la Côte</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une route côtière qui relie les villes côtières de la Normandie, où les Vikings se déplacent pour commercer et se ravitailler.</hasDescription>
-  <hasStanceTowardsPlayer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neutre</hasStanceTowardsPlayer>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#CollineDeLaBataille">
-  <rdf:type rdf:resource="#Location"/>
-  <isLinkedToLocation rdf:resource="#CampementDeLaRivière"/>
-  <isLinkedToLocation rdf:resource="#ForêtDeLaHague"/>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colline de la Bataille</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une colline qui domine la plaine de la bataille à venir, où les Vikings se préparent pour la bataille.</hasDescription>
-  <hasStanceTowardsPlayer rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hostile</hasStanceTowardsPlayer>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Hero">
-  <rdf:type rdf:resource="#Player"/>
-  <isAtLocation rdf:resource="#ForêtDeLaHague"/>
-</owl:NamedIndividual>
 
 
 </rdf:RDF>
