@@ -27,6 +27,7 @@ def parse_outline(outline_string: str) -> OutlineData:
     print(outline_string)
     print('---')
 
+    # https://regex101.com/r/y13CrG/1
     json_extraction_pattern = r'```(?:json)?\n?((?:.*\n)*)\n?```'
 
     json_match = re.search(json_extraction_pattern, outline_string)

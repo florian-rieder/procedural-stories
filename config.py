@@ -4,4 +4,4 @@ CHAT_MODEL_TEMPERATURE = 0.05
 WORKHORSE_MODEL_NAME = 'gpt-3.5-turbo-1106'
 WORKHORSE_MODEL_TEMPERATURE = 0
 
-HF_CHAT = 'meta-llama/Meta-Llama-3-8B'
+HF_CHAT = 'meta-llama/Meta-Llama-3.1-8B'

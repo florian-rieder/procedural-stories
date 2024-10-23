@@ -1,7 +1,6 @@
 from owlready2 import *
 
 from ontology_manager import list_onto, add_location
-from generator.models import LocationData
 
 # Create an ontology
 onto = get_ontology("http://www.florianrieder.com/story.owl")
@@ -10,19 +9,13 @@ with onto:
     # Class Definitions
     class Entity(Thing):
         label = "Entité"
-        pass
 
     class Character(Entity):
         """Represents a character in the story, such as a player or NPC."""
         label = "Personnage"
-        pass
 
     class Player(Character):
         label = "Joueur"
-        pass
-
-    class Faction(Entity):
-        label = "Faction"
 
     class Location(Thing):
         label = "Lieu"
@@ -37,104 +30,98 @@ with onto:
 
     class Event(Thing):
         label = "Evènement"
-        pass
 
     class Consequence(Thing):
         label = "Conséquence"
-        pass
 
     class Emotion(Thing):
         label = "Emotion"
-        pass
 
     class Goal(Thing):
         label = "Objectif"
-        pass
 
     class PersonalityTrait(Thing):
         label = "Trait de personnalité"
-        pass
 
     class Role(Thing):
         label = "Role"
-        pass
 
     class Condition(Thing):
         label = "Condition"
-        pass
 
     class Information(Thing):
         label = "Information"
-        pass
 
     # Object Properties
 
     class containsCharacter(Location >> Character):
         """Indicates that a location contain a characters."""
         label = "contient le personnage"
-        pass
 
     class containsItem(Location >> Item):
         """Indicates that a location contains an item"""
         label = "contient l'objet"
-        pass
 
     class hasActionPlan(Character >> Action):
         """Indicates that a character has a plan."""
         label = "planifie"
-        pass
 
     class hasConsequences(Event >> Consequence):
         """Indicates that an action has a consequence"""
         label = "a comme conséquence"
-        pass
 
     class hasEffectOn(Action >> Entity):
         """Indicates that a an action has an effect on an entity"""
         label = "a un effet sur"
-        pass
 
     class hasEmotionalState(Character >> Emotion):
         """Indicates that a character has an emotional state"""
         label = "a l'état emotionnel"
-        pass
 
     class hasGoal(Entity >> Goal):
         """Indicates that a character has a goal"""
         label = "a comme objectif"
-        pass
 
     class hasPersonalityTrait(Character >> PersonalityTrait):
         """Indicates that a character has a personality trait"""
         label = "a le trait de personnalité"
-        pass
 
-    class hasRelationshipWith(Character >> Character):
-        label = "a une relation avec"
-        pass
+    # Character relationships
+    class hasFriendshipWith(Character >> Character, SymmetricProperty, TransitiveProperty):
+        label = "a une amitié avec"
+
+    class hasAllegiance(Character >> Faction, FunctionalProperty, TransitiveProperty):
+        label = "a une allégeance à"
+
+    class isEnemyWith(Character >> Character, IrreflexiveProperty, SymmetricProperty):
+        label = "est ennemi de"
+
+    class loves(Character >> Character):
+        label = "aime"
+        # No restrictions on love
+
+    class hasFamilyTieWith(Character >> Character, SymmetricProperty, TransitiveProperty):
+        label = "a un lien familial avec"
+
+    class hasRivalryWith(Character >> Character, IrreflexiveProperty, SymmetricProperty):
+        label = "est rival de"
 
     class hasRole(Character >> Role):
         label = "a le rôle de"
-        pass
 
     class hasTrigger(Event >> Condition):
         label = "est déclenché par"
-        pass
 
     class involvesCharacter(Event >> Character):
         label = "implique le personnage"
-        pass
 
     # A Character can only be in one Location
-    class isAtLocation(ObjectProperty, FunctionalProperty):
+    class isAtLocation(Character >> Location, FunctionalProperty):
         label = "est situé à"
-        domain = [Character]
-        range = [Location]
         inverse_property = containsCharacter
     
     class hasVisited(Entity >> Location):
         label = "a visité"
-        pass
 
     class wasVisitedBy(Location >> Entity):
         label = "a été visité par"
@@ -143,7 +130,6 @@ with onto:
     class knows(Entity >> Entity):
         """Does entity A know entity B ?"""
         label = "connaît"
-        pass
 
     class knowsInformation(Character >> Information):
         label = "connaît l'information"
@@ -157,20 +143,17 @@ with onto:
     
     # More evolved version of isLinkedToLocation
     # class isNorthOf(Location >> Location):
-    #     pass
-
+    #
     # class isSouthOf(Location >> Location):
     #     inverse_property = isNorthOf
 
     # class isWestOf(Location >> Location):
-    #     pass
-
+    #
     # class isEastOf(Location >> Location):
     #     inverse_property = isWestOf
 
     class ownedByCharacter(Item >> Character):
         label = "est possédé par"
-        pass
 
     class ownsItem(Character >> Item):
         label = "possède"
@@ -178,11 +161,9 @@ with onto:
 
     class performedByCharacter(Action >> Character):
         label = "est exécuté par"
-        pass
 
     class requiresItem(Action >> Item):
         label = "requiert l'objet"
-        pass
 
 
     # Data properties
@@ -205,6 +186,7 @@ with onto:
     
 
     # Test
+    # from generator.models import LocationData
     # loc = LocationData(name="Raven's thorpe",
     #                    description="La ville côtière la plus importante de la Normandie, où les Vikings se rassemblent pour commercer et se ravitailler.",
     #                    relationships=["Rouen", "Rivière magique"],

@@ -3,9 +3,11 @@ import logging
 
 from langchain_core.prompts import PromptTemplate
 from langchain.llms import BaseLLM
+from langchain_core.output_parsers import JsonOutputParser
+
 
 from generator.models import LocationData, OutlineData, CharacterData, ItemData
-from generator.prompts.world import OUTLINE_GENERATION_PROMPT, LOCATION_GENERATION_PROMPT
+from generator.prompts.world import *
 from generator.parsers import ExpandedLocationParser, OutlineParser
 
 logger = logging.getLogger(__name__)
@@ -51,10 +53,11 @@ def generate_world(setting: str, model: BaseLLM):
 def generate_outline(setting: str, model: BaseLLM) -> OutlineData:
     prompt = PromptTemplate(
         input_variables=['setting'],
-        template=OUTLINE_GENERATION_PROMPT
+        template=OUTLINE_GENERATION_PROMPT,
+        template_format='jinja2'
     )
 
-    parser = OutlineParser()
+    parser = JsonOutputParser() #OutlineParser()
 
     chain = prompt | model | parser
 

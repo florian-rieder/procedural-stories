@@ -7,7 +7,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 
 from generator.prompts.world import *
-from generator.world_generator import generate_world
+from generator.world_generator import generate_world, generate_outline
 from generator.utils.serializers import json2llmready
 
 set_verbose(True)
@@ -21,7 +21,7 @@ with open("story.json", "r") as f:
 print('Loading model...')
 llm = MLXPipeline.from_model_id(
     "mlx-community/Meta-Llama-3.1-8B-Instruct-8bit",
-    pipeline_kwargs={"max_tokens": 4096, "temp": 0.2, "repetition_penalty":1.0},
+    pipeline_kwargs={"max_tokens": 2048, "temp": 0.4, "repetition_penalty":1.1},
 )
 print('Model loaded.')
 
@@ -31,14 +31,18 @@ setting = "L'histoire se déroule dans la Normandie viking du 9e siècle, à l'�
 
 #setting = "L'histoire se déroule au Moyen Orient au 10ème siècle. Tu as la liberté du reste du contexte."
 
+
 from generator.parsers import OutlineParser
 #from generator.world_generator import generate_intermediate_locations
-from generator.models import LocationData
+from generator.models import LocationData, ItemData, CharacterData
 
+outline = generate_outline(setting, llm)
 
-with open('outline.txt', 'r') as f:
-    text = f.read()
-outline = OutlineParser().parse(text)
+# with open('outline.txt', 'r') as f:
+#     text = f.read()
+# outline = OutlineParser().parse(text)
+
+print(outline)
 
 # Parse locations into LocationData objects
 locations = []
@@ -46,20 +50,54 @@ for loc in outline.locations:
     location = LocationData(name=loc['name'], description=loc['description'])
     locations.append(location)
 
+for itm in outline.items:
+    item_location = itm.get('isAtLocation')
 
-prompt = PromptTemplate(
-    input_variables=["ontology", "context"],
-    template=INTERMEDIATE_LOCATIONS_GENERATION_PROMPT,
-    template_format='jinja2'
-)
+    item = ItemData(
+        name=itm['name'],
+        description=itm['description']
+    )
+    if item_location:
+        # Add the item to the location's item list
+        matches = list(filter(lambda x: x == item_location, locations))
+        if len(matches) > 0:
+            matches[0].items.append(item)
 
-parser = JsonOutputParser()
+for char in outline.characters:
+    char_location = char.get('isAtLocation')
+    
+    character = CharacterData(
+        name=char['name'],
+        description=char['description']
+    )
+    
+    if char_location:
+        matches = list(filter(lambda x: x == char_location, locations))
+        if len(matches) > 0:
+            matches[0].characters.append(item)
 
-chain = prompt | model | parser
+print(outline)
 
-res = chain.invoke({"setting": setting, "locations": locations})
+# prompt = PromptTemplate(
+#     input_variables=["setting", "location", "characters", "items"],
+#     template=LOCATION_EXPANSION_PROMPT,
+#     template_format='jinja2'
+# )
 
-print(res)
+# parser = JsonOutputParser()
+
+# chain = prompt | model | parser
+
+# for location in outline.locations:
+
+#     res = chain.invoke({"setting": setting,
+#                         "location": location,
+#                         "characters": outline.characters,
+#                         "items": outline.items })
+
+#     print('----*----')
+#     print(res)
+#     print('----*----')
 
 # with open('intermediate_locations.txt', 'r') as f:
 #     text = f.read()
