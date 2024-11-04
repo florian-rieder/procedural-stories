@@ -29,13 +29,3 @@ class LocationData:
     characters: Optional[List[str]] = field(default_factory=list)
     items: Optional[List[ItemData]] = field(default_factory=list)
 
-
-@dataclass
-class OutlineData:
-    locations: List[dict]
-    characters: List[dict]
-    player: dict
-    goal: dict
-    events: List[dict]
-    items: List[dict]
-    comments: List[str]
