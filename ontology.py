@@ -194,7 +194,7 @@ with onto:
 
     # add_location(onto, loc)
 
-    list_onto(onto)
+    #list_onto(onto)
 
     # # Save the ontology to a file if needed
-    onto.save(file="story_ontology2.owl", format="rdfxml")
+    #onto.save(file="story_ontology2.owl", format="rdfxml")

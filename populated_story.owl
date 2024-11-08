@@ -70,6 +70,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
   <rdfs:domain rdf:resource="#Character"/>
   <rdfs:range rdf:resource="#Character"/>
+  <owl:inverseOf rdf:resource="#isRulerOf"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a une allégeance à</rdfs:label>
 </owl:ObjectProperty>
 
@@ -185,7 +186,16 @@
 <owl:ObjectProperty rdf:about="#requiresItem">
   <rdfs:domain rdf:resource="#Action"/>
   <rdfs:range rdf:resource="#Item"/>
+  <rdfs:domain rdf:resource="#Goal"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">requiert l'objet</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isRulerOf">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <owl:inverseOf rdf:resource="#hasAllegiance"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">est le souverain de</rdfs:label>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about="#hasStanceTowardsPlayer">
@@ -251,6 +261,7 @@
 
 <owl:Class rdf:about="#Goal">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdf:type rdf:resource="#Goal"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Objectif</rdfs:label>
 </owl:Class>
 
@@ -274,283 +285,292 @@
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information</rdfs:label>
 </owl:Class>
 
-<owl:NamedIndividual rdf:about="#Village%20Fortifi%C3%A9%20de%20Gravepine">
+<owl:NamedIndividual rdf:about="#Village%20de%20Gravepine">
+  <rdf:type rdf:resource="#Location"/>
+  <containsCharacter rdf:resource="#Thora%20la%20Forgeronne"/>
+  <containsCharacter rdf:resource="#Ormr%20le%20Sage"/>
+  <containsItem rdf:resource="#Carte%20des%20Fjords"/>
+  <containsItem rdf:resource="#%C3%89clat%20de%20m%C3%A9tal%20sacr%C3%A9"/>
+  <containsCharacter rdf:resource="#Erik%20Stormbringer"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Village de Gravepine</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Village de Gravepine</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un village normand typique entouré d'une palissade de bois. C'est ici que commence l'aventure du protagoniste, un endroit simple mais solide où vivent des familles de pêcheurs et de fermiers. Il y a aussi plusieurs bâtiments importants comme la forge locale et le temple dédié aux dieux nordiques. Ce lieu jouxte deux autres lieux clés : le Hall des Jarls et le Port de Gravepine.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Hall%20des%20Jarls">
   <rdf:type rdf:resource="#Location"/>
   <containsCharacter rdf:resource="#Jarl%20Bjorn%20Ironheart"/>
-  <containsCharacter rdf:resource="#Hilda%20la%20Forgeronne"/>
-  <containsCharacter rdf:resource="#Oswin%20le%20R%C3%A9citant"/>
-  <containsItem rdf:resource="#%C3%89p%C3%A9e%20Vengeresse"/>
-  <containsItem rdf:resource="#Pergamene%20Mystique"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Village Fortifié de Gravepine</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Village Fortifié de Gravepine</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ce village fortifié est situé près d'une baie stratégique, offrant un abri sûr pour les navires vikings lorsqu'ils rentrent après leurs expéditions lointaines. Entouré de haies d’épines et doté d’une muraille solide, il sert également de centre administratif local sous la protection d’un jarl respecté. Grâce à sa position géographique avantageuse, le village jouit d’une certaine autonomie tout en restant vulnérable aux attaques externes.</hasDescription>
+  <containsCharacter rdf:resource="#Skadi%20la%20Voyante"/>
+  <containsItem rdf:resource="#Bouclier%20Ornament%C3%A9"/>
+  <isLinkedToLocation rdf:resource="#Village%20de%20Gravepine"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hall des Jarls</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hall des Jarls</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L'impressionnant hall situé juste hors du Village de Gravepine, c'est là que réside le grand jarl local. Décoré de trophées de bataque et de runes magiques gravées dans les murs, cet espace sert également de place publique pour discuter affaires et partager repas après chaque raid réussi.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Port%20de%20Gravepine">
+  <rdf:type rdf:resource="#Location"/>
+  <containsCharacter rdf:resource="#Sigrid%20the%20Seafarer"/>
+  <containsCharacter rdf:resource="#Gunnar%20le%20Marchand"/>
+  <containsCharacter rdf:resource="#Hilda%20la%20Cartographe"/>
+  <containsItem rdf:resource="#Compassvik"/>
+  <containsItem rdf:resource="#R%C3%A9seau%20de%20filet"/>
+  <isLinkedToLocation rdf:resource="#Village%20de%20Gravepine"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Port de Gravepine</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Port de Gravepine</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Point stratégique vital pour toute expédition maritime depuis Gravespine. Ici, on peut voir des navires longboats prêt à partir vers leur prochaine destination : pillage, exploration ou commerce. Des marchands locaux vendent leurs produits près du port. Ce lieu joue un rôle crucial dans les préparations des expeditions maritimes et est souvent fréquenté par des aventuriers et commerçants.</hasDescription>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#For%C3%AAt%20Sombre">
   <rdf:type rdf:resource="#Location"/>
-  <containsCharacter rdf:resource="#Sigrun%20the%20Seeress"/>
-  <containsCharacter rdf:resource="#Orvar%20le%20Chasseur"/>
-  <containsCharacter rdf:resource="#Liaison%20Rune"/>
-  <containsItem rdf:resource="#Arc%20%C3%89clatant"/>
-  <containsItem rdf:resource="#Boussole%20Magique"/>
-  <isLinkedToLocation rdf:resource="#Village%20Fortifi%C3%A9%20de%20Gravepine"/>
+  <containsCharacter rdf:resource="#Ogmund%20le%20Chasseur"/>
+  <containsItem rdf:resource="#Herbe%20Magique"/>
+  <containsItem rdf:resource="#Pergamene%20Ancienne"/>
+  <isLinkedToLocation rdf:resource="#Hall%20des%20Jarls"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forêt Sombre</rdfs:label>
   <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forêt Sombre</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une étendue sombre et mystérieuse peuplée de créatures légendaires selon les histoires locales. Elle offre refuge et ressources naturelles essentielles pour le Village Fortifié de Gravepine, mais reste dangereuse sans guide compétent.</hasDescription>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une immense étendue forestière sombre et dense bordant le Hall des Jarls. Elle abrite divers animaux fauves et certains disent même avoir vu des trolls errant dans cette région. La forêt offre des opportunités pour la chasse et la collecte de ressources essentielles. En son sein, se cache aussi une Grotte Secrète remplie de trésors anciens, peut-être gardée par des créatures légendaires.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Port%20Marchand">
+<owl:NamedIndividual rdf:about="#Grotte%20Secr%C3%A8te">
   <rdf:type rdf:resource="#Location"/>
-  <containsCharacter rdf:resource="#Gudrun%20la%20N%C3%A9gociatrice"/>
-  <containsCharacter rdf:resource="#Sigurd%20le%20Marin"/>
-  <containsItem rdf:resource="#Carte%20Antique"/>
-  <containsItem rdf:resource="#R%C3%A9seau%20de%20Filet%20Solide"/>
-  <containsItem rdf:resource="#Barrique%20de%20Bi%C3%A8re%20Sp%C3%A9ciale"/>
-  <isLinkedToLocation rdf:resource="#Village%20Fortifi%C3%A9%20de%20Gravepine"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Port Marchand</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Port Marchand</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un port animé où les commerçants viennent négocier des marchandises précieuses venues des quatre coins de l’Europe. C'est ici que beaucoup de riches transactions commerciales prennent place, faisant de ce lieu un carrefour vital pour toute personne souhaitant amasser fortune et prestige. Situé près de deux autres lieux importants : Village Fortifié de Gravepine et Mer Inquiétante, ce port offre non seulement des opportunités commerciales, mais aussi des informations cruciales sur les mouvements des bateaux et les dernières rumeurs concernant les voyages et les découvertes.</hasDescription>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Colline%20Sacr%C3%A9e">
-  <rdf:type rdf:resource="#Location"/>
-  <containsCharacter rdf:resource="#Harald%20le%20Sage"/>
-  <containsCharacter rdf:resource="#Ingrid%20la%20Gu%C3%A9risseuse"/>
+  <containsCharacter rdf:resource="#Grimgor%20le%20R%C3%B4deur"/>
   <containsItem rdf:resource="#Amulette%20Runique"/>
-  <containsItem rdf:resource="#Rune%20Protectrice"/>
-  <containsItem rdf:resource="#Offrande%20Divine"/>
-  <isLinkedToLocation rdf:resource="#Village%20Fortifi%C3%A9%20de%20Gravepine"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colline Sacrée</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colline Sacrée</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Colline Sacrée est un lieu empreint de mysticisme et de spiritualité, dédié aux divins dieux nordiques : Odin, Thor et Freya. C'est ici que les Vikings célèbrent des rites importants afin d’obtenir la bienveillance divine pour leurs futures aventures maritimes. Gravées dans la roche, on peut trouver des runes anciennes porteurs de savoir ancestral, ajoutant encore plus de prestige à ce sanctuaire.</hasDescription>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Grottes%20Anciennes">
-  <rdf:type rdf:resource="#Location"/>
-  <containsCharacter rdf:resource="#Oldr%C3%BAn%20la%20Voyante"/>
-  <containsCharacter rdf:resource="#Gr%C3%ADmarr%20le%20Mineur"/>
-  <containsItem rdf:resource="#Torche%20Enflammable"/>
-  <containsItem rdf:resource="#Cl%C3%A9%20Ancienne"/>
+  <containsItem rdf:resource="#Livre%20Antique"/>
   <isLinkedToLocation rdf:resource="#For%C3%AAt%20Sombre"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grottes Anciennes</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grottes Anciennes</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Système souterrain ancien rempli de trésors perdus depuis longtemps et potentiellement habité par des esprits malveillants. Ces grottes représentent un grand risque mais aussi une grande opportunité pour ceux ayant assez de courage et de chance pour explorer ses recoins obscurs.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grotte Secrète</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grotte Secrète</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cachée quelque part dans Forêt Sombre, cette grotte contient des trésors perdus datant de temps immémoriaux. Certaines légendes racontent qu'elle serait gardée par des créatures mythologiques telles que des géants ou des dragons. La forêt environnante est sombre et dense, bordant également le Hall des Jarls. On y trouve des animaux fauves et peut-être des trolls. Cette zone est souvent utilisée pour chasser ou trouver des ressources naturelles essentielles.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Mer%20Inqui%C3%A9tante">
+<owl:NamedIndividual rdf:about="#Mer%20des%20%C3%8Eles%20Myst%C3%A9rieuses">
   <rdf:type rdf:resource="#Location"/>
-  <containsCharacter rdf:resource="#Thorgils%20Blackeye"/>
-  <containsCharacter rdf:resource="#Helga%20la%20Cartographe"/>
-  <containsCharacter rdf:resource="#Olaf%20le%20Navigateur"/>
-  <containsItem rdf:resource="#Compass%20Stellaire"/>
-  <containsItem rdf:resource="#Ancre%20Pesante"/>
-  <isLinkedToLocation rdf:resource="#Port%20Marchand"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mer Inquiétante</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mer Inquiétante</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Mer Inquiétante est une vaste étendue marine naviguée par les Vikings pour explorer de nouveaux horizons et acquérir des trésors. Ces eaux tumultueuses abritent non seulement des tempêtes impitoyables mais également des créatures légendaires capables de mettre à mal même les plus courageux des explorateurs. Elle sert de lien crucial entre plusieurs lieux importants dont Port Marchand et le Village Fortifié de Gravepine.</hasDescription>
+  <containsCharacter rdf:resource="#Olav%20le%20Navigateur"/>
+  <containsItem rdf:resource="#Planche%20de%20Navigation%20Fragilis%C3%A9e"/>
+  <isLinkedToLocation rdf:resource="#Port%20de%20Gravepine"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mer des Îles Mystérieuses</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mer des Îles Mystérieuses</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cette mer recouvre nombre d’îles non cartographiées pleines de dangers potentiels tels que des tempêtes imprévues ou des pirates. Elle offre également des opportunités pour découvrir de nouvelles terres et améliorer sa fortune grâce au pillage ou au commerce. La Mer des Îles Mystérieuses relie plusieurs lieux importants comme Port de Gravepine et Terre Inconnue, faisant d'elle un passage crucial pour les explorateurs et les aventuriers.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#%C3%8Ele%20des%20Druides">
+  <rdf:type rdf:resource="#Location"/>
+  <containsCharacter rdf:resource="#Druid%20Alvar"/>
+  <containsCharacter rdf:resource="#Sylvain%20le%20Guetteur"/>
+  <containsItem rdf:resource="#Plantes%20M%C3%A9dicinales"/>
+  <isLinkedToLocation rdf:resource="#Mer%20des%20%C3%8Eles%20Myst%C3%A9rieuses"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Île des Druides</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Île des Druides</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Petite île située loin des routes commerciales connues, habitée uniquement par des druides qui pratiquent des rituels secrets. Ces derniers possèdent des connaissances précieuses sur la médecine herboriste et peuvent offrir des sorts bénéfiques si vous réussissez à obtenir leur confiance. L'île abrite également plusieurs sanctuaires naturels et anciennes pierres dressées qui ont des significations spirituelles importantes.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Terre%20Inconnue">
+  <rdf:type rdf:resource="#Location"/>
+  <containsCharacter rdf:resource="#Harald%20le%20V%C3%A9t%C3%A9ran"/>
+  <containsItem rdf:resource="#Couteau%20de%20Survie"/>
+  <containsItem rdf:resource="#Sac%20de%20Semailles"/>
+  <isLinkedToLocation rdf:resource="#Mer%20des%20%C3%8Eles%20Myst%C3%A9rieuses"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terre Inconnue</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terre Inconnue</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nouveau continent encore inexploité découvert durant vos voyages maritimes. Riches en ressources naturelles comme des mines d'argent et des forêts luxuriantes, cette terre possède également des zones inhabitées propices à la fondation d'un nouveau foyer. Cependant, certains endroits peuvent abriter des créatures hostiles ou des trésors anciens attendant d'être découverts.</hasDescription>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Jarl%20Bjorn%20Ironheart">
   <rdf:type rdf:resource="#Character"/>
+  <isRulerOf rdf:resource="#Jarl%20Bjorn%20Ironheart"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jarl Bjorn Ironheart</rdfs:label>
   <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jarl Bjorn Ironheart</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jarls protecteur du Village Fortifié de Gravepine; figure paternelle pour Erik, mais aussi source potentielle de conflit si Erik cherche à surpasser son autorité.</hasDescription>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Respecté parmi tous les jarls, Jarl Bjorn Ironheart est non seulement connu pour sa force prodigieuse mais aussi pour avoir mené plusieurs raids victorieux contre leurs ennemis traditionnels. Né sous l'ombre de grands héros vikings, il porte en lui-même cette volonté indomptée de défendre et d'étendre leur terre natale. Cependant, malgré toute sa gloire passée, il reste prudent face aux nouvelles aventures que certains jeunes guerriers comme Erik souhaitent entreprendre.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Sigrun%20the%20Seeress">
+<owl:NamedIndividual rdf:about="#Sigrid%20the%20Seafarer">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sigrun the Seeress</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sigrun the Seeress</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oracle vivant dans Forêt Sombre, possède des visions prophétiques qui peuvent aider Erik dans sa quête, mais demande toujours quelque chose en retour.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sigrid the Seafarer</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sigrid the Seafarer</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experte navigatrice et femme libre, Sigrid the Seafarer possède une connaissance approfondie des mers et des vents. Elle offre ses talents précieux à Erik pour explorer les terres inconnues au-delà de la Mer des Îles Mystérieuses. Ayant perdu sa famille lors d'une terrible tempête maritime, elle voit maintenant chaque expédition comme une chance de trouver quelque chose plus grand qu'elle-même - peut-être même une nouvelle maison. Son aide s'avère essentielle car sans elle, Erik serait incapable de naviguer avec succès.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Thorgils%20Blackeye">
+<owl:NamedIndividual rdf:about="#Druid%20Alvar">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thorgils Blackeye</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thorgils Blackeye</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antagoniste - Capitaine pirate connu pour harceler les navires commerciaux traversant Mer Inquiétante ; menace directe pour la sécurité économique locale.</hasDescription>
+  <hasFriendshipWith rdf:resource="#Jarl%20Bjorn%20Ironheart"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Druid Alvar</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Druid Alvar</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ancien druide vivant solitairement sur l’Île des Druides, Druid Alvar détient des pouvoirs magiques qui peuvent influencer radicalement le déroulement des batailles. Il fut autrefois un guide respecté dans les rituels sacrés et les cérémonies communautaires jusqu’à ce qu’un conflit ancestral divise profondément sa communauté. Refusant de prendre parti dans cet affrontement interne, il choisit plutôt l’exil pour préserver la neutralité et continuer à pratiquer sa spiritualité loin des querelles humaines.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Hilda%20la%20Forgeronne">
+<owl:NamedIndividual rdf:about="#Thora%20la%20Forgeronne">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hilda la Forgeronne</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hilda la Forgeronne</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme robuste connue pour sa forge exceptionnelle située juste à l'intérieur des remparts. Hilda peut fournir des armes et des équipements de haute qualité aux aventuriers courageux qui lui apportent certains matériaux rares trouvés dans les environs.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thora la Forgeronne</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thora la Forgeronne</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme robuste chargée de fabriquer armes et outils pour les habitants du village. Elle possède des compétences précieuses pour améliorer les équipements du joueur avant une mission importante.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Oswin%20le%20R%C3%A9citant">
+<owl:NamedIndividual rdf:about="#Ormr%20le%20Sage">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oswin le Récitant</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oswin le Récitant</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un vieillard sage qui passe ses journées assis devant la grande salle commune, racontant des histoires ancienne et donnant des indices importants concernant des lieux cachés et des trésors perdus dans les forêts environnantes.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ormr le Sage</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ormr le Sage</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ancien druide respecté qui partage des connaissances anciennes et donne des conseils utiles concernant les routes maritimes et les dangers potentiels rencontrés durant les voyages.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Orvar%20le%20Chasseur">
+<owl:NamedIndividual rdf:about="#Skadi%20la%20Voyante">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orvar le Chasseur</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orvar le Chasseur</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un chasseur aguerri connaissant bien les dangers secrets de la forêt. Il peut fournir des informations cruciales sur les chemins sûrs et les points d'eau potable.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Skadi la Voyante</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Skadi la Voyante</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme âgée respectée pour ses prédictions précises. Skadi peut donner des informations cruciales sur les futures missions et dangers potentiels.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Liaison%20Rune">
+<owl:NamedIndividual rdf:about="#Gunnar%20le%20Marchand">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liaison Rune</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liaison Rune</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme douce et discrète qui collecte des herbes médicinales rares dans la forêt. Elle pourrait donner quelques potions curatives si elle apprend que vous avez aidé quelqu'un dans besoin.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gunnar le Marchand</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gunnar le Marchand</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un homme robuste et bien informé, Gunnar propose divers équipements nécessaires aux voyages marins. Il fournit également des informations cruciales sur les routes commerciales sûres et les points d'intérêt le long des côtes voisines.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Gudrun%20la%20N%C3%A9gociatrice">
+<owl:NamedIndividual rdf:about="#Hilda%20la%20Cartographe">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gudrun la Négociatrice</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gudrun la Négociatrice</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme rusée et habile dans les affaires, capable de tirer profit même des situations les plus difficiles. Elle peut fournir des informations sur les routes commerciales sûres ainsi que des objets utiles pour votre périple marin.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hilda la Cartographe</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hilda la Cartographe</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme douce mais compétente, Hilda crée des cartes minutieusement détaillées des régions environnantes. Ces cartes peuvent aider le joueur à éviter les zones dangereuses pendant ses explorations initiales.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Sigurd%20le%20Marin">
+<owl:NamedIndividual rdf:about="#Ogmund%20le%20Chasseur">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sigurd le Marin</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sigurd le Marin</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expérience et connaissances approfondies des vents et courants marins font de Sigurd un guide précieux. Il peut vous aider à comprendre comment naviguer efficacement et éviter certains dangers.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ogmund le Chasseur</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ogmund le Chasseur</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un homme robuste et expérimenté dans l’art de la traque et de la survie en forêt. Il fournit des informations précises sur les dangers potentiels et les points stratégiques de la Forêt Sombre.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Harald%20le%20Sage">
+<owl:NamedIndividual rdf:about="#Grimgor%20le%20R%C3%B4deur">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harald le Sage</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harald le Sage</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un vieillard barbu habillé simplement, Harald possède une connaissance approfondie des légendes et rituels associés aux dieux nordiques. Il offre des conseils spirituels et explique comment interpréter certaines runes trouvées sur place.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grimgor le Rôdeur</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grimgor le Rôdeur</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un ancien membre du clan local connu pour être un excellent explorateur. Il pourrait donner des informations précieuses sur comment entrer dans la grotte sans attirer l’attention des créatures qui la gardent.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Ingrid%20la%20Gu%C3%A9risseuse">
+<owl:NamedIndividual rdf:about="#Olav%20le%20Navigateur">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ingrid la Guérisseuse</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ingrid la Guérisseuse</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme robuste et douce, Ingrid utilise ses compétences herboristes pour concocter des potions curatives tirées des plantes locales. Elle vend ces remèdes aux visiteurs blessés ou fatigués.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Olav le Navigateur</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Olav le Navigateur</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un ancien capitaine expérimenté qui partage volontiers ses connaissances sur les courants océaniques et les risques liés aux passages dangereux. Il peut fournir des conseils cruciaux pour éviter les pires pièges naturels de cette région.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Oldr%C3%BAn%20la%20Voyante">
+<owl:NamedIndividual rdf:about="#Sylvain%20le%20Guetteur">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oldrún la Voyante</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oldrún la Voyante</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme âgée dotée de pouvoirs divinatoires qui peut aider le joueur à naviguer à travers les dangers des Grottes Anciennes grâce à des visions prophétiques.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sylvain le Guetteur</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sylvain le Guetteur</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un ancien membre du clan druide qui veille maintenant seul près des falaises. Sylvain peut fournir des informations cruciales sur les mouvements des navires ennemis et les conditions maritimes aléatoires de la Mer des Îles Mystérieuses.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Gr%C3%ADmarr%20le%20Mineur">
+<owl:NamedIndividual rdf:about="#Harald%20le%20V%C3%A9t%C3%A9ran">
   <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grímarr le Mineur</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grímarr le Mineur</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un mineur expérimenté qui possède des connaissances précieuses sur les passages secrets et les pièges des cavernes. Il peut fournir des informations cruciales pour éviter les dangers inhérents à ces lieux.</hasDescription>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Helga%20la%20Cartographe">
-  <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helga la Cartographe</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helga la Cartographe</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme sage et expérimentée qui possède des cartes anciennes et précieuses permettant de naviguer sûrement dans la Mer Inquiétante. Helga peut fournir ces informations essentielles au joueur afin d'éviter certains dangers marins.</hasDescription>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#Olaf%20le%20Navigateur">
-  <rdf:type rdf:resource="#Character"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Olaf le Navigateur</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Olaf le Navigateur</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un ancien capitaine retraité qui offre ses services pour aider les aventuriers inexpérimentés à maîtriser les techniques de navigation complexes nécessaires pour affronter les éléments hostiles de la Mer Inquiétante. Il propose des formations rapides et efficaces.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harald le Vétéran</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harald le Vétéran</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un ancien combattant expérimenté qui peut fournir des conseils stratégiques sur comment affronter les menaces potentielles du nouveau continent.</hasDescription>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Amulette%20Runique">
   <rdf:type rdf:resource="#Item"/>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amulette Runique</rdfs:label>
   <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amulette Runique</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Objet magique trouvé dans Colline Sacrée qui augmente la force physique et mentale de son détenteur.</hasDescription>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Objet sacré trouvé dans Grotte Secrète, doté de propriétés protectrices qui augmenteraient considérablement chances survies d'Erik.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Carte%20Antique">
+<owl:NamedIndividual rdf:about="#Carte%20des%20Fjords">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte Antique</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte Antique</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indication vers un trésor perdu dans les Grottes Anciennes.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte des Fjords</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte des Fjords</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cette carte ancienne indique les meilleurs passages pour naviguer autour des îles et éviter les courants dangereux.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#%C3%89p%C3%A9e%20Vengeresse">
+<owl:NamedIndividual rdf:about="#%C3%89clat%20de%20m%C3%A9tal%20sacr%C3%A9">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Épée Vengeresse</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Épée Vengeresse</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cette épée antique possède une lame acérée capable de percer presque toutes les protections. Trouvable chez Hilda la Forgeronne après avoir ramené des pièces spécifiques provenant des grottes voisines.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Éclat de métal sacré</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Éclat de métal sacré</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Petite pièce provenant d'un ancien artefact divin utilisé pour invoquer des bénédictions temporaires lors de combats cruciaux.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Pergamene%20Mystique">
+<owl:NamedIndividual rdf:about="#Bouclier%20Ornament%C3%A9">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pergamene Mystique</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pergamene Mystique</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document contenant des informations cruciales sur les rites sacrés pratiqués sur la Colline Sacrée ainsi que des instructions pour invoquer des sorts bénéfiques. Cette pergamenne pourrait être obtenue auprès d'Oswin le Récitant.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bouclier Ornamenté</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bouclier Ornamenté</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un bouclier ancien orné de symboles runiques protecteurs. Utile pour augmenter la protection pendant les combats.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Arc%20%C3%89clatant">
+<owl:NamedIndividual rdf:about="#Compassvik">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arc Éclatant</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arc Éclatant</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cet arc spécial permet de tirer plus loin et plus précisément grâce à sa forme unique. Utile pour repousser les créatures hostiles rencontrées dans la forêt.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compassvik</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compassvik</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ce compas ancien permet de naviguer précisément malgré les conditions climatiques défavorables. Indispensable pour traverser la Mer des Îles Mystérieuses.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Boussole%20Magique">
+<owl:NamedIndividual rdf:about="#R%C3%A9seau%20de%20filet">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boussole Magique</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boussole Magique</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cette boussole indique non seulement votre direction, mais aussi les endroits cachés et précieux dans la région environnante. Un outil indispensable pour naviguer dans ce lieu complexe.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Réseau de filet</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Réseau de filet</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Utilisé pour capturer des poissons durant les longs trajets en mer. Sert à nourrir l'équipage et à maintenir les provisions.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#R%C3%A9seau%20de%20Filet%20Solide">
+<owl:NamedIndividual rdf:about="#Herbe%20Magique">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Réseau de Filet Solide</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Réseau de Filet Solide</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ce filet robuste peut servir tant pour la chasse marine que pour sécuriser vos biens durant les traversées tumultueuses.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Herbe Magique</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Herbe Magique</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plante rare ayant des propriétés curatives puissantes. Nécéssaire pour soigner les blessures subies durant les combats.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Barrique%20de%20Bi%C3%A8re%20Sp%C3%A9ciale">
+<owl:NamedIndividual rdf:about="#Pergamene%20Ancienne">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barrique de Bière Spéciale</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barrique de Bière Spéciale</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cette boisson forte et revitalisante peut aider à maintenir moral élevé pendant longues navigations. Utile surtout si vous prévoyez de faire escale dans différents ports.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pergamene Ancienne</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pergamene Ancienne</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document ancien décrivant les entrailles de la Grotte Secrète et indiquant comment y accéder sans danger. Utile pour découvrir les secrets cachés.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Rune%20Protectrice">
+<owl:NamedIndividual rdf:about="#Livre%20Antique">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rune Protectrice</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rune Protectrice</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cette rune ancienne, lorsque tenue fermement pendant un rite, confère une protection supplémentaire durant les voyages maritimes difficiles.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Livre Antique</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Livre Antique</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ce livre contient des runes anciennes révélant des secrets sur les défenses magiques possibles autour de la grotte. Utile pour préparer correctement avant toute expédition vers cet endroit.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Offrande%20Divine">
+<owl:NamedIndividual rdf:about="#Planche%20de%20Navigation%20Fragilis%C3%A9e">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Offrande Divine</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Offrande Divine</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cet objet symbolique utilisé pour faire des sacrifices aux dieux peut être nécessaire pour certains rituels spéciaux effectués sur la colline.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planche de Navigation Fragilisée</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planche de Navigation Fragilisée</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une carte usagée indiquant quelques points clés de navigation dans la Mer des Îles Mystérieuses. Bien que dégradée, elle reste utile pour identifier certains dangers et repères essentiels.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Torche%20Enflammable">
+<owl:NamedIndividual rdf:about="#Plantes%20M%C3%A9dicinales">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Torche Enflammable</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Torche Enflammable</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une torche spéciale capable de brûler même sous l'eau, indispensable pour illuminer les ténèbres des grottes.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plantes Médicinales</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plantes Médicinales</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une collection rare de plantes médicinales utilisées par les druides pour soigner divers maux. Elles permettent de restaurer rapidement la santé après combats ou maladies.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Cl%C3%A9%20Ancienne">
+<owl:NamedIndividual rdf:about="#Couteau%20de%20Survie">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clé Ancienne</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clé Ancienne</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une clé forgée il y a plusieurs siècles, nécessaire pour ouvrir certaines portes verrouillées dans les plus anciens secteurs des grottes.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Couteau de Survie</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Couteau de Survie</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instrument multifonctionnel indispensable pour couper, creuser et même préparer les aliments dans cet environnement hostile.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Compass%20Stellaire">
+<owl:NamedIndividual rdf:about="#Sac%20de%20Semailles">
   <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compass Stellaire</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compass Stellaire</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ce compas unique utilise les mouvements des astres pour orienter précisément le bateau, offrant ainsi une protection supplémentaire lors des voyages nocturnes ou sous des nuages épais.</hasDescription>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sac de Semailles</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sac de Semailles</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contient divers graines utiles pour cultiver des plantations initiales et assurer la subsistance dès l'établissement initial.</hasDescription>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#Ancre%20Pesante">
-  <rdf:type rdf:resource="#Item"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ancre Pesante</rdfs:label>
-  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ancre Pesante</hasName>
-  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cette ancre solide peut maintenir solidement le bateau durant les tempêtes violente, assurant la stabilité nécessaire pour survivre aux aléas climatiques inhospitalières de la Mer Inquiétante.</hasDescription>
+<owl:NamedIndividual rdf:about="#Erik%20Stormbringer">
+  <rdf:type rdf:resource="#Player"/>
+  <hasGoal rdf:resource="#player_goal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Erik Stormbringer</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Erik Stormbringer</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un jeune Viking ambitieux originaire du Village de Gravepine, désireux de faire preuve de bravoure et de gagner la reconnaissance nécessaire pour diriger sa propre flotte et conquérir un nouveau territoire.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#player_goal">
+  <rdf:type rdf:resource="#Goal"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">player_goal</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assemblage d’une flotte capable de soutenir une campagne militaire visant à conquérir Terre Inconnue. Erik doit accomplir des missions pour accumuler prestige et ressources avant de pouvoir convaincre Jarl Björn Ironheart de financer son voyage.</hasDescription>
 </owl:NamedIndividual>
 
 
