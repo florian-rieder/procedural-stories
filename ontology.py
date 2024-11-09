@@ -3,7 +3,7 @@ from owlready2 import *
 from ontology_manager import list_onto, add_location
 
 # Create an ontology
-onto = get_ontology("http://www.florianrieder.com/story.owl")
+onto = get_ontology("http://www.florianrieder.com/semantic/story.owl")
 
 with onto:
     # Class Definitions
@@ -51,7 +51,7 @@ with onto:
 
     class Information(Thing):
         label = "Information"
-
+    
     # Object Properties
 
     class containsCharacter(Location >> Character):
@@ -87,11 +87,15 @@ with onto:
         label = "a le trait de personnalité"
 
     # Character relationships
-    class hasFriendshipWith(Character >> Character, SymmetricProperty, TransitiveProperty):
+    class hasFriendshipWith(Character >> Character, SymmetricProperty, TransitiveProperty, IrreflexiveProperty):
         label = "a une amitié avec"
 
-    class hasAllegiance(Character >> Faction, FunctionalProperty, TransitiveProperty):
+    class hasAllegiance(Character >> Character, FunctionalProperty):
         label = "a une allégeance à"
+
+    class isRulerOf(Character >> Character):
+        label = "est le souverain de"
+        inverse_property = hasAllegiance
 
     class isEnemyWith(Character >> Character, IrreflexiveProperty, SymmetricProperty):
         label = "est ennemi de"
@@ -164,6 +168,9 @@ with onto:
 
     class requiresItem(Action >> Item):
         label = "requiert l'objet"
+    
+    class requiresItem(Goal >> Item):
+        label = "requiert l'objet"
 
 
     # Data properties
@@ -183,7 +190,11 @@ with onto:
         domain: [Thing]
         range: [str]
 
-    
+
+    # Equivalences
+    class CurrentLocation(Location):
+        equivalent_to = [Location & containsCharacter.some(Player)]
+
 
     # Test
     # from generator.models import LocationData
@@ -197,4 +208,4 @@ with onto:
     #list_onto(onto)
 
     # # Save the ontology to a file if needed
-    #onto.save(file="story_ontology2.owl", format="rdfxml")
+    onto.save(file="story_ontology3.owl", format="rdfxml")
