@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.florianrieder.com/semantic/story.owl"
+         xmlns="http://www.florianrieder.com/semantic/story.owl#">
+
+<owl:Ontology rdf:about="http://www.florianrieder.com/semantic/story.owl"/>
+
+<owl:ObjectProperty rdf:about="#characterIsLocatedAt">
+  <rdfs:subPropertyOf rdf:resource="#isLocatedAt"/>
+  <owl:inverseOf rdf:resource="#containsCharacter"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">personnage est situé à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLocatedAt">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Location"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsCharacter">
+  <rdfs:subPropertyOf rdf:resource="#containsEntity"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">contient le personnage</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsEntity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#isLocatedAt"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">contient l'entité</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsItem">
+  <rdfs:subPropertyOf rdf:resource="#containsEntity"/>
+  <owl:inverseOf rdf:resource="#itemIsLocatedAt"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Item"/>
+  <rdfs:label xml:lang="fr">contient l'objet</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#itemIsLocatedAt">
+  <rdfs:subPropertyOf rdf:resource="#isLocatedAt"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Item"/>
+  <rdfs:range rdf:resource="#Location"/>
+  <rdfs:label xml:lang="fr">objet est situé à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasActionPlan">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Action"/>
+  <rdfs:label xml:lang="fr">planifie</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAllegiance">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <owl:inverseOf rdf:resource="#isRulerOf"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">a une allégeance à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRelationship">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isRulerOf">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est le souverain de</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFamilyTieWith">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">a un lien familial avec</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFriendshipWith">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est ami avec</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasGoal">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Goal"/>
+  <rdfs:label xml:lang="fr">a comme objectif</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRivalryWith">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est rival de</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTrigger">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:label xml:lang="fr">est déclenché par</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasVisited">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#wasVisitedBy"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Location"/>
+  <rdfs:label xml:lang="fr">a visité</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#wasVisitedBy">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">a été visité par</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#involvesCharacter">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">implique le personnage</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isEnemyWith">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est ennemi de</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLinkedToLocation">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Location"/>
+  <rdfs:label xml:lang="fr">est connecté à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#knows">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">connaît</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#loves">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">aime</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ownedByCharacter">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#ownsItem"/>
+  <rdfs:domain rdf:resource="#Item"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est possédé par</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ownsItem">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Item"/>
+  <rdfs:label xml:lang="fr">possède l'objet</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requiresItem">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:domain rdf:resource="#Goal"/>
+  <rdfs:range rdf:resource="#Item"/>
+  <rdfs:label xml:lang="fr">requiert l'objet</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDescription">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label xml:lang="fr">est décrit comme</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasEmotionalState">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasImportance">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasLongDescription">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasName">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label xml:lang="fr">est nommé</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPersonalityTrait">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRole">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Character">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">Personnage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Location">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="fr">Lieu</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="fr">Entité</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Item">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">Objet</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Action">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:comment xml:lang="fr">Une action que peut prendre un personnage</rdfs:comment>
+  <rdfs:label xml:lang="fr">Action</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Goal">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="fr">Objectif</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="fr">Evènement</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#CurrentLocation">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Location"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#containsCharacter"/>
+          <owl:someValuesFrom rdf:resource="#Player"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Location"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The location containing the player</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Player">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">Joueur</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#NearbyCharacter">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#characterIsLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#CurrentLocation"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NearbyItem">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#itemIsLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#CurrentLocation"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Item"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NearbyLocation">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isLinkedToLocation"/>
+      <owl:someValuesFrom rdf:resource="#CurrentLocation"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Location"/>
+</owl:Class>
+
+<owl:Class rdf:about="#VisitedLocation">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Location"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#wasVisitedBy"/>
+          <owl:someValuesFrom rdf:resource="#Player"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Location"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#village%20des%20survivants">
+  <rdf:type rdf:resource="#Location"/>
+  <isLinkedToLocation rdf:resource="#for%C3%AAt%20abandonn%C3%A9e"/>
+  <isLinkedToLocation rdf:resource="#ruine%20urbaine"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Village des Survivants</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Village des Survivants</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ce village représente la dernière bastion de civilisation humaine dans cette région ravagée par les zombies. Protégé derrière des murs solides et surveillé nuit et jour, il sert de refuge sûr pour ses habitants. C'est ici que notre héros partira pour accomplir sa mission critique.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#for%C3%AAt%20abandonn%C3%A9e">
+  <rdf:type rdf:resource="#Location"/>
+  <isLinkedToLocation rdf:resource="#lac%20pollu%C3%A9"/>
+  <isLinkedToLocation rdf:resource="#mine%20d%C3%A9laiss%C3%A9e"/>
+  <containsItem rdf:resource="#gilles%2520lafitte"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forêt Abandonnée</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forêt Abandonnée</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une vaste étendue boisée qui était autrefois peuplée de faune variée avant l'épidémie zombie. Maintenant, elle offre un couvert idéal pour les survivants tentant de collecter des ressources essentielles comme l'eau fraîche et les fruits sauvages. Attention, certains secteurs peuvent contenir des groupes errants de zombies attirés par leur instinct animal.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ruine%20urbaine">
+  <rdf:type rdf:resource="#Location"/>
+  <containsItem rdf:resource="#gilles%252520lafitte"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ruine Urbaine</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ruine Urbaine</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un ancien quartier urbain transformé en champ de bataille permanent contre les zombies. Des immeubles écroulés et des rues jonchées de cadavres offrent peu de protection mais beaucoup de risques. Pourtant, si on peut y pénétrer discrètement, cela pourrait fournir des provisions précieuses.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lac%20pollu%C3%A9">
+  <rdf:type rdf:resource="#Location"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lac Pollué</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lac Pollué</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cet endroit était autrefois un site touristique populaire. Aujourd'hui, il est contaminé et infesté de zombies aquatiques. Bien que dangereuse, cette zone pourrait potentiellement servir de point stratégique vers d'autres régions.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mine%20d%C3%A9laiss%C3%A9e">
+  <rdf:type rdf:resource="#Location"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mine Délaissée</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mine Délaissée</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anciennement exploitée pour extraire divers minéraux, aujourd’hui la mine est presque inaccessible et remplie de dangers cachés - incluant des zombies piégés dedans pendant longtemps. Elle pourrait cependant receler des trésors ignorés jusqu'à présent.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#marcelle%20dupont">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#village%20des%20survivants"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marcelle Dupont</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marcelle Dupont</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La chef du Village des Survivants, Marcelle soutient Alexandre dans sa quête et espère que son expertise scientifique aidera à comprendre mieux l’épidémie zombie.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">main character</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lucas%20martin">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#village%20des%20survivants"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lucas Martin</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lucas Martin</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un jeune aventurier intrépide qui propose volontiers son aide à Alexandre lors de son exploration. Lucas possède des compétences utiles pour naviguer dans les territoires hostiles.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">main character</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gilles%20lafitte">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#village%20des%20survivants"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gilles Lafitte</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gilles Lafitte</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Antagoniste principal, Gilles est un individu ambitieux qui cherche à prendre le contrôle du Village des Survivants. Il voit Alexandre comme un obstacle à ses plans et essaiera de saboter sa mission.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">main character</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gilles%2520lafitte">
+  <rdf:type rdf:resource="#Item"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cartographie Antique</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cartographie Antique</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cette carte ancienne indiquait auparavant des sources d'eaux propres et des points stratégiques dans la forêt.</hasDescription>
+  <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">major</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gilles%252520lafitte">
+  <rdf:type rdf:resource="#Item"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kit Analyse D'Eau</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kit Analyse D'Eau</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instrument indispensable pour tester la qualité de l'eau trouvée durant l’expédition.</hasDescription>
+  <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">major</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#alexandre%20durand">
+  <rdf:type rdf:resource="#Player"/>
+  <characterIsLocatedAt rdf:resource="#village%20des%20survivants"/>
+  <hasGoal rdf:resource="#player_goal"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alexandre Durand</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alexandre Durand</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ancien biologiste spécialisé dans les maladies virales, Alexandre a été choisi pour partir explorer les zones contaminées autour du Village des Survivants afin de localiser une nouvelle source d'alimentation ou d'eau potable.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#player_goal">
+  <rdf:type rdf:resource="#Goal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Player goal</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trouver une source sécurisée de nourriture ou d'eau potable pour assurer la survie immédiate du Village des Survivants.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:Class>
+  <owl:intersectionOf rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Item"/>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </owl:intersectionOf>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#itemIsLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class>
+  <owl:intersectionOf rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Character"/>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </owl:intersectionOf>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#characterIsLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+</rdf:RDF>

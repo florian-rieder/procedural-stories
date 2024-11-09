@@ -5,6 +5,7 @@ from discord.ext import commands
 class ChatCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
+        self.started = False
 
     @commands.hybrid_command(name="reset")
     async def reset(self, ctx: commands.Context[commands.Bot]) -> None:
@@ -37,9 +38,21 @@ class ChatCog(commands.Cog):
         """
         await ctx.reply(message)
 
+    @commands.hybrid_command(name="start")
+    async def start(self, ctx: commands.Context[commands.Bot]):
+        """
+        Start an adventure
+        """
+        self.started = True
+        
+        # Reply with the start scene
+        await ctx.reply("Adventure started !")
 
     @commands.Cog.listener("on_message")
     async def on_message(self, message: discord.Message):
+        if not self.started:
+            return
+
         # Basic debug prints to see if the event is firing
         print('Event triggered! Message content:', message.content)
 

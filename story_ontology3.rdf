@@ -48,6 +48,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#containsEntity -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#containsEntity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#isLocatedAt"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
@@ -70,12 +71,13 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#hasActionPlan -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#happensAt -->
 
-    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasActionPlan">
-        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Action"/>
-        <rdfs:label xml:lang="fr">planifie</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#happensAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasEvent"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
     </owl:ObjectProperty>
     
 
@@ -83,6 +85,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#hasAllegiance -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasAllegiance">
+        <rdfs:subPropertyOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasRelationship"/>
         <owl:inverseOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#isRulerOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
@@ -92,12 +95,12 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#hasEmotionalState -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasEvent -->
 
-    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasEmotionalState">
-        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Emotion"/>
-        <rdfs:label xml:lang="fr">a l&apos;état emotionnel</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasEvent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
     </owl:ObjectProperty>
     
 
@@ -105,6 +108,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#hasFamilyTieWith -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasFamilyTieWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasRelationship"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
@@ -117,6 +121,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#hasFriendshipWith -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasFriendshipWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasRelationship"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
@@ -129,6 +134,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#hasGoal -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasGoal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Entity"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Goal"/>
         <rdfs:label xml:lang="fr">a comme objectif</rdfs:label>
@@ -136,12 +142,10 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#hasPersonalityTrait -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasRelationship -->
 
-    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasPersonalityTrait">
-        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#PersonalityTrait"/>
-        <rdfs:label xml:lang="fr">a le trait de personnalité</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasRelationship">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -149,6 +153,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#hasRivalryWith -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasRivalryWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasRelationship"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
@@ -158,21 +163,11 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#hasRole -->
-
-    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasRole">
-        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Role"/>
-        <rdfs:label xml:lang="fr">a le rôle de</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.florianrieder.com/semantic/story.owl#hasTrigger -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasTrigger">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
-        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Condition"/>
         <rdfs:label xml:lang="fr">est déclenché par</rdfs:label>
     </owl:ObjectProperty>
     
@@ -181,6 +176,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#hasVisited -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasVisited">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#wasVisitedBy"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Entity"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
@@ -192,6 +188,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#involvesCharacter -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#involvesCharacter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:label xml:lang="fr">implique le personnage</rdfs:label>
@@ -202,6 +199,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#isEnemyWith -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#isEnemyWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasRelationship"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
@@ -214,6 +212,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#isLinkedToLocation -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#isLinkedToLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
@@ -226,6 +225,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#isLocatedAt">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Entity"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
     </owl:ObjectProperty>
@@ -235,6 +235,8 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#isRulerOf -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#isRulerOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasRelationship"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:label xml:lang="fr">est le souverain de</rdfs:label>
@@ -257,6 +259,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#knows -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#knows">
+        <rdfs:subPropertyOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasRelationship"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Entity"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Entity"/>
         <rdfs:label xml:lang="fr">connaît</rdfs:label>
@@ -264,19 +267,10 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#knowsInformation -->
-
-    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#knowsInformation">
-        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Information"/>
-        <rdfs:label xml:lang="fr">connaît l&apos;information</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.florianrieder.com/semantic/story.owl#loves -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#loves">
+        <rdfs:subPropertyOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasRelationship"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:label xml:lang="fr">aime</rdfs:label>
@@ -287,6 +281,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#ownedByCharacter -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#ownedByCharacter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#ownsItem"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
@@ -298,9 +293,10 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#ownsItem -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#ownsItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <rdfs:label xml:lang="fr">possède</rdfs:label>
+        <rdfs:label xml:lang="fr">possède l&apos;objet</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -308,7 +304,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#requiresItem -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#requiresItem">
-        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Action"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Goal"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
         <rdfs:label xml:lang="fr">requiert l&apos;objet</rdfs:label>
@@ -319,6 +315,7 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#wasVisitedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#wasVisitedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Entity"/>
         <rdfs:label xml:lang="fr">a été visité par</rdfs:label>
@@ -337,13 +334,58 @@
     
 
 
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasCondition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of a condition for an event to be triggered</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasConsequence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasConsequence">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of the consequence(s) of an event</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.florianrieder.com/semantic/story.owl#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A text description of something, used to guide generation during play.</rdfs:comment>
         <rdfs:label xml:lang="fr">est décrit comme</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasEmotionalState -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasEmotionalState">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasImportance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasImportance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -352,8 +394,10 @@
 
     <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasLongDescription">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A longer description of something, used when focusing on an element</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -361,10 +405,42 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#hasName -->
 
     <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="fr">est nommé</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasPersonalityTrait -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasPersonalityTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasQuantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasQuantity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasRole -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -380,39 +456,11 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#Action -->
-
-    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Action">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment xml:lang="fr">Une action que peut prendre un personnage</rdfs:comment>
-        <rdfs:label xml:lang="fr">Action</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.florianrieder.com/semantic/story.owl#Character -->
 
     <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Character">
         <rdfs:subClassOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Entity"/>
         <rdfs:label xml:lang="fr">Personnage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Condition -->
-
-    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Condition">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="fr">Condition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Consequence -->
-
-    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Consequence">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="fr">Conséquence</rdfs:label>
     </owl:Class>
     
 
@@ -433,15 +481,6 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
         <rdfs:comment>The location containing the player</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Emotion -->
-
-    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Emotion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="fr">Emotion</rdfs:label>
     </owl:Class>
     
 
@@ -469,15 +508,6 @@
     <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Goal">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label xml:lang="fr">Objectif</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Information -->
-
-    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Information">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="fr">Information</rdfs:label>
     </owl:Class>
     
 
@@ -542,29 +572,11 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#PersonalityTrait -->
-
-    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#PersonalityTrait">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="fr">Trait de personnalité</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.florianrieder.com/semantic/story.owl#Player -->
 
     <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Player">
         <rdfs:subClassOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:label xml:lang="fr">Joueur</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Role -->
-
-    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Role">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:label xml:lang="fr">Rôle</rdfs:label>
     </owl:Class>
     
 
@@ -585,80 +597,6 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Character_A -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Character_A">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <isLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#Depart"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Depart -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Depart">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <containsEntity rdf:resource="http://www.florianrieder.com/semantic/story.owl#Erik"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Erik -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Erik">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Player"/>
-        <hasVisited rdf:resource="http://www.florianrieder.com/semantic/story.owl#Depart"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Lieu_A -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Lieu_A">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#Depart"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Lieu_B -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Lieu_B">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#Depart"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Lieu_C -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Lieu_C">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#Lieu_B"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Objet_1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Objet_1">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <isLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#Depart"/>
-    </owl:NamedIndividual>
     
 
 
