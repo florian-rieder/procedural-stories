@@ -555,7 +555,7 @@
 
     <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Player">
         <rdfs:subClassOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdfs:label>Joueur</rdfs:label>
+        <rdfs:label xml:lang="fr">Joueur</rdfs:label>
     </owl:Class>
     
 
@@ -565,6 +565,25 @@
     <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Role">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label xml:lang="fr">Rôle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#VisitedLocation -->
+
+    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#VisitedLocation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.florianrieder.com/semantic/story.owl#Location"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.florianrieder.com/semantic/story.owl#wasVisitedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.florianrieder.com/semantic/story.owl#Player"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
     </owl:Class>
     
 
@@ -602,6 +621,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Erik">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Player"/>
+        <hasVisited rdf:resource="http://www.florianrieder.com/semantic/story.owl#Depart"/>
     </owl:NamedIndividual>
     
 
