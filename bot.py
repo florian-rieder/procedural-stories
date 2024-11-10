@@ -3,8 +3,10 @@ Based on https://fallendeity.github.io/discord.py-masterclass
 """
 
 import asyncio
+import certifi
 import configparser
 import datetime
+from importlib import reload
 import logging
 import os
 import time
@@ -15,9 +17,7 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from story import get_chain
-
-import certifi
+from generator.models import model, predictable_model
 
 
 # Fix SSL error: https://stackoverflow.com/a/78935128/10914628
@@ -73,8 +73,26 @@ class StorytellerBot(commands.Bot):
         #     self.config['DEFAULT']['MESSAGES_LIMIT'] = '100'
         #     self.save_config()
 
-        # Initialize LLM pipeline
-        self.chain = get_chain()
+
+        ########################################################################
+        #                    Initialize conversation chain                     #
+        ########################################################################
+        
+
+        # Load LLM
+        # We load a second model with a temperature of 0 because we couldn't find how
+        # to change that setting on the fly.
+        # But in principle, changing the temperature on the same model is
+        # doable, so this still counts as using one 8B model for the
+        # conversation loop and processing.
+        self.predictable_model = predictable_model
+        self.model = model
+        
+        
+        ########################################################################
+        #                End conversation chain initialization                 #
+        ########################################################################
+
 
         # Load cogs
         await self._load_extensions()
@@ -133,9 +151,8 @@ class StorytellerBot(commands.Bot):
             # Reload or refresh files like story.py and generator files if they change
             if files_to_watch:
                 for file in files_to_watch:
-                    print(f"Detected change in {
-                        file}, reloading relevant components.")
-                    # Handle reloading logic for these files if necessary
+                    print(f"Detected change in {file}, reloading relevant components.")
+                    reload(file)
 
             last = time.time()
             await asyncio.sleep(1)

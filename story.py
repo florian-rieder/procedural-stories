@@ -13,19 +13,11 @@ from langchain_community.vectorstores import Chroma
 
 from langchain_community.llms.mlx_pipeline import MLXPipeline
 from langchain_community.chat_models.mlx import ChatMLX
-# from langchain_openai import ChatOpenAI
-# from langchain_openai import OpenAIEmbeddings
 # from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace, HuggingFacePipeline
-
-from config import *
 
 
 print('Loading model...')
 llm = MLXPipeline.from_model_id(
-    #"mlx-community/Mistral-7B-Instruct-v0.3",
-    #"mlx-community/Meta-Llama-3-8B-Instruct-4bit",
-    #"mlx-community/Meta-Llama-3-8B-Instruct-8bit",
-    #"mlx-community/Meta-Llama-3-8B-Instruct-bf16",
     "mlx-community/Meta-Llama-3.1-8B-Instruct-8bit",
     #"mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
     #"mlx-community/Meta-Llama-3.1-8B-Instruct-bf16",
