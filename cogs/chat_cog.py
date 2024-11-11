@@ -176,7 +176,7 @@ class ChatCog(commands.Cog):
             response = await self.invoke_current_chain(message.content)
 
         # Send the LLM response in the channel
-        await message.channel.send(response.content)
+        await message.channel.send(response)
 
 
 async def setup(bot: commands.Bot):
