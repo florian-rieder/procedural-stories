@@ -108,8 +108,8 @@ def get_chain(model, predictable_model, start_message: str, setting: str, langua
     logger.info(f'Loading ontology for user {user_name}')
     onto = get_ontology('file://story_poptest.rdf').load()
 
-    with onto:
-        sync_reasoner()
+    # with onto:
+    #     sync_reasoner()
 
     logger.info(f'Ontology loaded for user {user_name}')
     # Define the chat prompt

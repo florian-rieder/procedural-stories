@@ -76,7 +76,7 @@
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#follows">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Player"/>
         <rdfs:comment>Any character following the player will change location with the player when the player moves.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -125,6 +125,17 @@
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:label xml:lang="fr">a un lien familial avec</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasFollower -->
+
+    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasFollower">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Player"/>
+        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <rdfs:comment>Any character following the player will change location with the player when the player moves.</rdfs:comment>
     </owl:ObjectProperty>
     
 
