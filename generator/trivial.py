@@ -45,6 +45,7 @@ The game is played by interactions between the game (you) and the player. The pl
 Do not reveal everything all at once: let the player discover things. Only output natural text, as one would read in a book they actually were the hero of.
 
 Your messages should be short. Please do not produce lengthy messages. Your messages should be one to two sentences long. The player can always ask for more details ! For dialogues, you will output only one line of dialogue, and let the player respond.
+The player cannot invent new items, locations or characters. Only you can do that.
 
 Always answer in {{language}}
 """
@@ -54,7 +55,7 @@ HUMAN_MESSAGE_TEMPLATE = """
 """
 
 
-def get_chain(model, start_message: str):
+def get_chain(model, start_message: str, setting: str, language: str, user_name: str, config: dict):
     chat_prompt = ChatPromptTemplate.from_messages(
         [
             ("system", CHAT_SYSTEM_PROMPT),
@@ -76,17 +77,16 @@ def get_chain(model, start_message: str):
         verbose=True
     )
 
-    async def ainvoke_wrapper(*args, **kwargs):
-        # makeshift verbose mode
-        # print('helloooooooooooooo')
-        # history = chain.get_session_history()
-        # params = args[0]
-        # params['history'] = history
-        # print(chat_prompt.invoke(*args).text)
-
-
-        result = await chain.ainvoke(*args, **kwargs)
+    async def converse(message: str):
+        result = await chain.ainvoke(
+            {
+                "setting": setting,
+                "language": language,
+                "message": message,
+            },
+            config=config
+        )
 
         return result
 
-    return ainvoke_wrapper
+    return converse

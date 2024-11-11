@@ -71,13 +71,24 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#hasActionPlan -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#follows -->
 
-    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasActionPlan">
+    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#follows">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Action"/>
-        <rdfs:label xml:lang="fr">planifie</rdfs:label>
+        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <rdfs:comment>Any character following the player will change location with the player when the player moves.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#happensAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#happensAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#hasEvent"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
     </owl:ObjectProperty>
     
 
@@ -91,6 +102,16 @@
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
         <rdfs:label xml:lang="fr">a une allégeance à</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasEvent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
     </owl:ObjectProperty>
     
 
@@ -295,7 +316,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#requiresItem">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Action"/>
         <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Goal"/>
         <rdfs:range rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
         <rdfs:label xml:lang="fr">requiert l&apos;objet</rdfs:label>
@@ -325,6 +345,30 @@
     
 
 
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasCondition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of a condition for an event to be triggered</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#hasConsequence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasConsequence">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The description of the consequence(s) of an event</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.florianrieder.com/semantic/story.owl#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.florianrieder.com/semantic/story.owl#hasDescription">
@@ -332,6 +376,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A text description of something, used to guide generation during play.</rdfs:comment>
         <rdfs:label xml:lang="fr">est décrit comme</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -365,6 +410,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A longer description of something, used when focusing on an element</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -420,16 +466,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#Action -->
-
-    <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#Action">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment xml:lang="fr">Une action que peut prendre un personnage</rdfs:comment>
-        <rdfs:label xml:lang="fr">Action</rdfs:label>
-    </owl:Class>
     
 
 
@@ -511,12 +547,20 @@
 
     <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#NearbyCharacter">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.florianrieder.com/semantic/story.owl#characterIsLocatedAt"/>
-                <owl:someValuesFrom rdf:resource="http://www.florianrieder.com/semantic/story.owl#CurrentLocation"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Player"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.florianrieder.com/semantic/story.owl#characterIsLocatedAt"/>
+                        <owl:someValuesFrom rdf:resource="http://www.florianrieder.com/semantic/story.owl#CurrentLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <owl:disjointWith rdf:resource="http://www.florianrieder.com/semantic/story.owl#Player"/>
     </owl:Class>
     
 
@@ -539,10 +583,17 @@
 
     <owl:Class rdf:about="http://www.florianrieder.com/semantic/story.owl#NearbyLocation">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.florianrieder.com/semantic/story.owl#isLinkedToLocation"/>
-                <owl:someValuesFrom rdf:resource="http://www.florianrieder.com/semantic/story.owl#CurrentLocation"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#CurrentLocation"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.florianrieder.com/semantic/story.owl#isLinkedToLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://www.florianrieder.com/semantic/story.owl#CurrentLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
     </owl:Class>
@@ -588,40 +639,51 @@
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#louis -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#louis">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20urbaine"/>
-        <hasDescription>Ancien ingénieur électrique, Louis connaît parfaitement les systèmes électriques de la ville avant l&apos;invasion zombie. Il pourrait aider le joueur à activer temporairement certaines installations électriques pour créer des distractions ou obtenir de la lumière.</hasDescription>
-        <hasImportance>secondary</hasImportance>
-        <hasName>Louis</hasName>
-        <hasRole>I</hasRole>
-        <rdfs:label>Louis</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.florianrieder.com/semantic/story.owl#player_goal -->
 
     <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#player_goal">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Goal"/>
-        <hasDescription>Trouver une source sécurisée de nourriture ou d&apos;eau potable pour assurer la survie immédiate du Village des Survivants.</hasDescription>
+        <hasDescription>Trouver un moyen de mettre fin à l’épidémie zombie afin de permettre aux survivants de reconstruire une société stable et sûre.</hasDescription>
         <rdfs:label>Player goal</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#victor -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#Confrontation%20interne -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#victor">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#lac%20pollu%C3%A9"/>
-        <hasDescription>Un chasseur expérimenté qui connaît parfaitement les alentours du Lac Pollué. Il peut fournir des informations précises sur les mouvements des zombies aquatiques ainsi que des conseils utiles pour naviguer en sécurité autour du lac.</hasDescription>
-        <hasImportance>secondary</hasImportance>
-        <hasName>Victor</hasName>
-        <hasRole>Chasseur</hasRole>
-        <rdfs:label>Victor</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Confrontation%20interne">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <hasCondition>Suite à la décision d’explorer le labo.</hasCondition>
+        <hasConsequence>Victor essaiera de saboter les efforts d’Alexandre</hasConsequence>
+        <hasDescription>Les tensions montent lorsque Victor découvre les plans d’Alexandre pour explorer le Labo.</hasDescription>
+        <hasName>Confrontation interne</hasName>
+        <rdfs:label>Confrontation interne</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#Rencontre%20initiale -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Rencontre%20initiale">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <hasCondition>Après avoir exploré &apos;Ville Fantôme&apos;.</hasCondition>
+        <hasConsequence>Sophia décide de rejoindre Alexandre.</hasConsequence>
+        <hasDescription>Alexandre rencontre Sophia dans Forêt Délaissée.</hasDescription>
+        <hasName>Rencontre initiale</hasName>
+        <rdfs:label>Rencontre initiale</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#Révélation%20finale -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#Révélation%20finale">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Event"/>
+        <hasCondition>Exploration complète du Labo.</hasCondition>
+        <hasConsequence>Nouvelle direction vers la production d’une solution</hasConsequence>
+        <hasDescription>Des documents trouvés dans le Labo indiquent la possibilité d&apos;un vaccin.</hasDescription>
+        <hasName>Révélation finale</hasName>
+        <rdfs:label>Révélation finale</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -629,176 +691,145 @@
     <!-- http://www.florianrieder.com/semantic/story.owl#alexandre%20durand -->
 
     <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#alexandre%20durand">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#NearbyCharacter"/>
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Player"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20abandonn%C3%A9e"/>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ville%20fant%C3%B4me"/>
         <hasGoal rdf:resource="http://www.florianrieder.com/semantic/story.owl#player_goal"/>
-        <hasDescription>Ancien biologiste spécialisé dans les maladies virales, Alexandre a été choisi pour partir explorer les zones contaminées autour du Village des Survivants afin de localiser une nouvelle source d&apos;alimentation ou d&apos;eau potable.</hasDescription>
+        <hasDescription>Un ingénieur civil ayant acquis une expertise inattendue dans la survie post-zombie durant les premiers mois de l’épidémie. Motivé par la volonté de restaurer quelque chose de semblable à la vie normale et convaincu qu’un remède existe.</hasDescription>
+        <hasImportance>Player</hasImportance>
         <hasName>Alexandre Durand</hasName>
         <rdfs:label>Alexandre Durand</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#baril%20d%E2%80%99eau%20potable -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#antidote%20partiellement%20d%C3%A9velopp%C3%A9 -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#baril%20d%E2%80%99eau%20potable">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#antidote%20partiellement%20d%C3%A9velopp%C3%A9">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#mine%20d%C3%A9laiss%C3%A9e"/>
-        <hasDescription>Un baril contenant de l&apos;eau pure provenant d&apos;un puits intérieur de la mine. Très utile pour hydrater le groupe et prolonger leurs chances de survie lors de missions difficiles.</hasDescription>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#laboratoire%20abandonn%C3%A9"/>
+        <hasDescription>Une substance chimique presque prête à servir comme base pour développer un antidote complet. Cet élément doit être combiné avec d’autres ingrédients spécifiques pour obtenir un résultat efficace.</hasDescription>
         <hasImportance>minor</hasImportance>
-        <hasName>Baril d’Eau Potable</hasName>
-        <rdfs:label>baril%20d%E2%80%99eau%20potable</rdfs:label>
+        <hasName>Antidote Partiellement Développé</hasName>
+        <rdfs:label>Antidote Partiellement Développé</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#boussole%20magn%C3%A9tique -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#arc%20et%20fl%C3%A8ches -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#boussole%20magn%C3%A9tique">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#arc%20et%20fl%C3%A8ches">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <hasDescription>Une boussole robuste capable de fonctionner même près des matériaux métalliques endommagés présents dans les ruines urbaines. Indispensable pour ne pas perdre son chemin dans les zones dangereuses.</hasDescription>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20d%C3%A9laiss%C3%A9e"/>
+        <hasDescription>Un arc robuste accompagné de plusieurs flèches, idéal pour la chasse silencieuse et la protection contre les menaces invisibles dans la forêt.</hasDescription>
         <hasImportance>minor</hasImportance>
-        <hasName>Boussole Magnétique</hasName>
-        <rdfs:label>boussole%20magn%C3%A9tique</rdfs:label>
+        <hasName>Arc et Flèches</hasName>
+        <rdfs:label>Arc et Flèches</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#claude%20lambert -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#bunker%20souterrain -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#claude%20lambert">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <hasDescription>Un ancien ingénieur agricole qui connaît parfaitement la flore locale. Claude peut donner des conseils précieux sur comment identifier les plantes comestibles et médicinales dans la forêt voisine.</hasDescription>
-        <hasImportance>secondary</hasImportance>
-        <hasName>Claude Lambert</hasName>
-        <hasRole>Botaniste</hasRole>
-        <rdfs:label>Claude Lambert</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#couteau%20suisse%20multi-fonctions -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#couteau%20suisse%20multi-fonctions">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <hasDescription>Outil polyvalent avec plusieurs fonctions telles que cutter, pinces, tournevis et ouvre-boites. Utile pour divers travaux manuels et urgences.</hasDescription>
-        <hasImportance>minor</hasImportance>
-        <hasName>Couteau Suisse Multi-Fonctions</hasName>
-        <rdfs:label>couteau%20suisse%20multi-fonctions</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#filtre%20eau%20purificateur -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#filtre%20eau%20purificateur">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <hasDescription>Utilisé pour purifier l&apos;eau provenant des sources suspectes. Essentiel pour éviter toute contamination durant la mission.</hasDescription>
-        <hasImportance>minor</hasImportance>
-        <hasName>Filtre EAU Purificateur</hasName>
-        <rdfs:label>filtre%20eau%20purificateur</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#fl%C3%A8ches%20enflammables -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#fl%C3%A8ches%20enflammables">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20abandonn%C3%A9e"/>
-        <hasDescription>Des flèches traitées avec une substance inflammable, très efficaces lors des confrontations rapprochées avec les zombies.</hasDescription>
-        <hasImportance>minor</hasImportance>
-        <hasName>Flèches Enflammables</hasName>
-        <rdfs:label>fl%C3%A8ches%20enflammables</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20abandonn%C3%A9e -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20abandonn%C3%A9e">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#bunker%20souterrain">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#NearbyLocation"/>
-        <containsItem rdf:resource="http://www.florianrieder.com/semantic/story.owl#gilles%2520lafitte"/>
-        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#lac%20pollu%C3%A9"/>
-        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#mine%20d%C3%A9laiss%C3%A9e"/>
-        <hasDescription>Une vaste étendue boisée qui était autrefois peuplée de faune variée avant l&apos;épidémie zombie. Maintenant, elle offre un couvert idéal pour les survivants tentant de collecter des ressources essentielles comme l&apos;eau fraîche et les fruits sauvages. Attention, certains secteurs peuvent contenir des groupes errants de zombies attirés par leur instinct animal.</hasDescription>
-        <hasLongDescription>Une vaste étendue boisée qui était autrefois peuplée de faune variée avant l&apos;épidémie zombie. Maintenant, elle offre un couvert idéal pour les survivants tentant de collecter des ressources essentielles comme l&apos;eau fraîche et les fruits sauvages. Attention, certains secteurs peuvent contenir des groupes errants de zombies attirés par leur instinct animal.</hasLongDescription>
-        <hasName>Forêt Abandonnée</hasName>
-        <rdfs:label>Forêt Abandonnée</rdfs:label>
+        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#laboratoire%20abandonn%C3%A9"/>
+        <hasDescription>Un bunker militaire secret construit avant même la catastrophe. Il abrite actuellement une petite communauté de survivants qui ont réussi à y entrer juste avant sa fermeture automatique. L&apos;eau potable et la nourriture sont limitées, mais il offre une protection contre les attaques extérieures.</hasDescription>
+        <hasLongDescription>Un bunker militaire secret construit avant même la catastrophe. Actuellement occupé par une petite communauté de survivants qui ont réussi à y entrer juste avant sa fermeture automatique. Bien que l&apos;eau potable et la nourriture soient limitées, le bunker offre une protection solide contre les attaques externes.</hasLongDescription>
+        <hasName>Bunker Souterrain</hasName>
+        <rdfs:label>Bunker Souterrain</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#gilles%20lafitte -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#carte%20routi%C3%A8re%20ancienne -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#gilles%20lafitte">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#carte%20routi%C3%A8re%20ancienne">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ville%20fant%C3%B4me"/>
+        <hasDescription>Cette carte montre plusieurs points stratégiques autour de la Ville Fantôme, notamment le chemin vers le Bunker Souterrain et des caches potentielles de fournitures.</hasDescription>
+        <hasImportance>minor</hasImportance>
+        <hasName>Carte Routière Ancienne</hasName>
+        <rdfs:label>Carte Routière Ancienne</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#cl%C3%A9s%20usb%20contenant%20des%20plans%20techniques -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#cl%C3%A9s%20usb%20contenant%20des%20plans%20techniques">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20industrielle"/>
+        <hasDescription>Des données techniques permettant de comprendre mieux les systèmes industriels présents et potentiellement utilisables pour créer des armements improvisés.</hasDescription>
+        <hasImportance>minor</hasImportance>
+        <hasName>Clés USB Contenant Des Plans Techniques</hasName>
+        <rdfs:label>Clés USB Contenant Des Plans Techniques</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#claire%20lambert -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#claire%20lambert">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#NearbyCharacter"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <knows rdf:resource="http://www.florianrieder.com/semantic/story.owl#marcelle%20dupont"/>
-        <hasDescription>Antagoniste principal, Gilles est un individu ambitieux qui cherche à prendre le contrôle du Village des Survivants. Il voit Alexandre comme un obstacle à ses plans et essaiera de saboter sa mission.</hasDescription>
-        <hasImportance>main character</hasImportance>
-        <hasLongDescription>Gilles Lafitte, antagoniste principal, est un homme ambitieux né dans les ruines d&apos;une société déchirée par une épidémie zombi. Son enfance marquée par la pénurie et la peur lui donne aujourd&apos;hui une soif insatiable de pouvoir et de sécurité. C&apos;est pourquoi il souhaite prendre le contrôle total sur le Village des Survivants en utilisant tous les moyens nécessaires. Sa vision autoritaire et impulsive le conduit souvent vers des décisions radicales. Voir Alexandre durcir face aux zombies et gagner la confiance des autres résidents agace particulièrement Gilles car cela menace directement ses ambitions.</hasLongDescription>
-        <hasName>Gilles Lafitte</hasName>
-        <rdfs:label>Gilles Lafitte</rdfs:label>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#bunker%20souterrain"/>
+        <hasDescription>Une ingénieure spécialisée en systèmes électriques. Elle maintient fonctionnel le système de ventilation et d&apos;alimentation électrique du bunker. Claire pourrait aider le joueur à obtenir plus d&apos;informations sur les mécanismes internes du bunker ainsi que sur les plans d&apos;évacuation.</hasDescription>
+        <hasImportance>secondary</hasImportance>
+        <hasName>Claire Lambert</hasName>
+        <hasRole>T</hasRole>
+        <rdfs:label>Claire Lambert</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#gilles%2520lafitte -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#couteau%20survie%20multi-fonctions -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#gilles%2520lafitte">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#couteau%20survie%20multi-fonctions">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <hasDescription>Cette carte ancienne indiquait auparavant des sources d&apos;eaux propres et des points stratégiques dans la forêt.</hasDescription>
-        <hasImportance>major</hasImportance>
-        <hasName>Cartographie Antique</hasName>
-        <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
-        <rdfs:label>Cartographie Antique</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#gilles%252520lafitte -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#gilles%252520lafitte">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <hasDescription>Instrument indispensable pour tester la qualité de l&apos;eau trouvée durant l’expédition.</hasDescription>
-        <hasImportance>major</hasImportance>
-        <hasName>Kit Analyse D&apos;Eau</hasName>
-        <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
-        <rdfs:label>Kit Analyse D&apos;Eau</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#harpon%20%C3%A9lectrique -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#harpon%20%C3%A9lectrique">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#lac%20pollu%C3%A9"/>
-        <hasDescription>Utilisé principalement pour repousser les zombies aquatiques lorsqu&apos;ils approchent trop près pendant votre exploration sous-marine. Ce harpon fournit un moyen efficace de défense contre les menaces subaquatiques.</hasDescription>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ville%20fant%C3%B4me"/>
+        <hasDescription>Outil indispensable pour couvrir divers besoins quotidiens et urgences lorsqu&apos;on explore la Ville Fantôme.</hasDescription>
         <hasImportance>minor</hasImportance>
-        <hasName>Harpon Électrique</hasName>
-        <rdfs:label>harpon%20%C3%A9lectrique</rdfs:label>
+        <hasName>Couteau Survie Multi-Fonctions</hasName>
+        <rdfs:label>Couteau Survie Multi-Fonctions</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#herbe%20m%C3%A9dicinale -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#eliane%20rousseau -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#herbe%20m%C3%A9dicinale">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#eliane%20rousseau">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20d%C3%A9laiss%C3%A9e"/>
+        <hasDescription>Une chasseuse expérimentée qui connaît bien les abords de la forêt. Eliane offre son aide pour identifier les plantes comestibles et éviter les piéges naturels.</hasDescription>
+        <hasImportance>secondary</hasImportance>
+        <hasName>Eliane Rousseau</hasName>
+        <hasRole>G</hasRole>
+        <rdfs:label>Eliane Rousseau</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20d%C3%A9laiss%C3%A9e -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20d%C3%A9laiss%C3%A9e">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
+        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20industrielle"/>
+        <hasDescription>Cette zone boisée entoure presque toute la Ville Fantôme. Bien que moins peuplée de zombies, elle recèle également des dangers tels que des animaux féroces et des groupes hostiles de survivants. Elle fournit cependant des ressources essentielles comme le bois et certains aliments comestibles.</hasDescription>
+        <hasLongDescription>Cette zone boisée entoure presque toute la Ville Fantôme. Bien que moins peuplée de zombies, elle recèle également des dangers tels que des animaux féroces et des groupes hostiles de survivants. Elle fournit cependant des ressources essentielles comme le bois et certains aliments comestibles.</hasLongDescription>
+        <hasName>Forêt Délaissée</hasName>
+        <rdfs:label>Forêt Délaissée</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#herbe%20r%C3%A9g%C3%A9n%C3%A9ratrice -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#herbe%20r%C3%A9g%C3%A9n%C3%A9ratrice">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20abandonn%C3%A9e"/>
-        <hasDescription>Plante capable de soigner certaines blessures légères et infections. Très utile en cas de besoin urgent.</hasDescription>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20d%C3%A9laiss%C3%A9e"/>
+        <hasDescription>Plante médicinale capable de soigner rapidement les blessures légères lorsqu&apos;elle est appliquée directement sur la plaie.</hasDescription>
         <hasImportance>minor</hasImportance>
-        <hasName>Herbe Médicinale</hasName>
-        <rdfs:label>herbe%20m%C3%A9dicinale</rdfs:label>
+        <hasName>Herbe Régénératrice</hasName>
+        <rdfs:label>Herbe Régénératrice</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -807,40 +838,68 @@
 
     <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#jean-pierre%20dubois">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <hasDescription>Un homme organisé qui veille à la gestion efficace des ressources alimentaires. Il donne accès à certaines denrées spécifiques qui pourraient faciliter la mission d’Alexandre.</hasDescription>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#laboratoire%20abandonn%C3%A9"/>
+        <hasDescription>Un ancien technicien du laboratoire qui cherche activement des solutions pour combattre la maladie. Jean-Pierre détient des connaissances techniques essentielles et peut fournir des conseils sur certains équipements trouvés dans le labo.</hasDescription>
         <hasImportance>secondary</hasImportance>
         <hasName>Jean-Pierre Dubois</hasName>
-        <hasRole>Logistique</hasRole>
+        <hasRole>I</hasRole>
         <rdfs:label>Jean-Pierre Dubois</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#lac%20pollu%C3%A9 -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#kit%20m%C3%A9dical -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#lac%20pollu%C3%A9">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <hasDescription>Cet endroit était autrefois un site touristique populaire. Aujourd&apos;hui, il est contaminé et infesté de zombies aquatiques. Bien que dangereuse, cette zone pourrait potentiellement servir de point stratégique vers d&apos;autres régions.</hasDescription>
-        <hasLongDescription>Lac Pollué était autrefois un site touristique populaire. À présent, le lac est fortement contaminé et habité par des zombies aquatiques. Malgré ses dangers, cette région peut offrir un passage stratégique vers d&apos;autres zones. Non loin s&apos;étendent également les vastes espaces forestiers de Forêt Abandonnée, ancien sanctuaire de divers animaux aujourd&apos;hui transformé en refuge pour les survivants recherchant des ressources vitales telles que l&apos;eau fraîche et les fruits sauvages.</hasLongDescription>
-        <hasName>Lac Pollué</hasName>
-        <rdfs:label>Lac Pollué</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#kit%20m%C3%A9dical">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#bunker%20souterrain"/>
+        <hasDescription>Contenant divers produits médicaux essentiels tels que des bandages, des antibiotiques et des antalgiques. Ce kit serait indispensable pour traiter les blessures subies pendant les missions hors du bunker.</hasDescription>
+        <hasImportance>minor</hasImportance>
+        <hasName>Kit Médical</hasName>
+        <rdfs:label>Kit Médical</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#lucas%20martin -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#laboratoire%20abandonn%C3%A9 -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#lucas%20martin">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#laboratoire%20abandonn%C3%A9">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
+        <containsItem rdf:resource="http://www.florianrieder.com/semantic/story.owl#sophia%2520martin"/>
+        <containsItem rdf:resource="http://www.florianrieder.com/semantic/story.owl#sophia%252520martin"/>
+        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20industrielle"/>
+        <hasDescription>Ancien centre de recherche médicale qui aurait travaillé sur la maladie zombie peu avant l&apos;épidémie. Ses archives peuvent contenir des informations cruciales pour comprendre comment arrêter la propagation. Toutefois, le laboratoire n&apos;a pas été sécurisé correctement lorsqu&apos;il fut fermé précipitamment ; on trouve encore des expériences en cours et des risques biologiques importants.</hasDescription>
+        <hasLongDescription>Ancien centre de recherche médicale qui aurait travaillé sur la maladie zombie peu avant l’épidémie. Ses archives peuvent contenir des informations cruciales pour comprendre comment arrêter la propagation. Toutefois, le laboratoire n’a pas été sécurisé correctement lorsqu’il fut fermé précipitamment; on trouve encore des expériences en cours et des risques biologiques importants.</hasLongDescription>
+        <hasName>Laboratoire Abandonné</hasName>
+        <rdfs:label>Laboratoire Abandonné</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#louis%20beaumont -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#louis%20beaumont">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#NearbyCharacter"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <hasFriendshipWith rdf:resource="http://www.florianrieder.com/semantic/story.owl#alexandre%20durand"/>
-        <hasDescription>Un jeune aventurier intrépide qui propose volontiers son aide à Alexandre lors de son exploration. Lucas possède des compétences utiles pour naviguer dans les territoires hostiles.</hasDescription>
-        <hasImportance>main character</hasImportance>
-        <hasLongDescription>Lucas Martin, un jeune aventurier intrépide originaire des terres désolées au nord du Village des Survivants, s&apos;est forgé une réputation grâce à ses nombreuses expériences en terrain hostile. Ayant perdu sa famille durant l&apos;épidémie zombi, il décida de consacrer sa vie à protéger ceux qui restent. Son offre spontanée d&apos;assister Alexandre dans son exploration découle non seulement de leur amitié naissante mais aussi de son désir profond de contribuer à trouver une solution durable face aux défis environnementaux.</hasLongDescription>
-        <hasName>Lucas Martin</hasName>
-        <rdfs:label>Lucas Martin</rdfs:label>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20industrielle"/>
+        <hasDescription>Un ancien ingénieur électrique qui connaît bien les systèmes électriques de l&apos;usine. Il offre son aide pour maintenir les générateurs solaires opérationnels contre des provisions alimentaires.</hasDescription>
+        <hasImportance>secondary</hasImportance>
+        <hasName>Louis Beaumont</hasName>
+        <hasRole>T</hasRole>
+        <rdfs:label>Louis Beaumont</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#lucas%20valois -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#lucas%20valois">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ville%20fant%C3%B4me"/>
+        <hasDescription>Un ancien médecin qui a trouvé refuge temporairement dans la Ville Fantôme. Lucas détient des informations cruciales concernant la possible existence d&apos;un laboratoire expérimental localisé près du centre commercial.</hasDescription>
+        <hasImportance>secondary</hasImportance>
+        <hasName>Lucas Valois</hasName>
+        <hasRole>I</hasRole>
+        <rdfs:label>Lucas Valois</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -849,163 +908,137 @@
 
     <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#marcelle%20dupont">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#NearbyCharacter"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#bunker%20souterrain"/>
         <hasFriendshipWith rdf:resource="http://www.florianrieder.com/semantic/story.owl#alexandre%20durand"/>
-        <isEnemyWith rdf:resource="http://www.florianrieder.com/semantic/story.owl#gilles%20lafitte"/>
-        <hasDescription>La chef du Village des Survivants, Marcelle soutient Alexandre dans sa quête et espère que son expertise scientifique aidera à comprendre mieux l’épidémie zombie.</hasDescription>
+        <knows rdf:resource="http://www.florianrieder.com/semantic/story.owl#sophia%20martin"/>
+        <hasDescription>Une médecin chercheuse qui avait travaillé dans le Laboratoire Abandonné. Connaît bien Alexandre et croit en son projet. Se cache dans le Bunker Souterrain.</hasDescription>
         <hasImportance>main character</hasImportance>
-        <hasLongDescription>Marcelle Dupont, ancienne médecin spécialisée en santé publique avant l&apos;épidémie zombi, dirige maintenant avec sagesse et détermination le Village des Survivants. Son expérience médicale lui permet d&apos;assister efficacement aux soins des blessés et aux urgences sanitaires quotidiennes. Elle croit fermement au potentiel d’Alexandre durant cette époque incertaine et encourage activement son voyage vers les terres contaminées pour trouver des ressources essentielles. Cependant, elle doit constamment faire face aux menaces internes et externes, notamment celles posées par Gilles Lafitte.</hasLongDescription>
+        <hasLongDescription>Une médecin chercheuse qui avait travaillé dans le Laboratoire Abandonné où elle cherchait désespérément un remède contre l&apos;épidémie zombie. Elle connaissait bien Alexandre depuis leurs jours au sein d&apos;une équipe de recherche pré-catastrophe. C&apos;est cette relation passée qui lui fait aujourd&apos;hui avoir foi en ses capacités malgré les défiances de certains membres du groupe comme Victor Lafleur. Actuellement cachée dans le Bunker Souterrain, elle espère pouvoir aider Alexandre à trouver ce qui pourrait stopper l&apos;infection.</hasLongDescription>
         <hasName>Marcelle Dupont</hasName>
         <rdfs:label>Marcelle Dupont</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#masque%20anti-gaz -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#panneau%20solaire%20endommag%C3%A9 -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#masque%20anti-gaz">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#panneau%20solaire%20endommag%C3%A9">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#lac%20pollu%C3%A9"/>
-        <hasDescription>Ce masque protège contre les toxines présentes dans l’air autour du Lac Pollué, rendant possible l&apos;exploration de certaines parties du lac sans risquer une intoxication grave.</hasDescription>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20industrielle"/>
+        <hasDescription>Une pièce clé pouvant aider à améliorer les installations solaires existantes, augmentant ainsi la production d’énergie nécessaire pour activer plus de machines utiles.</hasDescription>
         <hasImportance>minor</hasImportance>
-        <hasName>Masque Anti-Gaz</hasName>
-        <rdfs:label>masque%20anti-gaz</rdfs:label>
+        <hasName>Panneau Solaire Endommagé</hasName>
+        <rdfs:label>Panneau Solaire Endommagé</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#mine%20d%C3%A9laiss%C3%A9e -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#plan%20secr%C3%A9te -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#mine%20d%C3%A9laiss%C3%A9e">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#plan%20secr%C3%A9te">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#bunker%20souterrain"/>
+        <hasDescription>Un plan montrant les points faibles du bunker et les passages secrets vers l&apos;extérieur. Utile si le joueur doit évacuer rapidement ou explorer davantage.</hasDescription>
+        <hasImportance>minor</hasImportance>
+        <hasName>Plan Secréte</hasName>
+        <rdfs:label>Plan Secréte</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#protocole%20d%27exp%C3%A9rience%20inachev%C3%A9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#protocole%20d%27exp%C3%A9rience%20inachev%C3%A9">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
+        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#laboratoire%20abandonn%C3%A9"/>
+        <hasDescription>Document contenant les résultats incomplets d’une expérience menée sur un traitement potentiel. Ce document peut aider Sophia Martin à avancer dans son travail.</hasDescription>
+        <hasImportance>minor</hasImportance>
+        <hasName>Protocole D&apos;Expérience Inachevé</hasName>
+        <rdfs:label>Protocole D&apos;Expérience Inachevé</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.florianrieder.com/semantic/story.owl#ruine%20industrielle -->
+
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#ruine%20industrielle">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <hasDescription>Anciennement exploitée pour extraire divers minéraux, aujourd’hui la mine est presque inaccessible et remplie de dangers cachés - incluant des zombies piégés dedans pendant longtemps. Elle pourrait cependant receler des trésors ignorés jusqu&apos;à présent.</hasDescription>
-        <hasLongDescription>Anciennement exploitée pour extraire divers minéraux, aujourd&apos;hui la mine est presque inaccessible et remplie de dangers cachés - incluant des zombies piégés dedans pendant longtemps. Elle pourrait cependant receler des trésors ignorés jusqu&apos;à présent. Cette ancienne structure souterraine sert désormais de refuge accidentel pour plusieurs créatures dangereuses et peut-être même des ressources précieuses.</hasLongDescription>
-        <hasName>Mine Délaissée</hasName>
-        <rdfs:label>Mine Délaissée</rdfs:label>
+        <hasDescription>Les vestiges d&apos;une usine moderne dont certaines machines fonctionnent toujours grâce à des générateurs solaires. Cette zone attire beaucoup de zombies car ils sentent la présence d&apos;être vivants. Néanmoins, si vous pouvez naviguer autour des pièges mécaniques et des cadavres putrides, cela pourrait être un bon point stratégique pour rassembler des matériaux.</hasDescription>
+        <hasLongDescription>Les vestiges d&apos;une usine moderne dont certaines machines fonctionnent toujours grâce à des générateurs solaires. Cet endroit attire beaucoup de zombies car ils perçoivent la présence d’être vivants. Si vous réussissez à éviter les pièges mécaniques et les cadavres putrides, il pourrait servir de base importante pour collecter des matériaux nécessaires à votre survie et vos recherches.</hasLongDescription>
+        <hasName>Ruine Industrielle</hasName>
+        <rdfs:label>Ruine Industrielle</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#pierre%20laurent -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#sophia%20martin -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#pierre%20laurent">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#sophia%20martin">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#mine%20d%C3%A9laiss%C3%A9e"/>
-        <hasDescription>Un ancien mineur qui connaît parfaitement le réseau complexe de tunnels sous terre. Il peut aider le joueur en fournissant des informations clés sur comment naviguer dans la mine sans tomber dans des pièges ou rencontrer trop de zombies.</hasDescription>
-        <hasImportance>secondary</hasImportance>
-        <hasName>Pierre Laurent</hasName>
-        <hasRole>G</hasRole>
-        <rdfs:label>Pierre Laurent</rdfs:label>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#laboratoire%20abandonn%C3%A9"/>
+        <knows rdf:resource="http://www.florianrieder.com/semantic/story.owl#alexandre%20durand"/>
+        <knows rdf:resource="http://www.florianrieder.com/semantic/story.owl#marcelle%20dupont"/>
+        <hasDescription>Une jeune scientifique qui était étudiante sous Marcelle avant l’invasion. A découvert des indices prometteurs dans le Laboratoire Abandonné mais manque de confiance en soi pour continuer seule.</hasDescription>
+        <hasImportance>main character</hasImportance>
+        <hasLongDescription>Sophia Martin est une jeune scientifique pleine de potentiel qui s&apos;est retrouvée face au chaos après l&apos;invasion zombi. Avant cette catastrophe, elle poursuivait ses études avec passion auprès de Marcelle Dupont, une vétéran respectée dans sa communauté académique. C’est grâce à ce mentorat que Sophie découvrit non seulement des indices cruciaux sur la nature même de l&apos;épidémie lorsqu&apos;elle explorait le Laboratoire Abandonné, mais aussi une détermination nouvelle malgré son manque initial de confiance en elle-même.</hasLongDescription>
+        <hasName>Sophia Martin</hasName>
+        <rdfs:label>Sophia Martin</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#plan%20des%20tunnels -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#sophia%2520martin -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#plan%20des%20tunnels">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#sophia%2520martin">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#mine%20d%C3%A9laiss%C3%A9e"/>
-        <hasDescription>Une carte usagée montrant les principaux passages et salles de la mine. Cet objet aide grandement le joueur à éviter les zones infestées de zombies et à localiser rapidement les endroits potentiellement riches en ressources.</hasDescription>
-        <hasImportance>minor</hasImportance>
-        <hasName>Plan des Tunnels</hasName>
-        <rdfs:label>plan%20des%20tunnels</rdfs:label>
+        <hasDescription>Notes personnelles de Marcelle concernant des traitements possibles.</hasDescription>
+        <hasImportance>major</hasImportance>
+        <hasName>Manuscrit Médical</hasName>
+        <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+        <rdfs:label>Manuscrit Médical</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#radio%20cass%C3%A9e -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#sophia%252520martin -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#radio%20cass%C3%A9e">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#sophia%252520martin">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20urbaine"/>
-        <hasDescription>Une radio cassée qui pourrait donner accès à des informations importantes si elle était réparée avec les bons outils. Elle pourrait également servir comme moyen de communication provisoire.</hasDescription>
-        <hasImportance>minor</hasImportance>
-        <hasName>Radio Cassée</hasName>
-        <rdfs:label>radio%20cass%C3%A9e</rdfs:label>
+        <hasDescription>Matériel nécessaire pour tester des théories médicales.</hasDescription>
+        <hasImportance>major</hasImportance>
+        <hasName>Équipement Expérimental</hasName>
+        <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+        <rdfs:label>Équipement Expérimental</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#rations%20alimentaires%20compactes -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#victor%20lafleur -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#rations%20alimentaires%20compactes">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <hasDescription>Des barres nutritives conçues pour maximiser l&apos;énergie tout en minimisant le poids porté pendant les longues explorations.</hasDescription>
-        <hasImportance>minor</hasImportance>
-        <hasName>Rations Alimentaires Compactes</hasName>
-        <rdfs:label>rations%20alimentaires%20compactes</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#victor%20lafleur">
+        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
+        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#bunker%20souterrain"/>
+        <hasRivalryWith rdf:resource="http://www.florianrieder.com/semantic/story.owl#alexandre%20durand"/>
+        <knows rdf:resource="http://www.florianrieder.com/semantic/story.owl#marcelle%20dupont"/>
+        <hasDescription>L’ancien chef de sécurité du Bunker Souterrain. Jaloux des compétences d’Alexandre et sceptique quant à l’utilité de rechercher un remède plutôt que de protéger le groupe existant.</hasDescription>
+        <hasImportance>main character</hasImportance>
+        <hasLongDescription>Victor Lafleur est l&apos;ancien chef de sécurité du Bunker Souterrain. Avant l&apos;épidémie, il était connu pour sa rigueur et son dévouement sans faille au maintien de la sécurité. Cependant, depuis l&apos;arrivée d&apos;Alexandre avec ses idées révolutionnaires sur la recherche d&apos;un remède contre les zombies, Victor se sent marginalisé et jaloux des compétences d&apos;Alexandre. Il voit cette nouvelle direction comme une menace potentielle pour la stabilité actuelle du bunker et préfère conserver les choses telles quelles.</hasLongDescription>
+        <hasName>Victor Lafleur</hasName>
+        <rdfs:label>Victor Lafleur</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.florianrieder.com/semantic/story.owl#ruine%20urbaine -->
+    <!-- http://www.florianrieder.com/semantic/story.owl#ville%20fant%C3%B4me -->
 
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#ruine%20urbaine">
+    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#ville%20fant%C3%B4me">
         <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#NearbyLocation"/>
-        <containsItem rdf:resource="http://www.florianrieder.com/semantic/story.owl#gilles%252520lafitte"/>
-        <hasDescription>Un ancien quartier urbain transformé en champ de bataille permanent contre les zombies. Des immeubles écroulés et des rues jonchées de cadavres offrent peu de protection mais beaucoup de risques. Pourtant, si on peut y pénétrer discrètement, cela pourrait fournir des provisions précieuses.</hasDescription>
-        <hasLongDescription>Un ancien quartier urbain transformé en champ de bataille permanent contre les zombies. Des immeubles écroulés et des rues jonchées de cadavres offrent peu de protection mais beaucoup de dangers. Malgré le chaos ambiant, certains endroits peuvent contenir des provisions précieuses.</hasLongDescription>
-        <hasName>Ruine Urbaine</hasName>
-        <rdfs:label>Ruine Urbaine</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#sac%20de%20ration -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#sac%20de%20ration">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Item"/>
-        <itemIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20urbaine"/>
-        <hasDescription>Contenant plusieurs repas rapides et nutritifs conçus pour les situations d&apos;urgence. Utile pour maintenir les forces pendant l&apos;aventure.</hasDescription>
-        <hasImportance>minor</hasImportance>
-        <hasName>Sac de Ration</hasName>
-        <rdfs:label>sac%20de%20ration</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#simon%20rousseau -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#simon%20rousseau">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20abandonn%C3%A9e"/>
-        <hasDescription>Un chasseur expérimenté qui connaît parfaitement le territoire de la Forêt Abandonnée. Il peut fournir des informations précises sur les zones sécurisées et celles à éviter.</hasDescription>
-        <hasImportance>secondary</hasImportance>
-        <hasName>Simon Rousseau</hasName>
-        <hasRole>G</hasRole>
-        <rdfs:label>Simon Rousseau</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#sophie%20moreau -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#sophie%20moreau">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Character"/>
-        <characterIsLocatedAt rdf:resource="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants"/>
-        <hasDescription>Une femme expérimentée dans les soins médicaux basiques. Elle fournit des informations cruciales concernant les dangers sanitaires liés aux eaux contaminées et recommande des procédés de purification.</hasDescription>
-        <hasImportance>secondary</hasImportance>
-        <hasName>Sophie Moreau</hasName>
-        <hasRole>Médical</hasRole>
-        <rdfs:label>Sophie Moreau</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants -->
-
-    <owl:NamedIndividual rdf:about="http://www.florianrieder.com/semantic/story.owl#village%20des%20survivants">
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#CurrentLocation"/>
-        <rdf:type rdf:resource="http://www.florianrieder.com/semantic/story.owl#Location"/>
-        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20abandonn%C3%A9e"/>
-        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#ruine%20urbaine"/>
-        <hasDescription>Ce village représente la dernière bastion de civilisation humaine dans cette région ravagée par les zombies. Protégé derrière des murs solides et surveillé nuit et jour, il sert de refuge sûr pour ses habitants. C&apos;est ici que notre héros partira pour accomplir sa mission critique.</hasDescription>
-        <hasLongDescription>Ce village représente la dernière bastion de civilisation humaine dans cette région ravagée par les zombies. Protégé derrière des murs solides et surveillé nuit et jour, il sert de refuge sûr pour ses habitants. C&apos;est ici que notre héros partira pour accomplir sa mission critique. À proximité, vous pouvez trouver deux autres lieux importants : la Forêt Abandonnée, qui offre un couvert idéal pour rassembler des ressources essentielles, et la Ruine Urbaine, un ancien quartier urbain désormais dangereux mais potentiellement riche en provisions.</hasLongDescription>
-        <hasName>Village des Survivants</hasName>
-        <rdfs:label>Village des Survivants</rdfs:label>
+        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#bunker%20souterrain"/>
+        <isLinkedToLocation rdf:resource="http://www.florianrieder.com/semantic/story.owl#for%C3%AAt%20d%C3%A9laiss%C3%A9e"/>
+        <hasDescription>Une ancienne ville maintenant abandonnée où les zombies errent librement. Les immeubles sont partiellement effondrés et les voitures calcinées parsèment les rues. C&apos;est ici que commence notre histoire, endroit dangereux mais potentiellement rempli de ressources utiles.</hasDescription>
+        <hasLongDescription>Une ancienne ville maintenant abandonnée où les zombies errent librement. Les immeubles sont partiellement effondrés et les voitures calcinées parsèment les rues. Ce lieu représente un danger permanent mais possède encore des ressources précieuses telles que des médicaments, des armes et de la nourriture. À proximité, la Forêt Délaissée offre un contraste vert et sombre tandis que le Bunker Souterrain promet sécurité et ressources limitées.</hasLongDescription>
+        <hasName>Ville Fantôme</hasName>
+        <rdfs:label>Ville Fantôme</rdfs:label>
     </owl:NamedIndividual>
     
 

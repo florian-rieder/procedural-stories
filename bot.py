@@ -6,9 +6,10 @@ import asyncio
 import certifi
 import configparser
 import datetime
-from importlib import reload
+import importlib
 import logging
 import os
+import sys
 import time
 import traceback
 import typing
@@ -26,6 +27,23 @@ os.environ["SSL_CERT_FILE"] = certifi.where()
 CONFIG_FILE = 'config.ini'
 
 
+def reload_module_by_path(file_path):
+    # Check if the module is already loaded
+    for module_name, module in sys.modules.items():
+        if getattr(module, '__file__', None) == file_path:
+            # If found, reload it and return the reloaded module
+            return importlib.reload(module)
+    
+    # module_name = file_path[:-3].replace("/", ".")
+
+    # # If the module is not yet loaded, import it
+    # spec = importlib.util.spec_from_file_location(module_name, file_path)
+    # module = importlib.util.module_from_spec(spec)
+    # sys.modules[spec.name] = module
+    # spec.loader.exec_module(module)
+    return module
+
+
 class StorytellerBot(commands.Bot):
     config: configparser.ConfigParser = configparser.ConfigParser()
     _uptime: datetime.datetime = datetime.datetime.now()
@@ -37,6 +55,7 @@ class StorytellerBot(commands.Bot):
         intents = discord.Intents.default()
         intents.message_content = True
         intents.messages = True
+
         super().__init__(*args, **kwargs,
                          command_prefix=commands.when_mentioned_or(prefix), intents=intents)
         self.logger = logging.getLogger(self.__class__.__name__)
@@ -75,7 +94,7 @@ class StorytellerBot(commands.Bot):
 
 
         ########################################################################
-        #                    Initialize conversation chain                     #
+        #                            Initialize LLM                            #
         ########################################################################
         
 
@@ -90,7 +109,7 @@ class StorytellerBot(commands.Bot):
         
         
         ########################################################################
-        #                End conversation chain initialization                 #
+        #                    Load extensions and watch files                   #
         ########################################################################
 
 
@@ -152,7 +171,7 @@ class StorytellerBot(commands.Bot):
             if files_to_watch:
                 for file in files_to_watch:
                     print(f"Detected change in {file}, reloading relevant components.")
-                    reload(file)
+                    reload_module_by_path(file)
 
             last = time.time()
             await asyncio.sleep(1)
@@ -184,3 +203,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    # mod = reload_module_by_path('generator/trivial.py')
+    # print(mod.get_chain)

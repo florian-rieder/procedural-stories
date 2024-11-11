@@ -8,6 +8,8 @@ from langchain.globals import set_debug
 # set_debug(True)
 set_verbose(True)
 
+MAX_TOKENS = 2048
+
 print('Loading model...')
 
 # Load model from huggingface, using the MLX framework to take advantage of
@@ -29,7 +31,7 @@ _llm = MLXPipeline.from_model_id(
     # "mlx-community/Llama-3.2-3B-Instruct-8bit",
 
     pipeline_kwargs={
-        "max_tokens": 2048,
+        "max_tokens": MAX_TOKENS,
         "temp": 0.2,
         "repetition_penalty": 1.2
     },
@@ -42,7 +44,7 @@ _llm = MLXPipeline.from_model_id(
 _predictable_llm = MLXPipeline.from_model_id(
     "mlx-community/Meta-Llama-3.1-8B-Instruct-8bit",
     pipeline_kwargs={
-        "max_tokens": 2048,
+        "max_tokens": MAX_TOKENS,
         "temp": 0,
         "repetition_penalty": 1.2
     },
