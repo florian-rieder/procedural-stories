@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bot:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+    platform: linux/arm64  # Specify ARM64 platform
