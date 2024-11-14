@@ -13,11 +13,13 @@ from langchain_core.runnables import (
 )
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.runnables.history import RunnableWithMessageHistory
-from owlready2 import *
 from pydantic import BaseModel, Field
+from owlready2 import *
 
 
 from generator.nlp import extract_move_intent
+
+from generator.utils import find_levenshtein_match, encode_entity_name
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +31,7 @@ Keep in mind that not everything that is in a location is necessarily immediatel
 If the player has spent a long time in a location, you can push them a little more explicitly to move to different locations.
 The game is played by interactions between the game (you) and the player. The player will type in natural language whatever they want to do, etc.
 Do not reveal everything all at once: let the player discover things. Only output natural text, as one would read in a book they actually were the hero of.
+Do not reveal character names unless the player knows them.
 
 Your messages should be short. Please do not produce lengthy messages. Your messages should be one to two sentences long. The player can always ask for more details ! For dialogues, you will output only one line of dialogue, and let the player respond.
 
@@ -131,11 +134,6 @@ def get_chain(model, predictable_model, first_message: str, setting: str, langua
 
     # Initialize the history
     history = InMemoryHistory()
-    system_prompt_template = PromptTemplate(template=CHAT_SYSTEM_PROMPT, template_format='jinja2')
-    history.system_prompt = system_prompt_template.invoke({
-        'setting': setting,
-        'language': language
-    }).text
 
     # Add the first messages to the history
     history.add_messages([('ai', first_message)])
@@ -189,13 +187,15 @@ def get_chain(model, predictable_model, first_message: str, setting: str, langua
                 'player': player,
                 'nearby_locations_names': nearby_locations_names,
                 "message": message},
-                config={"configurable": {"session_id": "foo"}}
+                config=config
             )
 
+            text_response = response.content
+
             # Find if the LLM accepted the move, and filter out the <CONFIRM_MOVE> token
-            if '<CONFIRM_MOVE>' in response.content:
+            if '<CONFIRM_MOVE>' in text_response:
                 print('Move confirmed by the LLM')
-                response = response.replace('<CONFIRM_MOVE>', '').strip()
+                text_response = text_response.replace('<CONFIRM_MOVE>', '').strip()
 
                 # If the LLM accepted the move, update the KG
                 with onto:
@@ -203,6 +203,315 @@ def get_chain(model, predictable_model, first_message: str, setting: str, langua
                         follower.isLocatedAt = move_intent_location
                     player.isLocatedAt = move_intent_location
 
-        return response
+            inventory_actions = extract_inventory_actions(predictable_model, message, text_response, onto)
+            character_actions = extract_character_actions(predictable_model, message, text_response, onto)
+            apply_inventory_actions(inventory_actions.get('actions', []), onto)
+            apply_character_actions(character_actions.get('actions', []), onto)
+
+        return text_response
 
     return converse
+
+
+INVENTORY_ACTIONS_PARSER_TEMPLATE = """
+Human: Please analyze the player's message and determine if they intend to interact with an item.
+
+# Action Types
+- "create" if you need to create a new item that doesn't exist yet.
+- "destroy" if an item should be removed from the game.
+- "claim" if the player has taken or picked up an unowned item.
+- "give" if the player has given an item they own to another character. In this case, you will provide the name of the character the player gives the item to. **If the character doesn't exist, ignore the action.**
+- "drop" if the player has dropped an item they own in the current location.
+- "alter" if the player's actions have changed the state of an item. In this case, you will provide an updated description of the item.
+
+{%- if player.INDIRECT_ownsItem %}
+# Possible items whose state to change
+**Owned items**:
+{%- for item in player.INDIRECT_ownsItem %}
+- {{item.hasName}}: {{item.hasDescription}}
+{%- endfor %}
+{%- else %}
+There are no items in the player's inventory.
+{%- endif %}
+
+{%- if nearby_items %}
+**Unowned items in the current location**:
+{%- for item in nearby_items %}
+{%- if not item.INDIRECT_isOwnedBy %}
+- {{item.hasName}}: {{item.hasDescription}}
+{%- endif %}
+{%- endfor %}
+{%- else %}
+There are no unowned items in the current location.
+{%- endif %}
+
+{%- if nearby_characters %}
+**Names of the characters present in the current location**:
+{%- for character in nearby_characters %}
+    {%- if character.hasName != player.hasName %}
+- "{{character.hasName}}"
+    {%- endif %}
+{%- endfor %}
+{%- else %}
+There are no other characters present in the current location.
+{%- endif %}
+
+# Last message from the player and game response
+Player message: "{{player_message}}"
+Game response: "{{game_response}}"
+
+**Please output a list of actions that the game system needs to perform to update the game state, in the following JSON format:**
+If none of these fit, output an empty list.
+
+```json
+{
+    "actions": [
+        {"action": "create", "item": "map", "description": "A map of the area."},
+        {"action": "claim", "item": "map"},
+        {"action": "give", "item": "coin", "target": "John Brown"},
+        {"action": "drop", "item": "bucket"},
+        {"action": "destroy", "item": "apple"},
+        {"action": "alter", "item": "sword", "description": "The sword is now covered in rust."}
+    ]
+}
+```
+
+Output:
+"""
+
+
+
+def extract_inventory_actions(model, message: str, game_response: str, onto):
+    prompt = PromptTemplate(
+        template=INVENTORY_ACTIONS_PARSER_TEMPLATE,
+        template_format='jinja2'
+    )
+
+    parser = JsonOutputParser()
+
+    chain = prompt | model | parser
+
+    
+    with onto:
+        player = onto.Player.instances()[0]
+        current_location = player.INDIRECT_isLocatedAt
+
+        parameters = {
+            "player_message": message, 
+            "game_response": game_response, 
+            "player": player,
+            "onto": onto,
+            "nearby_characters": current_location.INDIRECT_containsCharacter,
+            "nearby_items": current_location.INDIRECT_containsItem
+        }
+
+        # Print the prompt to inspect it
+        print(prompt.invoke(parameters).text)
+
+        response = chain.invoke(parameters)
+        
+    return response
+
+
+
+def apply_inventory_actions(actions: list, onto):
+    with onto:
+        player = onto.Player.instances()[0]
+        for action in actions:
+            try:
+                if action['action'] == 'create':
+                    item_name = action['item']
+                    item = onto.Item(encode_entity_name(item_name))
+                    item.hasDescription = action['description']
+                    player.ownsItem.append(item)
+                elif action['action'] == 'destroy':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
+                    if item:
+                        player.ownsItem.remove(item)
+                        destroy_entity(item)
+                elif action['action'] == 'claim':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
+                    if item:
+                        player.ownsItem.append(item)
+                        item.itemIsLocatedAt = None
+                elif action['action'] == 'give':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
+                    target = find_levenshtein_match(action['target'], onto.Character.instances())
+                    if item and target:
+                        if item in player.ownsItem:
+                            player.ownsItem.remove(item)
+                            target.ownsItem.append(item)
+                elif action['action'] == 'drop':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
+                    if item:
+                        player.ownsItem.remove(item)
+                        item.itemIsLocatedAt = current_location
+                elif action['action'] == 'alter':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
+                    if item:
+                        item.hasDescription = action['description']
+            except ValueError as e:
+                print(f'Error applying inventory action: {e}')
+
+
+
+CHARACTER_ACTIONS_PARSER_TEMPLATE = """
+Human: Please analyze the player's message and corresponding game response to determine if the interaction changed something about the characters present in the scene
+
+**Action Types**:.
+- "start_following" if a character has started following the player.
+- "stop_following" if a character has stopped following the player.
+- "change_health" if a character's health has changed. Add a new description of the character's health.
+- "change_description" if a character's description needs to be changed. Add a new description of the character.
+- "become_enemies" if two characters have become enemies. (symmetrical)
+- "become_friends" if two characters have become friends. (symmetrical)
+- "become_rivals" if two characters have become rivals. (symmetrical)
+- "become_neutral" if two characters have become neutral. (symmetrical)
+- "give_allegiance" if a character has given allegiance to another character. (asymmetrical)
+- "now_knows" if a character now knows about another character's existence. (asymmetrical)
+- "fall_in_love" if a character has fallen in love with another character. (asymmetrical)
+
+Most relationships are symmetrical, but some are not, like loves. If love is reciprocal, output two actions, one for each character.
+
+The player is named "{{player.hasName}}" and is described as "{{player.hasDescription}}".
+
+**Characters present**:
+{%- for character in characters_present %}
+- {{character.hasName}}: {{character.hasDescription}}
+    {% if character.INDIRECT_knows %}knows: {%- for known_character in character.INDIRECT_knows %} "{{known_character.hasName}}" {%- endfor %}{%- endif %}
+    {% if character.INDIRECT_isEnemyWith %}is enemy with: {%- for enemy in character.INDIRECT_isEnemyWith %} "{{enemy.hasName}}" {%- endfor %}{%- endif %}
+    {% if character.INDIRECT_hasFriendshipWith %}is friend with: {%- for friend in character.INDIRECT_hasFriendshipWith %} "{{friend.hasName}}" {%- endfor %}{%- endif %}
+    {% if character.INDIRECT_isRivalWith %}is rival with: {%- for rival in character.INDIRECT_isRivalWith %} "{{rival.hasName}}" {%- endfor %}{%- endif %}
+    {% if character.INDIRECT_loves %}is in love with: {%- for love in character.INDIRECT_loves %} "{{love.hasName}}" {%- endfor %}{%- endif %}
+    {% if character.INDIRECT_hasAllegiance %}has allegiance to: {{character.INDIRECT_hasAllegiance.hasName}}{%- endif %}
+{%- endfor %}
+
+Player message: "{{player_message}}"
+Game response: "{{game_response}}"
+
+**Please output a list of actions that the game system needs to perform to update the game state, in the following JSON format:**
+If none of these fit, output an empty list.
+
+```json
+{
+    "actions": [
+        {"action": "become_enemies", "subject": "John Brown", "object": "Jane Doe"},
+        {"action": "become_friends", "subject": "John Brown", "object": "Jane Doe"},
+        {"action": "become_neutral", "subject": "John Brown", "object": "Jane Doe"},
+        {"action": "fall_in_love", "subject": "John Brown", "object": "Jane Doe"},
+        {"action": "give_allegiance", "subject": "John Brown", "object": "Jane Doe"},
+        {"action": "now_knows", "subject": "John Brown", "object": "Jane Doe"},
+        {"action": "start_following", "subject": "John Brown", "object": "Jane Doe"},
+        {"action": "stop_following", "subject": "John Brown", "object": "Jane Doe"},
+        {"action": "change_health", "subject": "John Brown", "description": "John Brown is now in dire condition. He might die soon."},
+        {"action": "change_description", "subject": "John Brown", "description": "John Brown is blablabla (keep parts of the original description) and is now wearing a red hat."}
+    ]
+}
+```
+
+Output:
+"""
+
+def extract_character_actions(model, message: str, game_response: str, onto):
+    prompt = PromptTemplate(
+        template=CHARACTER_ACTIONS_PARSER_TEMPLATE,
+        template_format='jinja2'
+    )
+
+    parser = JsonOutputParser()
+
+    chain = prompt | model | parser
+
+    with onto:
+        player = onto.Player.instances()[0]
+        current_location = player.INDIRECT_isLocatedAt
+
+        parameters = {
+            "player_message": message, 
+            "game_response": game_response, 
+            "player": player,
+            "onto": onto,
+            "characters_present": current_location.INDIRECT_containsCharacter
+        }
+
+        # Print the prompt to inspect it
+        print(prompt.invoke(parameters).text)
+
+        response = chain.invoke(parameters)
+        
+    return response
+
+
+
+def apply_character_actions(actions: list, onto):
+    with onto:
+        player = onto.Player.instances()[0]
+        for action in actions:
+            try:
+                if action['action'] == 'start_following':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    if subject:
+                        player.hasFollower.append(subject)
+                elif action['action'] == 'stop_following':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    if subject:
+                        if subject in player.hasFollower:
+                            player.hasFollower.remove(subject)
+                elif action['action'] == 'change_health':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    if subject:
+                        subject.hasHealth = action['description']
+                elif action['action'] == 'change_description':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    if subject:
+                        subject.hasDescription = action['description']
+                elif action['action'] == 'become_enemies':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
+                    if subject and _object:
+                        subject.isEnemyWith.append(_object)
+                        _object.isEnemyWith.append(subject)
+                elif action['action'] == 'become_friends':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
+                    if subject and _object:
+                        subject.hasFriendshipWith.append(_object)
+                        _object.hasFriendshipWith.append(subject)
+                elif action['action'] == 'become_neutral':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
+                    if subject and _object:
+                        if _object in subject.isEnemyWith:
+                            subject.isEnemyWith.remove(_object)
+                        if _object in subject.isRivalWith:
+                            subject.isRivalWith.remove(_object)
+                        if _object in subject.hasFriendshipWith:
+                            subject.hasFriendshipWith.remove(_object)
+                        if _object in _object.isEnemyWith:
+                            _object.isEnemyWith.remove(subject)
+                        if _object in _object.isRivalWith:
+                            _object.isRivalWith.remove(subject)
+                        if _object in _object.hasFriendshipWith:
+                            _object.hasFriendshipWith.remove(subject)
+                elif action['action'] == 'fall_in_love':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
+                    if subject and _object:
+                        # Love is sometimes reciprocal, sometimes not
+                        subject.loves.append(_object)
+                elif action['action'] == 'give_allegiance':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
+                    if subject and _object:
+                        subject.hasAllegiance = _object
+                elif action['action'] == 'rescind_allegiance':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    if subject:
+                        subject.hasAllegiance = None
+                elif action['action'] == 'now_knows':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
+                    if subject and _object:
+                        subject.knows.append(_object)
+            except ValueError as e:
+                print(f'Error applying character action: {e}')

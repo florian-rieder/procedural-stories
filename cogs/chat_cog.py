@@ -10,9 +10,8 @@ from generator.trivial import get_chain as get_trivial_chain
 from generator.story import get_chain as get_story_chain
 
 logger = logging.getLogger(__name__)
-first_message = """
-Tu te trouves au cœur de ce qui était autrefois une ville prospère, aujourd'hui réduite à un chaos silencieux appelé Ville Fantôme. Autour de toi, les bâtiments délabrés témoignent d’une époque passée tandis que les ombres mouvantes des zombies hantent chaque coin sombre. Tu es Alexandre Durand, un ingénieur civil transformé en survivant aguerri depuis le début de cette pandémie terrifiante. Ta conviction reste intacte : trouver un moyen de stopper définitivement ces créatures infectées est non seulement ta mission personnelle, mais aussi celle de tous ceux qui espèrent voir renaître une forme quelconque de normalité. La route sera longue et périlleuse, mais tu sais désormais que chaque détail peut faire la différence entre la survie et l’extinction. Que décides-tu de faire ?
-"""
+first_message = "Vous vous trouvez dans un quartier en ruine de la grande ville, où les survivants se sont regroupés pour se protéger mutuellement. Vous êtes Alexandre Dumont, un survivant déterminé à retrouver un sens à sa vie après avoir perdu vos proches dans l'épidémie. Vous avez entendu parler d'un laboratoire où des scientifiques travaillent à trouver un remède à l'épidémie, et vous êtes déterminé à les rejoindre pour aider à développer ce remède. Vous regardez autour de vous, et vous voyez des survivants qui s'affairent à améliorer les défenses du quartier, d'autres qui se reposent après une longue nuit de veille, et Léa Rousseau, une jeune femme qui fabrique des pièges pour se protéger des morts-vivants. Qu'allez-vous faire ?"
+
 
 
 class ChatCog(commands.Cog):

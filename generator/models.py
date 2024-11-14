@@ -73,7 +73,8 @@ else:
 
     print('Loading Fireworks model...')
     model = ChatFireworks(
-        model="accounts/fireworks/models/llama-v3-70b-instruct",
+        # model="accounts/fireworks/models/llama-v3-70b-instruct",
+        model="accounts/fireworks/models/llama-v3p1-8b-instruct",
         temperature=0.6,
         max_tokens=4096,
         timeout=None,
