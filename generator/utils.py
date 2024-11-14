@@ -28,4 +28,5 @@ def find_levenshtein_match(string: str, entity_list: list, threshold: int = 5):
         if dist < minimum:
             minimum = dist
             closest_entity = entity
+    #print(f'{string} -> {closest_entity.hasName}')
     return closest_entity
