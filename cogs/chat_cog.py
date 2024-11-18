@@ -4,13 +4,12 @@ import logging
 import discord
 from discord.ext import commands
 
-# Trivial system
-from generator.trivial import get_chain as get_trivial_chain
-# Our system
-from generator.story import get_chain as get_story_chain
+
+from generator.trivial.converse import TrivialConverse
+from generator.story.converse import StoryConverse
 
 logger = logging.getLogger(__name__)
-first_message = "Vous vous trouvez dans un quartier en ruine de la grande ville, où les survivants se sont regroupés pour se protéger mutuellement. Vous êtes Alexandre Dumont, un survivant déterminé à retrouver un sens à sa vie après avoir perdu vos proches dans l'épidémie. Vous avez entendu parler d'un laboratoire où des scientifiques travaillent à trouver un remède à l'épidémie, et vous êtes déterminé à les rejoindre pour aider à développer ce remède. Vous regardez autour de vous, et vous voyez des survivants qui s'affairent à améliorer les défenses du quartier, d'autres qui se reposent après une longue nuit de veille, et Léa Rousseau, une jeune femme qui fabrique des pièges pour se protéger des morts-vivants. Qu'allez-vous faire ?"
+first_message = "Vous vous trouvez dans une communauté isolée, barricadée et surveillée, où quelques dizaines de survivants comme vous ont trouvé refuge. Vous avez perdu des proches lors de l'épidémie et vous êtes déterminé à trouver un moyen de vaincre les Errants et de reconstruire votre monde. Vous avez reçu une mission, et vous savez que votre seul espoir de survie réside dans la découverte d'un remède contre l'épidémie. Vous devez partir à la recherche d'informations sur ce remède, mais pour cela, vous devrez quitter la sécurité relative de votre communauté et affronter les dangers du monde extérieur."
 
 
 
@@ -19,19 +18,30 @@ class ChatCog(commands.Cog):
         self.bot = bot
         self.started = False
         self.setting = "Post-apocalypse zombie mondiale, 1 an après le début de l'épidémie"
+        self.start_ontology_file = "story_poptest70b.rdf"
         self.language = "french"
         self.first_message = first_message
-        #self.invoke_current_chain = None
+        self.current_chain = None
 
-        self.invoke_current_chain = get_story_chain(
+        self.story_converse = StoryConverse(
             self.bot.model,
             self.bot.predictable_model,
             self.first_message, 
             self.setting, 
             self.language,
+            self.start_ontology_file,
             'foo', 
-            {"configurable": {"session_id": 'foo'}}
         )
+
+        self.trivial_converse = TrivialConverse(
+            self.bot.model,
+            self.first_message, 
+            self.setting, 
+            self.language,
+            'foo', 
+        )
+
+        self.current_chain = self.story_converse
 
     
     # Define a command to choose between trivial and story mode
@@ -40,24 +50,9 @@ class ChatCog(commands.Cog):
         await ctx.defer()  # Acknowledge the command to prevent timeout
         try:
             if mode == "trivial":
-                self.invoke_current_chain = get_trivial_chain(
-                    self.bot.model, 
-                    self.first_message, 
-                    self.setting, 
-                    self.language, 
-                    session_id, 
-                    {"configurable": {"session_id": session_id}}
-                )
+                self.current_chain = self.trivial_converse
             elif mode == "story":
-                self.invoke_current_chain = get_story_chain(
-                    self.bot.model,
-                    self.bot.predictable_model,
-                    self.first_message, 
-                    self.setting, 
-                    self.language, 
-                    session_id, 
-                    {"configurable": {"session_id": session_id}}
-                )
+                self.current_chain = self.story_converse
         except Exception as e: 
             await ctx.reply(f"Error setting mode: {e}")
             return
@@ -77,23 +72,9 @@ class ChatCog(commands.Cog):
         self.is_trivial_mode = random.random() < 0.5
         
         if self.is_trivial_mode:
-            self.invoke_current_chain = get_trivial_chain(
-                self.bot.model, 
-                self.first_message, 
-                self.setting, 
-                self.language, 
-                session_id, 
-                {"configurable": {"session_id": session_id}}
-            )
+            self.current_chain = self.trivial_converse
         else:
-            self.invoke_current_chain = get_story_chain(
-                self.bot.model, 
-                self.first_message, 
-                self.setting, 
-                self.language, 
-                session_id, 
-                {"configurable": {"session_id": session_id}}
-            )
+            self.current_chain = self.story_converse
         
         # Record the model order in the user's data directory
         with open(f'data/{session_id}/model_order.txt', 'w') as f:
@@ -109,9 +90,9 @@ class ChatCog(commands.Cog):
             order = f.read()
 
         if order == 'A/B':
-            self.invoke_current_chain = get_story_chain(self.bot.model, self.first_message, ctx.author.name)
+            self.current_chain = self.story_converse
         else:
-            self.invoke_current_chain = get_trivial_chain(self.bot.model, self.first_message)
+            self.current_chain = self.trivial_converse
             
         await ctx.reply("Mode switched!")
 
@@ -131,7 +112,7 @@ class ChatCog(commands.Cog):
         await ctx.defer()  # Acknowledge the command to prevent timeout
 
         # Check if a chain is initialized
-        if self.invoke_current_chain is None:
+        if self.current_chain is None:
             await ctx.reply("No chain initialized. Please set a mode first.")
             return
         
@@ -158,7 +139,7 @@ class ChatCog(commands.Cog):
             return
 
         # Basic debug prints to see if the event is firing
-        print('Event triggered! Message content:', message.content)
+        #print('Event triggered! Message content:', message.content)
 
         # Avoid the bot responding to its own messages
         if message.author == self.bot.user:
@@ -172,10 +153,13 @@ class ChatCog(commands.Cog):
         # Notify user that the bot is processing by showing "typing..."
         async with message.channel.typing():
             # Send the message to the procedural story system
-            response = await self.invoke_current_chain(message.content)
+            response = await self.current_chain.converse(message.content)
 
         # Send the LLM response in the channel
         await message.channel.send(response)
+
+        # Do post-processing after the reply
+        await self.current_chain.postprocess_last_turn()
 
 
 async def setup(bot: commands.Bot):

@@ -13,8 +13,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # These don't work well...
-# set_debug(True)
-set_verbose(True)
+#set_debug(True)
+#set_verbose(True)
 
 # Use local model or cloud model ?
 USE_LOCAL_MODEL = False
@@ -23,8 +23,9 @@ MAX_TOKENS = 2048
 model = None
 predictable_model = None
 
-print('Loading model...')
 if USE_LOCAL_MODEL:
+    print('Loading local model...')
+
     # Load model from huggingface, using the MLX framework to take advantage of
     # Apple Silicon chips
     _llm = MLXPipeline.from_model_id(
@@ -66,6 +67,8 @@ if USE_LOCAL_MODEL:
     model = ChatMLX(llm=_llm)
     predictable_model = ChatMLX(llm=_predictable_llm)
 
+    print('Local model loaded.')
+
 else:
     # Use Fireworks
     if "FIREWORKS_API_KEY" not in os.environ:
@@ -85,10 +88,9 @@ else:
     predictable_model = ChatFireworks(
         model="accounts/fireworks/models/llama-v3p1-8b-instruct",
         temperature=0,
-        max_tokens=256,
+        max_tokens=1024,
         timeout=None,
         max_retries=0,
         # other params...
     )
     print('Fireworks model loaded.')
-print('Model loaded.')
