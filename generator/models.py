@@ -76,8 +76,8 @@ else:
 
     print('Loading Fireworks model...')
     model = ChatFireworks(
-        # model="accounts/fireworks/models/llama-v3-70b-instruct",
-        model="accounts/fireworks/models/llama-v3p1-8b-instruct",
+        model="accounts/fireworks/models/llama-v3-70b-instruct",
+        #model="accounts/fireworks/models/llama-v3p1-8b-instruct",
         temperature=0.6,
         max_tokens=4096,
         timeout=None,
@@ -86,7 +86,8 @@ else:
     )
 
     predictable_model = ChatFireworks(
-        model="accounts/fireworks/models/llama-v3p1-8b-instruct",
+        #model="accounts/fireworks/models/llama-v3p1-8b-instruct",
+        model="accounts/fireworks/models/llama-v3-70b-instruct",
         temperature=0,
         max_tokens=1024,
         timeout=None,
