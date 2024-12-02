@@ -1,289 +1,207 @@
+from typing import Optional
+
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import JsonOutputParser
+
 from generator.utils import find_levenshtein_match, encode_entity_name
 
-from generator.story.nlp.prompts import (
-    INTENT_ANALYSIS_TEMPLATE,
-    INVENTORY_ACTIONS_PARSER_TEMPLATE,
-    CHARACTER_ACTIONS_PARSER_TEMPLATE,
-)
-
-from tracet import Chain, chainable, JsonRepairParser
-
-from owlready2 import destroy_entity
+from generator.story.nlp.prompts import *
 
 
-@chainable(input_keys=["onto"], output_key="nearby_locations")
-def get_nearby_locations(onto):
+def extract_move_intent(model, previous_game_response: str, message: str, onto):
+    prompt = PromptTemplate(
+        template=INTENT_ANALYSIS_TEMPLATE,
+        template_format='jinja2'
+    )
+
     with onto:
-        player = onto.Player.instances()[0]
-        current_location = player.INDIRECT_isLocatedAt
-        nearby_locations = current_location.INDIRECT_isLinkedToLocation
-
+        nearby_locations = onto.Player.instances()[0].INDIRECT_isLocatedAt.INDIRECT_isLinkedToLocation
+        
         nearby_locations_names = []
-        for location in nearby_locations:
-            if location.name == "CurrentLocation":
+        for l in nearby_locations:
+            if l.name == "CurrentLocation":
                 continue
+            
+            nearby_locations_names.append(l.hasName)
 
-            nearby_locations_names.append(location.hasName)
+        #print(nearby_locations_names)
 
-        nearby_locations = ", ".join(f'"{name}"' for name in nearby_locations_names)
+        parameters = {
+            'nearby_locations_names': ", ".join(f'"{l}"' for l in nearby_locations_names),
+            'previous_game_response': previous_game_response,
+            'player_message': message
+        }
+        
+        print(prompt.invoke(parameters).text)
+        
+        chain = prompt | model
 
-        return nearby_locations
-
-
-@chainable(input_keys=["response", "onto"], output_key="move_intent_location")
-def find_location(response: str, onto):
-    result = response.strip().strip('"')
-    if result.lower() == "none":
-        return None
-    else:
+        analysis = chain.invoke(parameters)
+        print(f"Move intent output: {analysis.content}")
+        
+        
+        result = analysis.content.strip().strip('"')
+        
+        
+        
+        if result.lower() == 'none':
+            return None
+        
+        #print(result)
+        
         entity = find_levenshtein_match(result, onto.Location.instances())
+        
         return entity
 
 
-def get_move_intent_extraction_chain(model):
-    extract_move_intent_chain = Chain(
-        get_nearby_locations,
-        INTENT_ANALYSIS_TEMPLATE,
-        model.using(
-            output_key="response",
-            temperature=0.0,
-        ),
-        find_location,
-        verbose=True,
-        debug=True,
+
+def extract_inventory_actions(model, message: str, game_response: str, onto):
+    prompt = PromptTemplate(
+        template=INVENTORY_ACTIONS_PARSER_TEMPLATE,
+        template_format='jinja2'
     )
 
-    return extract_move_intent_chain
+    parser = JsonOutputParser()
 
+    chain = prompt | model | parser
 
-# def extract_move_intent(model, previous_game_response: str, player_message: str, onto):
-#     extract_move_intent_chain = Chain(
-#         get_nearby_locations,
-#         INTENT_ANALYSIS_TEMPLATE,
-#         model.using(
-#             output_key="response",
-#             temperature=0.0,
-#         ),
-#         find_location,
-#         verbose=True,
-#         debug=True,
-#     )
-
-#     result = extract_move_intent_chain.call(
-#         onto=onto,
-#         previous_game_response=previous_game_response,
-#         player_message=player_message,
-#     )
-
-#     return result
-
-
-@chainable(input_keys=["onto"], output_key="current_location")
-def get_current_location(onto):
+    
     with onto:
         player = onto.Player.instances()[0]
         current_location = player.INDIRECT_isLocatedAt
 
-    return current_location
+        parameters = {
+            "player_message": message, 
+            "game_response": game_response, 
+            "player": player,
+            "onto": onto,
+            "nearby_characters": current_location.INDIRECT_containsCharacter,
+            "nearby_items": current_location.INDIRECT_containsItem
+        }
+
+        # Print the prompt to inspect it
+        #print(prompt.invoke(parameters).text)
+
+        response = chain.invoke(parameters)
+
+        actions = response.get('actions', [])
+        
+    return actions
 
 
-@chainable(input_keys=["onto"], output_key="player")
-def get_player(onto):
-    with onto:
-        return onto.Player.instances()[0]
 
-
-def get_inventory_actions_extraction_chain(model):
-    chain = Chain(
-        get_current_location,
-        get_player,
-        INVENTORY_ACTIONS_PARSER_TEMPLATE,
-        model,
-        JsonRepairParser(output_key="inventory_actions"),
-        verbose=True,
-        debug=True,
-    )
-
-    return chain
-
-
-# def extract_inventory_actions(model, message: str, game_response: str, onto):
-#     chain = Chain(
-#         get_current_location,
-#         get_player,
-#         INVENTORY_ACTIONS_PARSER_TEMPLATE,
-#         model,
-#         JsonRepairParser(output_key="inventory_actions"),
-#         verbose=True,
-#         debug=True,
-#     )
-
-#     result = chain.call(
-#         onto=onto,
-#         player_message=message,
-#         game_response=game_response,
-#     )
-
-#     actions = result.get("actions", [])
-
-#     return actions
-
-
-@chainable(input_keys=["inventory_actions", "onto"], output_key=None)
-def apply_inventory_actions(inventory_actions: list, onto):
+def apply_inventory_actions(actions: list, onto):
     with onto:
         player = onto.Player.instances()[0]
-        for action in inventory_actions:
+        for action in actions:
             try:
-                if action["action"] == "create":
-                    item_name = action["item"]
+                if action['action'] == 'create':
+                    item_name = action['item']
                     item = onto.Item(encode_entity_name(item_name))
-                    item.hasDescription = action["description"]
+                    item.hasDescription = action['description']
                     player.ownsItem.append(item)
-                elif action["action"] == "destroy":
-                    item = find_levenshtein_match(action["item"], onto.Item.instances())
+                elif action['action'] == 'destroy':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
                     if item:
                         player.ownsItem.remove(item)
                         destroy_entity(item)
-                    else:
-                        print(f"Item not found: {action['item']}")
-                elif action["action"] == "claim":
-                    item = find_levenshtein_match(action["item"], onto.Item.instances())
+                elif action['action'] == 'claim':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
                     if item:
                         player.ownsItem.append(item)
                         item.itemIsLocatedAt = None
-                    else:
-                        print(f"Item not found: {action['item']}")
-                elif action["action"] == "give":
-                    item = find_levenshtein_match(action["item"], onto.Item.instances())
-                    target = find_levenshtein_match(
-                        action["target"], onto.Character.instances()
-                    )
+                elif action['action'] == 'give':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
+                    target = find_levenshtein_match(action['target'], onto.Character.instances())
                     if item and target:
                         if item in player.ownsItem:
                             player.ownsItem.remove(item)
                             target.ownsItem.append(item)
-                    else:
-                        if not item:
-                            print(f"Item not found: {action['item']}")
-                        if not target:
-                            print(f"Target not found: {action['target']}")
-                elif action["action"] == "drop":
-                    item = find_levenshtein_match(action["item"], onto.Item.instances())
+                elif action['action'] == 'drop':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
                     if item:
                         player.ownsItem.remove(item)
-                        current_location = get_current_location(onto)
                         item.itemIsLocatedAt = current_location
-                    else:
-                        print(f"Item not found: {action['item']}")
-                elif action["action"] == "alter":
-                    item = find_levenshtein_match(action["item"], onto.Item.instances())
+                elif action['action'] == 'alter':
+                    item = find_levenshtein_match(action['item'], onto.Item.instances())
                     if item:
-                        item.hasDescription = action["description"]
-                    else:
-                        print(f"Item not found: {action['item']}")
+                        item.hasDescription = action['description']
             except ValueError as e:
-                print(f"Error applying inventory action: {e}")
+                print(f'Error applying inventory action: {e}')
 
 
-def get_character_actions_extraction_chain(model):
-    chain = Chain(
-        get_current_location,
-        get_player,
-        CHARACTER_ACTIONS_PARSER_TEMPLATE,
-        model,
-        JsonRepairParser(output_key="character_actions"),
-        verbose=True,
-        debug=True,
+
+
+def extract_character_actions(model, message: str, game_response: str, onto):
+    prompt = PromptTemplate(
+        template=CHARACTER_ACTIONS_PARSER_TEMPLATE,
+        template_format='jinja2'
     )
 
-    return chain
+    parser = JsonOutputParser()
 
-    # result = chain.call(
-    #     onto=onto,
-    #     player_message=message,
-    #     game_response=game_response,
-    # )
+    chain = prompt | model | parser
 
-    # actions = result.get("character_actions", [])
-
-    # return actions
-
-
-@chainable(input_keys=["character_actions", "onto"], output_key=None)
-def apply_character_actions(character_actions: list, onto):
     with onto:
         player = onto.Player.instances()[0]
-        for action in character_actions:
+        current_location = player.INDIRECT_isLocatedAt
+
+        parameters = {
+            "player_message": message, 
+            "game_response": game_response, 
+            "player": player,
+            "onto": onto,
+            "characters_present": current_location.INDIRECT_containsCharacter
+        }
+
+        # Print the prompt to inspect it
+        #print(prompt.invoke(parameters).text)
+
+        response = chain.invoke(parameters)
+
+        actions = response.get('actions', [])
+
+    return actions
+
+
+
+def apply_character_actions(actions: list, onto):
+    with onto:
+        player = onto.Player.instances()[0]
+        for action in actions:
             try:
-                if action["action"] == "start_following":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
+                if action['action'] == 'start_following':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
                     if subject:
                         player.hasFollower.append(subject)
-                elif action["action"] == "stop_following":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
+                elif action['action'] == 'stop_following':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
                     if subject:
                         if subject in player.hasFollower:
                             player.hasFollower.remove(subject)
-                    else:
-                        print(f"Subject not found: {action['subject']}")
-                elif action["action"] == "change_health":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
+                elif action['action'] == 'change_health':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
                     if subject:
-                        subject.hasHealth = action["description"]
-                    else:
-                        print(f"Subject not found: {action['subject']}")
-                elif action["action"] == "change_description":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
+                        subject.hasHealth = action['description']
+                elif action['action'] == 'change_description':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
                     if subject:
-                        subject.hasDescription = action["description"]
-                    else:
-                        print(f"Subject not found: {action['subject']}")
-                elif action["action"] == "become_enemies":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
-                    _object = find_levenshtein_match(
-                        action["object"], onto.Character.instances()
-                    )
+                        subject.hasDescription = action['description']
+                elif action['action'] == 'become_enemies':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
                     if subject and _object:
                         subject.isEnemyWith.append(_object)
                         _object.isEnemyWith.append(subject)
-                    else:
-                        if not subject:
-                            print(f"Subject not found: {action['subject']}")
-                        if not _object:
-                            print(f"Object not found: {action['object']}")
-                elif action["action"] == "become_friends":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
-                    _object = find_levenshtein_match(
-                        action["object"], onto.Character.instances()
-                    )
+                elif action['action'] == 'become_friends':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
                     if subject and _object:
                         subject.hasFriendshipWith.append(_object)
                         _object.hasFriendshipWith.append(subject)
-                    else:
-                        if not subject:
-                            print(f"Subject not found: {action['subject']}")
-                        if not _object:
-                            print(f"Object not found: {action['object']}")
-                elif action["action"] == "become_neutral":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
-                    _object = find_levenshtein_match(
-                        action["object"], onto.Character.instances()
-                    )
+                elif action['action'] == 'become_neutral':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
                     if subject and _object:
                         if _object in subject.isEnemyWith:
                             subject.isEnemyWith.remove(_object)
@@ -297,56 +215,25 @@ def apply_character_actions(character_actions: list, onto):
                             _object.hasRivalryWith.remove(subject)
                         if _object in _object.hasFriendshipWith:
                             _object.hasFriendshipWith.remove(subject)
-                elif action["action"] == "fall_in_love":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
-                    _object = find_levenshtein_match(
-                        action["object"], onto.Character.instances()
-                    )
+                elif action['action'] == 'fall_in_love':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
                     if subject and _object:
                         # Love is sometimes reciprocal, sometimes not
                         subject.loves.append(_object)
-                    else:
-                        if not subject:
-                            print(f"Subject not found: {action['subject']}")
-                        if not _object:
-                            print(f"Object not found: {action['object']}")
-                elif action["action"] == "give_allegiance":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
-                    _object = find_levenshtein_match(
-                        action["object"], onto.Character.instances()
-                    )
+                elif action['action'] == 'give_allegiance':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
                     if subject and _object:
                         subject.hasAllegiance = _object
-                    else:
-                        if not subject:
-                            print(f"Subject not found: {action['subject']}")
-                        if not _object:
-                            print(f"Object not found: {action['object']}")
-                elif action["action"] == "rescind_allegiance":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
+                elif action['action'] == 'rescind_allegiance':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
                     if subject:
                         subject.hasAllegiance = None
-                    else:
-                        print(f"Subject not found: {action['subject']}")
-                elif action["action"] == "now_knows":
-                    subject = find_levenshtein_match(
-                        action["subject"], onto.Character.instances()
-                    )
-                    _object = find_levenshtein_match(
-                        action["object"], onto.Character.instances()
-                    )
+                elif action['action'] == 'now_knows':
+                    subject = find_levenshtein_match(action['subject'], onto.Character.instances())
+                    _object = find_levenshtein_match(action['object'], onto.Character.instances())
                     if subject and _object:
                         subject.knows.append(_object)
-                    else:
-                        if not subject:
-                            print(f"Subject not found: {action['subject']}")
-                        if not _object:
-                            print(f"Object not found: {action['object']}")
             except ValueError as e:
-                print(f"Error applying character action: {e}")
+                print(f'Error applying character action: {e}')

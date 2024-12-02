@@ -3,7 +3,7 @@ Human: Please analyze the player's message and determine if they **explicitly** 
 Nearby locations: {{nearby_locations_names}}
 
 Previous game response: "{{previous_game_response}}"
-Player message: "{{message}}"
+Player message: "{{player_message}}"
 
 **Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
 Output:
@@ -31,9 +31,9 @@ Human: Please analyze the player's message and determine if they intend to inter
 There are no items in the player's inventory.
 {%- endif %}
 
-{%- if current_location.INDIRECT_containsItem %}
+{%- if nearby_items %}
 **Unowned items in the current location**:
-{%- for item in current_location.INDIRECT_containsItem %}
+{%- for item in nearby_items %}
 {%- if not item.INDIRECT_isOwnedBy %}
 - {{item.hasName}}: {{item.hasDescription}}
 {%- endif %}
@@ -42,9 +42,9 @@ There are no items in the player's inventory.
 There are no unowned items in the current location.
 {%- endif %}
 
-{%- if current_location.INDIRECT_containsCharacter %}
+{%- if nearby_characters %}
 **Names of the characters present in the current location**:
-{%- for character in current_location.INDIRECT_containsCharacter %}
+{%- for character in nearby_characters %}
     {%- if character.hasName != player.hasName %}
 - "{{character.hasName}}"
     {%- endif %}
@@ -54,7 +54,7 @@ There are no other characters present in the current location.
 {%- endif %}
 
 # Last message from the player and game response
-Player message: "{{message}}"
+Player message: "{{player_message}}"
 Game response: "{{game_response}}"
 
 **Please output a list of actions that the game system needs to perform to update the game state, in the following JSON format:**
@@ -72,9 +72,6 @@ If none of these fit, output an empty list.
     ]
 }
 ```
-
-"claim" (for the player) and "give" (to the player) are always from the player's point of view.
-In order to give an item that doesn't exist yet in the game system to the player, you need to create it first with a "create" action, before you can claim it with a "claim" action.
 
 Output:
 """.strip()
@@ -100,9 +97,8 @@ Most relationships are symmetrical, but some are not, like loves. If love is rec
 
 The player is named "{{player.hasName}}" and is described as "{{player.hasDescription}}".
 
-{%- if current_location.INDIRECT_containsCharacter %}
 **Characters present**:
-{%- for character in current_location.INDIRECT_containsCharacter %}
+{%- for character in characters_present %}
 - {{character.hasName}}: {{character.hasDescription}}
     {% if character.INDIRECT_knows %}knows: {%- for known_character in character.INDIRECT_knows %} "{{known_character.hasName}}" {%- endfor %}{%- endif %}
     {% if character.INDIRECT_isEnemyWith %}is enemy with: {%- for enemy in character.INDIRECT_isEnemyWith %} "{{enemy.hasName}}" {%- endfor %}{%- endif %}
@@ -111,11 +107,8 @@ The player is named "{{player.hasName}}" and is described as "{{player.hasDescri
     {% if character.INDIRECT_loves %}is in love with: {%- for love in character.INDIRECT_loves %} "{{love.hasName}}" {%- endfor %}{%- endif %}
     {% if character.INDIRECT_hasAllegiance %}has allegiance to: {{character.INDIRECT_hasAllegiance.hasName}}{%- endif %}
 {%- endfor %}
-{%- else %}
-There are no characters present in the current location.
-{%- endif %}
 
-Player message: "{{message}}"
+Player message: "{{player_message}}"
 Game response: "{{game_response}}"
 
 **Please output a list of actions that the game system needs to perform to update the game state, in the following JSON format:**
