@@ -50,41 +50,42 @@ def get_relevant_information(move_intent_location, history, message, onto):
         }
 
 
-@chainable(input_keys=["response", "onto"], output_key="response")
-def extract_move_confirmation(response: str, onto):
+@chainable(
+    input_keys=["game_response", "move_intent_location", "onto"],
+    output_key="cleaned_game_response",
+)
+def extract_move_confirmation(game_response: str, move_intent_location, onto):
     # Find if the LLM accepted the move, and filter out the <CONFIRM_MOVE> token
-    if "<CONFIRM_MOVE>" in response:
+    cleaned_game_response = game_response
+    if "<CONFIRM_MOVE>" in game_response:
         print("Move confirmed by the LLM")
-        response = response.replace("<CONFIRM_MOVE>", "").strip()
+        cleaned_game_response = cleaned_game_response.replace(
+            "<CONFIRM_MOVE>", ""
+        ).strip()
 
         # If the LLM accepted the move, update the KG
         with onto:
             player = onto.Player.instances()[0]
-            move_intent_location = response["move_intent_location"]
             for follower in player.INDIRECT_hasFollower:
                 follower.isLocatedAt = move_intent_location
             player.isLocatedAt = move_intent_location
 
     # Overwrite the response with the new one
-    return response
+    return cleaned_game_response
 
 
 class StoryConverse:
     def __init__(
         self,
         model,
-        predictable_model,
         first_message,
         setting,
         language,
         start_ontology_file,
-        session_id,
     ):
         self.model = model
-        self.predictable_model = predictable_model
         self.setting = setting
         self.language = language
-        self.session_id = session_id
         self.start_ontology_file = start_ontology_file
 
         self.onto = get_ontology(f"file://{start_ontology_file}").load()
@@ -112,19 +113,20 @@ class StoryConverse:
                 output_key="system_prompt",
             ),
             self.model.using(
-                output_key="response",
+                output_key="game_response",
                 history_key="history",
                 system_prompt_key="system_prompt",
             ),
             extract_move_confirmation,
             ConversationMemory(
                 human_message_key="message",
-                llm_message_key="response",
+                llm_response_key="cleaned_game_response",
                 output_key="history",
                 human_prefix="player",
                 llm_prefix="game",
             ),
             verbose=True,
+            debug=True,
         )
 
         self.postprocess_chain = Chain(
@@ -152,7 +154,7 @@ class StoryConverse:
         # Update the message history
         self.history = response["history"]
 
-        return response["response"]
+        return response["cleaned_game_response"]
 
     async def postprocess_last_turn(self):
         # Post-process the response to update the KG
@@ -161,7 +163,7 @@ class StoryConverse:
         # print(self.history.messages)
         player_message, game_response = self.history[-2:]
 
-        self.postprocess_chain.call(
+        await self.postprocess_chain.acall(
             message=player_message["content"],
             game_response=game_response["content"],
             onto=self.onto,

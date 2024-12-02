@@ -1,5 +1,7 @@
 """
 Based on https://fallendeity.github.io/discord.py-masterclass
+Mostly boilerplate code.
+We load the LLM here to only load it once.
 """
 
 import asyncio
@@ -18,22 +20,23 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from generator.models import model, predictable_model
+from generator.models import model
 
 
 # Fix SSL error: https://stackoverflow.com/a/78935128/10914628
 os.environ["SSL_CERT_FILE"] = certifi.where()
 
-CONFIG_FILE = 'config.ini'
+CONFIG_FILE = "config.ini"
 
 
+# Doesn't work
 def reload_module_by_path(file_path):
     # Check if the module is already loaded
     for module_name, module in sys.modules.items():
-        if getattr(module, '__file__', None) == file_path:
+        if getattr(module, "__file__", None) == file_path:
             # If found, reload it and return the reloaded module
             return importlib.reload(module)
-    
+
     # module_name = file_path[:-3].replace("/", ".")
 
     # # If the module is not yet loaded, import it
@@ -49,15 +52,21 @@ class StorytellerBot(commands.Bot):
     _uptime: datetime.datetime = datetime.datetime.now()
     _watcher: asyncio.Task
 
-    def __init__(self, prefix: str, ext_dir: str, *args: typing.Any, **kwargs: typing.Any) -> None:
+    def __init__(
+        self, prefix: str, ext_dir: str, *args: typing.Any, **kwargs: typing.Any
+    ) -> None:
         # Declare intents
         # see https://discordpy.readthedocs.io/en/stable/api.html#intents
         intents = discord.Intents.default()
         intents.message_content = True
         intents.messages = True
 
-        super().__init__(*args, **kwargs,
-                         command_prefix=commands.when_mentioned_or(prefix), intents=intents)
+        super().__init__(
+            *args,
+            **kwargs,
+            command_prefix=commands.when_mentioned_or(prefix),
+            intents=intents,
+        )
         self.logger = logging.getLogger(self.__class__.__name__)
         self.ext_dir = ext_dir
         self.synced = False
@@ -72,11 +81,17 @@ class StorytellerBot(commands.Bot):
                     await self.load_extension(f"{self.ext_dir}.{filename[:-3]}")
                     self.logger.info(f"Loaded extension {filename[:-3]}")
                 except commands.ExtensionError:
-                    self.logger.error(f"Failed to load extension {filename[:-3]}\n{traceback.format_exc()}")
+                    self.logger.error(
+                        f"Failed to load extension {filename[:-3]}\n{traceback.format_exc()}"
+                    )
         await self.tree.sync()
 
-    async def on_error(self, event_method: str, *args: typing.Any, **kwargs: typing.Any) -> None:
-        self.logger.error(f"An error occurred in {event_method}.\n{traceback.format_exc()}")
+    async def on_error(
+        self, event_method: str, *args: typing.Any, **kwargs: typing.Any
+    ) -> None:
+        self.logger.error(
+            f"An error occurred in {event_method}.\n{traceback.format_exc()}"
+        )
 
     async def on_ready(self) -> None:
         self.logger.info(f"Logged in as {self.user} ({self.user.id})")
@@ -92,26 +107,16 @@ class StorytellerBot(commands.Bot):
         #     self.config['DEFAULT']['MESSAGES_LIMIT'] = '100'
         #     self.save_config()
 
-
         ########################################################################
         #                            Initialize LLM                            #
         ########################################################################
-        
 
         # Load LLM
-        # We load a second model with a temperature of 0 because we couldn't find how
-        # to change that setting on the fly.
-        # But in principle, changing the temperature on the same model is
-        # doable, so this still counts as using one 8B model for the
-        # conversation loop and processing.
-        self.predictable_model = predictable_model
         self.model = model
-        
-        
+
         ########################################################################
         #                    Load extensions and watch files                   #
         ########################################################################
-
 
         # Load cogs
         await self._load_extensions()
@@ -146,12 +151,12 @@ class StorytellerBot(commands.Bot):
                     extensions.add(name)
 
             # Add story.py to files to watch
-            story_file = 'story.py'
+            story_file = "story.py"
             if os.path.isfile(story_file) and os.stat(story_file).st_mtime > last:
                 files_to_watch.append(story_file)
 
             # Add all Python files in the 'generator' directory to files to watch
-            generator_dir = 'generator'
+            generator_dir = "generator"
             if os.path.isdir(generator_dir):
                 for filename in os.listdir(generator_dir):
                     if filename.endswith(".py"):
@@ -195,8 +200,9 @@ class StorytellerBot(commands.Bot):
 
 
 def main() -> None:
-    logging.basicConfig(level=logging.INFO,
-                        format="[%(asctime)s] %(levelname)s: %(message)s")
+    logging.basicConfig(
+        level=logging.INFO, format="[%(asctime)s] %(levelname)s: %(message)s"
+    )
     bot = StorytellerBot(prefix="!", ext_dir="cogs")
     bot.run()
 

@@ -11,7 +11,7 @@ from tracet import Chain, chainable, JsonRepairParser
 from owlready2 import destroy_entity
 
 
-@chainable(input_keys=["onto"], output_key="nearby_locations")
+@chainable(input_keys=["onto"], output_key="nearby_locations_names")
 def get_nearby_locations(onto):
     with onto:
         player = onto.Player.instances()[0]
@@ -30,9 +30,11 @@ def get_nearby_locations(onto):
         return nearby_locations
 
 
-@chainable(input_keys=["response", "onto"], output_key="move_intent_location")
-def find_location(response: str, onto):
-    result = response.strip().strip('"')
+@chainable(
+    input_keys=["move_intent_response", "onto"], output_key="move_intent_location"
+)
+def find_location(move_intent_response: str, onto):
+    result = move_intent_response.strip().strip('"')
     if result.lower() == "none":
         return None
     else:
@@ -45,7 +47,7 @@ def get_move_intent_extraction_chain(model):
         get_nearby_locations,
         INTENT_ANALYSIS_TEMPLATE,
         model.using(
-            output_key="response",
+            output_key="move_intent_response",
             temperature=0.0,
         ),
         find_location,
@@ -191,8 +193,13 @@ def get_character_actions_extraction_chain(model):
         get_current_location,
         get_player,
         CHARACTER_ACTIONS_PARSER_TEMPLATE,
-        model,
-        JsonRepairParser(output_key="character_actions"),
+        model.using(
+            output_key="character_actions_response",
+            temperature=0.0,
+        ),
+        JsonRepairParser(
+            input_key="character_actions_response", output_key="character_actions"
+        ),
         verbose=True,
         debug=True,
     )

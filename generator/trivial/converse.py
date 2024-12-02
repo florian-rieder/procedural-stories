@@ -9,12 +9,11 @@ logger = logging.getLogger(__name__)
 
 
 class TrivialConverse:
-    def __init__(self, model, first_message, setting, language, session_id):
+    def __init__(self, model, first_message, setting, language):
         self.model = model
         self.first_message = first_message
         self.setting = setting
         self.language = language
-        self.session_id = session_id
 
         # Initialize the message history
         self.history = []
@@ -27,13 +26,13 @@ class TrivialConverse:
                 output_key="system_prompt",
             ),
             model.using(
-                output_key="response",
+                output_key="game_response",
                 history_key="history",
                 system_prompt_key="system_prompt",
             ),
             ConversationMemory(
                 human_message_key="message",
-                llm_message_key="response",
+                llm_response_key="game_response",
                 output_key="history",
             ),
             verbose=True,
@@ -54,7 +53,7 @@ class TrivialConverse:
         # Update the message history
         self.history = result["history"]
 
-        return result["response"]
+        return result["game_response"]
 
     async def postprocess_last_turn(self):
         # Nothing to post-process

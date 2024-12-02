@@ -1,29 +1,53 @@
-from tracet import Chain, ChatOllama
+import asyncio
+from generator.models import model
+
+from generator.story.converse import StoryConverse
+from generator.trivial.converse import TrivialConverse
 
 
-llm = ChatOllama(
-    model="llama3.2:3b",
-    streaming=True,
-    max_tokens=64,
-    temperature=0.9,
-    repetition_penalty=1.2,
+first_message = """
+Vous vous trouvez dans une communauté isolée, barricadée et surveillée, où quelques
+dizaines de survivants comme vous ont trouvé refuge. Vous avez perdu des proches lors de
+l'épidémie et vous êtes déterminé à trouver un moyen de vaincre les Errants et de
+reconstruire votre monde. Vous avez reçu une mission, et vous savez que votre seul
+espoir de survie réside dans la découverte d'un remède contre l'épidémie. Vous devez
+partir à la recherche d'informations sur ce remède, mais pour cela, vous devrez quitter
+la sécurité relative de votre communauté et affronter les dangers du monde extérieur.
+""".strip()
+
+setting = "Post-apocalypse zombie mondiale, 1 an après le début de l'épidémie"
+
+ontology_file = "story_poptest70b.rdf"
+
+language = "french"
+
+
+trivial_converse = TrivialConverse(model, first_message, setting, language)
+
+story_converse = StoryConverse(
+    model,
+    first_message,
+    setting,
+    language,
+    ontology_file,
 )
 
-chain = Chain(
-    "System: You are a helpful assistant.\n User: {input}",
-    llm,
-)
+current_chain = story_converse
 
 
-for token in chain.stream(input="What is python?"):
-    print(token, end="", flush=True)
+async def main():
+    while True:
+        message = input("You: ")
 
-## Or, to register a system prompt correctly with a Chat model, we need to give it a list of messages
+        if message.strip() == "":
+            continue
 
-chain = Chain(llm)
+        if message.lower() == "quit" or message.lower() == "exit":
+            break
 
-for token in chain.stream(
-    prompt="What is python?",
-    messages=[{"role": "system", "content": "You are a helpful assistant."}],
-):
-    print(token, end="", flush=True)
+        response = await current_chain.converse(message)
+        print("Game:", response)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
