@@ -17,7 +17,7 @@ class TrivialConverse:
 
         # Initialize the message history
         self.history = []
-        self.history.append({"role": "ai", "content": self.first_message})
+        self.history.append({"role": "game", "content": self.first_message})
 
         # Initialize the conversation chain
         self.chain = Chain(
@@ -26,14 +26,18 @@ class TrivialConverse:
                 output_key="system_prompt",
             ),
             model.using(
+                input_key="message",
                 output_key="game_response",
                 history_key="history",
                 system_prompt_key="system_prompt",
+                temperature=1.0,
             ),
             ConversationMemory(
                 human_message_key="message",
                 llm_response_key="game_response",
                 output_key="history",
+                human_prefix="player",
+                llm_prefix="game",
             ),
             verbose=True,
         )
@@ -48,8 +52,6 @@ class TrivialConverse:
             history=self.history,
         )
 
-        # TODO Write the new messages to a file
-
         # Update the message history
         self.history = result["history"]
 
@@ -59,7 +61,6 @@ class TrivialConverse:
         # Nothing to post-process
         pass
 
-    def reset(self):
+    def reset(self, first_message: str):
         self.history = []
-        self.history.append({"role": "system", "content": CHAT_SYSTEM_PROMPT})
-        self.history.append({"role": "ai", "content": self.first_message})
+        self.history.append({"role": "game", "content": first_message})

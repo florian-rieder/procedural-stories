@@ -147,8 +147,6 @@ class StoryConverse:
             onto=self.onto,
         )
 
-        # TODO Write the new messages to a file
-
         # Update the message history
         self.history = response["history"]
 
@@ -167,6 +165,6 @@ class StoryConverse:
             onto=self.onto,
         )
 
-    def reset(self):
+    def reset(self, first_message: str):
         self.history = []
-        self.history.append({"role": "game", "content": self.first_message})
+        self.history.append({"role": "game", "content": first_message})

@@ -48,7 +48,7 @@ class ChatCog(commands.Cog):
             self.language,
         )
 
-        self.current_chain = self.story_converse
+        self.current_chain = None
 
     # Define a command to choose between trivial and story mode
     @commands.hybrid_command(name="set_mode")
@@ -70,45 +70,61 @@ class ChatCog(commands.Cog):
     # Variant for double blind experiment: the user and experimenter don't know which mode they are in. We need to choose the model randomly and add another command to switch to the other mode, while recording the actual mode used.
     @commands.hybrid_command(name="start_experiment")
     async def start_experiment(
-        self, ctx: commands.Context[commands.Bot], session_id: str
+        self,
+        ctx: commands.Context[commands.Bot],
     ):
         await ctx.defer()  # Acknowledge the command to prevent timeout
         # Create a directory for the user if it doesn't exist
-        os.makedirs(f"data/{session_id}", exist_ok=True)
+        os.makedirs(f"data/{ctx.channel.name}", exist_ok=True)
 
         # Record which mode we're starting with
         self.is_trivial_mode = random.random() < 0.5
 
         if self.is_trivial_mode:
+            print("Starting with trivial mode (A/B)")
             self.current_chain = self.trivial_converse
         else:
+            print("Starting with story mode (B/A)")
             self.current_chain = self.story_converse
 
         # Record the model order in the user's data directory
-        with open(f"data/{session_id}/model_order.txt", "w") as f:
+        with open(f"data/{ctx.channel.name}/model_order.txt", "w") as f:
             f.write(f'{'A/B' if self.is_trivial_mode else 'B/A'}')
 
-        await ctx.reply("Experiment started!")
+        self.started = True
 
-    @commands.hybrid_command(name="second_mode")
-    async def second_mode(self, ctx: commands.Context[commands.Bot]):
+        await ctx.reply("Commençons l'aventure !\n" + self.first_message)
+
+    @commands.hybrid_command(name="switch_mode")
+    async def switch_mode(self, ctx: commands.Context[commands.Bot]):
         """Switch to the other experimental mode"""
 
-        with open(f"data/{ctx.author.name}/model_order.txt", "r") as f:
-            order = f.read()
+        with open(f"data/{ctx.channel.name}/model_order.txt", "r") as f:
+            order = f.read().strip()
 
         if order == "A/B":
+            print("Switching to story mode (A/B)")
             self.current_chain = self.story_converse
         else:
+            print("Switching to trivial mode (B/A)")
             self.current_chain = self.trivial_converse
 
-        await ctx.reply("Mode switched!")
+        await ctx.reply("Mode switched!\n" + self.first_message)
+
+    @commands.hybrid_command(name="stop")
+    async def stop(self, ctx: commands.Context[commands.Bot]):
+        """
+        Stop the adventure
+        """
+        await ctx.defer()  # Acknowledge the command to prevent timeout
+        self.started = False
+        await ctx.reply("Merci d'avoir joué !")
 
     @commands.hybrid_command(name="reset")
     async def reset(self, ctx: commands.Context[commands.Bot]) -> None:
         await ctx.defer()  # Acknowledge the command to prevent timeout
-        self.story_converse.reset()
-        self.trivial_converse.reset()
+        self.story_converse.reset(self.first_message)
+        self.trivial_converse.reset(self.first_message)
         await ctx.reply("Memory cleared !")
 
     @commands.hybrid_command(name="start")
@@ -127,17 +143,6 @@ class ChatCog(commands.Cog):
 
         # Reply with the start scene
         await ctx.reply("Commençons l'aventure !\n" + self.first_message)
-
-    @commands.hybrid_command(name="stop")
-    async def stop(self, ctx: commands.Context[commands.Bot]):
-        """
-        Start an adventure
-        """
-        await ctx.defer()  # Acknowledge the command to prevent timeout
-        self.started = False
-
-        # Reply with the start scene
-        await ctx.reply("Merci d'avoir joué !")
 
     @commands.Cog.listener("on_message")
     async def on_message(self, message: discord.Message):
