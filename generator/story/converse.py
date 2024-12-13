@@ -26,11 +26,8 @@ def get_previous_game_response(history):
     return history[-1]["content"]
 
 
-@chainable(
-    input_keys=["move_intent_location", "history", "message", "onto"],
-    output_key="info",
-)
-def get_relevant_information(move_intent_location, history, message, onto):
+@chainable(input_keys=["onto"], output_key="info")
+def get_relevant_information(onto):
     # Retrieve relevant information from the KG
     with onto:
         player = list(onto.Player.instances())[0]
@@ -112,11 +109,12 @@ class StoryConverse:
                 CHAT_SYSTEM_PROMPT,
                 output_key="system_prompt",
             ),
-            self.model.using(
-                input_key="prompt",
+            model.using(
                 output_key="game_response",
                 history_key="history",
+                input_key="message",
                 system_prompt_key="system_prompt",
+                temperature=1.0,
             ),
             extract_move_confirmation,
             ConversationMemory(
@@ -127,7 +125,6 @@ class StoryConverse:
                 llm_prefix="game",
             ),
             verbose=True,
-            debug=True,
         )
 
         self.postprocess_chain = Chain(

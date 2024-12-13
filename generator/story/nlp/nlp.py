@@ -58,28 +58,6 @@ def get_move_intent_extraction_chain(model):
     return extract_move_intent_chain
 
 
-# def extract_move_intent(model, previous_game_response: str, player_message: str, onto):
-#     extract_move_intent_chain = Chain(
-#         get_nearby_locations,
-#         INTENT_ANALYSIS_TEMPLATE,
-#         model.using(
-#             output_key="response",
-#             temperature=0.0,
-#         ),
-#         find_location,
-#         verbose=True,
-#         debug=True,
-#     )
-
-#     result = extract_move_intent_chain.call(
-#         onto=onto,
-#         previous_game_response=previous_game_response,
-#         player_message=player_message,
-#     )
-
-#     return result
-
-
 @chainable(input_keys=["onto"], output_key="current_location")
 def get_current_location(onto):
     with onto:
@@ -109,33 +87,15 @@ def get_inventory_actions_extraction_chain(model):
     return chain
 
 
-# def extract_inventory_actions(model, message: str, game_response: str, onto):
-#     chain = Chain(
-#         get_current_location,
-#         get_player,
-#         INVENTORY_ACTIONS_PARSER_TEMPLATE,
-#         model,
-#         JsonRepairParser(output_key="inventory_actions"),
-#         verbose=True,
-#         debug=True,
-#     )
-
-#     result = chain.call(
-#         onto=onto,
-#         player_message=message,
-#         game_response=game_response,
-#     )
-
-#     actions = result.get("actions", [])
-
-#     return actions
-
-
 @chainable(input_keys=["inventory_actions", "onto"], output_key=None)
 def apply_inventory_actions(inventory_actions: list, onto):
+    if not inventory_actions:
+        print("No inventory actions to apply.")
+        return
+    actions = inventory_actions.get("actions", [])
     with onto:
         player = onto.Player.instances()[0]
-        for action in inventory_actions:
+        for action in actions:
             try:
                 if action["action"] == "create":
                     item_name = action["item"]
@@ -181,10 +141,14 @@ def apply_inventory_actions(inventory_actions: list, onto):
                 elif action["action"] == "alter":
                     item = find_levenshtein_match(action["item"], onto.Item.instances())
                     if item:
-                        item.hasDescription = action["description"]
+                        description = action.get("description", "")
+                        if description:
+                            item.hasDescription = description
+                        else:
+                            print(f"No description provided for item: {action['item']}")
                     else:
                         print(f"Item not found: {action['item']}")
-            except ValueError as e:
+            except Exception as e:
                 print(f"Error applying inventory action: {e}")
 
 
@@ -206,22 +170,16 @@ def get_character_actions_extraction_chain(model):
 
     return chain
 
-    # result = chain.call(
-    #     onto=onto,
-    #     player_message=message,
-    #     game_response=game_response,
-    # )
-
-    # actions = result.get("character_actions", [])
-
-    # return actions
-
 
 @chainable(input_keys=["character_actions", "onto"], output_key=None)
 def apply_character_actions(character_actions: list, onto):
+    if not character_actions:
+        print("No character actions to apply")
+        return
+    actions = character_actions.get("actions", [])
     with onto:
         player = onto.Player.instances()[0]
-        for action in character_actions:
+        for action in actions:
             try:
                 if action["action"] == "start_following":
                     subject = find_levenshtein_match(
@@ -355,5 +313,5 @@ def apply_character_actions(character_actions: list, onto):
                             print(f"Subject not found: {action['subject']}")
                         if not _object:
                             print(f"Object not found: {action['object']}")
-            except ValueError as e:
+            except Exception as e:
                 print(f"Error applying character action: {e}")

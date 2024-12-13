@@ -35,7 +35,7 @@ There are no items in the player's inventory.
 **Unowned items in the current location**:
 {%- for item in current_location.INDIRECT_containsItem %}
 {%- if not item.INDIRECT_isOwnedBy %}
-- {{item.hasName}}: {{item.hasDescription}}
+- "{{item.hasName}}": {{item.hasDescription}}
 {%- endif %}
 {%- endfor %}
 {%- else %}
@@ -74,7 +74,8 @@ If none of these fit, output an empty list.
 ```
 
 "claim" (for the player) and "give" (to the player) are always from the player's point of view.
-In order to give an item that doesn't exist yet in the game system to the player, you need to create it first with a "create" action, before you can claim it with a "claim" action.
+**In order to give an item that doesn't exist yet in the game system to the player, you need to create it first with a "create" action, before you can claim it with a "claim" action.**
+ALWAYS USE THE SAME NAME FOR THE ITEM IN THE JSON OUTPUT AS THE ONE IN THE GAME STATE (IN QUOTES). Otherwise, the game will not be able to find the item.
 
 Output:
 """.strip()
@@ -107,7 +108,7 @@ The player is named "{{player.hasName}}" and is described as "{{player.hasDescri
     {% if character.INDIRECT_knows %}knows: {%- for known_character in character.INDIRECT_knows %} "{{known_character.hasName}}" {%- endfor %}{%- endif %}
     {% if character.INDIRECT_isEnemyWith %}is enemy with: {%- for enemy in character.INDIRECT_isEnemyWith %} "{{enemy.hasName}}" {%- endfor %}{%- endif %}
     {% if character.INDIRECT_hasFriendshipWith %}is friend with: {%- for friend in character.INDIRECT_hasFriendshipWith %} "{{friend.hasName}}" {%- endfor %}{%- endif %}
-    {% if character.INDIRECT_isRivalWith %}is rival with: {%- for rival in character.INDIRECT_isRivalWith %} "{{rival.hasName}}" {%- endfor %}{%- endif %}
+    {% if character.INDIRECT_hasRivalryWith %}is rival with: {%- for rival in character.INDIRECT_hasRivalryWith %} "{{rival.hasName}}" {%- endfor %}{%- endif %}
     {% if character.INDIRECT_loves %}is in love with: {%- for love in character.INDIRECT_loves %} "{{love.hasName}}" {%- endfor %}{%- endif %}
     {% if character.INDIRECT_hasAllegiance %}has allegiance to: {{character.INDIRECT_hasAllegiance.hasName}}{%- endif %}
 {%- endfor %}
@@ -119,7 +120,7 @@ Player message: "{{message}}"
 Game response: "{{game_response}}"
 
 **Please output a list of actions that the game system needs to perform to update the game state, in the following JSON format:**
-If none of these fit, output an empty list.
+**If none of these fit, output an empty list.**
 
 ```json
 {
