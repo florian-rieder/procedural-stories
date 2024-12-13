@@ -113,6 +113,7 @@ class StoryConverse:
                 output_key="system_prompt",
             ),
             self.model.using(
+                input_key="prompt",
                 output_key="game_response",
                 history_key="history",
                 system_prompt_key="system_prompt",
