@@ -4,7 +4,7 @@ import logging
 from tracet import Chain, Jinja2Template, ConversationMemory, chainable
 
 
-from owlready2 import get_ontology
+from owlready2 import get_ontology, sync_reasoner
 
 
 from generator.story.nlp.nlp import (
@@ -30,8 +30,7 @@ def get_previous_game_response(history):
 def get_relevant_information(onto):
     # Retrieve relevant information from the KG
     with onto:
-        player = list(onto.Player.instances())[0]
-        current_location = player.INDIRECT_isLocatedAt
+        current_location = onto.Player.instances()[0].INDIRECT_isLocatedAt
         characters_nearby = current_location.INDIRECT_containsCharacter
         locations_nearby = current_location.INDIRECT_isLinkedToLocation
         nearby_locations_names = ", ".join(
@@ -45,7 +44,7 @@ def get_relevant_information(onto):
             "locations_nearby": locations_nearby,
             "nearby_locations_names": nearby_locations_names,
             "items_nearby": items_nearby,
-            "player": player,
+            "player": onto.Player.instances()[0],
         }
 
 
@@ -65,12 +64,39 @@ def extract_move_confirmation(game_response: str, move_intent_location, onto):
         # If the LLM accepted the move, update the KG
         with onto:
             player = onto.Player.instances()[0]
+            current_location = player.INDIRECT_isLocatedAt
+
             for follower in player.INDIRECT_hasFollower:
                 print("Follower: ", follower.hasName)
+                try:
+                    current_location.containsCharacter.remove(follower)
+                except ValueError:
+                    pass
                 follower.isLocatedAt = move_intent_location
+
+            try:
+                current_location.containsCharacter.remove(player)
+            except ValueError:
+                pass
             player.isLocatedAt = move_intent_location
             print("Player move intent: ", move_intent_location.hasName)
-            print("Player position: ", player.INDIRECT_isLocatedAt.hasName)
+            print(
+                "Player position (INDIRECT): ",
+                onto.Player.instances()[0].INDIRECT_isLocatedAt.hasName,
+            )
+            print(
+                "Player position (DIRECT): ",
+                onto.Player.instances()[0].isLocatedAt.hasName,
+            )
+            sync_reasoner()
+            print(
+                "Player position (INDIRECT AFTER SYNC): ",
+                onto.Player.instances()[0].INDIRECT_isLocatedAt.hasName,
+            )
+            print(
+                "Player position (DIRECT AFTER SYNC): ",
+                onto.Player.instances()[0].isLocatedAt.hasName,
+            )
 
     # Overwrite the response with the new one
     return cleaned_game_response
@@ -175,6 +201,14 @@ class StoryConverse:
 
         # Update our ontology with the new information
         self.onto = result["onto"]
+
+        print(
+            "Player position: ",
+            self.onto.Player.instances()[0].INDIRECT_isLocatedAt.hasName,
+        )
+
+        with self.onto:
+            sync_reasoner()
 
     def reset(self, first_message: str):
         self.history = []

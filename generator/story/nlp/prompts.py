@@ -78,6 +78,7 @@ If none of these fit, output an empty list as the value for the "actions" key.
 "claim" (for the player) and "give" (to the player) are always from the player's point of view.
 **In order to give an item that doesn't exist yet in the game system to the player, you need to create it first with a "create" action, before you can claim it with a "claim" action.**
 ALWAYS USE THE SAME NAME FOR THE ITEM IN THE JSON OUTPUT AS THE ONE IN THE GAME STATE (IN QUOTES). Otherwise, the game will not be able to find the item.
+WHEN ALTERING A DESCRIPTION, COPY THE ORIGINAL DESCRIPTION MOSTLY INTACT INTO YOUR OUTPUT, AND ONLY ADD OR CHANGE THINGS THAT ARE IMPORTANT. DO NOT DELETE ANYTHING. THE SYSTEM WILL REPLACE THE ORIGINAL DESCRIPTION WITH YOUR OUTPUT.
 
 Output:
 """.strip()
@@ -135,10 +136,13 @@ Game response: "{{game_response}}"
         {"action": "now_knows", "subject": "John Brown", "object": "Jane Doe"},
         {"action": "start_following", "subject": "John Brown", "object": "Jane Doe"},
         {"action": "stop_following", "subject": "John Brown", "object": "Jane Doe"},
-        {"action": "change_health", "subject": "John Brown", "description": "John Brown is in dire condition. He might die soon."},
-        {"action": "change_description", "subject": "John Brown", "description": "... (**keep most of the original description, only add or change things that are important**) and is now wearing a red hat."}
+        {"action": "change_description", "subject": "John Brown", "description": "<copy the original description here> He is now badly injured. He may die soon without help."}
     ]
 }
+
+**WHEN ALTERING A DESCRIPTION, COPY THE ORIGINAL DESCRIPTION MOSTLY INTACT INTO YOUR OUTPUT, AND ONLY ADD OR CHANGE THINGS THAT ARE IMPORTANT. DO NOT DELETE ANYTHING. THE SYSTEM WILL REPLACE THE ORIGINAL DESCRIPTION WITH YOUR OUTPUT.**
+**DO NOT INCLUDE LOCATION OR INVENTORY INFORMATION, OR OTHER TEMPORARY INFORMATION. ONLY INCLUDE INFORMATION THAT IS IMPORTANT ABOUT THE CHARACTER AND SHOULD BE REMEMBERED. MOST INFORMATION SHOULDN'T BE REMEMBERED.**
+
 ```
 
 Output:
