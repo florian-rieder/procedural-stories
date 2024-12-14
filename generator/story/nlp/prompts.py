@@ -1,11 +1,13 @@
 INTENT_ANALYSIS_TEMPLATE = """
-Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
-Nearby locations: {{nearby_locations_names}}
+Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Questions about location or current position are NOT move intents.
 
-Previous game response: "{{previous_game_response}}"
+Nearby locations where it is possible to move: {{nearby_locations_names}}
+
+Previous game response (for context only): "{{previous_game_response}}"
 Player message: "{{message}}"
 
-**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+**Please output only the *exact location name* or 'none' with **ABSOLUTELY no additional explanation, notes or details before or after the output**. If it doesn't fit, output ONLY 'none'**
 Output:
 """.strip()
 
@@ -58,7 +60,7 @@ Player message: "{{message}}"
 Game response: "{{game_response}}"
 
 **Please output a list of actions that the game system needs to perform to update the game state, in the following JSON format:**
-If none of these fit, output an empty list.
+If none of these fit, output an empty list as the value for the "actions" key.
 
 ```json
 {

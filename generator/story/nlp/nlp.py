@@ -51,8 +51,6 @@ def get_move_intent_extraction_chain(model):
             temperature=0.0,
         ),
         find_location,
-        verbose=True,
-        debug=True,
     )
 
     return extract_move_intent_chain
@@ -80,8 +78,8 @@ def get_inventory_actions_extraction_chain(model):
         INVENTORY_ACTIONS_PARSER_TEMPLATE,
         model,
         JsonRepairParser(output_key="inventory_actions"),
-        verbose=True,
-        debug=True,
+        # verbose=True,
+        # debug=True,
     )
 
     return chain
@@ -89,6 +87,7 @@ def get_inventory_actions_extraction_chain(model):
 
 @chainable(input_keys=["inventory_actions", "onto"], output_key=None)
 def apply_inventory_actions(inventory_actions: list, onto):
+    print("Inventory actions: ", inventory_actions)
     if not inventory_actions:
         print("No inventory actions to apply.")
         return
@@ -164,8 +163,8 @@ def get_character_actions_extraction_chain(model):
         JsonRepairParser(
             input_key="character_actions_response", output_key="character_actions"
         ),
-        verbose=True,
-        debug=True,
+        # verbose=True,
+        # debug=True,
     )
 
     return chain
@@ -173,6 +172,7 @@ def get_character_actions_extraction_chain(model):
 
 @chainable(input_keys=["character_actions", "onto"], output_key=None)
 def apply_character_actions(character_actions: list, onto):
+    print("Character actions: ", character_actions)
     if not character_actions:
         print("No character actions to apply")
         return

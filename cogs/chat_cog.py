@@ -52,9 +52,7 @@ class ChatCog(commands.Cog):
 
     # Define a command to choose between trivial and story mode
     @commands.hybrid_command(name="set_mode")
-    async def set_mode(
-        self, ctx: commands.Context[commands.Bot], mode: str, session_id: str
-    ):
+    async def set_mode(self, ctx: commands.Context[commands.Bot], mode: str):
         await ctx.defer()  # Acknowledge the command to prevent timeout
         try:
             if mode == "trivial":
@@ -65,7 +63,7 @@ class ChatCog(commands.Cog):
             await ctx.reply(f"Error setting mode: {e}")
             return
 
-        await ctx.reply(f"Set mode to {mode} with session id {session_id}!")
+        await ctx.reply(f"Set mode to {mode}!")
 
     # Variant for double blind experiment: the user and experimenter don't know which mode they are in. We need to choose the model randomly and add another command to switch to the other mode, while recording the actual mode used.
     @commands.hybrid_command(name="start_experiment")
@@ -151,6 +149,10 @@ class ChatCog(commands.Cog):
 
         # Basic debug prints to see if the event is firing
         # print('Event triggered! Message content:', message.content)
+
+        # Don't respond at all on certain channels
+        if message.channel.name in ["general", "général"]:
+            return
 
         # Avoid the bot responding to its own messages
         if message.author == self.bot.user:

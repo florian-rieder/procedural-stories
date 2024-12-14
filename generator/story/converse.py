@@ -34,7 +34,9 @@ def get_relevant_information(onto):
         current_location = player.INDIRECT_isLocatedAt
         characters_nearby = current_location.INDIRECT_containsCharacter
         locations_nearby = current_location.INDIRECT_isLinkedToLocation
-        nearby_locations_names = [location.hasName for location in locations_nearby]
+        nearby_locations_names = ", ".join(
+            [location.hasName for location in locations_nearby]
+        )
         items_nearby = current_location.INDIRECT_containsItem
 
         return {
@@ -64,8 +66,11 @@ def extract_move_confirmation(game_response: str, move_intent_location, onto):
         with onto:
             player = onto.Player.instances()[0]
             for follower in player.INDIRECT_hasFollower:
+                print("Follower: ", follower.hasName)
                 follower.isLocatedAt = move_intent_location
             player.isLocatedAt = move_intent_location
+            print("Player move intent: ", move_intent_location.hasName)
+            print("Player position: ", player.INDIRECT_isLocatedAt.hasName)
 
     # Overwrite the response with the new one
     return cleaned_game_response
@@ -123,6 +128,7 @@ class StoryConverse:
                 output_key="history",
                 human_prefix="player",
                 llm_prefix="game",
+                max_messages=16,
             ),
             verbose=True,
         )
@@ -133,13 +139,12 @@ class StoryConverse:
             self.character_actions_extraction_chain,
             apply_character_actions,
             verbose=True,
-            debug=True,
         )
 
         logger.info("StoryConverse initialized.")
 
     async def converse(self, message: str):
-        response = await self.conversation_chain.acall(
+        result = await self.conversation_chain.acall(
             setting=self.setting,
             language=self.language,
             message=message,
@@ -147,10 +152,13 @@ class StoryConverse:
             onto=self.onto,
         )
 
-        # Update the message history
-        self.history = response["history"]
+        # Update our ontology with the new information
+        self.onto = result["onto"]
 
-        return response["cleaned_game_response"]
+        # Update the message history
+        self.history = result["history"]
+
+        return result["cleaned_game_response"]
 
     async def postprocess_last_turn(self):
         # Post-process the response to update the KG
@@ -159,11 +167,14 @@ class StoryConverse:
         # print(self.history.messages)
         player_message, game_response = self.history[-2:]
 
-        await self.postprocess_chain.acall(
+        result = await self.postprocess_chain.acall(
             message=player_message["content"],
             game_response=game_response["content"],
             onto=self.onto,
         )
+
+        # Update our ontology with the new information
+        self.onto = result["onto"]
 
     def reset(self, first_message: str):
         self.history = []

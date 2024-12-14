@@ -38,6 +38,7 @@ class TrivialConverse:
                 output_key="history",
                 human_prefix="player",
                 llm_prefix="game",
+                max_messages=16,
             ),
             verbose=True,
         )
@@ -54,6 +55,12 @@ class TrivialConverse:
 
         # Update the message history
         self.history = result["history"]
+
+        print("Player move intent: ", result.get("move_intent_location"))
+        print(
+            "Player's final position: ",
+            result.get("onto").Player.instances()[0].INDIRECT_isLocatedAt.hasName,
+        )
 
         return result["game_response"]
 

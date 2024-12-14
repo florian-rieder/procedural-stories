@@ -19,14 +19,15 @@ def decode_entity_name(encoded_name: str) -> str:
     return unquote(encoded_name)
 
 
-def find_levenshtein_match(string: str, entity_list: list, threshold: int = 5):
+def find_levenshtein_match(string: str, entity_list: list, threshold: int = 8):
     """Find a match amongst a list of entities from the ontology, in case the LLM made slight typos !"""
     minimum = threshold
     closest_entity = None
     for entity in entity_list:
         dist = distance(string, entity.hasName)
+        # We always want to return the best match, with the lowest distance
         if dist < minimum:
             minimum = dist
             closest_entity = entity
-    #print(f'{string} -> {closest_entity.hasName}')
+    # print(f'{string} -> {closest_entity.hasName}')
     return closest_entity
