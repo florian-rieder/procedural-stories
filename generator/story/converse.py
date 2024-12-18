@@ -39,6 +39,7 @@ logger = logging.getLogger(__name__)
 # Here we use a global variable to store the chat message history.
 # This will make it easier to inspect it to see the underlying results.
 store = {}
+max_messages = 16
 
 
 def get_by_session_id(session_id: str) -> BaseChatMessageHistory:
@@ -56,6 +57,8 @@ class InMemoryHistory(BaseChatMessageHistory, BaseModel):
     def add_messages(self, messages: List[BaseMessage]) -> None:
         """Add a list of messages to the store"""
         self.messages.extend(messages)
+        if len(self.messages) > max_messages:
+            self.messages = self.messages[-max_messages:]
 
     def clear(self) -> None:
         self.messages = []
@@ -87,7 +90,7 @@ class StoryConverse:
         # Add the first messages to the history
         self.history.add_messages([("game", first_message)])
 
-        logger.info(f"StoryConverse initialized.")
+        logger.info("StoryConverse initialized.")
 
     async def converse(self, message: str):
         # 1. Extract move intent
@@ -148,12 +151,22 @@ class StoryConverse:
             # Find if the LLM accepted the move, and filter out the <CONFIRM_MOVE> token
             if "<CONFIRM_MOVE>" in text_response:
                 print("Move confirmed by the LLM")
-                # text_response = text_response.replace('<CONFIRM_MOVE>', '').strip()
+                text_response = text_response.replace("<CONFIRM_MOVE>", "").strip()
 
                 # If the LLM accepted the move, update the KG
                 with self.onto:
+                    current_location = player.INDIRECT_isLocatedAt
                     for follower in player.INDIRECT_hasFollower:
+                        print("Follower: ", follower.hasName)
+                        try:
+                            current_location.containsCharacter.remove(follower)
+                        except ValueError:
+                            pass
                         follower.isLocatedAt = move_intent_location
+                    try:
+                        current_location.containsCharacter.remove(player)
+                    except ValueError:
+                        pass
                     player.isLocatedAt = move_intent_location
 
         self.history.add_messages([("human", message), ("game", text_response)])
@@ -165,14 +178,34 @@ class StoryConverse:
         # This allows the LLM to make changes to the world
         # Doing this after the reply ensures we take advantage of the time the player will take to respond
         # print(self.history.messages)
-        player_message, game_response = self.history.messages[-2:]
-        inventory_actions = extract_inventory_actions(
-            self.predictable_model, player_message[1], game_response[1], self.onto
-        )
-        print(f"INVENTORY ACTIONS: {inventory_actions}")
-        apply_inventory_actions(inventory_actions, self.onto)
-        character_actions = extract_character_actions(
-            self.predictable_model, player_message[1], game_response[1], self.onto
-        )
-        print(f"CHARACTER ACTIONS: {character_actions}")
-        apply_character_actions(character_actions, self.onto)
+        player_message, game_response = store[self.session_id].messages[-2:]
+        print(f"PLAYER MESSAGE: {player_message.content}")
+        print(f"GAME RESPONSE: {game_response.content}")
+
+        try:
+            inventory_actions = extract_inventory_actions(
+                self.predictable_model,
+                player_message.content,
+                game_response.content,
+                self.onto,
+            )
+            print(f"INVENTORY ACTIONS: {inventory_actions}")
+            apply_inventory_actions(inventory_actions, self.onto)
+        except Exception as e:
+            print(f"Error extracting inventory actions: {e}")
+
+        try:
+            character_actions = extract_character_actions(
+                self.predictable_model,
+                player_message.content,
+                game_response.content,
+                self.onto,
+            )
+            print(f"CHARACTER ACTIONS: {character_actions}")
+            apply_character_actions(character_actions, self.onto)
+        except Exception as e:
+            print(f"Error extracting character actions: {e}")
+
+    def reset(self):
+        store[self.session_id].clear()
+        store[self.session_id].add_messages([("game", self.first_message)])

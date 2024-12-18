@@ -29,6 +29,9 @@ def get_by_session_id(session_id: str) -> BaseChatMessageHistory:
     return store[session_id]
 
 
+max_messages = 16
+
+
 class InMemoryHistory(BaseChatMessageHistory, BaseModel):
     """In memory implementation of chat message history."""
 
@@ -37,12 +40,14 @@ class InMemoryHistory(BaseChatMessageHistory, BaseModel):
     def add_messages(self, messages: List[BaseMessage]) -> None:
         """Add a list of messages to the store"""
         self.messages.extend(messages)
+        if len(self.messages) > max_messages:
+            self.messages = self.messages[-max_messages:]
 
     def clear(self) -> None:
         self.messages = []
 
 
-class TrivialConverse():
+class TrivialConverse:
     def __init__(self, model, first_message, setting, language, session_id):
         self.model = model
         self.first_message = first_message
@@ -54,12 +59,11 @@ class TrivialConverse():
         chat_prompt = ChatPromptTemplate.from_messages(
             [
                 ("system", CHAT_SYSTEM_PROMPT),
-                ('ai', self.first_message),
+                ("ai", self.first_message),
                 MessagesPlaceholder(variable_name="history"),
                 ("human", "{{message}}"),
             ],
-            template_format='jinja2',
-
+            template_format="jinja2",
         )
 
         chain = chat_prompt | self.model
@@ -69,11 +73,10 @@ class TrivialConverse():
             get_by_session_id,
             input_messages_key="message",
             history_messages_key="history",
-            verbose=True
+            verbose=True,
         )
 
-        logger.info(f'TrivialConverse initialized.')
-
+        logger.info(f"TrivialConverse initialized.")
 
     async def converse(self, message: str):
         result = await self.chain.ainvoke(
@@ -82,11 +85,15 @@ class TrivialConverse():
                 "language": self.language,
                 "message": message,
             },
-            config={"configurable": {"session_id": self.session_id}}
+            config={"configurable": {"session_id": self.session_id}},
         )
 
         return result.content
-    
+
     async def postprocess_last_turn(self):
         # Nothing to post-process
         pass
+
+    def reset(self):
+        store[self.session_id] = InMemoryHistory()
+        store[self.session_id].add_messages([("game", self.first_message)])

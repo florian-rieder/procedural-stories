@@ -1,0 +1,969 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.florianrieder.com/semantic/story.owl"
+         xmlns="http://www.florianrieder.com/semantic/story.owl#">
+
+<owl:Ontology rdf:about="http://www.florianrieder.com/semantic/story.owl"/>
+
+<owl:ObjectProperty rdf:about="#characterIsLocatedAt">
+  <rdfs:subPropertyOf rdf:resource="#isLocatedAt"/>
+  <owl:inverseOf rdf:resource="#containsCharacter"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">personnage est situé à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLocatedAt">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Location"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsCharacter">
+  <rdfs:subPropertyOf rdf:resource="#containsEntity"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">contient le personnage</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsEntity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#isLocatedAt"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">contient l'entité</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsItem">
+  <rdfs:subPropertyOf rdf:resource="#containsEntity"/>
+  <owl:inverseOf rdf:resource="#itemIsLocatedAt"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Item"/>
+  <rdfs:label xml:lang="fr">contient l'objet</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#itemIsLocatedAt">
+  <rdfs:subPropertyOf rdf:resource="#isLocatedAt"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Item"/>
+  <rdfs:range rdf:resource="#Location"/>
+  <rdfs:label xml:lang="fr">objet est situé à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#follows">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Player"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any character following the player will change location with the player when the player moves.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#happensAt">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#hasEvent"/>
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Location"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasEvent">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Event"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAllegiance">
+  <rdfs:subPropertyOf rdf:resource="#knows"/>
+  <owl:inverseOf rdf:resource="#isRulerOf"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">a une allégeance à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#knows">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">connaît</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isRulerOf">
+  <rdfs:subPropertyOf rdf:resource="#hasRelationship"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est le souverain de</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFamilyTieWith">
+  <rdfs:subPropertyOf rdf:resource="#knows"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">a un lien familial avec</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFollower">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Player"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any character following the player will change location with the player when the player moves.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasFriendshipWith">
+  <rdfs:subPropertyOf rdf:resource="#knows"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est ami avec</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasGoal">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Goal"/>
+  <rdfs:label xml:lang="fr">a comme objectif</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRelationship">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRivalryWith">
+  <rdfs:subPropertyOf rdf:resource="#knows"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est rival de</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTrigger">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:label xml:lang="fr">est déclenché par</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasVisited">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#wasVisitedBy"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Location"/>
+  <rdfs:label xml:lang="fr">a visité</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#wasVisitedBy">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">a été visité par</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#involvesCharacter">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">implique le personnage</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isEnemyWith">
+  <rdfs:subPropertyOf rdf:resource="#knows"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est ennemi de</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isLinkedToLocation">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdfs:domain rdf:resource="#Location"/>
+  <rdfs:range rdf:resource="#Location"/>
+  <rdfs:label xml:lang="fr">est connecté à</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isOwnedBy">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#ownsItem"/>
+  <rdfs:domain rdf:resource="#Item"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">est possédé par</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ownsItem">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Item"/>
+  <rdfs:label xml:lang="fr">possède l'objet</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isRequiredBy">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <owl:inverseOf rdf:resource="#requiresItem"/>
+  <rdfs:domain rdf:resource="#Item"/>
+  <rdfs:range rdf:resource="#Goal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requiresItem">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Goal"/>
+  <rdfs:range rdf:resource="#Item"/>
+  <rdfs:label xml:lang="fr">requiert l'objet</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#loves">
+  <rdfs:subPropertyOf rdf:resource="#knows"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">aime</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasCondition">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The description of a condition for an event to be triggered</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasConsequence">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The description of the consequence(s) of an event</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDescription">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A text description of something, used to guide generation during play.</rdfs:comment>
+  <rdfs:label xml:lang="fr">est décrit comme</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasEmotionalState">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasHealth">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasImportance">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The narrative importance of an element of the story</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasLongDescription">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A longer description of something, used when focusing on an element</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasName">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label xml:lang="fr">est nommé</rdfs:label>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPersonalityTrait">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasQuantity">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Item"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRole">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Character">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">Personnage</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Location">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="fr">Lieu</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="fr">Entité</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Item">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <rdfs:label xml:lang="fr">Objet</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Player">
+  <rdfs:subClassOf rdf:resource="#Character"/>
+  <rdfs:label xml:lang="fr">Joueur</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="fr">Evènement</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Goal">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:label xml:lang="fr">Objectif</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#CurrentLocation">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Location"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#containsCharacter"/>
+          <owl:someValuesFrom rdf:resource="#Player"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Location"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The location containing the player</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#NearbyCharacter">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:complementOf rdf:resource="#Player"/>
+        </owl:Class>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#characterIsLocatedAt"/>
+          <owl:someValuesFrom rdf:resource="#CurrentLocation"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NearbyItem">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#itemIsLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#CurrentLocation"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Item"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NearbyLocation">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:complementOf rdf:resource="#CurrentLocation"/>
+        </owl:Class>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#isLinkedToLocation"/>
+          <owl:someValuesFrom rdf:resource="#CurrentLocation"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Location"/>
+</owl:Class>
+
+<owl:Class rdf:about="#VisitedLocation">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Location"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#wasVisitedBy"/>
+          <owl:someValuesFrom rdf:resource="#Player"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Location"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#royaume%20de%20la%20lumi%C3%A8re">
+  <rdf:type rdf:resource="#Location"/>
+  <isLinkedToLocation rdf:resource="#for%C3%AAt%20t%C3%A9n%C3%A9breuse"/>
+  <isLinkedToLocation rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Royaume de la Lumière</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Royaume de la Lumière</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres, caractérisé par ses remparts imposants, ses tours élégantes et ses rues pavées. L'atmosphère y est animée, avec des marchés colorés et des tavernes bruyantes. C'est ici que vous trouverez la Pierre de Lumière, l'un des trois artefacts anciens nécessaires pour vaincre le seigneur des Ténèbres.</hasDescription>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le Royaume de la Lumière est un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Les remparts imposants, les tours élégantes et les rues pavées caractérisent ce lieu animé, avec des marchés colorés et des tavernes bruyantes. La Pierre de Lumière, un artefact lumineux qui donne au porteur une grande puissance magique, se trouve ici. Les aventuriers peuvent explorer les différents quartiers, rencontrer des personnages intrigants et affronter des défis pour atteindre leur objectif.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#for%C3%AAt%20t%C3%A9n%C3%A9breuse">
+  <rdf:type rdf:resource="#Location"/>
+  <isLinkedToLocation rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forêt Ténébreuse</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forêt Ténébreuse</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un domaine mystérieux et périlleux habité par les créatures de la nuit, tels que les loups-garous, les vampires et les gobelins. La forêt est dense et sombre, avec des arbres qui semblent vous avaler dans leur ombre. Les rumeurs disent que le Sceptre de la Nuit se cache quelque part dans cette forêt, mais il faudra être prudent pour y survivre.</hasDescription>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Forêt Ténébreuse est un domaine mystérieux et périlleux, habité par les créatures de la nuit. Les arbres sont denses et sombres, leurs ombres semblant vous avaler. Le vent murmure des secrets inquiétants, et les rumeurs parlent du Sceptre de la Nuit caché quelque part dans cette forêt. Les aventuriers qui osent s'y aventurer doivent être prudents, car les dangers sont omniprésents.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#montagnes%20de%20la%20pierre">
+  <rdf:type rdf:resource="#Location"/>
+  <isLinkedToLocation rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Montagnes de la Pierre</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Montagnes de la Pierre</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un massif montagneux rocailleux où les nains et les gobelins s'affrontent pour le contrôle des riches filons. Les mines sont périlleuses, avec des tunnels étroits et des puits sans fond. Les légendes parlent d'un trésor caché quelque part dans ces montagnes, mais les rumeurs de guerres entre les nains et les gobelins sont alarmantes.</hasDescription>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Les Montagnes de la Pierre sont un massif montagneux rocailleux où les nains et les gobelins s'affrontent pour le contrôle des riches filons. Les mines sont périlleuses, avec des tunnels étroits et des puits sans fond. Les légendes parlent d'un trésor caché quelque part dans ces montagnes, mais les rumeurs de guerres entre les nains et les gobelins sont alarmantes. Les Montagnes de la Pierre sont également un lieu de repos pour les créatures des Ténèbres, qui y trouvent un abri dans les ténèbres et les ombres.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cit%C3%A9%20des%20eaux">
+  <rdf:type rdf:resource="#Location"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cité des Eaux</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cité des Eaux</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un port cosmopolite où les marchands et les pirates se côtoient, avec des docks animés et des quais encombrés de marchandises. La ville est multiculturelle, avec des personnages venus de tous les horizons. C'est ici que vous pourriez trouver des informations sur le Livre des Eaux, le dernier artefact nécessaire pour vaincre le seigneur des Ténèbres.</hasDescription>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Cité des Eaux est un port cosmopolite animé où les marchands et les pirates se côtoient. Les docks sont encombrés de marchandises et les quais vibrent de l'activité des marins et des commerçants. La ville est un carrefour de cultures, attirant des personnages venus de tous les horizons. C'est ici que les aventuriers pourraient trouver des informations cruciales sur le Livre des Eaux et peut-être même acquérir des objets précieux pour leur quête.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres">
+  <rdf:type rdf:resource="#Location"/>
+  <isLinkedToLocation rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <isLinkedToLocation rdf:resource="#for%C3%AAt%20t%C3%A9n%C3%A9breuse"/>
+  <isLinkedToLocation rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <isLinkedToLocation rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Château du Seigneur des Ténèbres</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Château du Seigneur des Ténèbres</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un château imposant et sinistre, caché dans les profondeurs des ténèbres, où réside le seigneur des Ténèbres. Les murailles sont gardées par des créatures terrifiantes et des pièges mortels. C'est le dernier lieu que vous visiterez avant la bataille finale.</hasDescription>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le Château du Seigneur des Ténèbres est une forteresse imposante et sinistre, cachée dans les profondeurs des ténèbres. Les murailles sont gardées par des créatures terrifiantes et des pièges mortels. Le château est divisé en plusieurs parties, notamment les remparts, les tours de garde et les donjons. Chaque partie du château a son propre rôle dans l'histoire, que ce soit la défense, la sécurité ou la torture. Le château est le dernier lieu que vous visiterez avant la bataille finale contre le Seigneur des Ténèbres.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#village%20des%20nains">
+  <rdf:type rdf:resource="#Location"/>
+  <isLinkedToLocation rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Village des Nains</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Village des Nains</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un village isolé au cœur des Montagnes de la Pierre, où vivent les nains. Les maisons sont taillées dans la roche et les rues sont étroites. Les nains peuvent vous offrir de l'aide et des conseils, mais ils sont également très méfiants des étrangers.</hasDescription>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le Village des Nains est un petit village isolé au cœur des Montagnes de la Pierre, où vivent les nains. Les maisons sont taillées dans la roche et les rues sont étroites, ce qui donne au village un aspect mystérieux et peu accueillant pour les étrangers. Cependant, les nains qui y vivent sont fiers de leur héritage et de leur culture, et ils pourraient être disposés à offrir de l'aide et des conseils à ceux qui parviennent à gagner leur confiance.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#taverne%20de%20la%20cit%C3%A9%20des%20eaux">
+  <rdf:type rdf:resource="#Location"/>
+  <isLinkedToLocation rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taverne de la Cité des Eaux</rdfs:label>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taverne de la Cité des Eaux</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une taverne bruyante et animée dans le cœur de la Cité des Eaux, où les pirates et les marchands se réunissent pour boire et échanger des informations. C'est un endroit idéal pour recueillir des rumeurs et des indices sur les artefacts.</hasDescription>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Taverne de la Cité des Eaux est un endroit bruyant et animé situé au cœur de la ville, où les pirates et les marchands se réunissent pour boire et échanger des informations. Les murs sont ornés de trophées de chasse et de navigation, tandis que les tables sont remplies de gens de toutes origines, discutant de leurs récits de voyage et de leurs découvertes. C'est ici que l'on peut recueillir des rumeurs et des indices précieux sur les artefacts, échanger des marchandises rares ou simplement écouter les histoires des marins et des aventuriers.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#La rencontre avec Lady Lirien">
+  <rdf:type rdf:resource="#Event"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La rencontre avec Lady Lirien</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La rencontre avec Lady Lirien</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le joueur rencontre Lady Lirien, qui lui explique la situation actuelle et lui donne des conseils pour commencer sa quête.</hasDescription>
+  <hasCondition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arriver au Royaume de la Lumière et parler avec Lady Lirien.</hasCondition>
+  <hasConsequence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le joueur reçoit des informations sur les artefacts et les régions à explorer.</hasConsequence>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#L'attaque des gobelins">
+  <rdf:type rdf:resource="#Event"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L'attaque des gobelins</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L'attaque des gobelins</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Les gobelins de Gorvoth attaquent le Village des Nains, et le joueur doit les repousser pour sauver les nains.</hasDescription>
+  <hasCondition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arriver au Village des Nains pendant l'attaque.</hasCondition>
+  <hasConsequence rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le joueur gagne la gratitude des nains et obtient des informations sur les Montagnes de la Pierre.</hasConsequence>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#seigneur%20arin">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres"/>
+  <isEnemyWith rdf:resource="#eryndor%20thorne"/>
+  <hasRivalryWith rdf:resource="#lady%20lirien"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seigneur Arin</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seigneur Arin</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le seigneur des Ténèbres, un puissant sorcier qui cherche à engloutir le monde dans les ténèbres. Il est craint par tous et possède des pouvoirs dark magiques impressionnants.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">main character</hasImportance>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le seigneur des Ténèbres, un puissant sorcier qui cherche à engloutir le monde dans les ténèbres. Il est craint par tous et possède des pouvoirs dark magiques impressionnants. Son passé est marqué par une tragédie : il a perdu sa famille et son royaume à cause de la lumière qui a détruit tout ce qu'il aimait. Depuis, il cherche à se venger en plongeant le monde dans les ténèbres. Il est actuellement en train de rassembler ses forces pour lancer une attaque contre le Royaume de la Lumière.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lady%20lirien">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <hasFriendshipWith rdf:resource="#eryndor%20thorne"/>
+  <isEnemyWith rdf:resource="#seigneur%20arin"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lady Lirien</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lady Lirien</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une mage lumineuse, experte en magie blanche, qui guide et aide les aventuriers dans leur quête. Elle est sagesse et compassion incarnées.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">main character</hasImportance>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lady Lirien est une mage lumineuse, experte en magie blanche, qui guide et aide les aventuriers dans leur quête. Elle est sagesse et compassion incarnées. Elle a vécu une enfance difficile, ayant perdu ses parents lors d'une attaque du Seigneur Arin, ce qui l'a poussée à se consacrer à la magie blanche pour protéger les innocents. Actuellement, elle se trouve au Royaume de la Lumière, où elle aide les aventuriers à préparer leur quête pour récupérer les trois artefacts anciens et vaincre les forces des ténèbres. Son objectif principal est de restaurer l'équilibre dans le monde et de mettre fin aux actions destructrices du Seigneur Arin.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gorvoth">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <isEnemyWith rdf:resource="#eryndor%20thorne"/>
+  <hasRivalryWith rdf:resource="#seigneur%20arin"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gorvoth</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gorvoth</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un gobelin rusé et cruel, qui cherche à prendre le contrôle des Montagnes de la Pierre pour son propre peuple. Il est rusé et possède une armée de gobelins à ses ordres.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">main character</hasImportance>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gorvoth est un gobelin rusé et cruel, qui cherche à prendre le contrôle des Montagnes de la Pierre pour son propre peuple. Il est rusé et possède une armée de gobelins à ses ordres. Son histoire est marquée par une quête de puissance et de reconnaissance, ayant grandi dans l'ombre de son père, un ancien chef de guerre gobelin. Il a été éduqué dans l'art de la stratégie et de la magie noire, ce qui lui a permis de gravir les échelons du pouvoir au sein de son peuple. Cependant, son ambition démesurée et sa soif de pouvoir l'ont conduit à se dresser contre les autres peuples de la région, avec pour objectif ultime de dominer les Montagnes de la Pierre et d'étendre son influence sur le monde entier.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#capitaine%20ryker">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <knows rdf:resource="#eryndor%20thorne"/>
+  <isEnemyWith rdf:resource="#seigneur%20arin"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capitaine Ryker</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capitaine Ryker</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un pirate célèbre et charismatique, qui commande un navire dans la Cité des Eaux. Il est prêt à aider les aventuriers si cela sert ses intérêts.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">main character</hasImportance>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capitaine Ryker est un pirate célèbre et charismatique, qui commande un navire dans la Cité des Eaux. Il est prêt à aider les aventuriers si cela sert ses intérêts. Son passé est marqué par une quête de vengeance contre Seigneur Arin, qui a détruit son village natal et tua sa famille il y a des années. Depuis, il recherche les moyens de se renforcer et de se venger, tout en maintenant une certaine réputation et un réseau d'alliances qui lui permettent de naviguer dans les eaux troubles du monde. Il est diplômé en navigation, en stratégie et en négociation, ce qui lui permet de maintenir son influence dans la Cité des Eaux.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#capitaine%2520ryker">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pierre de Lumière</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pierre de Lumière</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un artefact lumineux qui donne au porteur une grande puissance magique.</hasDescription>
+  <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">major</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#capitaine%252520ryker">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#for%C3%AAt%20t%C3%A9n%C3%A9breuse"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sceptre de la Nuit</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sceptre de la Nuit</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un artefact sombre qui permet au porteur de contrôler les créatures des Ténèbres.</hasDescription>
+  <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">major</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#capitaine%25252520ryker">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Livre des Eaux</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Livre des Eaux</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un artefact ancient qui contient des secrets sur la magie de l'eau et la navigation.</hasDescription>
+  <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">major</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#eryndor%20thorne">
+  <rdf:type rdf:resource="#Player"/>
+  <characterIsLocatedAt rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <hasGoal rdf:resource="#player_goal"/>
+  <ownsItem rdf:resource="#poignard%20de%20chasseur"/>
+  <ownsItem rdf:resource="#potion%20de%20soin"/>
+  <ownsItem rdf:resource="#carte%20du%20royaume"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eryndor Thorne</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eryndor Thorne</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Il est diplômé en magie et en stratégie militaire.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Player</hasImportance>
+  <hasLongDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Il est diplômé en magie et en stratégie militaire. Son objectif principal est de vaincre le Seigneur Arin et mettre fin à son règne de terreur. Il est motivé par un sens du devoir envers sa famille et son royaume, ainsi que par le désir de protéger les innocents.</hasLongDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#player_goal">
+  <rdf:type rdf:resource="#Goal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Player goal</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Récupérer les trois artefacts anciens (Pierre de Lumière, Sceptre de la Nuit et Livre des Eaux) pour vaincre le seigneur des Ténèbres et restaurer l'équilibre dans le monde.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ma%C3%AEtre%20armand">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maître Armand</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maître Armand</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un vieux mage qui enseigne la magie blanche aux élèves du royaume. Il peut fournir des informations sur la Pierre de Lumière et les dangers qui la protègent.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Informateur</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#guillaume%20le%20forgeron">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guillaume le Forgeron</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guillaume le Forgeron</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un forgeron réputé pour ses armes et armures de haute qualité. Il peut proposer des échanges ou des ventes d'objets utiles aux aventuriers.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Commerçant</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bougie%20enchant%C3%A9e">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bougie enchantée</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bougie enchantée</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une bougie qui émet une lumière douce et apaisante, capable de repousser les créatures des ténèbres. Elle peut être utile pour les aventuriers qui doivent explorer des lieux sombres.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#potion%20de%20soin">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potion de soin</rdfs:label>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potion de soin</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une potion qui restaure la santé du joueur, utile en cas d'urgence ou de blessure.</hasDescription>
+  <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasQuantity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#carte%20du%20royaume">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#royaume%20de%20la%20lumi%C3%A8re"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte du royaume</rdfs:label>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte du royaume</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une carte détaillée du royaume, permettant au joueur de naviguer et de localiser les différents lieux et personnages.</hasDescription>
+  <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#elara%20la%20chasseuse">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#for%C3%AAt%20t%C3%A9n%C3%A9breuse"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Elara la Chasseuse</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Elara la Chasseuse</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Elara est une chasseuse expérimentée qui vit à la lisière de la Forêt Ténébreuse. Elle possède une connaissance approfondie de la forêt et de ses dangers, et est prête à partager ses connaissances avec les aventuriers qui lui prouvent leur valeur.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guide</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#thrain%20le%20corbeau">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#for%C3%AAt%20t%C3%A9n%C3%A9breuse"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thrain le Corbeau</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thrain le Corbeau</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thrain est un mystérieux corbeau qui semblerait posséder une intelligence exceptionnelle. Il peut échanger des informations ou des objets de valeur avec les aventuriers, mais à des conditions qui leur seront imposées.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marchand</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#graine%20de%20lumi%C3%A8re">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#for%C3%AAt%20t%C3%A9n%C3%A9breuse"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Graine de lumière</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Graine de lumière</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une graine rare qui, une fois plantée, peut crescere en une plante émettant une lumière faible mais suffisante pour éloigner les créatures des ténèbres.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#poudre%20de%20protection">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#for%C3%AAt%20t%C3%A9n%C3%A9breuse"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poudre de protection</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poudre de protection</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une poudre magique qui, une fois appliquée sur la peau ou les vêtements, peut offrir une protection temporaire contre les attaques des créatures de la nuit.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#carte%20de%20la%20for%C3%AAt%20t%C3%A9n%C3%A9breuse">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#for%C3%AAt%20t%C3%A9n%C3%A9breuse"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte de la Forêt Ténébreuse</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte de la Forêt Ténébreuse</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une carte détaillée de la forêt, indiquant les lieux les plus dangereux et les chemins les plus sûrs. Elle pourrait également révéler l'emplacement de certains trésors ou artefacts.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#kragnir">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kragnir</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kragnir</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un nain âgé et sage qui a vécu dans les Montagnes de la Pierre toute sa vie. Il connaît les tunnels et les mines comme sa poche et peut vous offrir des conseils sur la façon de naviguer dans ce terrain dangereux.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conseiller</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#xandria">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xandria</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xandria</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une aventurière humaine qui a découvert un passage secret dans les Montagnes de la Pierre. Elle peut vous proposer de vous rejoindre pour explorer ce passage et y trouver des trésors cachés.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Partenaire</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lampe%20de%20mineur">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lampe de mineur</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lampe de mineur</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une lampe solide et fiable qui peut éclairer les tunnels sombres des Montagnes de la Pierre. Elle est essentielle pour naviguer dans les mines sans se perdre ou tomber dans les puits.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pioche%20de%20nain">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pioche de nain</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pioche de nain</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une pioche solide et robuste qui a été utilisée par les nains pour extraire les minéraux des Montagnes de la Pierre. Elle peut être utilisée pour creuser des tunnels ou dégager des débris.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#carte%20des%20mines">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#montagnes%20de%20la%20pierre"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte des mines</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte des mines</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une carte détaillée des tunnels et des mines des Montagnes de la Pierre. Elle peut vous aider à naviguer dans ce terrain complexe et à éviter les dangers.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lysandra%20la%20navigateuse">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lysandra la Navigateuse</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lysandra la Navigateuse</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une experte de la navigation et des cartes marines, Lysandra pourrait offrir des conseils précieux ou partager des informations sur les routes maritimes les plus sûres, ou peut-être même des secrets sur les eaux mystérieuses qui entourent la Cité.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guide</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#kael%20le%20mar%C3%A9chal">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kael le Maréchal</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kael le Maréchal</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un maréchal des docks, Kael est responsable de l'ordre et de la sécurité dans le port. Il pourrait fournir des détails sur les mouvements suspects ou les rumeurs qui circulent parmi les marins, et propose peut-être une alliance ou une aide précieuse aux aventuriers.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Informateur</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#carte%20de%20navigation%20mystique">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte de navigation mystique</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte de navigation mystique</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une carte ancienne et détaillée des eaux entourant la Cité des Eaux, potentiellement révélant des passages secrets ou des zones de danger caché.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#compas%20enchant%C3%A9">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compas enchanté</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Compas enchanté</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un compas qui non seulement indique la direction mais également détecte les perturbations magiques à proximité, aidant les aventuriers à éviter les dangers ou à trouver des indices cachés.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#coffre%20de%20ravitaillement%20pour%20navire">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coffre de ravitaillement pour navire</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coffre de ravitaillement pour navire</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un coffre contenant des provisions non périssables et de l'équipement de base pour un navire, permettant aux aventuriers de se préparer pour de longs voyages en mer.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lyra%20la%20captive">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lyra la Captive</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lyra la Captive</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une jeune femme capturée par les forces des Ténèbres et emprisonnée dans les donjons du château. Elle pourrait fournir des informations précieuses sur les défenses du château et les plans du Seigneur des Ténèbres.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Informateur</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#korvus%20le%20gardien">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Korvus le Gardien</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Korvus le Gardien</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un gardien du château chargé de surveiller les remparts et les tours de garde. Il pourrait proposer un défi au joueur, notamment un combat, en échange de la liberté de Lyra la Captive.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gardien</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cl%C3%A9%20de%20donjon">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clé de donjon</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clé de donjon</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une clé permettant d'accéder aux donjons du château, où Lyra la Captive est emprisonnée.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#parchemin%20de%20sorts">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parchemin de sorts</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parchemin de sorts</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un parchemin contenant des sorts darken magiques qui pourraient être utiles pour vaincre les forces des Ténèbres.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#poignard%20de%20chasseur">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poignard de chasseur</rdfs:label>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poignard de chasseur</hasName>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un poignard léger et polyvalent, utile pour la chasse et le combat rapproché.</hasDescription>
+  <hasQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasQuantity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#balandir">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#village%20des%20nains"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Balandir</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Balandir</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un nain âgé et sage qui a vécu dans les Montagnes de la Pierre toute sa vie. Il possède une grande connaissance des tunnels et des mines, et il pourrait être disposé à partager ses connaissances avec ceux qui lui prouvent leur valeur.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sage</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#kragna">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#village%20des%20nains"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kragna</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kragna</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une naine forgeuse de talent qui créé des armes et des outils de haute qualité. Elle est prête à échanger ses créations contre des matières premières rares ou d'autres objets de valeur.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artisane</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pioche%20en%20fer">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#village%20des%20nains"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pioche en fer</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pioche en fer</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une pioche solide et robuste, idéale pour creuser et miner dans les Montagnes de la Pierre.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lampe%20%C3%A0%20huile">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#village%20des%20nains"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lampe à huile</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lampe à huile</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une lampe à huile qui peut être utilisée pour éclairer les tunnels et les mines, réduisant ainsi les risques d'accidents et de rencontres avec des créatures hostiles.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#carte%20des%20tunnels">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#village%20des%20nains"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte des tunnels</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte des tunnels</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une carte détaillée des tunnels et des mines des Montagnes de la Pierre, qui peut aider à naviguer dans ce labyrinthe complexe et à éviter les dangers.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ragnar%20le%20marin">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#taverne%20de%20la%20cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ragnar le Marin</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ragnar le Marin</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un vieux marin aux cheveux blancs et au visage buriné, qui a passé sa vie en mer. Il possède des connaissances précieuses sur les courants marins, les îles cachées et les dangers qui guettent les navigateurs. Il est prêt à partager ces informations avec ceux qui sont disposés à l'écouter.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Informateur</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lila%20la%20courti%C3%A8re">
+  <rdf:type rdf:resource="#Character"/>
+  <characterIsLocatedAt rdf:resource="#taverne%20de%20la%20cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lila la Courtière</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lila la Courtière</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une femme élégante et charismatique, qui fait office de courtière pour les marchands et les pirates. Elle peut aider les aventuriers à trouver des marchandises rares ou à échanger des objets de valeur contre d'autres biens ou services. Elle a une connaissance approfondie du marché et des personnes qui comptent dans la ville.</hasDescription>
+  <hasRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Commerçant</hasRole>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#carte%20de%20navigation%20de%20la%20c%C3%B4te">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#taverne%20de%20la%20cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte de navigation de la côte</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carte de navigation de la côte</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une carte détaillée de la côte, montrant les ports, les récifs et les courants marins. Elle pourrait être utile pour les aventuriers qui souhaitent naviguer le long de la côte ou explorer les îles voisines.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#potion%20de%20restauration">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#taverne%20de%20la%20cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potion de restauration</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potion de restauration</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Une potion qui restaure les forces et la santé de celui qui la boit. Elle pourrait être utile pour les aventuriers qui ont subi des blessures ou qui ont besoin d'un regain d'énergie.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#couteau%20de%20pirate">
+  <rdf:type rdf:resource="#Item"/>
+  <itemIsLocatedAt rdf:resource="#taverne%20de%20la%20cit%C3%A9%20des%20eaux"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Couteau de pirate</hasName>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Couteau de pirate</rdfs:label>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Un couteau solide et efficace, conçu pour les combats rapprochés. Il pourrait être utile pour les aventuriers qui souhaitent se défendre ou attaquer leurs ennemis.</hasDescription>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#string">minor</hasImportance>
+</owl:NamedIndividual>
+
+<owl:Class>
+  <owl:intersectionOf rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Item"/>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </owl:intersectionOf>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#itemIsLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class>
+  <owl:intersectionOf rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Character"/>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </owl:intersectionOf>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#characterIsLocatedAt"/>
+      <owl:someValuesFrom rdf:resource="#Location"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+
+</rdf:RDF>
