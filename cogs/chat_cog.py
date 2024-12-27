@@ -100,6 +100,8 @@ class ChatCog(commands.Cog):
             print("Switching to trivial mode (B/A)")
             self.current_chain = self.trivial_converse
 
+        self.started = True
+
         await ctx.reply("Mode switched!\n" + self.first_message)
 
     @commands.hybrid_command(name="reset")

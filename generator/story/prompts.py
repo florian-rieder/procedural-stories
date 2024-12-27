@@ -64,8 +64,12 @@ The parser has detected that the player intends to move to {{move_intent_locatio
         {%- endfor %}
     {%- endif %}
 
-If you confirm the move, add the token "<CONFIRM_MOVE>" to your response.
-**Keep in mind that the player will read your response before typing theirs, and only the token will be removed from your response.**
+**If you CONFIRM the move (that is, you are telling the player that they have moved to the new location), add the token "<CONFIRM_MOVE>" at the end of your response.
+THIS IS OF PARAMOUNT IMPORTANCE. DO NOT FORGET THIS.
+YOU CANNOT TELL THE PLAYER THEY HAVE MOVED WITHOUT INCLUDING THIS TOKEN.
+YOU CANNOT INCLUDE THE TOKEN IF YOU ARE NOT TELLING THE PLAYER THEY HAVE MOVED.
+DO NOT MENTION THE "<CONFIRM_MOVE>" TOKEN OTHERWISE IN YOUR RESPONSE.**
+**Keep in mind that the player will read your response before typing theirs, and only the specific token will be removed from your response.**
 {%- endif %}
 
 Always answer in {{language}}

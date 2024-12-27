@@ -28,14 +28,14 @@ if USE_LOCAL_MODEL:
     model = ChatOllama(
         model="llama3.1:8b",
         temperature=1.0,
-        num_predict=512,
+        num_predict=2048,
         timeout=None,
         max_retries=0,
     )
     predictable_model = ChatOllama(
         model="llama3.1:8b",
         temperature=0.0,
-        num_predict=128,
+        num_predict=1024,
         timeout=None,
         max_retries=0,
     )

@@ -78,6 +78,7 @@ class StoryConverse:
         self.model = model
         self.predictable_model = predictable_model
         self.setting = setting
+        self.first_message = first_message
         self.language = language
         self.session_id = session_id
         self.start_ontology_file = start_ontology_file
@@ -152,6 +153,10 @@ class StoryConverse:
             if "<CONFIRM_MOVE>" in text_response:
                 print("Move confirmed by the LLM")
                 text_response = text_response.replace("<CONFIRM_MOVE>", "").strip()
+
+                if not move_intent_location:
+                    print("No move intent location detected to move to")
+                    return text_response
 
                 # If the LLM accepted the move, update the KG
                 with self.onto:
