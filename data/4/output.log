@@ -1,0 +1,170 @@
+Loading local model...
+Local model loaded.
+Watching for changes...
+Starting with story mode (B/A)
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Forêt Ténébreuse", "Cité des Eaux", "Château du Seigneur des Ténèbres"
+
+Previous game response: "Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester."
+Player message: "Tu vas te coucher, tu as eu une longue journée"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Tu vas te coucher, tu as eu une longue journée
+GAME RESPONSE: Non, attends ! Je me souviens que j'ai quelque chose à faire... La Pierre de Lumière est peut-être en danger et il faut la trouver avant qu'elle tombe aux mains du seigneur des Ténèbres. Et puis, il y a cette forêt qui m'a été suggérée comme une destination possible... Tu as dit que tu pourrais me montrer des routes alternatives si je voulais aller n'importe où ?
+INVENTORY ACTIONS: [{'action': 'claim', 'item': 'Pierre de Lumière'}]
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Eryndor Thorne', 'description': '... (**keep most of the original description, only add or change things that are important**) and is now determined to find the Pierre de Lumière.'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Forêt Ténébreuse", "Cité des Eaux", "Château du Seigneur des Ténèbres"
+
+Previous game response: "Non, attends ! Je me souviens que j'ai quelque chose à faire... La Pierre de Lumière est peut-être en danger et il faut la trouver avant qu'elle tombe aux mains du seigneur des Ténèbres. Et puis, il y a cette forêt qui m'a été suggérée comme une destination possible... Tu as dit que tu pourrais me montrer des routes alternatives si je voulais aller n'importe où ?"
+Player message: "Je vais dormir dans la forêt"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: Forêt Ténébreuse
+MOVE INTENT: story_poptest70b_fantasy.for%C3%AAt%20t%C3%A9n%C3%A9breuse
+Move confirmed by the LLM
+PLAYER MESSAGE: Je vais dormir dans la forêt
+GAME RESPONSE: La forêt Ténébreuse ! C'est un lieu sombre et mystérieux. Vous trouverez peut-être de l'hébergement temporaire, mais il faudra être prudent contre les créatures qui y habitent. Les loups-garous, les vampires et les gobelins sont réputés pour faire des ravages dans cette forêt. Si vous voulez essayer de dormir là-bas, je ne vois pas grand-chose à y gagner... Mais si vous êtes désireux de tenter votre chance, la lisière de la forêt est visible par-delà les collines qui bordent le village.
+
+<CONFIRM_MOVE>
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: []
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: "La forêt Ténébreuse ! C'est un lieu sombre et mystérieux. Vous trouverez peut-être de l'hébergement temporaire, mais il faudra être prudent contre les créatures qui y habitent. Les loups-garous, les vampires et les gobelins sont réputés pour faire des ravages dans cette forêt. Si vous voulez essayer de dormir là-bas, je ne vois pas grand-chose à y gagner... Mais si vous êtes désireux de tenter votre chance, la lisière de la forêt est visible par-delà les collines qui bordent le village."
+Player message: "Je vais dormir là bas"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: La forêt Ténébreuse
+MOVE INTENT: story_poptest70b_fantasy.for%C3%AAt%20t%C3%A9n%C3%A9breuse
+Move confirmed by the LLM
+PLAYER MESSAGE: Je vais dormir là bas
+GAME RESPONSE: Vous vous dirigez vers la lisière de la forêt. La nuit est sombre et les ombres semblent bouger autour de vous. Vous trouvez un endroit relativement calme, mais vous sentez que vous êtes surveillé. Tout à coup, vous entendez des branchages qui craquent derrière une broussaille voisine.
+
+Elara la Chasseuse se tient debout au loin, regardant en votre direction. Elle semble discrète et ne bouge pas. Vous remarquez qu'elle a un sac accroché à son épaule et que vous pouvez deviner quelques objets à l'intérieur par leur forme.
+
+<CONFIRM_MOVE>
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Elara la Chasseuse'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: "Vous vous dirigez vers la lisière de la forêt. La nuit est sombre et les ombres semblent bouger autour de vous. Vous trouvez un endroit relativement calme, mais vous sentez que vous êtes surveillé. Tout à coup, vous entendez des branchages qui craquent derrière une broussaille voisine.
+
+Elara la Chasseuse se tient debout au loin, regardant en votre direction. Elle semble discrète et ne bouge pas. Vous remarquez qu'elle a un sac accroché à son épaule et que vous pouvez deviner quelques objets à l'intérieur par leur forme."
+Player message: "Je devine un sac de couchage dans son sac. Je le prends et je m'en vais dormir dedans"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Je devine un sac de couchage dans son sac. Je le prends et je m'en vais dormir dedans
+GAME RESPONSE: Vous prenez le sac de couchage sans dire mot à Elara la Chasseuse, qui vous regarde avec surprise mais ne proteste pas. Vous vous éloignez d'elle pour trouver un endroit plus calme où dormir.
+
+Une fois que vous êtes loin, vous enroulez le sac de couchage autour de vous et cherchez un endroit confortable pour dormir. Le bruit des branchages qui craquaient tout à l'heure semble s'être calmé, mais vous ne pouvez pas vous empêcher d'avoir l'impression que quelque chose attend votre sommeil.
+
+Vous essayez de dormir, mais la forêt semble être remplie de sons nocturnes. Vous vous sentez nerveux et incapable de trouver le repos.
+INVENTORY ACTIONS: [{'action': 'claim', 'item': 'sac de couchage'}]
+CHARACTER ACTIONS: [{'action': 'stop_following', 'subject': 'Elara la Chasseuse', 'object': 'Eryndor Thorne'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: "Vous prenez le sac de couchage sans dire mot à Elara la Chasseuse, qui vous regarde avec surprise mais ne proteste pas. Vous vous éloignez d'elle pour trouver un endroit plus calme où dormir.
+
+Une fois que vous êtes loin, vous enroulez le sac de couchage autour de vous et cherchez un endroit confortable pour dormir. Le bruit des branchages qui craquaient tout à l'heure semble s'être calmé, mais vous ne pouvez pas vous empêcher d'avoir l'impression que quelque chose attend votre sommeil.
+
+Vous essayez de dormir, mais la forêt semble être remplie de sons nocturnes. Vous vous sentez nerveux et incapable de trouver le repos."
+Player message: "Je trouve le repos"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Je trouve le repos
+GAME RESPONSE: Après une nuit agitée, vous parvenez finalement à trouver un peu de sommeil. Le sac de couchage semble avoir été une bonne idée ! Vous dormez plusieurs heures, et lorsque vous vous réveillez, la lune est déjà haut dans le ciel.
+
+Elara la Chasseuse se trouve toujours près de votre endroit de sommeil, mais elle semble être occupée à préparer un petit déjeuner. Elle vous regarde avec une expression aimable et vous invite à rejoindre elle.
+
+"Je me nomme Elara", dit-elle. "Et toi ? Qu'est-ce que tu fais dans cette forêt si reculée ?"
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Eryndor Thorne', 'description': '... (**keep most of the original description, only add or change things that are important**) and is now determined to find the Pierre de Lumière.'}, {'action': 'now_knows', 'subject': 'Elara la Chasseuse', 'object': 'Eryndor Thorne'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: "Après une nuit agitée, vous parvenez finalement à trouver un peu de sommeil. Le sac de couchage semble avoir été une bonne idée ! Vous dormez plusieurs heures, et lorsque vous vous réveillez, la lune est déjà haut dans le ciel.
+
+Elara la Chasseuse se trouve toujours près de votre endroit de sommeil, mais elle semble être occupée à préparer un petit déjeuner. Elle vous regarde avec une expression aimable et vous invite à rejoindre elle.
+
+"Je me nomme Elara", dit-elle. "Et toi ? Qu'est-ce que tu fais dans cette forêt si reculée ?""
+Player message: "Je dors"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Je dors
+GAME RESPONSE: Elle rit poliment. "Ah, je suppose que c'est une bonne idée de dormir un peu plus tard. Il faut être prêt pour les aventures qui vous attendent ici !"
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Elara la Chasseuse', 'description': '... (**keep most of the original description, only add or change things that are important**) and seems to be in a good mood.'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: "Elle rit poliment. "Ah, je suppose que c'est une bonne idée de dormir un peu plus tard. Il faut être prêt pour les aventures qui vous attendent ici !""
+Player message: "Pourquoi?"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Pourquoi?
+GAME RESPONSE: "La forêt est pleine de secrets et de dangers", dit-elle avec un air sérieux. "Mais je crois que vous êtes préparé à affronter ces défis. Vous cherchez la Pierre de Lumière, n'est-ce pas ?"
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: []
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: ""La forêt est pleine de secrets et de dangers", dit-elle avec un air sérieux. "Mais je crois que vous êtes préparé à affronter ces défis. Vous cherchez la Pierre de Lumière, n'est-ce pas ?""
+Player message: "Oui, je veux l'éteindre, comme ça je peux dormir."
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Oui, je veux l'éteindre, comme ça je peux dormir.
+GAME RESPONSE: Elle éclate d'un rire nerveux. "Ah, non, je pense que c'est le contraire ! La Pierre de Lumière est un artefact puissant qui peut vous aider à éclairer votre chemin. Mais si vous voulez poursuivre ton désir... Tu pourrais peut-être aller demander conseil à Thrain le Corbeau ? Il connaît la forêt comme sa poche et pourrait t'aider."
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Elara la Chasseuse', 'description': '... (**keep most of the original description, only add or change things that are important**) and seems to be in a bad mood.'}, {'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Thrain le Corbeau'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: "Elle éclate d'un rire nerveux. "Ah, non, je pense que c'est le contraire ! La Pierre de Lumière est un artefact puissant qui peut vous aider à éclairer votre chemin. Mais si vous voulez poursuivre ton désir... Tu pourrais peut-être aller demander conseil à Thrain le Corbeau ? Il connaît la forêt comme sa poche et pourrait t'aider.""
+Player message: "Il est où ce corbeau?"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Il est où ce corbeau?
+GAME RESPONSE: "Thrain se trouve souvent perché dans un arbre en bordure de la clairière du nord", dit-elle. "Vous pouvez le voir voler autour des arbres, mais il préfère rester sur son perchoir pour observer les alentours." Vous apercevez à l'horizon une série d'arbres qui semblent plus touffus que les autres et dont un se distingue par une grande branche en forme de Y. C'est peut-être là qu'on trouve Thrain.
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Thrain le Corbeau'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: ""Thrain se trouve souvent perché dans un arbre en bordure de la clairière du nord", dit-elle. "Vous pouvez le voir voler autour des arbres, mais il préfère rester sur son perchoir pour observer les alentours." Vous apercevez à l'horizon une série d'arbres qui semblent plus touffus que les autres et dont un se distingue par une grande branche en forme de Y. C'est peut-être là qu'on trouve Thrain."
+Player message: "Peut être?"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Peut être?
+GAME RESPONSE: Elle sourit. "Oui, peut-être ! Mais n'oublie pas qu'en cette forêt, les choses ne sont jamais aussi simples qu'elles le semblent. La clairière du nord est loin de là où nous sommes... Tu devras traverser la zone des bruyères et risques d'y rencontrer des compagnons inattendus."
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Elara la Chasseuse', 'description': '... (**keep most of the original description, only add or change things that are important**) and seems to be in a good mood.'}, {'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Thrain le Corbeau'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Royaume de la Lumière", "Château du Seigneur des Ténèbres", "Montagnes de la Pierre"
+
+Previous game response: "Elle sourit. "Oui, peut-être ! Mais n'oublie pas qu'en cette forêt, les choses ne sont jamais aussi simples qu'elles le semblent. La clairière du nord est loin de là où nous sommes... Tu devras traverser la zone des bruyères et risques d'y rencontrer des compagnons inattendus.""
+Player message: "Tu t'ennui avec cette histoire de pierre de lumière et de train machintruc. C'est quoi les autres artifacts?"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:

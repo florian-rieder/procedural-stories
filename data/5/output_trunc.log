@@ -1,0 +1,495 @@
+    await self.send_as_json(beat)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/discord/gateway.py", line 661, in send_as_json
+    await self.send(utils._to_json(data))
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/discord/gateway.py", line 657, in send
+    await self.socket.send_str(data)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/aiohttp/client_ws.py", line 226, in send_str
+    await self._writer.send(data, binary=False, compress=compress)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/aiohttp/http_websocket.py", line 750, in send
+    await self._send_frame(message, WSMsgType.TEXT, compress)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/aiohttp/http_websocket.py", line 690, in _send_frame
+    self._write(header + mask + message)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/aiohttp/http_websocket.py", line 723, in _write
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2024-12-27 16:33:30 INFO     discord.gateway Shard ID None has successfully RESUMED session 6963218988ea1b757b30a211c1931d80.
+[2024-12-27 16:33:30,586] INFO: Shard ID None has successfully RESUMED session 6963218988ea1b757b30a211c1931d80.
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Forêt Ténébreuse", "Château du Seigneur des Ténèbres", "Cité des Eaux"
+
+Previous game response: "La petite personne mince regarde autour d'elle pour s'assurer qu'il ne se trouve personne d'autre dans le coin avant de lever légèrement les sourcils. "Je ne crois pas que je vous ai jamais vu, mais Madame Lirien a bien sûr un agenda très chargé...", dit-elle avec un ton léger de doute.
+
+Après une pause, elle ajoute : "Attendez ici un moment, je vais aller voir si elle est disponible pour discuter..."
+
+Elle s'éloigne rapidement, vous laissant seuls dans le petit vestibule. Vous entendez des bruits provenant du fond du chemin de moquette et bientôt la petite personne reparaît avec une mine plus calme.
+
+"Madame Lirien est prête à vous recevoir", dit-elle. "Veuillez poursuivre.""
+Player message: "la suivre en se remémorant ce que je sais de la pierre de lumière"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+[2024-12-27 16:33:43,906] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Move intent output: none
+[2024-12-27 16:33:51,711] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+PLAYER MESSAGE: la suivre en se remémorant ce que je sais de la pierre de lumière
+GAME RESPONSE: Vous suivez Lady Lirien dans un long couloir jusqu'à une grande pièce qui donne sur le jardin du château. La pièce est éclairée par des lumières douces qui semblent provenir d'une source naturelle, plutôt que de la lumière artificielle.
+
+Madame Lirien s'assoit dans un fauteuil confortable, en vous invitant à vous asseoir également. Elle fait quelques gestes pour que vous vous sentiez à l'aise, puis commence :
+
+"Je vois que vous avez apporté le problème de la pierre de lumière au premier plan...".
+
+Elle s'interrompt, fixant un regard dans le vide comme si elle cherchait quelque chose. "C'est bien... Je crois qu'il est temps que je vous disse quelque chose."
+[2024-12-27 16:34:02,852] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INVENTORY ACTIONS: [{'action': 'alter', 'item': 'Pierre de Lumière', 'description': "The player's thoughts about the Stone of Light have been updated."}]
+[2024-12-27 16:34:18,236] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+CHARACTER ACTIONS: [{'action': 'become_friends', 'subject': 'Eryndor Thorne', 'object': 'Lady Lirien'}, {'action': 'now_knows', 'subject': 'Lady Lirien', 'object': 'Eryndor Thorne'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Forêt Ténébreuse", "Château du Seigneur des Ténèbres", "Cité des Eaux"
+
+Previous game response: "Vous suivez Lady Lirien dans un long couloir jusqu'à une grande pièce qui donne sur le jardin du château. La pièce est éclairée par des lumières douces qui semblent provenir d'une source naturelle, plutôt que de la lumière artificielle.
+
+Madame Lirien s'assoit dans un fauteuil confortable, en vous invitant à vous asseoir également. Elle fait quelques gestes pour que vous vous sentiez à l'aise, puis commence :
+
+"Je vois que vous avez apporté le problème de la pierre de lumière au premier plan...".
+
+Elle s'interrompt, fixant un regard dans le vide comme si elle cherchait quelque chose. "C'est bien... Je crois qu'il est temps que je vous disse quelque chose.""
+Player message: "écouter madame lirien en la poussant à dire le plus de choses possible"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+[2024-12-27 16:34:31,105] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Move intent output: none
+[2024-12-27 16:34:39,066] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+PLAYER MESSAGE: écouter madame lirien en la poussant à dire le plus de choses possible
+GAME RESPONSE: Lady Lirien vous regarde attentivement, comme si elle cherchait à mesurer votre réaction avant de continuer. "La pierre de lumière...", dit-elle doucement, "est un objet très précieux pour notre communauté. Mais il y a une raison pour laquelle je ne puisse pas vous en dire plus à ce stade."
+
+Elle s'arrête, regardant autour d'elle comme si elle était nerveuse de continuer. "Je crois que vous devez comprendre que les secrets que je vais partager avec vous maintenant sont confidents et risquent de mettre des vies en danger s'ils tombent dans les mauvaises mains."
+
+Elle prend une profonde inspiration, puis commence à parler d'une voix basse et rapide : "La pierre de lumière est un artefact qui peut être utilisé pour...". Elle s'arrête brusquement, levant la main comme si elle essayait de contenir quelque chose.
+
+"Attendez...", dit-elle. "Je ne devrais pas vous dire ça maintenant."
+[2024-12-27 16:34:52,507] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INVENTORY ACTIONS: [{'action': 'alter', 'item': 'Pierre de Lumière', 'description': "The player's thoughts about the Stone of Light have been updated."}]
+[2024-12-27 16:35:04,372] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Lady Lirien', 'description': '... (**keep most of the original description, only add or change things that are important**) and is now more cautious when sharing information.'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Forêt Ténébreuse", "Château du Seigneur des Ténèbres", "Cité des Eaux"
+
+Previous game response: "Lady Lirien vous regarde attentivement, comme si elle cherchait à mesurer votre réaction avant de continuer. "La pierre de lumière...", dit-elle doucement, "est un objet très précieux pour notre communauté. Mais il y a une raison pour laquelle je ne puisse pas vous en dire plus à ce stade."
+
+Elle s'arrête, regardant autour d'elle comme si elle était nerveuse de continuer. "Je crois que vous devez comprendre que les secrets que je vais partager avec vous maintenant sont confidents et risquent de mettre des vies en danger s'ils tombent dans les mauvaises mains."
+
+Elle prend une profonde inspiration, puis commence à parler d'une voix basse et rapide : "La pierre de lumière est un artefact qui peut être utilisé pour...". Elle s'arrête brusquement, levant la main comme si elle essayait de contenir quelque chose.
+
+"Attendez...", dit-elle. "Je ne devrais pas vous dire ça maintenant.""
+Player message: "Lui dire que la situation est désp"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+[2024-12-27 16:35:22,199] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Move intent output: none
+[2024-12-27 16:35:30,159] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+PLAYER MESSAGE: Lui dire que la situation est désp
+GAME RESPONSE: Vous la regardez avec sérieux et dites : "Madame Lirien, je comprends que la situation soit grave, mais je sens que vous me cachez quelque chose qui pourrait mettre le communauté entière en danger. Je dois savoir ce qu'il se passe avec la pierre de lumière."
+
+Vous prenez une profonde inspiration avant de continuer : "Je suis prêt à prendre des risques pour protéger notre communauté, et je pense que vous avez plus d'informations que vous ne le dites. S'il vous plaît, Madame Lirien, dites-moi la vérité."
+
+Lady Lirien vous regarde avec une expression grave, puis se lève lentement de son fauteuil. "Je vais vous dire quelque chose...", dit-elle doucement, comme si elle était sur le point de révéler un secret terrible. "Mais vous devez promettre de ne jamais répéter ce que je vais dire à quiconque."
+
+Elle vous fixe avec une intensité qui semble glacée : "La pierre de lumière est...".
+[2024-12-27 16:35:44,052] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INVENTORY ACTIONS: [{'action': 'alter', 'item': 'Pierre de Lumière', 'description': "The player's thoughts about the Stone of Light have been updated."}]
+[2024-12-27 16:35:55,179] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2024-12-27 16:35:58 WARNING  discord.gateway Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/bot.py", line 205, in <module>
+    main()
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/bot.py", line 201, in main
+    bot.run()
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/bot.py", line 182, in run
+    super().run(str(os.getenv("DISCORD_TOKEN")), *args, **kwargs)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/discord/client.py", line 869, in run
+    asyncio.run(runner())
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 708, in run_until_complete
+    self.run_forever()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 679, in run_forever
+    self._run_once()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 2027, in _run_once
+    handle._run()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/discord/client.py", line 449, in _run_event
+    await coro(*args, **kwargs)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/cogs/chat_cog.py", line 167, in on_message
+    await self.current_chain.postprocess_last_turn()
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/generator/story/converse.py", line 203, in postprocess_last_turn
+    character_actions = extract_character_actions(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/generator/story/nlp/nlp.py", line 175, in extract_character_actions
+    response = chain.invoke(parameters)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 3024, in invoke
+    input = context.run(step.invoke, input, config)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 786, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 633, in generate
+    self._generate_with_cache(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 851, in _generate_with_cache
+    result = self._generate(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_ollama/chat_models.py", line 690, in _generate
+    final_chunk = self._chat_stream_with_aggregation(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_ollama/chat_models.py", line 591, in _chat_stream_with_aggregation
+    for stream_resp in self._create_chat_stream(messages, stop, **kwargs):
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_ollama/chat_models.py", line 578, in _create_chat_stream
+    yield from self._client.chat(**chat_params)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/ollama/_client.py", line 169, in inner
+    for line in r.iter_lines():
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_models.py", line 863, in iter_lines
+    for text in self.iter_text():
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_models.py", line 850, in iter_text
+    for byte_content in self.iter_bytes():
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_models.py", line 831, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_models.py", line 885, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_client.py", line 127, in __iter__
+    for chunk in self._stream:
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 116, in __iter__
+    for part in self._httpcore_stream:
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 363, in __iter__
+    for part in self._stream:
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 341, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 210, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 224, in _receive_event
+    data = self._network_stream.read(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    return self._sock.recv(max_bytes)
+
+[2024-12-27 16:35:58,202] WARNING: Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/bot.py", line 205, in <module>
+    main()
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/bot.py", line 201, in main
+    bot.run()
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/bot.py", line 182, in run
+    super().run(str(os.getenv("DISCORD_TOKEN")), *args, **kwargs)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/discord/client.py", line 869, in run
+    asyncio.run(runner())
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 708, in run_until_complete
+    self.run_forever()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 679, in run_forever
+    self._run_once()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 2027, in _run_once
+    handle._run()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/discord/client.py", line 449, in _run_event
+    await coro(*args, **kwargs)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/cogs/chat_cog.py", line 167, in on_message
+    await self.current_chain.postprocess_last_turn()
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/generator/story/converse.py", line 203, in postprocess_last_turn
+    character_actions = extract_character_actions(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/generator/story/nlp/nlp.py", line 175, in extract_character_actions
+    response = chain.invoke(parameters)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/runnables/base.py", line 3024, in invoke
+    input = context.run(step.invoke, input, config)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 286, in invoke
+    self.generate_prompt(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 786, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 633, in generate
+    self._generate_with_cache(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 851, in _generate_with_cache
+    result = self._generate(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_ollama/chat_models.py", line 690, in _generate
+    final_chunk = self._chat_stream_with_aggregation(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_ollama/chat_models.py", line 591, in _chat_stream_with_aggregation
+    for stream_resp in self._create_chat_stream(messages, stop, **kwargs):
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/langchain_ollama/chat_models.py", line 578, in _create_chat_stream
+    yield from self._client.chat(**chat_params)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/ollama/_client.py", line 169, in inner
+    for line in r.iter_lines():
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_models.py", line 863, in iter_lines
+    for text in self.iter_text():
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_models.py", line 850, in iter_text
+    for byte_content in self.iter_bytes():
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_models.py", line 831, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_models.py", line 885, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_client.py", line 127, in __iter__
+    for chunk in self._stream:
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 116, in __iter__
+    for part in self._httpcore_stream:
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 363, in __iter__
+    for part in self._stream:
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 341, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 210, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_sync/http11.py", line 224, in _receive_event
+    data = self._network_stream.read(
+  File "/Users/frieder/Documents/GitHub/procedural-stories copy/.venv/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 126, in read
+    return self._sock.recv(max_bytes)
+
+CHARACTER ACTIONS: [{'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': "Lady Lirien's secret about the Pierre de Lumière"}, {'action': 'change_description', 'subject': 'Lady Lirien', 'description': '... (**keep most of the original description, only add or change things that are important**) and is now more cautious when sharing information with Eryndor Thorne'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Forêt Ténébreuse", "Château du Seigneur des Ténèbres", "Cité des Eaux"
+
+Previous game response: "Vous la regardez avec sérieux et dites : "Madame Lirien, je comprends que la situation soit grave, mais je sens que vous me cachez quelque chose qui pourrait mettre le communauté entière en danger. Je dois savoir ce qu'il se passe avec la pierre de lumière."
+
+Vous prenez une profonde inspiration avant de continuer : "Je suis prêt à prendre des risques pour protéger notre communauté, et je pense que vous avez plus d'informations que vous ne le dites. S'il vous plaît, Madame Lirien, dites-moi la vérité."
+
+Lady Lirien vous regarde avec une expression grave, puis se lève lentement de son fauteuil. "Je vais vous dire quelque chose...", dit-elle doucement, comme si elle était sur le point de révéler un secret terrible. "Mais vous devez promettre de ne jamais répéter ce que je vais dire à quiconque."
+
+Elle vous fixe avec une intensité qui semble glacée : "La pierre de lumière est..."."
+Player message: "Promettre de ne rien dire"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+[2024-12-27 16:36:06,680] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Move intent output: none
+[2024-12-27 16:36:13,956] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+PLAYER MESSAGE: Promettre de ne rien dire
+GAME RESPONSE: Vous faites un serment solennel et disiez : "Je promets sur ma parole d'honneur que je ne répéterai jamais ce que vous alliez me dire, Madame Lirien. Je suis prêt à prendre les risques pour protéger notre communauté."
+
+Lady Lirien semble satisfaite de votre promesse et continue doucement : "La pierre de lumière est en danger d'être prise par le Seigneur des Ténèbres. Il a des agents secrets qui recherchent activement l'artefact pour l'utiliser à ses propres fins sombres."
+
+Elle se rapproche de vous, comme si elle craignait d'être entendue : "Je ne devais pas vous dire ça ici, mais je sens que je peux vous faire confiance. Vous devez être prudent et bien garder le secret pour sauver notre communauté."
+
+Vous sentez un frisson glacé descendre votre dos à l'écoute de ces mots. La situation est plus grave qu'elle ne semblait au début.
+[2024-12-27 16:36:27,383] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INVENTORY ACTIONS: []
+[2024-12-27 16:36:36,470] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+CHARACTER ACTIONS: [{'action': 'become_friends', 'subject': 'Eryndor Thorne', 'object': 'Lady Lirien'}, {'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': "Seigneur Arin's intentions"}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Forêt Ténébreuse", "Château du Seigneur des Ténèbres", "Cité des Eaux"
+
+Previous game response: "Vous faites un serment solennel et disiez : "Je promets sur ma parole d'honneur que je ne répéterai jamais ce que vous alliez me dire, Madame Lirien. Je suis prêt à prendre les risques pour protéger notre communauté."
+
+Lady Lirien semble satisfaite de votre promesse et continue doucement : "La pierre de lumière est en danger d'être prise par le Seigneur des Ténèbres. Il a des agents secrets qui recherchent activement l'artefact pour l'utiliser à ses propres fins sombres."
+
+Elle se rapproche de vous, comme si elle craignait d'être entendue : "Je ne devais pas vous dire ça ici, mais je sens que je peux vous faire confiance. Vous devez être prudent et bien garder le secret pour sauver notre communauté."
+
+Vous sentez un frisson glacé descendre votre dos à l'écoute de ces mots. La situation est plus grave qu'elle ne semblait au début."
+Player message: "Continuer à écouter"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+[2024-12-27 16:36:44,615] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Move intent output: none
+[2024-12-27 16:36:52,143] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+PLAYER MESSAGE: Continuer à écouter
+GAME RESPONSE: Madame Lirien continue à parler d'une voix basse et urgente : "Il faut que vous preniez la Pierre de Lumière loin du Seigneur des Ténèbres, avant qu'il ne soit trop tard. J'ai entendu dire que le maître Armand, notre mage de l'ordre, possède une théorie qui pourrait vous aider à localiser la pierre et à protéger la communauté."
+
+Elle se rapproche encore plus de vous, comme si elle craignait d'être dérangée : "Vous devez aller trouver maître Armand le plus vite possible. Il sait ce qu'il fait, mais il sera difficile pour lui de faire... (elle s'arrête, regardant autour d'elle avec anxiété) ...difficile pour lui de faire une chose qui pourrait sauver la communauté."
+
+Elle vous fixe dans les yeux, comme si elle essayait à vous transmettre un message crucial : "Allez-y, vite. Le sort de notre communauté est entre vos mains."
+[2024-12-27 16:37:05,471] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INVENTORY ACTIONS: []
+[2024-12-27 16:37:16,501] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+CHARACTER ACTIONS: [{'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Maître Armand'}, {'action': 'become_friends', 'subject': 'Lady Lirien', 'object': 'Eryndor Thorne'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Forêt Ténébreuse", "Château du Seigneur des Ténèbres", "Cité des Eaux"
+
+Previous game response: "Madame Lirien continue à parler d'une voix basse et urgente : "Il faut que vous preniez la Pierre de Lumière loin du Seigneur des Ténèbres, avant qu'il ne soit trop tard. J'ai entendu dire que le maître Armand, notre mage de l'ordre, possède une théorie qui pourrait vous aider à localiser la pierre et à protéger la communauté."
+
+Elle se rapproche encore plus de vous, comme si elle craignait d'être dérangée : "Vous devez aller trouver maître Armand le plus vite possible. Il sait ce qu'il fait, mais il sera difficile pour lui de faire... (elle s'arrête, regardant autour d'elle avec anxiété) ...difficile pour lui de faire une chose qui pourrait sauver la communauté."
+
+Elle vous fixe dans les yeux, comme si elle essayait à vous transmettre un message crucial : "Allez-y, vite. Le sort de notre communauté est entre vos mains.""
+Player message: "Embrasser madame lirien et aller voir armand"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+[2024-12-27 16:37:37,741] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+Move intent output: none
+[2024-12-27 16:37:45,141] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+PLAYER MESSAGE: Embrasser madame lirien et aller voir armand
+GAME RESPONSE: Vous embrassez Madame Lirien avec sincérité, en essayant à vous exprimer votre gratitude et votre engagement à protéger la communauté. Elle vous retourne un baiser rapide, puis se recule pour permettre d'aller poursuivre votre conversation.
+
+"Allez-y, Eryndor," dit-elle doucement, "Maître Armand attend probablement dans son petit bâtiment derrière l'école de la communauté. Soyez prudent."
+
+Vous quittez le petit espace où vous étiez avec Madame Lirien et vous dirigez vers l'endroit qu'elle a mentionné. Vous passez devant quelques bâtiments, puis arrivez à un joli petit bâtiment avec des tuiles rouges et une petite tour dans le coin. Un signe suspendu au-dessus de la porte indique que c'est bien là que Maître Armand habite.
+
+Vous frappez doucement à la porte et entendez une voix qui vous appelle d'intérieur : "Entrez, Eryndor !"
+[2024-12-27 16:37:58,836] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INVENTORY ACTIONS: [{'action': 'claim', 'item': 'Carte du royaume'}]
+[2024-12-27 16:38:09,082] INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+CHARACTER ACTIONS: [{'action': 'become_friends', 'subject': 'Eryndor Thorne', 'object': 'Lady Lirien'}, {'action': 'change_description', 'subject': 'Lady Lirien', 'description': '... (**keep most of the original description, only add or change things that are important**) and is now less cautious when sharing information with Eryndor Thorne'}]
+2024-12-27 20:25:28 INFO     discord.gateway Shard ID None has successfully RESUMED session 6963218988ea1b757b30a211c1931d80.
+[2024-12-27 20:25:28,566] INFO: Shard ID None has successfully RESUMED session 6963218988ea1b757b30a211c1931d80.
+2024-12-27 23:00:14 INFO     discord.gateway Shard ID None has successfully RESUMED session 6963218988ea1b757b30a211c1931d80.
+[2024-12-27 23:00:14,974] INFO: Shard ID None has successfully RESUMED session 6963218988ea1b757b30a211c1931d80.
+2024-12-28 00:19:23 INFO     discord.gateway Shard ID None has successfully RESUMED session 6963218988ea1b757b30a211c1931d80.
+[2024-12-28 00:19:23,791] INFO: Shard ID None has successfully RESUMED session 6963218988ea1b757b30a211c1931d80.
+2024-12-28 02:58:05 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 02:58:05,218] INFO: Shard ID None session has been invalidated.
+2024-12-28 02:58:10 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 815443b1777c932bacdedf7e207f0db1).
+[2024-12-28 02:58:10,768] INFO: Shard ID None has connected to Gateway (Session ID: 815443b1777c932bacdedf7e207f0db1).
+[2024-12-28 02:58:12,779] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 03:03:45 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 03:03:45,063] INFO: Shard ID None session has been invalidated.
+2024-12-28 03:03:50 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: d0bd34758851b177f0cfb65ef695d91a).
+[2024-12-28 03:03:50,703] INFO: Shard ID None has connected to Gateway (Session ID: d0bd34758851b177f0cfb65ef695d91a).
+[2024-12-28 03:03:52,709] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 03:20:28 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 03:20:28,114] INFO: Shard ID None session has been invalidated.
+2024-12-28 03:20:33 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 90ee03eb833f99a764b1e89127a31a50).
+[2024-12-28 03:20:33,869] INFO: Shard ID None has connected to Gateway (Session ID: 90ee03eb833f99a764b1e89127a31a50).
+[2024-12-28 03:20:35,872] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 03:50:55 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 03:50:55,519] INFO: Shard ID None session has been invalidated.
+2024-12-28 03:51:02 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 1cb732a0f53a6b2e558f2b02a557d229).
+[2024-12-28 03:51:02,024] INFO: Shard ID None has connected to Gateway (Session ID: 1cb732a0f53a6b2e558f2b02a557d229).
+[2024-12-28 03:51:04,028] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 04:12:18 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 04:12:18,026] INFO: Shard ID None session has been invalidated.
+2024-12-28 04:12:23 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: da50918064cd1051e6a14380357fe1d5).
+[2024-12-28 04:12:23,527] INFO: Shard ID None has connected to Gateway (Session ID: da50918064cd1051e6a14380357fe1d5).
+[2024-12-28 04:12:25,533] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 04:47:19 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 04:47:19,906] INFO: Shard ID None session has been invalidated.
+2024-12-28 04:47:25 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: f81305c1b9278ca1cd31f064f3d3f06f).
+[2024-12-28 04:47:25,415] INFO: Shard ID None has connected to Gateway (Session ID: f81305c1b9278ca1cd31f064f3d3f06f).
+[2024-12-28 04:47:27,419] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 05:03:54 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 05:03:54,893] INFO: Shard ID None session has been invalidated.
+2024-12-28 05:04:00 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: f35b6f7e2b92465c3bc606c8de5ce102).
+[2024-12-28 05:04:00,370] INFO: Shard ID None has connected to Gateway (Session ID: f35b6f7e2b92465c3bc606c8de5ce102).
+[2024-12-28 05:04:02,381] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 05:25:34 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 05:25:34,438] INFO: Shard ID None session has been invalidated.
+2024-12-28 05:25:39 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: bc754843531109f41f610e3669f38a99).
+[2024-12-28 05:25:39,917] INFO: Shard ID None has connected to Gateway (Session ID: bc754843531109f41f610e3669f38a99).
+[2024-12-28 05:25:42,119] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 05:36:31 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 05:36:31,494] INFO: Shard ID None session has been invalidated.
+2024-12-28 05:36:36 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: ee7a194c4c9685a46ed8190a10b41587).
+[2024-12-28 05:36:36,955] INFO: Shard ID None has connected to Gateway (Session ID: ee7a194c4c9685a46ed8190a10b41587).
+[2024-12-28 05:36:38,959] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 05:52:24 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 05:52:24,618] INFO: Shard ID None session has been invalidated.
+2024-12-28 05:52:30 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 95f559dc6badfc9aac2ea9e78c9cd896).
+[2024-12-28 05:52:30,285] INFO: Shard ID None has connected to Gateway (Session ID: 95f559dc6badfc9aac2ea9e78c9cd896).
+[2024-12-28 05:52:32,288] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 06:09:26 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 06:09:26,897] INFO: Shard ID None session has been invalidated.
+2024-12-28 06:09:32 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 432419a76a0d2530d634e0cc31932897).
+[2024-12-28 06:09:32,405] INFO: Shard ID None has connected to Gateway (Session ID: 432419a76a0d2530d634e0cc31932897).
+[2024-12-28 06:09:34,562] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 06:26:29 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 06:26:29,501] INFO: Shard ID None session has been invalidated.
+2024-12-28 06:26:35 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 04883ba1ba2f45fbb616a7dfeb600004).
+[2024-12-28 06:26:35,018] INFO: Shard ID None has connected to Gateway (Session ID: 04883ba1ba2f45fbb616a7dfeb600004).
+[2024-12-28 06:26:37,124] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 06:44:13 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 06:44:13,263] INFO: Shard ID None session has been invalidated.
+2024-12-28 06:44:18 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 9b532418d3e90f0297094d8804c6a352).
+[2024-12-28 06:44:18,866] INFO: Shard ID None has connected to Gateway (Session ID: 9b532418d3e90f0297094d8804c6a352).
+[2024-12-28 06:44:20,874] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 06:59:53 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 06:59:53,106] INFO: Shard ID None session has been invalidated.
+2024-12-28 06:59:58 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 44ff09b618205e43772cb832da6d77e5).
+[2024-12-28 06:59:58,606] INFO: Shard ID None has connected to Gateway (Session ID: 44ff09b618205e43772cb832da6d77e5).
+[2024-12-28 07:00:00,777] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 07:15:33 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 07:15:33,001] INFO: Shard ID None session has been invalidated.
+2024-12-28 07:15:38 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 2912a98ad686b615d4b7bd5358dd3cbc).
+[2024-12-28 07:15:38,493] INFO: Shard ID None has connected to Gateway (Session ID: 2912a98ad686b615d4b7bd5358dd3cbc).
+[2024-12-28 07:15:40,577] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 07:34:38 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 07:34:38,462] INFO: Shard ID None session has been invalidated.
+2024-12-28 07:34:43 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 332fb31b95cbb5950840c5bd813f6b4f).
+[2024-12-28 07:34:43,990] INFO: Shard ID None has connected to Gateway (Session ID: 332fb31b95cbb5950840c5bd813f6b4f).
+[2024-12-28 07:34:46,193] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 07:52:21 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 07:52:21,804] INFO: Shard ID None session has been invalidated.
+2024-12-28 07:52:27 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 00cac9eabc897215dc9c3c9436fddf18).
+[2024-12-28 07:52:27,455] INFO: Shard ID None has connected to Gateway (Session ID: 00cac9eabc897215dc9c3c9436fddf18).
+[2024-12-28 07:52:29,460] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 08:08:01 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 08:08:01,626] INFO: Shard ID None session has been invalidated.
+2024-12-28 08:08:07 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 9974e76a4df374a3502feae4b8024b3d).
+[2024-12-28 08:08:07,165] INFO: Shard ID None has connected to Gateway (Session ID: 9974e76a4df374a3502feae4b8024b3d).
+[2024-12-28 08:08:09,170] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 08:26:15 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 08:26:15,919] INFO: Shard ID None session has been invalidated.
+2024-12-28 08:26:21 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: c73614fab51aededdaeb5c240707992a).
+[2024-12-28 08:26:21,476] INFO: Shard ID None has connected to Gateway (Session ID: c73614fab51aededdaeb5c240707992a).
+[2024-12-28 08:26:23,660] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 08:43:36 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 08:43:36,468] INFO: Shard ID None session has been invalidated.
+2024-12-28 08:43:41 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 2124357484b087e698259ff23ea920ff).
+[2024-12-28 08:43:41,954] INFO: Shard ID None has connected to Gateway (Session ID: 2124357484b087e698259ff23ea920ff).
+[2024-12-28 08:43:43,960] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 09:01:19 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 09:01:19,416] INFO: Shard ID None session has been invalidated.
+2024-12-28 09:01:24 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: ba86812829f0a085479c7549513f2eea).
+[2024-12-28 09:01:24,908] INFO: Shard ID None has connected to Gateway (Session ID: ba86812829f0a085479c7549513f2eea).
+[2024-12-28 09:01:26,922] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 09:19:33 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 09:19:33,278] INFO: Shard ID None session has been invalidated.
+2024-12-28 09:19:39 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 433a0bd00b5cb7679695e8c97c0d5e35).
+[2024-12-28 09:19:39,054] INFO: Shard ID None has connected to Gateway (Session ID: 433a0bd00b5cb7679695e8c97c0d5e35).
+[2024-12-28 09:19:41,192] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 09:37:35 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 09:37:35,284] INFO: Shard ID None session has been invalidated.
+2024-12-28 09:37:40 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 700f57873033b4eb2562758ac67980aa).
+[2024-12-28 09:37:40,857] INFO: Shard ID None has connected to Gateway (Session ID: 700f57873033b4eb2562758ac67980aa).
+[2024-12-28 09:37:42,976] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 09:56:32 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 09:56:32,291] INFO: Shard ID None session has been invalidated.
+2024-12-28 09:56:37 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: de9c89b06183b292d32b0fae41b556dd).
+[2024-12-28 09:56:37,781] INFO: Shard ID None has connected to Gateway (Session ID: de9c89b06183b292d32b0fae41b556dd).
+[2024-12-28 09:56:39,801] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 10:12:30 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 10:12:30,119] INFO: Shard ID None session has been invalidated.
+2024-12-28 10:12:35 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: a553c40004394df8448c98b7b2981fe7).
+[2024-12-28 10:12:35,699] INFO: Shard ID None has connected to Gateway (Session ID: a553c40004394df8448c98b7b2981fe7).
+[2024-12-28 10:12:37,702] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 10:32:20 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 10:32:20,338] INFO: Shard ID None session has been invalidated.
+2024-12-28 10:32:25 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 6a5173ccb7c8bba28d5c358c6d18d201).
+[2024-12-28 10:32:25,817] INFO: Shard ID None has connected to Gateway (Session ID: 6a5173ccb7c8bba28d5c358c6d18d201).
+[2024-12-28 10:32:27,847] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 10:51:50 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 10:51:50,222] INFO: Shard ID None session has been invalidated.
+2024-12-28 10:51:55 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 42455035fb1b2b3e0ff27eb96c23976a).
+[2024-12-28 10:51:55,699] INFO: Shard ID None has connected to Gateway (Session ID: 42455035fb1b2b3e0ff27eb96c23976a).
+[2024-12-28 10:51:57,706] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 11:10:50 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 11:10:50,276] INFO: Shard ID None session has been invalidated.
+2024-12-28 11:10:55 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 74be06380247546a2d2782fe7236447f).
+[2024-12-28 11:10:55,759] INFO: Shard ID None has connected to Gateway (Session ID: 74be06380247546a2d2782fe7236447f).
+[2024-12-28 11:10:57,763] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 11:30:47 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 11:30:47,477] INFO: Shard ID None session has been invalidated.
+2024-12-28 11:30:53 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 919b81e29d7f97a60f799016f82dba58).
+[2024-12-28 11:30:53,181] INFO: Shard ID None has connected to Gateway (Session ID: 919b81e29d7f97a60f799016f82dba58).
+[2024-12-28 11:30:55,322] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 11:50:13 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 11:50:13,817] INFO: Shard ID None session has been invalidated.
+2024-12-28 11:50:19 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 2cdfd62b4472d64319a0982c647ab604).
+[2024-12-28 11:50:19,321] INFO: Shard ID None has connected to Gateway (Session ID: 2cdfd62b4472d64319a0982c647ab604).
+[2024-12-28 11:50:21,326] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 12:08:37 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 12:08:37,451] INFO: Shard ID None session has been invalidated.
+2024-12-28 12:08:42 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: 3f2ec30dee1bf53ac70b84a95cd6f8db).
+[2024-12-28 12:08:42,960] INFO: Shard ID None has connected to Gateway (Session ID: 3f2ec30dee1bf53ac70b84a95cd6f8db).
+[2024-12-28 12:08:44,970] INFO: Logged in as Storyteller#8466 (1286595876654940171)
+2024-12-28 12:19:36 INFO     discord.gateway Shard ID None session has been invalidated.
+[2024-12-28 12:19:36,099] INFO: Shard ID None session has been invalidated.
+2024-12-28 12:19:41 INFO     discord.gateway Shard ID None has connected to Gateway (Session ID: bdabc67a205fcca14eb021385e8184fd).
+[2024-12-28 12:19:41,569] INFO: Shard ID None has connected to Gateway (Session ID: bdabc67a205fcca14eb021385e8184fd).
+[2024-12-28 12:19:43,573] INFO: Logged in as Storyteller#8466 (1286595876654940171)
