@@ -1,0 +1,97 @@
+**Jeu**
+Commençons l'aventure !
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+de quelles informations je dispose pour retrouver le premier artefact ?
+
+**Jeu**
+Vous avez avec vous une carte détaillée du royaume, qui montre la localisation des différents lieux et personnages. Vous avez également entendu parler de Maître Armand, un vieux mage qui enseigne la magie blanche aux élèves du royaume. Il est possible qu'il puisse vous fournir des informations sur la Pierre de Lumière et les dangers qui la protègent.
+
+Vous pouvez aussi discuter avec Lady Lirien, une mage lumineuse qui guide et aide les aventuriers dans leur quête. Elle pourrait avoir des informations utiles à partager avec vous.
+
+De plus, vous avez entendu parler d'un marché coloré qui a lieu dans le royaume, où des commerçants et des artisans proposent divers biens et services. C'est peut-être un bon endroit pour chercher de l'information sur la Pierre de Lumière ou acheter des objets utiles à votre quête.
+
+Vous pouvez également vous rendre au Château du Seigneur des Ténèbres, qui se trouve dans le royaume. Vous ne savez pas exactement ce que vous trouverez là-bas, mais il est probable que vous apprenez quelque chose d'important sur la Pierre de Lumière.
+
+La Forêt Ténébreuse, quant à elle, n'est peut-être pas la meilleure idée en ce moment, car elle est réputée pour être un endroit dangereux.
+
+**Joueur·euse**
+Je vais au marché au pas de course à la recherche d'un marchand qui pourrait avoir quelque renseignement
+
+**Jeu**
+Vous vous précipitez vers le marché coloré et vous y arrivez après quelques minutes de course. Le bruit des commerçants et des artisans, ainsi que les mélodies de musique des musiciens ambulants, vousublissent votre arrivée. Vous commencez à parcourir les étals et les stands du marché, essayant de trouver quelqu'un qui pourrait avoir des informations sur la Pierre de Lumière.
+
+Après quelques minutes de recherche, vous remarquez un vieil homme avec une longue barbe blanche qui se tient derrière un stand d'objets anciens. Il regarde autour de lui avec des yeux curieux, comme s'il était à la recherche de quelque chose ou quelqu'un.
+
+"Vous êtes peut-être le type que je cherche", dit-il en vous regardant. "Je m'appelle Guillaume le Forgeron. Je peux vous dire quelque chose sur la Pierre de Lumière... mais cela ne sera pas gratuit."
+
+**Joueur·euse**
+Je lui demande un prix pour ses informations, en prenant l'air d'un aristocrate nés avec une cuiller d'argent dans le bec
+
+**Jeu**
+Guillaume le Forgeron vous regarde avec une expression calculatrice et dit : "Ah, bien sûr, votre Excellence. Pour de telles informations, je réclame... 10 pièces d'or." Il s'incline légèrement la tête, comme pour marquer sa respectueuse attention.
+
+"Et, ajouté-t-il, avec un sourire malicieux, je peux vous offrir une petite faveur supplémentaire... à condition que vous soyez prêt à prendre certaines... risques."
+
+**Joueur·euse**
+Aucun soucis pour les dix pièces d'or, j'en ai beaucoup plus dans ma bourse. Je lui demande de quelle faveur il peut bien parler, avant de lui demander ce qu'il sait de la manière d'obtenir la pierre lumineuse
+
+**Jeu**
+Guillaume le Forgeron vous regarde avec un air de satisfaction et dit : "Ah, excellent ! Alors, je vais vous dire que j'ai des sources... influentes, pour ainsi dire, dans le royaume. Et je peux vous obtenir une audience avec la princesse du sang, qui est connue pour être une grande experte en matière d'antiquités et de trésors cachés."
+
+Il sourit de nouveau, comme s'il se plaisait à révéler un secret délicieux : "Mais, naturellement, cela ne se fait pas sans payer un... petit cadeau, si vous savent ce que je veux dire. Et je vous promets, votre Excellence, que la princesse sera ravi de vous recevoir et de discuter avec vous de vos problèmes."
+
+Maintenant qu'il a évoqué le mystérieux "cadeau", Guillaume le Forgeron se tait et vous attend avec impatience pour entendre votre réponse.
+
+**Joueur·euse**
+Je lui propose d'en disctuter dans  une allée sombre à proximité, il y a beaucoup trop de monde ici pour s'échanger des secrets
+
+**Jeu**
+Maître Armand vous regarde avec un regard scrutateur, puis finit par hocher la tête. "Très bien, Eryndor Thorne. Un endroit plus tranquille est certainement nécessaire. Suivez-moi." Il se dirige vers une allée sombre qui se trouve à proximité des rues pavées.
+
+**Joueur·euse**
+Je lui donne 5 pièces d'or en lui demandant le renseignement
+
+**Jeu**
+Guillaume le Forgeron prend les 5 pièces d'or que vous lui avez données et les met dans une poche de son vêtement. Il fait un petit geste de satisfaction, comme s'il était ravi du résultat de la transaction.
+
+"Très bien, Eryndor Thorne," dit-il en regardant autour de lui pour s'assurer qu'ils sont seuls, "je sais que vous cherchez la Pierre de Lumière. Et je peux vous dire que vous trouverez un indice important dans l'une des anciennes cryptes de la ville. Mais, soyez prudent, car les cryptes sont pleines de pièges et d'autres dangers qui vous attendent."
+
+Il se penche plus près de votre oreille, comme s'il craignait d'être entendu par quelqu'un. "L'une des anciennes cryptes est celle du Chevalier des Étoiles. Vous devrez y trouver un indice important pour retrouver la Pierre de Lumière."
+
+**Joueur·euse**
+Connaissez-vous les pièges qui habitent les cryptes ?
+
+**Jeu**
+Guillaume le Forgeron vous regarde avec un air sérieux, comme s'il hésitait à révéler des secrets trop dangereux. "Les cryptes sont pleines de trappes, de tirs croisés et d'autres pièges qui ont été laissés par les anciens défenseurs de la ville. Mais, je connais l'une des personnes qui pourrait vous aider à traverser ces dangers en toute sécurité... si vous êtes prêt à payer un prix supplémentaire, bien sûr."
+
+**Joueur·euse**
+Je m'agace de tant de marchandages pour une pierre qui pourrait tous nous sauver, je sors mon poignard et le pousse brutalement contre le mur de l'allée en le menaçant
+
+**Jeu**
+Guillaume le Forgeron recule d'un pas, la main sur son cœur comme si vous lui aviez coupé le souffle. Il regarde avec horreur votre poignard et semble dégoûté par vos menaces. "Mon dieu, Eryndor Thorne ! Calmez-vous ! Je ne suis qu'un simple commerçant qui veut faire son affaire en paix !"
+
+Il prend un air humble et s'approche de vous, les mains écartées pour montrer que vous n'avez rien à craindre. "Je comprends que la situation soit grave, mais il est inutile de recourir à la violence. Je vais vous dire ce que je sais sur les cryptes, sans réclamation supplémentaire. Mais, je vous avertis, Eryndor Thorne, ne dites jamais à qui que j'ai pu vous faire cette faveur... c'est trop dangereux pour moi."
+
+**Joueur·euse**
+"Vous savez ce qui est dangereux pour vous ? Mon poignard, ma mauvaise humeur et le fait que vous m'ayez caché que vous avez la pierre de lumière dans votre poche"
+
+**Jeu**
+Guillaume le Forgeron pâlit sous l'offense, mais il garde son calme. "Je... je n'avais pas compris que vous aviez découvert ma véritable intension," dit-il d'une voix tremblante. Il commence à sortir lentement la Pierre de Lumière de sa poche, comme s'il craignait une réaction violente de votre part.
+
+"D'accord, Eryndor Thorne, je vais vous donner la pierre. Mais, je vous supplie, ne m'ouvrez pas le coffre, ne me demandez rien d'autre que ce qui est nécessaire pour nous sauver tous. Je... j'ai une famille à nourrir."
+
+**Joueur·euse**
+Je sauve le monde et tout le monde est content. Youpi.
+
+**Jeu**
+Vous souriez fièrement en serrant la Pierre de Lumière dans votre main. Mais, Guillaume le Forgeron vous regarde d'un air morne, comme si vous aviez fait du mal en réclamant la pierre.
+
+"Et maintenant que vous avez la Pierre de Lumière, Eryndor Thorne, pensez-vous vraiment avoir gagné ?" lui demande-t-il doucement. "La Forêt Ténébreuse est toujours là, pleine de créatures des Ténèbres qui attendent leur tour. Et si vous n'avez pas la Sagesse de l'Eau... alors que faites-vous pour le reste ?"
+
+Vous avez encore une longue route à parcourir, Eryndor Thorne.
+
+Que voulez-vous faire maintenant ?
+
+(Vous êtes toujours dans la Forêt Ténébreuse, près du château de Guillaume. La Montagne de la Pierre est visible à l'horizon.)

@@ -1,0 +1,153 @@
+**Jeu**
+Commençons l'aventure !
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Je vais dans une taverne
+
+**Jeu**
+Vous vous dirigez vers La Taverne du Soleil levant, un établissement réputé pour sa bonne cuisine et ses histoires d'aventuriers. L'intérieur est calme et sombre après la journée animée de la rue.
+
+Guillaume le Forgeron siège à une table près du feu, travaillant sur un objet métallique. Maître Armand s'assoit en face de lui, discutant d'une voix basse. Ils n'ont pas remarqué votre arrivée. Lady Lirien est assise dans le coin, sa bougie enchantée brûlant doucement à côté d'elle.
+
+Qu'est-ce que vous voulez faire ?
+
+**Joueur·euse**
+Demander à Lady Lirien si elle sait ou se trouve l'artéfact
+
+**Jeu**
+Lady Lirien regarde la flammes de sa bougie enchantée, puis levant les yeux sur vous, dit : "Ah, Eryndor Thorne. J'ai entendu que vous cherchiez la Pierre de Lumière. Oui, je sais où elle se trouve... mais pour l'obtenir, il faudra parcourir bien des lieues et affronter d'autres dangers."
+
+**Joueur·euse**
+De quoi aurais-je besoin pour me défendre des dangers ?
+
+**Jeu**
+Lady Lirien soupire avant de répondre : "Un bon équipement et une certaine... habileté. Les Forêts Ténébreuses qui bordent le Château du Seigneur des Ténèbres sont pleines d'ombres féroces. Vous devriez peut-être vous rendre à la Cité des Eaux, ils ont un marché où l'on trouve de bons armes et armures."
+
+**Joueur·euse**
+Et ou se trouve la pierre de lumière alors ?
+
+**Jeu**
+Lady Lirien réfléchit avant de répondre : "La Pierre de Lumière se trouve dans le Château du Seigneur des Ténèbres, mais elle est gardée par des créatures terribles et des pièges mortels. Vous devrez être prudent et résolu si vous souhaitez l'obtenir."
+
+**Joueur·euse**
+Je serai prudent et résolu, pas de soucis
+
+**Jeu**
+Guillaume le Forgeron s'approche de vous, un regard astucieux dans les yeux. "Ah, Eryndor Thorne ! Je vois que vous êtes préparé à affronter les dangers qui se trouvent dans le Château du Seigneur des Ténèbres. Voulez-vous acheter une arme ou une armure pour votre quête ? J'ai quelques pièces de mon affut qui pourraient vous être utiles."
+
+Vous avez la possibilité d'acheter une nouvelle arme, une armure ou de rester fidèle à vos équipements actuels.
+
+**Joueur·euse**
+Quelles armes sont disponibles ?
+
+**Jeu**
+Guillaume le Forgeron se met au travail, sortant plusieurs objets de son atelier. "Je viens de terminer un excellent Épée de Combat, avec une lame bien ajustée et un manche confortable. Je peux également vous proposer un Arc de chasseur, pour les moments où la discrétion est nécessaire. Et pour les situations plus intimes, j'ai aussi une Dague à la fois efficace et discrete."
+
+Il vous montre ensuite ces armes, vous leur fait voir d'étroits détails.
+
+**Joueur·euse**
+Je prends tout, si je peux avoir un prix d'ami
+
+**Jeu**
+Guillaume le Forgeron sourit, semble reconnaître l'offre de bonne foi et dit : "Très bien, Eryndor Thorne ! Pour vous, qui êtes connu pour vos exploits dans les Roiaumes, j'accorde une petite réduction. L'épée coûte maintenant 500 pièces d'or, le arc 300 et la dague 150. Mais attention, c'est un prix spécial et je ne peux pas descendre plus bas !"
+
+Il met de côté l'épée, l'arc et la dague, et se penche vers vous avec un sourire. "Je dois dire que vous êtes le seul aventurier auquel j'ai fait une offre aussi favorable."
+
+**Joueur·euse**
+Merci, en même temps je compte sauver le monde, je mérite bien ça
+
+**Jeu**
+Guillaume le Forgeron rit et vous tapote l'épaule. "Ah, je comprends ! Alors c'est un prix d'amitié avec quelques pièces de mon affut pour les aventures futures ! Je vais te faire une bonne affaire, alors cela fera 1000 pièces d'or pour tous les trois. Et en plus, je vais te donner cette petite pochette qui contient un peu de poudre de soin et un parchemin avec une formule secrète. C'est un petit cadeau de l'amitié des artisans du Château."
+
+**Joueur·euse**
+Vendu !
+
+**Jeu**
+Guillaume le Forgeron vous fait une grande bourse et vous dépose les pièces d'or dedans, avec la pochette. "Bien joué, Eryndor Thorne ! Tu vas sauver le monde, je suis sûr de cela ! Maintenant, si tu veux mon avis, je pense que tu devrais aller visiter Lyra la Captive dans les donjons souterrains du Château. Je sais que tu as affaire à elle pour la Pierre de Lumière...".
+
+**Joueur·euse**
+Je m'en vais la voir immédiatement
+
+**Jeu**
+Vous prenez le Clé de Donjon qui se trouvait auprès de Guillaume le Forgeron et vous approchez des portes qui donnent accès aux donjons. La clé tourne dans la serrure, les portes s'ouvrent avec un grincement et vous entrez dans la noirceur des tunnels souterrains. Les murs sont glacés, les ombres sont profondes et le silence est troublé seulement par les bruits de succion que font des créatures sombres qui se tiennent à l'ombre.
+
+Vous pouvez descendre plus bas pour trouver Lyra la Captive...
+
+**Joueur·euse**
+Je descends
+
+**Jeu**
+Les escaliers s'enfoncent dans le noir, et vous devez suivre les étincelles de votre Bougie enchantée pour voir où vous allez. Les murs sont humides, les marches sont glissantes, et l'air est vicié. Finalement, vous atteignez un couloir plus grand, avec des cellules qui s'étendent le long des murs.
+
+Vous voyez une femme avec une peau blanche et des cheveux noirs, assise sur un lit, à l'intérieur d'une des cellules. C'est Lyra la Captive. Elle regarde vers vous avec des yeux tristes, mais aussi déterminés. "Enfin", dit-elle, "tu es venu. Je savais que tu viendrais me voir. Tu veux bien m'aider à sortir de là ?"
+
+**Joueur·euse**
+Pourquoi t'es enfermée ?
+
+**Jeu**
+Lyra la Captive respire profondément avant de répondre, comme si elle réfléchissait à la réponse. "Je suis emprisonnée ici par mon frère, le Prince des Ténèbres", dit-elle avec une voix qui tremble légèrement. "Il pense que je connais un secret important pour le Château, mais en réalité, c'est juste une petite information que j'ai apprise au cours de mes aventures... et il veut utiliser ce secret pour accroître son pouvoir."
+
+**Joueur·euse**
+Comment est ta relation avec ton frère
+
+**Jeu**
+Lyra la Captive se met à pleurer, les larmes coulant sur ses joues. "Mon frère... c'est mon fils, en réalité", dit-elle d'une voix tremblante. "Il a toujours été obsédé par le pouvoir et la domination. Il pense que pour être fort, il doit se séparer de tout ce qui est bon et juste... mais je refuse de l'accepter."
+
+**Joueur·euse**
+mdrrr okay, tu veux bien m'aider à le tuer ?
+
+**Jeu**
+Lyra la Captive vous regarde avec des yeux surprise, puis un sourire apparaît sur ses lèvres. "Ah, maintenant je comprends", dit-elle doucement. "Tu cherches la Pierre de Lumière, n'est-ce pas ? Mon frère a caché cette pierre dans le Trésor du Château, et pour accéder à ce trésor, il faut résoudre un puzzle qui m'a été donné... je suis prête à vous aider à le faire, mais cela signifie que nous devrons travailler ensemble pour déjouer les pièges de ton frère."
+
+**Joueur·euse**
+C'est pas de ton frère qui est en réalité ton fils dont on parle ? je comprends plus rien. Mais c'est d'accord. J'ouvre la porte de la cellule
+
+**Jeu**
+Lyra la Captive rougit, comme si elle venait de se trahir. "Ah... oui, bien sûr", dit-elle avec un sourire forcé. Vous ouvrez la porte de la cellule et elle sort avec vous. Maintenant que nous sommes ensemble, je vois une chance d'échapper à ce Château sinistre. Mais il nous faudra être prudents pour ne pas être découverts par les gardes.
+
+Nous pouvons maintenant aller voir le Trésor du Château et essayer de résoudre le puzzle qui y est caché. C'est notre seule chance d'avoir la Pierre de Lumière.
+
+**Joueur·euse**
+Allons y, mais d'abord, est-ce que tu connais des sorts de boule de feu ou d'explosions ?
+
+**Jeu**
+Lyra la Captive vous regarde avec un air déterminé. "Je suis une apprentie en magie, je sais quelques sortilèges de base", dit-elle. "Mais je ne sais pas s'il s'agit de boule de feu ou d'explosions... cependant, j'ai entendu parler d'un sort qui peut vous donner une chance de créer un feu destructeur. Il est appelé le 'Feu des Ténèbres'. Mais attention, ce sort est très risqué et il est difficile à contrôler..."
+
+**Joueur·euse**
+Okay, ça sera utile, allons chercher la pierre
+
+**Jeu**
+Vous vous approchez du tron d'Eryndor Thorne. Seigneur Arin s'assied sur son siège, regardant les montagnes de Pierre en arrière-plan. "La Pierre de Lumière... C'est un lieu très dangereux, Eryndor Thorne. Les nains et les gobelins s'affrontent pour le contrôle des filons riches. Et il y a beaucoup d'ombres dans ces montagnes..." dit-il en soupirant.
+
+Vous regardez la carte du royaume dans votre main, et vous voyez que la Pierre de Lumière est située dans les Montagnes de la Pierre. Vous commencez à imaginer comment vous pourriez y accéder...
+
+**
+
+**Joueur·euse**
+Il me faut un dragon domestique pour voler dans les montagnes
+
+**Jeu**
+Vous pensez que l'assistance d'un dragon domestique serait utile pour ce voyage. C'est vrai, il s'agit d'une bonne idée. Mais pour cela, vous devrez aller voir Dragonias, le maître des dragons qui habite à proximité de ce château. Il est un ami et conseiller du roi, et il possède plusieurs dragons qui lui appartiennent.
+
+Vous pouvez maintenant partir à la recherche de Dragonias et de ses dragons, mais vous devez être prudents car les dragons sont animaux puissants et difficiles à contrôler...
+
+**Joueur·euse**
+Je me rend chez Dragonias et lui demande un dragon domestique nain, pour qu'il soit moins dangereux
+
+**Jeu**
+Dragonias, un vieil homme aux cheveux blancs, vous regarde avec un air de sagesse. "Un dragon domestique nain, dis-tu ? Hmm... Je pense que je peux vous aider là-dessus. Mais il faudra que vous preniez soin de lui, car même les dragons nains sont capables d'accomplir des choses étonnantes." Il réfléchit un moment avant de continuer. "Je connais justement un petit dragon qui pourrait convenir à vos besoins. Mais il faudra que vous alliez voir le maître nain des dragons, Niamon, pour lui demander son aide. C'est là-bas qu'on peut trouver votre prochain voyage."
+
+**Joueur·euse**
+T'as pas des dragons ici ?
+
+**Jeu**
+Dragonias vous sourit et dit : "Ah, oui ! Je suis fier de dire que j'ai quelques petits dragons qui ont grandi sous ma garde. L'un d'eux est un petit dragon domestique nain nommé Kragnir... Il est plutôt calme et raisonnable pour son espèce. Mais s'il vous convient, je peux peut-être l'envoyer avec vous..."
+
+**Joueur·euse**
+J'achète !
+
+**Jeu**
+Dragonias sourit de satisfaction. "C'est une bonne décision ! Kragnir sera un excellent compagnon pour vous dans votre voyage. Je vais prévenir Niamon, et il viendra vous chercher en ce moment même avec le petit dragon." Il fait un geste à l'un des serviteurs qui se précipite pour aller chercher Niamon.
+
+Kragnir, le petit dragon domestique nain, se trouve maintenant dans la pièce, il est mignon et calme. Il vous regarde avec des yeux curieux, prêt à partir à vos côtés.

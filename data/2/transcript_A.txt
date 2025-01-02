@@ -1,0 +1,109 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+de quelles informations je dispose pour retrouver le premier artefact ?
+
+**Jeu**
+Vous avez entendu parler d'une rumeur qui circule dans la ville, selon laquelle une femme âgée et mystérieuse, nommée la Sibylle de la Rue des Fleurs, connaît l'emplacement du premier artefact. Cependant, personne ne sait vraiment où trouver cette Sibylle ni si elle est prête à vous aider. Vous savez également que la bibliothèque du château abrite des anciennes chroniques et livres qui pourraient contenir des indices sur l'emplacement de la pierre lumineuse, mais les portes de la bibliothèque sont fermées et gardées par un vigile taciturne.
+
+**Joueur·euse**
+Je cours à la rue des fleurs
+
+**Jeu**
+Vous vous trouvez enfin devant une maison qui ne paraît pas avoir changé depuis des siècles, avec une façade en pierre grise et des fenêtres étroites comme des yeux de chat. La porte, qui semble être en bois sombre et ornée d'un loquet en forme d'hirondelle, s'ouvre lentement en grinçant. Une femme âgée avec une coiffure noire à la façon des vierges et une robe bleue sombre vous fixe du regard, ses yeux brillants de connaissances anciennes. "Ah, vous êtes venu me trouver," dit-elle d'une voix douce mais ferme, "je suppose que vous cherchez quelque chose...?"
+
+**Joueur·euse**
+"Bonjour, je cherche la pierre lumineuse. Sauriez-vous ou elle se trouve ? "
+
+**Jeu**
+La Sibylle de la Rue des Fleurs sourit en coin, comme si elle savait un secret délicieux. "La pierre lumineuse... oui, j'en ai entendu parler. Mais trouver c'est une chose, découvrir... c'en est une autre." Elle marqua une pause, puis poursuit : "Je peux vous dire que la pierre se trouve dans le Quartier des Mages, mais il faudra payer pour entrer en possession de l'information exacte. Les rues sont pleines de dangers et les ténèbres commencent à peser sur le quartier."
+
+**Joueur·euse**
+je soupire en lui demandant son prix. les gens veulent toujours des sous contre des secrets.
+
+**Jeu**
+La Sibylle rit doucement, ses yeux se pétillant de plaisir. "Ah, mais vous n'êtes pas comme les autres, je suppose. Les secrets ne sont jamais donnés à l'eau, ils coûtent... une poignée d'épices rares." Elle sort de sa robe un sac en cuir et y fouille quelques instants avant de produire un petit pot en argent. "Je veux le musc de chauve-souris de la forêt noire, frais cueilli, il fait oublier même les morts et les fantômes."
+
+**Joueur·euse**
+Me rendre à la forêt noire ? C'est une folie. Je propose à Sibylle d'en discuter à l'intérieur, je dispose de quelques objets rares qui pourraient l'interesser
+
+**Jeu**
+La Sibylle hoche la tête, visiblement intéressée par votre proposition. "Entrez donc, je suis curieuse de voir ce que vous avez à me montrer." Elle fait signe à un rideau de tapisserie qui se déplace doucement, révélant une pièce sombre et intime, avec des meubles anciens et des objets rares exposés. "Ah, je vois... vous avez quelque chose d'intéressant à me montrer, n'est-ce pas ?" Elle s'assoit dans un fauteuil confortable, les jambes croisées, et attend que vous présentiez vos offres.
+
+**Joueur·euse**
+"Etes vous consciente que la forêt est à trois jours de cheval ?"
+
+**Jeu**
+La Sibylle sourit avec une pointe d'ironie. "Je n'ai pas attendu mes 80 ans pour devenir folle, monsieur l'aventurier. Bien sûr, je suis consciente que la forêt est à trois jours de cheval... et même plus si vous prenez les chemins de traverse." Elle fait une pause, ses yeux étincelant dans la lumière faible de la pièce. "Cependant, je dispose d'autres sources d'information qui m'ont indiqué que vous pourriez... raccourcir votre trajet si vous êtes prêt à prendre un certain risque."
+
+**Joueur·euse**
+"Très bien. et savez vous les dangers qui nous menacent tous et toutes, l'imminence de l'arrivée des forces des ténèbres ? "
+
+**Jeu**
+La Sibylle hoche la tête lentement, son expression sérieuse. "Les forces des Ténèbres sont en effet à nos portes, monsieur l'aventurier... et elles viennent de loin. Le Seigneur des Ombres a lancé un appel au ralliement de ses troupes dans tout le royaume, et ils se rapprochent rapidement. Il faudra trouver la pierre lumineuse avant qu'ils ne parviennent à nous." Elle marque une pause, puis ajoute : "Mais il y a quelque chose... un symbole qui pourrait vous aider à traverser la forêt noire plus rapidement que prévu..."
+
+**Joueur·euse**
+"Il me semble que sur ce point, vous êtes à côté de la réalité. Les forces des ténèbres ont déja investi nos égouts. Dans quelques heures nous pourrions être submergés"
+
+**Jeu**
+La Sibylle pâlit légèrement, son expression reflétant une peur soudaine. "Mon dieu... les égouts sont leurs points d'entrée ? Ils vont bientôt envahir tout le quartier." Elle se lève de sa chaise et commence à agir avec une hâte inquiète. "Vous devez trouver la pierre lumineuse avant qu'il ne soit trop tard. Prenez mon sac d'épices rares, mais laissez-le vide... pour le musc de chauve-souris, vous aurez besoin des mains douces du marché aux fleurs..."
+
+**Joueur·euse**
+"Vous voulez tout de même vos épices ?! avec ce que je viens de vous dire ?!"
+
+**Jeu**
+La Sibylle vous regarde droit dans les yeux, une détermination farouche y brillant. "Je veux la pierre lumineuse, monsieur l'aventurier... et je suis prête à prendre des risques pour obtenir ce que j'ai toujours voulu. L'épice la plus rare est le prix de ma vie même."
+
+**Joueur·euse**
+"Il est cocasse que vous parliez du prix de votre vie" 
+Je sors mon poignard en la poussant brutalement contre le mur, la menançant.
+
+**Jeu**
+La Sibylle se fige, la peur et la terreur dans son regard. "Non... non, ne faites pas ça ! Je vais vous donner les épices, j'irai même vous chercher ce musc de chauve-souris que vous voulez... juste... s'il vous plaît, n'abîmez pas mon magasin."
+
+**Joueur·euse**
+"Je me contrefiche de vos épices, je veux la pierre ! Donnez la moi"
+
+**Jeu**
+La Sibylle tremble légèrement, son voix mal assurée. "E... elle est... dans une poche à monsieur le Chirurgien au bout du Pont des Pauvres..."
+
+**Joueur·euse**
+je la laisse tomber sans égards pour sa personne et je cours voir le chirurgien
+
+**Jeu**
+Vous arrivez haletant devant la porte de la boutique de monsieur le Chirurgien, et vous appuyez violemment sur la sonnette. La porte s'ouvre avec un cri plaintif, révélant l'intérieur encombré du magasin. "Mon dieu, qu'est-ce que c'est encore ?" s'écrie monsieur le Chirurgien, ses lunettes de vieillesse décalées sur son nez, tandis qu'il s'efforce à maintenir équilibre avec l'aide d'un bâton de marche. "Ah... vous cherchez la pierre lumineuse ?"
+
+**Joueur·euse**
+"Oui celle dans votre poche"
+
+**Jeu**
+Monsieur le Chirurgien cligne des yeux, sa main libre se crispant sur l'attache du bâton de marche. "Ah... oh... oui... je vois... Vous voulez dire que...?" Il hésite brièvement, puis, avec un geste résolu, il tend une poche de son tablier et la tire hors. Dans sa main tremblante, vous voyez briller une pierre lumineuse, d'une pureté qui éclaire tout autour. "C'est... c'est bien celle que vous cherchez..."
+
+**Joueur·euse**
+Sans rien dire, je lui prends la pierre des mains
+
+**Jeu**
+Monsieur le Chirurgien recule de plusieurs pas, son visage pâle de frayeur. "Non... non, je suppose que cela ne vous regarde pas... Mais il faudrait... il faudrait trouver une autre manière de vous sortir de ce guêpier... car si les forces des Ténèbres arrivent ici..."
+
+**Joueur·euse**
+Je ne l'écoute pas, le temps presse. La pierre dans la poche, je cours voir les mages de la bibliothèque
+
+**Jeu**
+Vous arrivez bouillant devant la grande porte en bois de la Bibliothèque des Sages, et vous frappez avec force sur la sonnette de cuivre qui y est fixée. Les portes s'ouvrent avec un grincement, révélant un hall de lecture sombre et silencieux. Un mage âgé, les cheveux blancs comme neige, se tient debout derrière le bureau d'enregistrement, son regard étonné de vous voir si rapide dans votre poursuite. "La... la pierre lumineuse ?" Il hésite brièvement, avant de faire un pas en arrière, son visage défait.
+
+**Joueur·euse**
+Je me transforme en super robot et j'explose dans une déflagration nucléaire. Fin
+
+**Jeu**
+Hah ! Vous ne pouvez même pas finir votre aventure dignement !
+
+La bibliothèque des sages est réduite à un tas de cendres, les livres carbonisés, les murs fissurés par la chaleur. Le mage blanc comme neige hurle au ciel : "Mon dieu ! Qu'as-tu fait ? Tout le savoir, tout l'histoire... perdue dans la destruction !"
+
+Et vous, vous vous transformez en un nuage de vapeur radioactive, évanoui dans les airs.
+
+La ville royale est finie. Les forces des ténèbres prennent d'assaut, et tout bascule dans le chaos.
+
+ La Sibylle ? Elle n'est plus... mais je suppose qu'elle s'en moque, maintenant que vous avez détruit tout.
+
+Fini. La comédie est finie.

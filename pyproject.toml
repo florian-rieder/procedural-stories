@@ -20,6 +20,8 @@ networkx = "^3.4.2"
 matplotlib = "^3.9.2"
 scipy = "^1.14.1"
 langchain-ollama = "^0.2.1"
+pandas = "^2.2.3"
+seaborn = "^0.13.2"
 
 
 [build-system]

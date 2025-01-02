@@ -1,0 +1,123 @@
+**Jeu**
+Commençons l'aventure !
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Tu vas te coucher, tu as eu une longue journée
+
+**Jeu**
+Non, attends ! Je me souviens que j'ai quelque chose à faire... La Pierre de Lumière est peut-être en danger et il faut la trouver avant qu'elle tombe aux mains du seigneur des Ténèbres. Et puis, il y a cette forêt qui m'a été suggérée comme une destination possible... Tu as dit que tu pourrais me montrer des routes alternatives si je voulais aller n'importe où ?
+
+**Joueur·euse**
+Je vais dormir dans la forêt
+
+**Jeu**
+La forêt Ténébreuse ! C'est un lieu sombre et mystérieux. Vous trouverez peut-être de l'hébergement temporaire, mais il faudra être prudent contre les créatures qui y habitent. Les loups-garous, les vampires et les gobelins sont réputés pour faire des ravages dans cette forêt. Si vous voulez essayer de dormir là-bas, je ne vois pas grand-chose à y gagner... Mais si vous êtes désireux de tenter votre chance, la lisière de la forêt est visible par-delà les collines qui bordent le village.
+
+**Joueur·euse**
+Je vais dormir là bas
+
+**Jeu**
+Vous vous dirigez vers la lisière de la forêt. La nuit est sombre et les ombres semblent bouger autour de vous. Vous trouvez un endroit relativement calme, mais vous sentez que vous êtes surveillé. Tout à coup, vous entendez des branchages qui craquent derrière une broussaille voisine.
+
+Elara la Chasseuse se tient debout au loin, regardant en votre direction. Elle semble discrète et ne bouge pas. Vous remarquez qu'elle a un sac accroché à son épaule et que vous pouvez deviner quelques objets à l'intérieur par leur forme.
+
+**Joueur·euse**
+Je devine un sac de couchage dans son sac. Je le prends et je m'en vais dormir dedans
+
+**Jeu**
+Vous prenez le sac de couchage sans dire mot à Elara la Chasseuse, qui vous regarde avec surprise mais ne proteste pas. Vous vous éloignez d'elle pour trouver un endroit plus calme où dormir.
+
+Une fois que vous êtes loin, vous enroulez le sac de couchage autour de vous et cherchez un endroit confortable pour dormir. Le bruit des branchages qui craquaient tout à l'heure semble s'être calmé, mais vous ne pouvez pas vous empêcher d'avoir l'impression que quelque chose attend votre sommeil.
+
+Vous essayez de dormir, mais la forêt semble être remplie de sons nocturnes. Vous vous sentez nerveux et incapable de trouver le repos.
+
+**Joueur·euse**
+Je trouve le repos
+
+**Jeu**
+Après une nuit agitée, vous parvenez finalement à trouver un peu de sommeil. Le sac de couchage semble avoir été une bonne idée ! Vous dormez plusieurs heures, et lorsque vous vous réveillez, la lune est déjà haut dans le ciel.
+
+Elara la Chasseuse se trouve toujours près de votre endroit de sommeil, mais elle semble être occupée à préparer un petit déjeuner. Elle vous regarde avec une expression aimable et vous invite à rejoindre elle.
+
+"Je me nomme Elara", dit-elle. "Et toi ? Qu'est-ce que tu fais dans cette forêt si reculée ?"
+
+**Joueur·euse**
+Je dors
+
+**Jeu**
+Elle rit poliment. "Ah, je suppose que c'est une bonne idée de dormir un peu plus tard. Il faut être prêt pour les aventures qui vous attendent ici !"
+
+**Joueur·euse**
+Pourquoi?
+
+**Jeu**
+"La forêt est pleine de secrets et de dangers", dit-elle avec un air sérieux. "Mais je crois que vous êtes préparé à affronter ces défis. Vous cherchez la Pierre de Lumière, n'est-ce pas ?"
+
+**Joueur·euse**
+Oui, je veux l'éteindre, comme ça je peux dormir.
+
+**Jeu**
+Elle éclate d'un rire nerveux. "Ah, non, je pense que c'est le contraire ! La Pierre de Lumière est un artefact puissant qui peut vous aider à éclairer votre chemin. Mais si vous voulez poursuivre ton désir... Tu pourrais peut-être aller demander conseil à Thrain le Corbeau ? Il connaît la forêt comme sa poche et pourrait t'aider."
+
+**Joueur·euse**
+Il est où ce corbeau?
+
+**Jeu**
+"Thrain se trouve souvent perché dans un arbre en bordure de la clairière du nord", dit-elle. "Vous pouvez le voir voler autour des arbres, mais il préfère rester sur son perchoir pour observer les alentours." Vous apercevez à l'horizon une série d'arbres qui semblent plus touffus que les autres et dont un se distingue par une grande branche en forme de Y. C'est peut-être là qu'on trouve Thrain.
+
+**Joueur·euse**
+Peut être?
+
+**Jeu**
+Elle sourit. "Oui, peut-être ! Mais n'oublie pas qu'en cette forêt, les choses ne sont jamais aussi simples qu'elles le semblent. La clairière du nord est loin de là où nous sommes... Tu devras traverser la zone des bruyères et risques d'y rencontrer des compagnons inattendus."
+
+**Joueur·euse**
+Tu t'ennui avec cette histoire de pierre de lumière et de train machintruc. C'est quoi les autres artifacts?
+
+**Jeu**
+"Ah, les autres artefacts ! Oui, bien sûr", dit-elle en changeant de sujet. "Il y a le Sceptre de la Nuit, un objet sombre qui permettrait au possesseur de contrôler les créatures de l'ombre... Et puis il y a quelque chose d'autre, mais je ne suis pas sûre que cela soit vrai..." Elle se tait brusquement, regardant autour d'elle comme si elle redoutait qu'on écoutât. "Disons que j'ai des rumeurs à partager."
+
+**Joueur·euse**
+Le sceptre de la NUIT! Exalté, je pars en quête de ce sceptre pour pouvoir dormir où bon me semble.
+
+**Jeu**
+Elle rit nerveusement. "Ah, bien sûr ! Le Sceptre de la Nuit, c'est une excellente idée... Mais sois prudent, Eryndor, car si tu parviens à obtenir ce sceptre, il te faudra aussi faire face aux conséquences qui en découlent." Thrain le Corbeau, qui se trouvait jusqu'alors perché dans un arbre voisin, descend soudainement et s'approche d'elle. "Dites-moi, Elara, savez-vous où je peux trouver des informations sur ce Sceptre de la Nuit dont il est question ici ?"
+
+**Joueur·euse**
+Eryndor? C'est mon prénom?
+
+**Jeu**
+Non ! Tu es Eryndor Thorne. Mais ne t'en soucie pas, dans cette forêt, les noms sont parfois oubliés et les identités se mélangent...
+
+**Joueur·euse**
+Non ! Je suis Thorne Eryndor, voyons!
+
+**Jeu**
+"Ah, pardonnez-moi donc, Thorne Eryndor ! Eh bien, alors qu'avez-vous décidé de faire ? Demander à Elara plus d'informations sur le Sceptre de la Nuit, ou plutôt...?" Vous remarquez que la forêt commence à s'éclairer avec des lueurs faibles et sinistres. Les ombres qui se profilent autour de vous semblent prendre vie...
+
+**Joueur·euse**
+Bref, revenons à cette histoire de scpetre de la Nuit.
+
+Je marche un peu et je trébuche dessus. Je l'ai trouvé.
+
+**Jeu**
+Elle semble soulagée de voir que tu as trouvé le Sceptre de la Nuit. "Ah, bravo, Thorne Eryndor ! Tu es vraiment fortuné aujourd'hui... Mais attention, maintenant que tu possède ce sceptre, les créatures de l'ombre commencent à s'intéresser à toi..." Elle se tourne vers le nord et dit : "Je crois que je vais me retirer là-bas. La clairière du nord est loin, mais si tu veux, tu peux aller y discuter avec Thrain. Il sait certainement quelque chose sur cette histoire."
+
+**Joueur·euse**
+Je marche un peu et je tribuche sur la pierre de la lumière. Je l'ai trouvée. On dirais plutôt un galet
+
+**Jeu**
+Un galet de lumière, voilà une découverte intéressante ! Le galet émet une faible lumière qui repousse légèrement les ombres environnantes. Cela devrait te permettre d'avoir une vue plus claire sur ton entourage. Tu remarques que la forêt semble moins menaçante qu'auparavant, mais tu ignores toujours où se trouve le Sceptre de la Nuit.
+
+**Joueur·euse**
+Il est dans ma main gauche, voyons, je viens de le trouver!
+
+**Jeu**
+Tu tiens donc le Sceptre de la Nuit dans ta main gauche ! Mais attends... Comment ça se fait que tu saches déjà où il est ? Tu avais juste tombé dessus, et maintenant, tu parles comme si tu l'avais toujours tenu... Thrain le Corbeau te regarde avec un air suspicieux.
+
+**Joueur·euse**
+Thrain le corbeau m'observe allègrement retourner à mon sommeil.
+
+**Jeu**
+Il hoche la tête d'un air approuvant et déclare : "Ah, parfait ! Je vois que tout se passe bien. La fatigue a souvent des effets bénéfiques... Mais si tu veux me croire, il y a autre chose dans cette forêt qui pourrait t'intéresser." Il fait un geste vers l'est, où les montagnes de la Pierre semblent émerger du paysage.

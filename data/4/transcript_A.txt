@@ -1,0 +1,122 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Tu vas te coucher, tu as eu une longue journée
+
+**Jeu**
+Vous retournez au château de votre famille, épuisé mais déterminé à poursuivre votre quête dès le matin. La nuit est tombée et la lune se reflète dans les fenêtres du château, créant un paysage paisible qui contraste avec les dangers que vous allez affronter demain.
+
+**Joueur·euse**
+Tu demandes Thrain le Corbeau qu'est que ce tu pourrais bien faire
+
+**Jeu**
+"Ahah, je vois que l'esprit d'aventure ne te quitte jamais ! Eh bien, si tu veux mon avis, il te faudra parler aux commerçants de la ville, ils doivent savoir quelque chose... et peut-être visiter la tour du mage, qui est toujours occupé à faire des choses mystérieuses."
+
+**Joueur·euse**
+Je m'en vais parler aux commerçants!
+
+**Jeu**
+Vous vous dirigez vers le marché nocturne, où les vendeurs de toutes sortes d'objets et de produits proposent leurs marchandises. Le bruit et la musique vous enveloppent, mais vous parvenez à reconnaître une figure familier derrière un stand de fromage et de bière : c'est Gwédolin, le petit commerçant qui s'appelle "l'expert des secrets" ! Il semble vous attendre...
+
+**Joueur·euse**
+Je rejoins les musiciens
+
+**Jeu**
+La musique est si agréable que vous ne pouvez pas résister à la tentation de danser. Les musiciens, un groupe de troubadours et de minstrels, semblent vous connaître, car l'un d'eux vous adresse en chantant : "Un chevalier errant, avec cœur courageux..."
+
+**Joueur·euse**
+...te rentre dedans, toute en dansant" chante tu en lui rentrant dedans tout en chantant
+
+**Jeu**
+Les musiciens se mettent à rire et vous continuez votre danse, avec un peu plus de difficulté cette fois-ci, car la musique est devenue une farandole ! Une main vous touche l'épaule, c'est Gwédolin qui vous dit, en vous soufflant à l'oreille : "Ahah, tu as du talent pour faire danser les gens ! Mais, dis-moi, que vas-tu faire maintenant ?"
+
+**Joueur·euse**
+Tu lui rentre dedans tout en chantant
+
+**Jeu**
+Gwédolin se retrouve au sol, le dos meurtri et la tête dans un étui de fromage. "Mon dieu, c'est trop fort !" s'exclame-t-il, alors que les musiciens, à moitié morts de rire, vous poursuivent avec leur danse. Un groupe d'hommes en noir, qui étaient jusque-là masqués par la foule, se rapproche maintenant de vous...
+
+**Joueur·euse**
+Tu leurs rentre dedans également
+
+**Jeu**
+Les hommes en noir sont désormais étalés sur le sol, comme un jeu de cartes renversées. Ils se relevent avec difficulté, visiblement déconcertés par votre capacité à faire danser les gens. Le leader d'entre eux, un type grand et maigre, vous regarde avec une expression méprisante et dit : "Tu es fou, chevalier ! Mais... nous te laissons partir tranquille cette fois-ci."
+
+**Joueur·euse**
+Tu les provoques d'avantages en lançant Gwédolin sur eux.
+
+**Jeu**
+Les hommes en noir se mettent à courir après vous et Gwédolin, qui a recommencé à danser et continue à faire des moulinets avec ses jambes. La scène devient complètement folle, les gens s'enferment dans leurs cabanes pour échapper au tumulte. Soudain, vous entendez une voix venue du ciel : "Arrêtez immédiatement ces bêtises ! Je suis le maire de cette ville et je demande l'ordre à être rétabli !"
+
+**Joueur·euse**
+Tu rentre dans le maire tout en dansant
+
+**Jeu**
+Le maire, un homme gras et chauve, se trouve sous votre pied, tandis que ses vêtements sont complètement déchirés. Il se relève avec difficulté, furieux, et vous crie : "Mon dieu, que vas-tu faire ? Je suis le représentant du peuple et tu me traites comme un vulgaire sac de foin !"
+
+**Joueur·euse**
+Tu le lance sur les hommes en noir en leurs demandant qu'est ce qu'ils te veulent?
+
+**Jeu**
+Le maire se retrouve à terre, entouré des hommes en noir qui s'entre-déchinent pour l'écraser. L'un d'eux, le leader, se relève et vous dit : "Nous sommes envoyés par la Congrégation Noire... nous veoulons récupérer le sceau de feu qui se trouve dans les cryptes sous la cathédrale..."
+
+**Joueur·euse**
+Tu les accompagnes poliment récupérer le sceau de feu dans les cryptes sous la cathédrale
+
+**Jeu**
+Vous marchez à l'intérieur des cryptes sous la cathédrale, entouré des hommes en noir. Leur leader vous précède, une torche à la main, et dit : "Faites attention, le sceau de feu est protégé par de puissants sorts... et par un gardien formidable". Vous arrivez devant une grande dalle de pierre qui cache l'entrée des cryptes les plus profondes. Le leader vous désigne la dalle et dit : "Voilà. C'est là que se trouve le sceau de feu..."
+
+**Joueur·euse**
+Et le gardien?
+
+**Jeu**
+Le leader des hommes en noir se tourne vers un coin sombre et dit à voix basse : "Il est caché... mais il vous attend. Son nom est Morcane, et il est redoutable. Surtout, ne lui parlez pas de votre... particularité."
+
+**Joueur·euse**
+Tu avance et tu rencontre morcane
+
+**Jeu**
+Vous approchez de la dalle de pierre qui cache l'entrée des cryptes les plus profondes, et un grand monsieur aux yeux rouges sort d'une ombre. Il est gigantesque, avec une voix basse comme un tonnerre et il vous regarde droit dans les yeux. "Ah, c'est toi que j'attendais", dit-il en souriant largement. "Et qui es-tu, petit aventurier ?"
+
+**Joueur·euse**
+Tu lui parle de ta .... particularité
+
+**Jeu**
+Morcane se met à rire et son immense corps commence à secouer tout le périmètre des cryptes. Il vous dit : "Ahahah ! Tu veux me parler de ta... particularité ? C'est que tu fais danser les gens, n'est-ce pas ? Je suppose que cela pourrait être un avantage pour nous..." et il s'arrête brusquement en regardant les hommes en noir qui se trouvent derrière vous. "Mais je doute que la Congrégation Noire soit intéressée par cette... particularité. Elles veulent le sceau de feu, et elles ne savent pas ce qu'ils vont trouver..."
+
+**Joueur·euse**
+Développe.
+
+**Jeu**
+Morcane se met à vous regarder avec une expression sérieuse, comme s'il allait révéler un secret important. "Le sceau de feu est... différent", dit-il en hésitant. "C'est un artefact qui pourrait être utilisé pour faire danser non seulement les gens, mais aussi les choses inanimées. Les pierres, les murs, les étoiles même..." Il se tait brusquement, comme s'il craignait d'en dire trop.
+
+"Et la Congrégation Noire", continue-t-il, "elle veut l'utiliser pour faire danser le monde entier. C'est une folie, un désir absurde qui pourrait avoir des conséquences terribles..."
+
+**Joueur·euse**
+Tu lui coupe la parole en lui rentrant dedans en chantant.
+
+**Jeu**
+Vous vous mettez à chanter et à danser avec abandon, entrant dans les jambes de Morcane avec un tel aplomb que celui-ci est pris au dépourvu. Il essaie de se défendre, mais votre énergie et votre force sont trop fortes. Vous continuez à danser et à chanter, entraînant tout autour de vous : les murs des cryptes commencent à bouger, les pierres se mettent à tourner, et même les ombres elles-mêmes semblent danser avec vous.
+
+Lorsque le chant s'arrête, Morcane est projeté contre un mur, la respiration coupée. "Ah... c'est terminé", dit-il en soufflant fort. "Vous avez réussi à...". Il se met à regarder autour de lui, et son visage devient vert. "Mon dieu...", continue-t-il, comme s'il venait de comprendre quelque chose d'horrible. "Le sceau de feu... il est juste là..."
+
+**Joueur·euse**
+Tu le prends et tu le brise en deux. Partageant chaque moitié entre Morcane et la Congrégaiton Noire.
+
+**Jeu**
+Vous récupérez le sceau de feu, une petite boule lumineuse qui semble contenir une énergie follement intense, et vous la brisez en deux avec un grand fracas. Les deux moitiés se volatilisent instantanément, l'une se retrouvant dans les bras de Morcane et l'autre chez la Congrégation Noire.
+
+Les hommes en noir apparaissent derrière vous, leurs visages éclatés de joie, et ils disparaissent dans la foule sans dire un mot. Morcane, quant à lui, se met à sourire largement, ses yeux rouges brillant d'un feu sauvage. "Ahahah", dit-il en tenant la moitié du sceau de feu, "je sens que j'ai trouvé mon vrai appel... Faire danser le monde entier, un morceau à la fois..."
+
+**Joueur·euse**
+Tu prends le maire de la ville et tu le lance à nouveau sur la congrégation noire et tu leurs demande pourquoi ils partent si vite?
+
+**Jeu**
+Vous récupérez le maire et vous le lancez à nouveau contre les hommes en noir, qui se trouvent maintenant près de la sortie des cryptes. Le maire heurte l'un d'eux avec un grand bruit, et celui-ci s'effondre par terre, incapable de bouger.
+
+L'autre homme en noir, toujours visiblement choqué par votre particulière particularité, se met à trembler. "I...ils nous ont dit que si nous ramenions le sceau de feu avant la pleine lune, ils nous donneraient... une récompense incroyable", dit-il d'une voix vacillante.
+
+"Et puisque nous avons obtenu l'un des morceaux du sceau de feu...", continue-t-il, "ils doivent croire que nous allons réussir à obtenir les deux morceaux, et ils veulent... ils veulent s'échapper avant que la pleine lune ait lieu..."
+
+Il se met à regarder autour de lui, comme s'il avait peur qu'on vous écoute. "Mais il y a autre chose... Ils nous ont dit que si nous réussissions, on allait pouvoir... faire danser les dieux même..."

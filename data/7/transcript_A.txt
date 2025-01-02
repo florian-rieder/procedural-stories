@@ -1,0 +1,107 @@
+**Jeu**
+Commençons l'aventure !
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+J'aimerai me rendre dans un haut lieu de magie pour discuter avec des mages et trouver des renseignements sur la pierre lumineuse.
+
+**Jeu**
+Vous vous dirigez vers le Temple des Mages, une grande tour qui domine la ville royale et abrite la communauté des mages les plus puissants du royaume. À l'entrée de la tour, un mage âgé avec une longue barbe blanche vous regarde avec intérêt, avant de demander : "Quel est votre nom et votre propos, aventurier ?"
+
+**Joueur·euse**
+Je suis Luc le Preux, issu de la famille des Morgenstern. Je cherche à consulter vos ouvrages.
+
+**Jeu**
+Le mage se met à réfléchir un instant, avant de hocher doucement la tête. "Ah, les Morgenstern ! Une ancienne et noble lignée... Oui, bien sûr, vous pouvez explorer nos archives, mais je vous préviens : nous n'avons pas parlé de la pierre lumineuse depuis... une longue période."
+
+**Joueur·euse**
+Ah oui ? Dites m'en plus.
+
+**Jeu**
+Le mage se déplace vers un rayon des étagères, et en sort un volume relié de cuir sombre, qu'il ouvre avec précaution. "Voici les anciens annales de notre ordre... C'est ici que l'on peut trouver une mention de la pierre lumineuse, mais aussi... Une certaine prudence est nécessaire lors de sa consultation."
+
+**Joueur·euse**
+Que dois-je faire ? Pouvez-vous m'aider à la localiser ?
+
+**Jeu**
+Le mage secoue la tête, ses yeux se plissant légèrement. "Je ne peux pas vous donner de réponses directes, Luc le Preux... Mais je peux vous dire que la pierre lumineuse est liée au Maître des Ombres qui sévit dans notre royaume. Si vous voulez trouver son emplacement, il faudra que vous parliez avec notre conseillère en mystères, Elara. Elle peut vous donner des... Pointeurs de valeur."
+
+**Joueur·euse**
+Présentez-moi Elara, je vous prie.
+
+**Jeu**
+Le mage se déplace vers une porte cachée derrière un tapis, qu'il ouvre avec une clef en forme d'étoile. "Elara attend dans les Jardins des Réflexions... Un lieu où la sagesse et l'intuition sont présentes en abondance." Il vous pousse doucement vers l'extérieur, vous indiquant le chemin menant aux jardins.
+
+**Joueur·euse**
+Je trouve Elara et me présente.
+
+**Jeu**
+Elara, une femme âgée avec des cheveux noirs comme la nuit et des yeux qui semblent contempler les secrets du cosmos, vous regarde avec un regard profond et calme. "Luc le Preux... Je suis heureuse de faire votre connaissance... Que recherchez-vous dans mes pensées, aventurier ?"
+
+**Joueur·euse**
+La voie vers la pierre lumineuse, cachée dans cette cité
+
+**Jeu**
+Elara ferme les yeux, semblant s'immerger dans une méditation profonde. Après un instant de silence, elle ouvre les yeux et dit : "Je vois... Les ténèbres se déplacent sous la lune... Le Marchand des Étoiles a une information qui pourrait vous servir... Mais soyez prudent, car ses prix sont exorbitants..."
+
+**Joueur·euse**
+Auriez-vous un objet de valeur à lui échanger afin que je sauve cette si belle cité ?
+
+**Jeu**
+Elara réfléchit pendant quelques instants avant de sourire légèrement. "Je possède une petite pierre d'azur, taillée avec précision... Une pièce rare qui pourrait intéresser le Marchand des Étoiles... Mais vous devrez promettre que vous la lui offrirez personnellement..."
+
+**Joueur·euse**
+Je promets. Et vous remercie de votre aide. Indiquez-moi la voie vers le Marchand.
+
+**Jeu**
+Elara hoche la tête, son regard se posant sur un point dans l'ombre. "Le Marchand des Étoiles opère sous la petite horloge du quartier de la Pelleterie... Un endroit où les crépusculaires ont souvent besoin de rires et d'échanges... Trouvez-le dans le coin du soleil couchant, juste avant la nuit tombe."
+
+**Joueur·euse**
+Je file voir le marchand et arrive pile à l'heure.
+
+**Jeu**
+Lorsque vous arrivez à l'emplacement indiqué, vous voyez le Marchand des Étoiles s'affairer avec un jeune apprenti, discutant à voix basse en regardant autour d'eux de manière suspecte. Lorsqu'il aperçoit votre approche, il s'arrête net et fixe sur vous un regard inquisiteur, son esprit calculateur évaluant rapidement la situation avant de sourire avec une rapidité qui vous fait sentir légèrement mal à l'aise. "Ah, Luc le Preux... Quel plaisir ! J'ai précisément ce dont je parle... Et que puis-je faire pour vous ?"
+
+**Joueur·euse**
+Exactement. Alors donnez-moi ce dont vous parliez...
+
+**Jeu**
+Le Marchand des Étoiles rit à mi-voix, semblant trouver votre franchise amusante. "Je voulais dire... une information, bien sûr ! Une petite affaire de confiance entre personnes d'égale valeur. Je possède un tuyau sur l'emplacement précis de la pierre lumineuse... Disons que c'est un marché qui vous donnera le droit de faire votre prochaine requête auprès du Marchand."
+
+**Joueur·euse**
+J'ai une magnifique azur à vous proposer en échange du renseignement qui me mènera à la pierre lumineuse.
+
+**Jeu**
+Le visage du Marchand des Étoiles s'éclaire de satisfaction, et il tend les mains avides pour prendre la petite pierre d'azur que vous lui proposez. "Ah, une pierre digne de mon intérêt... Votre... générosité est fort appréciée, Luc le Preux. Et voici donc la compensation promise : La pierre lumineuse se trouve dans un caveau situé sous l'auberge du Renard qui Passe au Travers. Mais soyez prudent, car ce n'est pas là que vous trouverez la moins de dangers..."
+
+**Joueur·euse**
+Merci, Marchand. As-tu une épée magique pour me protéger des dangers ?
+
+**Jeu**
+Le Marchand des Étoiles esquisse un sourire cynique, son regard plongeant dans le bas de sa tunique avant de revenir à vous avec un air enclin vers la négociation. "Ah... Une épée magique pour protéger notre brave aventurier... Eh bien, je peux peut-être... prêter à votre usage une épée dénommée Éclair du Destin... Mais cela coûtera, bien sûr..."
+
+**Joueur·euse**
+Je vous échange ce bracelet d'or aux armoiries de la noble famille des Morgenstern.
+
+**Jeu**
+Le Marchand des Étoiles s'empare avidement du bracelet et le fait disparaître dans sa poche, son regard se posant sur l'épée magique qui se trouve derrière lui, avant de revenir à vous avec un sourire triomphant. "Ah, un véritable trésor... L'Éclair du Destin est tout à vous, Luc le Preux ! Une épée capable d'infliger des blessures sans pourpoint et une lame qui brille comme la pleine lune dans les combats nocturnes..."
+
+**Joueur·euse**
+Je vous en suis gré, Marchand. Je me rends de ce pas à l'auberge.
+
+**Jeu**
+Le Marchand des Étoiles se débarrasse avec un signe de votre présence, son attention redevenant aussitôt concentrée sur ses affaires. "Alors que vous aller... bonne chance, Luc le Preux... N'oubliez pas de me faire savoir si je puis vous servir encore..."
+
+**Joueur·euse**
+J'en prends note.
+
+Je me rends à l'auberge du renard, dans le caveau
+
+**Jeu**
+Vous arrivez à la caveau souterraine de l'auberge du Renard qui Passe au Travers. L'air est humide et les torches que vous apercevez semblent ne pas faire leur effet. Une voix basse et menaçante fait écho dans le coin le plus sombre : "Eh bien, qu'est-ce que nous avons là ? Un visiteur... un visiteur qui cherche quelque chose de précisément..."
+
+**Joueur·euse**
+Donnez-moi la pierre lumineuse sinon je vous frappe de mon Eclair du Destin.
+
+**Jeu**
+La voix basse et menaçante s'approche, vous voyez une silhouette émergeant des ténèbres. Elle est vêtue d'une cape noire et son visage est caché par un masque à fer. "Ah, l'Eclair du Destin... c'est vrai que je n'avais pas vu ce joyau de la créativité chez vous... Mais gardez-le pour le compte, je suppose... La pierre lumineuse est juste là... sous votre regard..."

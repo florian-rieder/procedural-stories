@@ -1,0 +1,131 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Je me rends dans le temple le plus proche
+
+**Jeu**
+Vous vous rendez au temple du Seigneur des Ténèbres. C'est une structure sombre et imposante, avec des murs de pierre noire qui semblent absorber la lumière. Vous voyez des statues de créatures sinistres autour de l'entrée, et le son d'un éternel hurlement semble provenir du fond de la cour intérieure.
+
+Personne en particulier ne vous attire l'attention ici.
+
+Vous remarquez que l'intérieur du temple est sombre et désert. Une seule porte s'ouvre sur la cour extérieure, celle par où vous êtes entré. L'autre côté de la cour est bloqué par une grande muraille noire qui paraît inextricablement liée aux ténèbres elles-mêmes.
+
+Une petite statue de l'Ombre règne sur cette scène.
+
+**Joueur·euse**
+Je me rend à un autre temple pour trouver du renfort et des renseignements sur la pierre lumineuse.
+
+**Jeu**
+Vous vous rendez au Royaume de la Lumière, situé juste à côté de la Cité des Eaux. Le temple est éclairé par une multitude d'astres et de torches, créant un espace chaleureux et accueillant. Vous voyez les moines lumineux courant frénétiquement autour du complexe, se préparant à la venue du prochain lever de soleil.
+
+L'éclairage naturel de l'extérieur de la structure est tellement intensif que vous pouvez observer des détails plus profonds en vous approchant. Une petite closerie sur le côté atteste une verdure luxuriante, où quelques plantes bien soignées poussent dans un espace d'environ un mètre carré.
+
+Des informations peuvent être disponibles ici.
+Le temple du Royaume de la Lumière est ouvert à tous les visiteurs et il peut y avoir des membres influents là. 
+
+Accessible directement, une autre zone vous permettrait d'atteindre l'endroit le plus rapide vers la Pierre lumineuse sans passer par la cité : Montagnes de la Pierre.
+
+Les lieux accessibles depuis ici sont ['Château du Seigneur des Ténèbres', 'Cité des Eaux', 'Montagnes de la Pierre', 'Temple secret'].
+
+**Joueur·euse**
+Je me rends aux Montagnes de la Pierre.
+
+**Jeu**
+Vous cheminez pendant des heures pour arriver à l'entrée des montagnes. La vue est impressionnante, les pics rocheux se dressent en tous sens. Vous voyez un groupe d'aventuriers, dont une femme humaine et un nain âgé, qui semblent discuter avec animation. Plus loin, vous apercevez une troupe de gobelins armés, qui semblent avoir l'intention de se faire du souci.
+
+Vous pouvez rejoindre les aventuriers pour discuter ou vous approcher des gobelins pour essayer de comprendre leur but.
+
+**Joueur·euse**
+Je m'approche des aventuriers et les hèle.
+
+**Jeu**
+La femme humaine, Xandria, vous salue avec un sourire charmant. "Ah, bonjour ! Nous sommes en train de discuter de notre prochaine étape. Nous avons découvert un passage secret dans ces montagnes qui pourrait mener à des trésors cachés." Le nain âgé, Kragnir, vous regarde avec une expression sceptique, mais Xandria continue : "Nous pensons que nous pourrions profiter de votre compagnie et explorer ce passage ensemble."
+
+Vous pouvez accepter leur proposition ou refuser et continuer à discuter avec eux.
+
+**
+
+**Joueur·euse**
+Je viens avec vous explorer le passage secret
+
+**Jeu**
+Xandria sourit de nouveau et dit : "Fantastique ! Alors, nous devons trouver l'entrée secrète. Kragnir connaît ce lieu comme sa poche." Le nain âgé hoche la tête et commence à parler rapidement en langue qui vous est inconnue, mais Xandria traduit : "Il dit que l'entrée est cachée derrière une cascade se trouvant quelques kilomètres plus loin. Nous devons être prudents, car il est probablement surveillé."
+
+Vous pouvez suivre Xandria et Kragnir vers la cascade, ou prendre un autre chemin.
+
+Les lieux accessibles depuis ici sont ['Château du Seigneur des Ténèbres', 'Cité des Eaux', 'Temple secret', 'Montagnes de la Pierre'].
+
+**Joueur·euse**
+Nous traversons la cascade.
+
+**Jeu**
+Après quelques kilomètres de marche, vous atteignez un endroit où l'eau de la cascade forme une petite mare. Xandria et Kragnir s'arrêtent et regardent autour d'eux avec précaution. Le nain âgé point du doigt vers le fond de la mare, là où l'eau est plus profonde. "Voilà", dit-il doucement.
+
+Vous voyez une petite ouverture cachée derrière les rochers, à peu près au niveau de l'eau de la mare. Xandria et Kragnir vous regardent avec des yeux qui semblent dire : "Maintenant que nous sommes là, il est temps d'aller voir ce qu'il se cache".
+
+Les lieux accessibles depuis ici sont ['Château du Seigneur des Ténèbres', 'Cité des Eaux', 'Temple secret'].
+
+Je mets les marques de l'eau dans la mare à votre disposition. S'il vous plaît, utilisez-les en conséquence.
+
+CONFIRM_MOVE
+
+**Joueur·euse**
+J'avance dans l'ouverture.
+
+**Jeu**
+Vous entrez dans l'ouverture et trouvez-vous dans une petite grotte, illuminée par des torches qui brillent faiblement. Xandria et Kragnir suivent à votre poursuite. L'air est frais et humide, et vous pouvez sentir la présence d'eau en mouvement. Une rivière étroite coule au fond de la grotte.
+
+Vous voyez une passerelle qui enjambe la rivière, menant vers une porte en bois qui semble s'ouvrir sur un passage secret. Vous pouvez suivre la passerelle ou essayer de trouver une autre voie pour entrer dans le passage secret.
+
+Les lieux accessibles depuis ici sont ['Château du Seigneur des Ténèbres', 'Cité des Eaux'].
+
+**Joueur·euse**
+Je marche prudemment sur la passerelle pour aller inspecter la porte.
+
+**Jeu**
+Vous atteignez la fin de la passerelle et vous voyez que la porte en bois est lourdement charpentée et semble ne pas avoir été ouverte depuis longtemps. Vous essayez de tourner la poignée, mais elle ne bouge pas. Il y a un petit panneau au-dessus de la poignée avec un symbole qui ressemble à un écu.
+
+Xandria s'approche de vous et dit "Attention, j'ai l'impression que cette porte est scellée pour une raison en particulier. Je pense qu'il faudrait trouver le motif ou la clé qui permet d'ouvrir la porte pour éviter d'être pris par surprise."
+
+Les lieux accessibles depuis ici sont ['Château du Seigneur des Ténèbres', 'Cité des Eaux'].
+
+**Joueur·euse**
+Je prends un écu en guise de clé et la met dans la serrure ou tout autre orifice apparenté.
+
+**Jeu**
+L'écu tombe au fond d'une petite fosse située à côté de la porte. Une écritoire est visiblement accrochée au mur, près du trou où est tombé l'écu. Elle pourrait servir à écrire ou à transcrire des messages.
+
+Kragnir vous regarde avec un regard attentif, puis dit : "Ah, vous semblez avoir une bonne main, jeune aventurier. Vous seriez prêt à explorer les tunnels plus profonds de nos montagnes ?"
+
+Vous pouvez demander à Kragnir de vous accompagner, ou partir sans lui.
+
+À votre disposition sont également la porte d'entrée, la porte du couloir adjacent, et le trou où est tombé l'écu. Vous avez déjà utilisé un objet pour lancer une action avec, mais ce n'est pas la même chose que d'utiliser une action avec un objet, dans ce cas vous pouvez utiliser la fosse comme si c'était une serrure, par exemple.
+
+**Joueur·euse**
+Je demande à Kragnir de venir avec moi de l'autre côté de la porte.
+
+**Jeu**
+Kragnir sourit et dit : "Ah, bien sûr ! Je suis toujours prêt à explorer de nouveaux lieux. Suivez-moi."
+
+Il se place devant vous et tourne la poignée de la porte. La serrure s'ouvre avec un clic doux et la porte s'enfonce dans le mur, révélant une autre passerelle qui mène à une nouvelle salle.
+
+Vous vous trouvez désormais dans une pièce plus grande, avec des murs en pierre et un plafond voûté. La salle est éclairée par plusieurs torches allumées, projetant des ombres chaotiques sur les murs. Vous voyez plusieurs portes qui s'ouvrent sur des corridors différents.
+
+Kragnir se tourne vers vous et dit : "Voilà ! Nous sommes maintenant dans un endroit un peu plus... intéressant. Je pense que nous allons avoir de la chance à trouver quelque chose ici."
+
+Les lieux accessibles depuis ici sont ['Cité des Eaux', 'Château du Seigneur des Ténèbres'].
+
+**Joueur·euse**
+Oui, j'aimerai trouvé une pierre lumineuse. Aide-moi, cher ami nain.
+
+**Jeu**
+"Ah, un aventurier courageux ! La Pierre de Lumière est un artefact précieux que les habitants de la Cité des Eaux ont entendu mentionner dans certaines conversations. Kael le Maréchal pourrait savoir où en trouver des informations, mais je vous conseille de le demander directement à lui."
+
+**Joueur·euse**
+Et dans cette montagne, ne la trouverions-nous pas ?
+
+**Jeu**
+"Les Montagnes de la Pierre abritent peut-être des secrets et des trésors cachés. Mais n'oubliez pas que les tunnels sont périlleux et les puits sans fond ne vous attendent pas en sursis. Et puis, il y a Gorvoth, le gobelin rusé qui cherche à prendre le contrôle de ces montagnes... Il vaudrait peut-être mieux chercher d'autres informations avant d'entreprendre une telle aventure."
+
+Vous pouvez demander conseil à Kael le Maréchal ou visiter la Taverne de la Cité des Eaux pour entendre des rumeurs et des propos du coin. La Taverne est un endroit animé où les commerçants et les pirates se rencontrent, mais attention à vos propos, car il y a toujours quelqu'un qui écoute.

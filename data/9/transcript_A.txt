@@ -1,0 +1,152 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Je vais chez ma mère pour lui demander conseil
+
+**Jeu**
+Vous arrivez chez votre mère, qui habite une petite maison au nord de la ville. Elle vous accueille chaleureusement et vous invite à entrer. "Mon fils, je suis heureuse que tu sois venu me voir. Qu'est-ce qui te tracasse ?" demanda-t-elle en vous regardant avec inquiétude.
+
+**Joueur·euse**
+Tu sais où je pourrais trouver les meilleures armes de la contrée, et aussi tu sais où sont les artéfacts ?
+
+**Jeu**
+Votre mère se raidit légèrement à l'évocation des artefacts, mais son expression reste calme. "Ah, les armes... Eh bien, il y a une boutique d'armes près de la porte sud de la ville, dirigée par un certain Grimbert. C'est là que tu pourras trouver les meilleures épées et haches de la contrée. Mais quant aux artefacts... (elle s'arrête, comme si elle hésitait à poursuivre). Dis-toi qu'il vaut mieux ne pas chercher directement les pierres lumineuse, d'accord ?"
+
+**Joueur·euse**
+Il faut chercher quoi alors ? je veux sauver le monde
+
+**Jeu**
+Votre mère vous regarde avec des yeux tristes et gravez. "Oui, mon fils... Eh bien, cherche un homme nommé Alaric, un marchand de vin qui a une réputation d'être... informé sur les choses qui se passent dans la ville. Il vit près de l'église cathédrale. Si tu peux le convaincre à te dire quelque chose, il pourrait peut-être t'aider."
+
+**Joueur·euse**
+Okay, merci. Je vais acheter des armes chez Grimbert
+
+**Jeu**
+Vous vous dirigez vers la boutique d'armes de Grimbert, un homme corpulent avec une barbe rouge qui vous fait une grimace de bon accueil. "Ah, le fils de... (il hésite légèrement) ...l'aventurier ! Qu'est-ce que tu veux acheter ?" Il vous montre ses armes les plus belles et les mieux faites. "Ma meilleure épée, celle que je garde pour moi-même, coûte 10 pièces d'or..."
+
+**Joueur·euse**
+Je prends ta meilleure épée, ton meilleur arc, et comme je vais sauver le monde, je veux une dague et un parchemin d'explosion gratos
+
+**Jeu**
+Grimbert vous regarde avec des yeux étonnés. "Un parchemin d'explosion, vous voulez dire... de feu? C'est pas juste une épée et un arc que tu veux, c'est la guerre totale ! Et gratuit, en plus ? (il rit) Ah, bien sûr, je suis trop fier pour refuser votre argent. Voici donc tout cela... à 5 pièces d'or..." Il vous remet les objets demandés, avec un sourire de dédain.
+
+**Joueur·euse**
+Merci bien mon bon Grimbert. Je pars maintenant à la recherche du marchand de vin
+
+**Jeu**
+Vous quittez la boutique de Grimbert et vous vous dirigez vers l'église cathédrale, où vous savez que se trouve le marchand de vin Alaric. Lorsque vous y arrivez, vous voyez une grande cloche qui sonne doucement dans le vent. Vous entrez dans la cour de l'église et demandez à un prêtre s'il sait où se trouve Alaric. Le prêtre vous répond : "Ah, vous voulez parler d'Alaric ? Il est juste là... (il fait un signe vers une taverne adjacente) ...dans la Taverne des Sages."
+
+**Joueur·euse**
+J'entre dans la Taverne, commande une pinte de bière et commence à chercher Alaric
+
+**Jeu**
+Vous commandez une pinte de bière au barman, qui vous regarde avec un sourire amical. "Alaric ? Ah, c'est un ami du propriétaire... Il est assis dans le coin, près de la fenêtre. (il fait un signe vers un homme âgé qui lit une carte à l'ombre d'un chandelier). Allez-y, mais soyez discrétion, il est plutôt... concentré sur sa lecture."
+
+**Joueur·euse**
+Je m'approche doucement de lui
+
+**Jeu**
+Vous vous approchez lentement du vieil homme qui lit une carte. Lorsque vous arrivez à proximité, vous voyez que c'est en réalité une carte de l'Ombre, la région sombre et dangereuse située au nord de la ville, où se cachaient les créatures des Ténèbres. Le vieil homme, Alaric, ne semble pas avoir remarqué votre présence. Il murmure à lui-même : "L'entrée du tunnel secret se trouve dans le bois de l'Eclipse..."
+
+**Joueur·euse**
+Bonjour ?
+
+**Jeu**
+Alaric sursauta en entendant votre voix et se retourna vers vous, son regard perçant et inquisiteur. "Ah, pardon... Je m'appelle Alaric, je suis marchand de vin... Et vous êtes ?" Il déposa sa carte sur la table et se redressa, les sourcils froncés, comme s'il était toujours à la recherche d'une chose précieuse.
+
+**Joueur·euse**
+Je suis le sauveur du monde, j'ai besoin de savoir où sont les artéfacts pour... sauver le monde
+
+**Jeu**
+Alaric vous regarda avec un air grave et attentif, puis il se pencha vers vous, sa voix basse et confidentielle. "Les artéfacts, oui... Je sais ce que vous voulez dire. (il jeta un coup d'œil autour de la taverne, comme s'il craignait d'être entendu) L'une des pierres lumineuses se trouve dans le musée des Antiquités, mais il y a une sentinelle qui veille... une créature très particulière. Et l'autre ? (il hésita, comme s'il pesait le pour et le contre de la réponse) Je... je ne sais pas si je devrais vous dire..."
+
+**Joueur·euse**
+Dites-moi tout, je vous paie une bière en échange
+
+**Jeu**
+Alaric sourit faiblement et regarda autour de lui encore une fois. "D'accord... Mais gardez cela pour vous. (il baissa la voix) L'autre pierre lumineuse se trouve dans le donjon des Souvenirs, mais c'est un endroit très dangereux. C'est là que les souvenirs oubliés viennent s'accumuler et deviennent vivants... et féroces." Il pausa, comme s'il cherchait à y croire lui-même. "Et il y a une autre chose... La clef de l'Ombre, qui est nécessaire pour ouvrir la porte du donjon, se trouve dans le coffre de feu baron Gaspard, mais celui-ci est enterré avec tous ses biens dans les ruines de son château."
+
+**Joueur·euse**
+Tout ça est compliqué, est-ce qu'il existe un sort capable d'amener toutes les pierres lumineuses directement à moi ?
+
+**Jeu**
+Alaric secoua la tête, comme s'il craignait que vous ne compreniez pas. "Un sort pour amener les pierres lumineuses directement à vous... (il réfléchit un instant) Je connais un mage qui a essayé de faire quelque chose comme cela, mais ça s'est terminé très mal. Il a invoqué le Sort des Étoiles Chasseuses, mais les conséquences ont été catastrophiques... et la magicienne qui a fait le sort a disparu en fumée." Alaric se mit à parler d'une voix encore plus basse. "Mais il existe une autre possibilité... le Parchemin du Siphon, qui permet de transférer les pouvoirs et les objets d'un lieu à un autre. Je pense que c'est possible de l'obtenir dans la bibliothèque secrète des mages."
+
+**Joueur·euse**
+Merci, voilà une bière pour vous, et je me rends à la bibliothèque secrète des mages
+
+**Jeu**
+Alaric sourit largement en voyant la bière apparaître devant lui. "Ah, merci beaucoup ! Je savais que je pouvais compter sur votre gratitude." Il but une gorgée de bière et ajouta : "La bibliothèque secrète des mages... C'est un lieu bien connu des initiés, mais peu accessibles aux non-inscrits. Pour y entrer, vous devez trouver le Portail du Savoir, qui est caché quelque part dans la ville."
+
+**Joueur·euse**
+Caché où exactement ?
+
+**Jeu**
+Alaric réfléchit un instant avant de répondre : "Je ne sais pas s'il faut vous dire cela... Mais je pense que le Portail du Savoir se trouve dans l'ancienne chapelle des Muses, qui se situe sur les pentes du mont Cercle. (il baissa la voix) La chapelle a été abandonnée depuis longtemps, mais certains disent qu'elle abrite encore un reste de sa beauté et de son esprit."
+
+**Joueur·euse**
+Je m'y rends tout de suite, juste après avoir offert une autre bière à Alaric
+
+**Jeu**
+Alaric sourit à nouveau en voyant l'autre bière apparaître devant lui. "Ah, vous êtes vraiment un gentleman, n'est-ce pas ?" Il but une gorgée de la nouvelle bière et ajouta : "Je vais manger quelque chose... (il prit un pain grillé qui se trouvait sur le comptoir) Merci à nouveau pour les bières, et bon courage avec votre quête. Je vous souhaite tout le succès possible." Il mastiqua pensivement en regardant autour de la taverne.
+
+**Joueur·euse**
+Je pars pour la chapelle des Muses
+
+**Jeu**
+Vous quittez la taverne et vous dirigez vers le mont Cercle, laissant la ville derrière vous. Le soleil commence à disparaître derrière les collines, projetant une ombre bleutée sur la campagne. Vous atteignez l'ancienne chapelle des Muses après quelques minutes de marche. La porte d'entrée est grande ouverte, comme si elle attendait votre arrivée. L'intérieur de la chapelle est sombre et silencieux, les statues des Muses se dressent à l'intérieur, dans un silence qui paraît presque religieux. Vous sentez une étrange atmosphère sereine. Une plaque de bois avec l'inscription "Portail du Savoir" est suspendue au-dessus d'un grand panneau sombre.
+
+**Joueur·euse**
+Merde j'ai oublié de demander comment on ouvre le portail
+
+**Jeu**
+Un vieil homme à barbiche, vêtu d'une robe simple et tachée, sort du silence. "Ah, vous cherchez l'ouverture du Portail du Savoir ?" Il se présente : "Je m'appelle Elian, j'ai été gardien de la chapelle pendant 30 ans. Pour ouvrir le portail, il faut réciter les mots de l'Evangile des Muses, qui sont : 'Musea, aperi mentem'."
+
+**Joueur·euse**
+Musae, aperi mentem
+
+**Jeu**
+Les mots se détachent dans l'air et une lumière douce commence à s'élever du panneau sombre. La plaque de bois avec l'inscription "Portail du Savoir" commence à s'ouvrir, révélant un passage étroit et obscur qui semble mener ailleurs. Un souffle d'air frais surgit de l'intérieur du portail et vous sentez une légère odeur de sagesse et de connaissance. Le vieil homme Elian vous regarde avec un air approbateur et dit : "Bien fait, vous avez laissé parler votre esprit. Entrez maintenant dans le Portail du Savoir."
+
+**Joueur·euse**
+Je rentre dans le portail, après avoir offert une bière au vieil homme
+
+**Jeu**
+Elian sourit en voyant la bière apparaître dans son main. "Ah, vous êtes vraiment un gentilhomme, n'est-ce pas ?" Il déboucha la bière et but une gorgée avec plaisir. "Merci à nouveau pour cette bière... Je crois que je vais bien en profiter après avoir veillé sur ce lieu pendant si longtemps." Après avoir bu un peu plus de bière, il ajouta : "Bon courage dans votre quête, et que le Portail du Savoir vous guide vers la sagesse." Alors, avec une infime hésitation, il dit : "Maintenant que vous êtes passé par là, je pense qu'il est temps pour moi de partir... Et peut-être reprendre contact avec l'ordre des Muses..."
+
+**Joueur·euse**
+Je passe le portail
+
+**Jeu**
+Vous traversez la porte qui se referme derrière vous, et vous trouvez-vous dans un endroit inconnu. Vous êtes au cœur d'une grande bibliothèque, les murs entiers recouverts de livres poussent vers le ciel comme des montagnes de sagesse. La lumière est douce et jaune, la chaleur du soleil filtre à travers les vitraux colorés qui éclairent la salle. Vous vous rendez compte que vous êtes dans la bibliothèque secrète des mages. Une femme âgée, vêtue d'une robe de velours noir, avec des yeux qui semblent contempler des secrets et non les personnes physiques, vous regarde en hochant doucement la tête. "Bienvenue... (elle dit à voix basse) Je suppose que vous êtes là pour le Parchemin du Siphon ?"
+
+**Joueur·euse**
+J'offre une bière à la femme et lui demande où trouver le parchemin du siphon
+
+**Jeu**
+La femme âgée sourit en voyant l'apparition de la bière, et se laisse aller sur un siège voisin. "Ah, vous êtes vraiment... (elle dit en riant doucement) ...disponibiliste, n'est-ce pas ?" Elle déboucha la bière et but une gorgée avec plaisir. "Merci à nouveau pour cette bière... Je crois que je vais bien en profiter après avoir veillé sur les écrits de nos anciens sages." Après avoir bu un peu plus de bière, elle ajouta : "Ah, le Parchemin du Siphon... (elle secoue la tête) C'est une œuvre très précieuse, je ne peux pas vous dire exactement où il se trouve... mais je peux vous donner un indice. (elle regarde autour d'elle avec une infime inquiétude) Il est possible que vous le trouviez dans les Archives du Désert, si vous savez comment vous y prendre..."
+
+**Joueur·euse**
+Je ne sais pas comment m'y rendre, mais j'ai plus de bières sur moi, si vous m'expliquez comment y aller...
+
+**Jeu**
+La femme âgée sourit à nouveau en voyant les nouvelles bières apparaître. "Ah, je vois que vous êtes un vrai gentleman ! (elle dit en riant) D'accord, je vais vous donner l'adresse des Archives du Désert, mais soyez prêt à affronter des dangers inattendus. Pour y aller, prenez la porte au fond de la bibliothèque qui donne sur le Jardin des Ombres... (elle prononce ces mots avec une certaine réticence) Vous trouverez un sentier qui mène au Cercle du Soleil... (elle secoue à nouveau la tête) et puis, tout deviendra clair. Mais rappelez-vous que vous êtes seul... (elle regarde autour d'elle avec une infime inquiétude) et que les archives ne sont pas toujours aussi... (elle hésite) ...vivantes qu'on le pense."
+
+**Joueur·euse**
+Merci, est-ce que vous avez des parchemins de boule de feu ?
+
+**Jeu**
+La femme âgée rit doucement en regardant vos nouvelles bières. "Ah, les Parchemins de Boule-de-Feu... (elle secoue la tête) Je ne sais pas ce qui se passe avec vous et ces bières, mais je suppose que vous avez besoin d'une raison pour continuer votre quête ?" Elle rit à nouveau. "D'accord, j'ai un petit parchemin de boule-de-feu dans ma bibliothèque... (elle s'élève du siège) mais il est très précieux et ne doit pas être utilisé légèrement."
+
+**Joueur·euse**
+Je l'utiliserai lourdement pas de souci, voici une bière pour vous
+
+**Jeu**
+La femme âgée sourit en regardant le parchemin qu'elle vous a donné. "Ah, je suppose que c'est décidé... (elle dit en riant doucement) Alors, prenez soin de ce Parchemin de Boule-de-Feu et de votre vie ! Vous n'en aurez pas besoin des deux à la fois, j'espère ?" Elle prend une gorgée de la bière que vous lui avez donnée. "Ah, merci pour cette bière... (elle dit avec un air reconnaissant) C'est vraiement une raison d'être aimable."
+
+**Joueur·euse**
+Alors gros bisous, je vais de ce pas au jardin des ombres
+
+**Jeu**
+La femme âgée vous salue d'un petit signe de la main. "Au revoir, aventurier... (elle dit avec un air sérieux) Souvenez-vous que le Jardin des Ombres est un endroit où l'obscurité peut se faire jour à tout moment. Prenez garde aux ténèbres qui vous entourent." Elle réfléchit une seconde, puis ajoute : "Et ne me parlez pas de ces bières que vous avez sur vous... (elle dit avec un petit sourire) C'est trop pour une personne âgée comme moi..."

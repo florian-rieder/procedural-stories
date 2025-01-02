@@ -1,0 +1,144 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Je me rends à la taverne locale pour glâner des informations
+
+**Jeu**
+Vous entrez dans la taverne bruyante, le son des conversations et de la musique vous accueillant. La fumée de la bière et du feu de bois empli l'air. Vous remarquez une figure familier assise au bar, c'est Lady Lirien, la mage lumineuse qui guide les aventuriers dans leur quête.
+
+"Ah, Eryndor Thorne ! Que brings-tu ?" dit-elle avec un sourire chaleureux en vous voyant arriver.
+
+**Joueur·euse**
+Qui ?
+
+**Jeu**
+Vous vous rendez compte que Lady Lirien a appelé votre nom... C'est vous-même, Eryndor Thorne ! Elle semble connaître votre identité. Un bruit de rires et de conversations dans l'arrière-boutique attire votre attention.
+
+"Guillaume le Forgeron raconte une histoire intéressante sur la protection de la Pierre de Lumière", murmure un voisin en vous passant à côté.
+
+**Joueur·euse**
+Excusez-moi milady, je souffre de maux de crâne et de perte de mémoire suite à ma dernière aventure dans les mines de la foria
+
+**Jeu**
+Lady Lirien met fin aussitôt à ses distractions, sa voix prenant une tonalité plus sérieuse. "Ah, pardonnez-moi Eryndor, j'avais oublié... C'est normal, ces affections sont courantes après une expérience de ce genre." Elle réfléchit un instant puis poursuit : "Peut-être que je peux vous aider à rappeler les détails. Savez-vous exactement pourquoi vous êtes venu dans le Royaume de la Lumière ?"
+
+**Joueur·euse**
+Une histoire d'artefacts et monde des ténèbres
+
+**Jeu**
+Lady Lirien hoche la tête, comme si cela confirmait ses soupçons. "Exact ! Vous cherchez à récupérer les trois artefacts anciens : la Pierre de Lumière, le Sceptre de la Nuit et le Livre des Eaux... C'est un projet crucial pour restaurer l'équilibre dans le monde. Mais il faudra d'abord relever un grand défi."
+
+**Joueur·euse**
+Je comprends bien, mais quel est ce défi est ne devrait-on pas écouter ce que le vieux forgeron a à dire ?
+
+**Jeu**
+Guillaume le Forgeron vous regarde avec intérêt en vous interpellant : "Ah, Eryndor Thorne ! Je voulais vous voir ! Je suis en train de raconter une histoire à mes amis... De l'ancienne cité des eaux. J'ai entendu dire que les sbires du seigneur des ténèbres se promènent là-bas, cherchant le Livre des Eaux."
+
+**Joueur·euse**
+Sommes-nous sûr que le livre des Eaux s'y trouve, et l'histoire n'avait elle pas plutot rapport avec la pierre de lumière ?
+
+**Jeu**
+Guillaume le Forgeron vous sourit : "Ah, pardonnez-moi ! J'ai peut-être mal résumé. En effet, je racontais une histoire sur une aventurière qui avait récupéré la Pierre de Lumière à Cité des Eaux. Je n'en sais pas trop plus, mais il me semble que cette histoire pourrait être utile à ceux qui cherchent le Livre des Eaux... ou bien qui veulent s'évader de ce port !"
+
+Vous vous apercevez qu'un mouvement dans la foule attire l'attention des gens. Une femme est entrée précipitamment dans la taverne, en regardant autour d'elle avec inquiétude.
+
+**Joueur·euse**
+Aurais-tu de plus amples renseignements sur cette aventurière ?
+
+**Jeu**
+Eryndor Thorne, un aventurier solitaire et expérimenté, mais qui souffre actuellement de maux de tête et d'oubli de souvenir due à son dernière aventure dans les mines de Foria. Voilà.
+
+La Cité des Eaux s'étend devant toi, un port cosmopolite animé où les marchands et les pirates se côtoient. Les quais encombrés de marchandises donnent une odeur de sel et de bois brûlé, tandis que la ville multiculturelle vous offre à la fois des perspectives et des défis sans précédents.
+
+Ainsi, tu vois Lysandra la Navigateuse parmi les commerçants et les passants. Elle regarde l'horloge de la Cité, ses yeux se déplaçant entre le présent et le passé. Lysandra semble être absorbée par un mystère personnel et vous demande si elle peut partager quelques mots avec toi.
+
+Le reste de la ville est animé par l'activité des commerçants et les marins qui ont amarrés leurs navires. Tu vois également Kael le Maréchal, qui surveille attentivement la foule pour maintenir l'ordre au sein du port. Capitaine Ryker, un pirate renommé, se tient à l'écart, observant les échanges avec un intérêt non déguisé.
+
+Tu as aussi remarqué que certaines personnes sont plus discrètes et plus discretes, leurs regards errants entre les groupes et les maisons.
+
+Voici quelques éléments de ta vue :
+
+Lysandra la Navigateuse
+Kael le Maréchal
+Capitaine Ryker
+Carte de navigation mystique
+Livre des Eaux
+Compas enchanté
+Coffre de ravitaillement pour navire
+
+**Joueur·euse**
+Je me précipite sur le livre des Eaux
+
+**Jeu**
+L'occasion de vous jeter sur le Livre des Eaux s'est présentée ! Vous trouvez un exemplaire ancien et délicatement illusoire, apparenté à une bibliothèque de magie. Le volume est entouré d'un halo lumineux, qui vacille lorsque votre main se referme dessus.
+
+Kael le Maréchal vous jette un regard suspicieux : "Ah, voilà donc ! Vous cherchez vraiment cette chose ? Soyez prudent, le Livre des Eaux n'est pas sans danger..."
+
+Lysandra la Navigateuse sourit doucement : "Vraiment, Eryndor Thorne, vous devriez être plus précautionneux. Le Livre contient de puissants secrets... et les Ténèbres s'y intéressent."
+
+**Joueur·euse**
+Lysandra, ma chère amie, sauriez-vous oú je puis trouver l'aventurière ss'étant saisie de la pierre de lumière ?
+
+**Jeu**
+Lysandra secoue la tête avec un soupçon d'inquiétude : "Malheureusement, Eryndor Thorne, j'ai entendu dire que l'aventurière était à la recherche de votre attention... et qu'elle est maintenant dans une situation délicate. Je ne sais pas exactement où elle se trouve, mais je suppose qu'il serait sage d'aller trouver Kael le Maréchal pour en savoir plus."
+
+Kael les regarde avec un regard pensif : "Oui, c'est vrai. La pierre de lumière est... compromisée. Et l'aventurière qui la possède se trouve dans un état critique. Je suis désolé, mais je ne peux pas vous aider davantage sans mettre en danger tout le port..."
+
+**Joueur·euse**
+Comment ça un état critique ?
+
+**Jeu**
+Kael le Maréchal baisse la voix, son regard passant rapidement autour de l'agitation du port : "L'aventurière... elle a été attaquée par des créatures noires de la nuit. Des ombres, je suppose qu'on pourrait les appeler ainsi. Elles sont affamées de lumière et de vie... et ils ont cherché à prendre possession de la pierre."
+
+Il se racle la gorge avant de continuer : "Je crains que votre amie soit en danger. Mais il y a un autre qui pourra peut-être vous aider. Un certain Astarte, il est... bien dans son domaine, je suppose. Surtout avec les créatures nocturnes."
+
+**Joueur·euse**
+Amie, c'est un bien grand mot, je ne la connais que par la rumeur qui court, mais je souhaite récupérer l'artefact, si je ne m'en occupe pas nous somme tous condamnés
+
+**Jeu**
+Kael le Maréchal acquiesce, visiblement impressionné par votre détermination : "Je comprends. Vous êtes prêt à prendre les risques pour sauver... et récupérer l'artefact. Très bien, alors. Je peux vous donner quelques informations sur Astarte. Mais soyez prudent, il n'est pas un ami que vous pouvez compter sans réserve."
+
+Lysandra la Navigateuse intervient : "Et si je vous donnais une idée pour atteindre la taverne où l'aventurière a été attaquée ? Vous devriez être en mesure d'y arriver avant les créatures noires de la nuit... si ce que Kael dit est vrai, bien sûr."
+
+**Joueur·euse**
+Parlez !
+
+**Jeu**
+Lysandra la Navigateuse pointe dans une direction : "Prenez le chemin qui mène aux entrepôts à l'ouest du port. Il y a un petit marché où vous trouverez une taverne nommée 'Le Crapaud Écrasé'. C'est là que votre... amie était lorsque les créatures noires de la nuit sont intervenues. Soyez prudents, ils ont dû quitter des hommes pour garder l'endroit..."
+
+Kael le Maréchal ajoute : "Et prenez garde à vous, Eryndor Thorne. Les créatures nocturnes ne sont pas les seuls qui pourraient vous attendre... Astarte a ses propres intentions, et ils peuvent être... complexes."
+
+**Joueur·euse**
+J'aimerais savoir ce que je possède, équipement, or, etc...
+
+**Jeu**
+Vous examinez votre inventaire : vous avez un poignard de chasseur, une potion de soin, le Livre des Eaux, et la carte du royaume. Vous n'avez pas d'or ou d'autres objets de valeur sur vous.
+
+Lysandra la Navigateuse remarque : "Ah, votre équipement est simple mais pratique pour un aventurier comme vous. Mais gardez en tête que les créatures nocturnes sont affamées de lumière et de vie... votre poignard ne sera peut-être pas suffisant contre elles."
+
+Kael le Maréchal ajoute : "Et n'oubliez pas d'avoir la carte du royaume avec vous. Vous ne savez jamais quand il pourra vous être utile..."
+
+**Joueur·euse**
+Je me rends au crapaud écrasé à l'aide des indications de la navigateuse
+
+**Jeu**
+Vous vous dirigez vers le marché et les entrepôts à l'ouest du port, suivant les indications de Lysandra. Après quelques minutes de marche, vous arrivez devant un petit immeuble avec une enseigne qui lit : "Le Crapaud Écrasé". L'extérieur semble sombre et mal entretenu, mais il y a une lumière à l'intérieur.
+
+À l'intérieur, la taverne est animée et bruyante. Vous remarquez des types de toutes sortes, mais aucune créature nocturne en vue pour le moment. Derrière le bar, un homme avec un visage tailladé et une jambe en bois vous regarde d'un air intéressé.
+
+"Qu'est-ce que je peux faire pour toi ?" demande-t-il en levant un bras décharné.
+
+<CONFIRM_ENTRE>
+
+**Joueur·euse**
+Je cherche à rencontrer une aventurière qui serait arrivé en mauvais état ici ce devait êtree il y'a une ou deux nuits
+
+**Jeu**
+Le visage du tavernier change légèrement, et vous remarquez que ses yeux se dérobent vers le fond de la salle. Il semble hésiter avant de répondre : "Ah, je ne sais pas de quoi tu parles... Il y a eu une femme ici hier soir, mais elle semblait aller bien. Je n'ai rien vu d'anormal..."
+
+Il secoue la tête et continue à vous servir un client qui a besoin d'un nouveau verre. Vous remarquez cependant qu'il semble s'être rétracté dans son fauteuil, comme s'il se sentait mal à l'aise.
+
+Une cliente située à côté de vous, une femme à la voix douce et à l'apparence éthérée, se rapproche de vous. Elle chuchote : "Si vous cherchez une aventurière qui aurait été... attaquée ici, je pourrais peut-être vous aider. Je suis allée voir des choses étranges hier soir..."
+
+<CONFIRM_PARLE avec la femme à l'apparence éthérée>

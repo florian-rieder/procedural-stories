@@ -1,0 +1,114 @@
+Storyteller
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+Tchetchouille
+Où suis-je ?
+Storyteller
+Vous êtes actuellement dans le marché central de la ville royale, entouré d'étalages remplis de denrées rares et de marchands affairés. La grande église du Temple de la Lune se trouve juste à quelques pas de là, avec ses tours majestueuses s'élèvant vers le ciel.
+Tchetchouille
+Comment sais-je que la pierre lumineuse est dans la ville ?
+Storyteller
+Vous avez lu une inscription sur la porte d'un temple abandonné près du marché : "La lumière de l'aube ne brillera plus sans la pierre qui brille". Une femme âgée, qui venait juste de sortir d'une boutique voisin, vous a entendu murmurer et vous a regardé avec une expression mystérieuse en hochant la tête.
+Tchetchouille
+Parler à la femme âgée
+Storyteller
+"Ah, tu cherches la pierre lumineuse, n'est-ce pas ?", demande-t-elle d'une voix feutrée, tout en essuyant la poussière de son chapeau avec un mouchoir. "Je sais quelques choses... mais parle-y d'abord à Gilquin, l'épicier du coin. Il connaît des secrets qui peuvent t'aider."
+Tchetchouille
+Aller parler à Gilquin
+Storyteller
+Vous pénétrez dans la petite boutique de Gilquin, une épicerie spécialisée en potions et ingrédients rares. L'arôme de racines sèches et d'épices vous enveloppe, et le propriétaire, un homme corpulent avec une barbiche bien tondue, vous regarde par-dessus les rayons en demandant : "Ah, tu cherches la pierre lumineuse ? Tu as entendu parler de mon ami Elric, le savant fou qui travaille sur un projet secret dans la tour abandonnée au nord-est du château?"
+Tchetchouille
+Aller voir Elric
+Storyteller
+Après avoir traversé les rues étroites et sinueuses de la ville, vous arrivez devant une tour haute et sombre qui se dresse comme un monstre endormi dans le coin nord-est du château. La porte est grande ouverte, et une voix déclamatoire et absurde résonne à l'intérieur : "Les secrets sont maître de la lumière, mais je suis leur esclave !" Un homme barbu avec des lunettes énormes et un foulard autour du cou, qui semble être Elric, vous regarde avec une intensité fébrile.
+Tchetchouille
+Demander des informations sur la pierre lumineuse
+Storyteller
+"Ah, vous êtes venu pour la pierre lumineuse !", s'écrie Elric, son regard s'égarant dans l'infini. "Je sais qu'elle se trouve quelque part ici... mais elle est cachée sous une multitude de trappes et de secrets. Les Ténèbres ont placé un gardien puissant pour la protéger, un être de ténèbres qui ne dormira pas avant que vous ayez trouvé le moyen de vaincre la lumière pour lui. Mais je peux vous donner une piste... (Elric hésite, comme s'il pesait ses mots) ...demandez à Marguerite, l'hôtesse du Lion d'Or, si elle peut vous aider."
+Tchetchouille
+Aller parler à Marguerite
+Storyteller
+Vous entrez dans la salle commune de l'hôtel du Lion d'Or, un endroit somptueux avec des tableaux aux murs et une cheminée qui fait fumer la pièce. L'hôte s'appelle bien Marguerite, et c'est une femme grande et élégante avec des cheveux roux qui se tressent en un chignon serré. Elle vous invite à prendre place auprès d'elle et vous dit : "Ah, vous cherchez la pierre lumineuse... Je sais quelques chose de ce que vous cherchez. La clef pour trouver la pierre est peut-être dans le carnet d'un voyageur qui fut ici récemment."
+Tchetchouille
+Demander des informations sur le voyageur
+Storyteller
+"Ah, oui... le voyageur qui a été ici", dit Marguerite avec une expression pensivement nostalgique. "C'était un étranger inconnu, venu de l'est et parti rapidement dans la nuit. Il laissait derrière lui une carte d'un endroit caché qu'il appelle 'La Grotte du Déserteur'. Je pense que c'est peut-être là que vous trouverez les informations dont vous avez besoin."
+Tchetchouille
+Prendre la carte et aller vers la Grotte du Déserteur
+Storyteller
+Vous prenez la carte de Marguerite, avec ses marques et son symbole inconnu, et vous déciderez d'aller explorer la Grotte du Déserteur. Vous traversez le château, puis les champs et les forêts, en suivant le chemin indiqué sur la carte. Le soleil commence à se coucher, mais vous pressez l'allure pour atteindre la grotte avant que la nuit ne tombe. Finalement, après une heure de marche, vous arrivez devant l'entrée d'une grotte sombre et étroite. Une inscription gravée sur le mur dit : "Celui qui cherche les secrets des Ténèbres ne doit pas frapper avant d'avoir fait sonner la cloche du Déserteur."
+Tchetchouille
+Y a-t-il une cloche à proximité ?
+Storyteller
+Oui, vous voyez une petite grotte adjacente, avec un morceau de corde accroché à un rocher et une sonnette qui se balançait au vent. Mais elle est désormais immobile, comme si elle attendait quelque chose ou quelqu'un...
+Tchetchouille
+Sonner la cloche du Déserteur
+Storyteller
+Vous tirez sur la corde de la cloche et elle retentit dans l'air calme de la nuit. La sonorité est claire et perçante, et vous sentez une étrange sensation, comme si le silence lui-même se fendait pour donner passage à quelque chose de caché. Une voix venue des profondeurs de la grotte vous répond : "Le Déserteur est là... Viens trouver-moi dans les couloirs de la nuit."
+Tchetchouille
+Aller dans les couloirs de la nuit
+Storyteller
+Vous pénétrez dans la grotte, et la voix vous guide à travers des tunnels étroits et sombres qui semblent se dérouler à l'infini. Vous marchez longtemps, entouré par le bruit d'eau coulant sur les murs et le craquement de rochers en éclats sous vos pieds. Finalement, vous arrivez devant une grande salle aux murs recouverts de symboles et d'écritures mystérieuses. Et dans cette salle, vous voyez un homme assis à une table de bois sombre, avec la lumière d'une lampe faible qui brille au-dessus de sa tête. C'est le Déserteur...
+Tchetchouille
+Parler au Déserteur
+Storyteller
+"Ah, enfin, vous êtes arrivé", dit le Déserteur sans lever les yeux de sa table, sa voix grave et triste. "Je savais que vous seriez à la recherche de la pierre lumineuse... Et je peux vous dire où elle se trouve. Mais, soyez prêt à payer un prix pour cela..."
+Tchetchouille
+"Quel sera le prix à payer ?"
+Storyteller
+Le Déserteur regarde enfin vers vous, ses yeux bruns brillants de quelque chose qui ressemble presque à la malice. "Ah, oui... Le prix est simple : un rêve", dit-il avec une voix qui fait frémir. "Je veux que vous me dites le plus cher et le plus précieux pour vous dans tout votre passé. Et lorsque vous l'aurez dit, je vous donnerai les informations sur la pierre lumineuse..."
+Tchetchouille
+"Comment saurez-vous que je ne mens pas ?"
+Storyteller
+Le Déserteur sourit, et vous voyez ses dents blanches éclater dans un rire qui n'a rien de joyeux. "Ah, je sais déjà comment vous mentez... Mais laissez-moi vous montrer", dit-il en se levant de sa chaise. Il va vers un miroir qui se trouvait sur le mur et il se regarde dedans. Puis il tourne la tête vers toi, son regard brusquement fixé sur vous, avec une intensité glaciale...
+Tchetchouille
+Attendre
+Storyteller
+Vous attendez, en sentant que quelque chose de sinistre se déroule autour de vous. Le Déserteur se contente de rester là, à vous regarder comme s'il voyait droit au cœur de votre âme. La seule lumière qui éclaire la salle est celle de la lampe faible, et elle semble diminuer peu à peu, créant un silence total dans lequel vous entendez votre propre respiration. Finalement, le Déserteur se tourne vers toi avec une expression froide : "Vous avez choisi... Mais maintenant, je dois vous montrer que je sais qui vous êtes..."
+Tchetchouille
+Attendre
+Storyteller
+Le Déserteur semble s'absorber dans ses propres pensées, comme si l'on pouvait entendre les rouages de son cerveau tourner à toute vitesse. Vous attendez, en sentant que le temps s'étire et devient flou. La lumière de la lampe est désormais presque éteinte, et vous sentez un frisson glacé vous parcourir l'échine. Et puis, juste avant que la pièce ne plonge dans l'obscurité totale, le Déserteur dit simplement : "Ton nom... est Guillaume."
+Tchetchouille
+"Comment obtenir la pierre lumineuse ?"
+Storyteller
+Le Déserteur se relève de sa chaise, une lueur s'étant allumée dans ses yeux. "Ah, maintenant que je vous ai connu par votre nom... Je vais vous dire : pour obtenir la pierre lumineuse, vous devez aller au Château de la Lune d'Argent, où règne la Comtesse Étoile. Mais attention, car la route est dangereuse et les gardes de la Comtesse sont impitoyables."
+Tchetchouille
+Aller au Château de la Lune d'Argent
+Storyteller
+Vous traversez le paysage nocturne, avec la lune se levant à votre gauche comme une épée dans un ciel sombre. Le chemin est pavé et vous le suivez jusqu'à ce que vous voyiez les tours brillantes du Château de la Lune d'Argent s'élever devant vous, comme un mirage doré. Les portes sont grandes ouvertes et l'on voit une étincelle lumineuse dans les yeux des deux gardes qui se tournent vers vous. "Entraînez-vous à votre mort", disent-ils en même temps, leurs voix identiques comme celles d'une seule voix...
+Tchetchouille
+"Je viens chercher la pierre lumineuse"
+Storyteller
+Les deux gardes se déplacent brusquement vers vous, leur main sur le pommeau de leurs épées. "La Comtesse Étoile n'attend que les audacieux", disent-ils en même temps, mais leur regard est équivoque et vous sentez que ce sont peut-être des ordres plutôt qu'une simple bénédiction qui leur a été donnés. "Vous êtes autorisé à entrer... jusqu'à la Grande Salle", ajoutent-ils en même temps, avant de faire place pour vous avec un geste majestueux...
+Tchetchouille
+Aller dans la Grande Salle
+Storyteller
+Vous pénétrez dans la Grande Salle et vous êtes immédiatement saisi par l'ambiance luxueuse qui règne là. La lumière des chandeliers réfléchie sur les miroirs vous fait sentir que vous vous trouvez au cœur d'un rêve éclatant de grâce. La Comtesse Étoile, à la tête de la table où se tient un banquet somptueux, se tourne vers vous avec un regard impérieux. "Ah, Guillaume", dit-elle en souriant...
+Tchetchouille
+"Où se trouve la pierre lumineuse ?"
+Storyteller
+La Comtesse Étoile rit, et sa voix a une note de malice qui vous fait frémir. "La pierre lumineuse ? Ah, oui... Elle est dans les jardins du Château, au pied d'un arbre étrange qui pousse sa racine à la surface de l'eau", dit-elle en hochant doucement la tête. Son regard se perd un instant vers le fond de la salle, comme si elle contemplait quelque chose que vous ne pouvez pas voir. "Mais je doute que vous puissiez la trouver seule", ajoute-t-elle avec un sourire...
+Tchetchouille
+"Pourquoi ne pourrais-je la trouver seule ?"
+Storyteller
+La Comtesse Étoile rit de nouveau, et ce rire semble être éclaboussé par une larme de tristesse. "Parce que les Jardins sont infestés des Lézards de l'Ombre", dit-elle en regardant le plafond de la salle, comme si elle se souvenait d'une chose déplaisante. "Ils sont féroces et peu loyaux, ils ne mangeront pas la pierre lumineuse, mais ils feront tout pour vous tuer", ajoute-t-elle en baissant la voix...
+Tchetchouille
+M'infiltrer discrètement dans les jardins pour aller chercher la pierre lumineuse au pied de l'arbre.
+Storyteller
+Vous vous faufilez vers la sortie de la Grande Salle, sans attirer l'attention des courtisans et des gardes qui dorment à leur poste. Vous descendez dans les couloirs sombres du Château, jusqu'à atteindre la porte qui donne accès aux Jardins. Une petite fenêtre est entrouverte, vous pouvez entendre les sons de la nuit dans les jardins : le bruissement des feuilles, le cri d'un oiseau nocturne... Vous vous glissez hors de la fenêtre et vous trouvez vous sur une allée pavée qui mène à l'intérieur des Jardins. Les arbres sont immenses, leurs branches s'étendent comme des bras géants dans les ténèbres, mais vous distinguez vaguement un arbre plus haut que les autres, ses racines plongeant dans la surface de l'eau d'un bassin sombre...
+Tchetchouille
+Discrètement prendre la pierre lumineuse et repartir.
+Storyteller
+Vous vous approchez discrètement du bassin et voyez que les Lézards de l'Ombre sont effectivement présents, deux d'entre eux se déplacent silencieusement autour des racines de l'arbre qui abrite la pierre lumineuse. Vous voyez votre chance et vous prenez la pierre sans bruit, elle est légère et polie entre vos mains. Les Lézards semblent s'être approchés pour regarder ce que faites, mais ils ne vous ont pas encore vu...
+Tchetchouille
+Repartir discrètement vers la cité royale
+Storyteller
+Vous sortez des jardins et vous retrouvez sur l'allée pavée, puis vous entrez dans le Château en passant par la fenêtre entrouverte que vous avez utilisée pour entrer. Vous vous faufilez discrètement jusqu'à atteindre votre chambre, où vous pouvez enfin respirer librement. Une fois les Lézards et les gardes oubliés derrière vous, vous examinez soigneusement la pierre lumineuse qui brille doucement dans vos mains...
+Tchetchouille
+Que sais-je à propos des autres artefacts ?
+Storyteller
+Vous ne savez que très peu de chose sur les deux autres artefacts. Vous avez entendu dire qu'il s'agit d'un sabre légendaire appelé "Coup de Foudre" et d'une cape de soie capable de faire disparaître ceux qui l'utilisent, mais vous n'en savez pas plus. Les rumeurs laissent à penser que ces artefacts se trouvent dans des endroits très dangereux et contrôlés par des personnages peu sympathiques...
+Tchetchouille
+Trouver des informations sur "Coup de Foudre"
+Storyteller
+Vous vous promenez dans les rues de la cité royale, cherchant à obtenir des informations sur le sabre légendaire appelé "Coup de Foudre". Vous arrêtez un vieil homme assis à une table d'un coin du marché et lui demandez s'il connaît quelque chose au sujet du sabre. Le vieillard vous regarde avec un regard scrutateur, puis dit en hésitant : "Je crois que 'Coup de Foudre' se trouve dans la main de Maître Argent... Un tueur à gages très célèbre, qui travaille pour n'importe quel prix." Il jette un coup d'œil autour de lui, puis ajoute rapidement : "Mais il ne vous le donnera pas facilement..."

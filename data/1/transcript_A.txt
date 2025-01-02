@@ -1,0 +1,158 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Je cherche des armes et des hommes
+
+**Jeu**
+Vous entrez dans une boutique d'armes située dans le quartier artisanal de la ville, où vous rencontrez un vieil homme aux cheveux gris, nommé Jean-Marie. "Ah, vous cherchez à vous équiper pour l'aventure ?" dit-il avec un sourire acéré, "Je peux vous proposer des épées, des dagues et des boucliers de qualité, mais pour les hommes... je crains que ce ne soit une autre histoire."
+
+**Joueur·euse**
+Donne moi toutes les armes possibles. Où puis-je trouver des hommes ?
+
+**Jeu**
+Jean-Marie vous montre un éventail d'armes sur ses étagères : des épées fines, des dagues acérées, des massues lourdes, des poignards silencieux, des haches puissantes et des boucliers décorés. Il mentionne également une arquebuse qui serait en réparation, mais qu'il pourrait vous prêter pour un usage temporaire.
+
+Quant aux hommes, Jean-Marie se racle la gorge avant de poursuivre : "Eh bien... vous devriez peut-être essayer l'Hôtel du Loup, c'est là-bas que les guerriers et les mercenaires viennent souvent. Mais gardez votre tête haute et vos poches fermées, ceux-là ne sont pas toujours des hommes à mettre en confiance."
+
+**Joueur·euse**
+Je prends toutes les armes disponibles et je vais à l'Hôtel du Loup
+
+**Jeu**
+Vous prenez les épées, dagues, massues, poignards, haches et boucliers que Jean-Marie vous a proposés. L'arquebuse est encore en réparation, mais il s'offre de la prêter pour un usage temporaire. Vous payez honorablement ce qui vous coûte et quittez la boutique.
+
+Vous poussez la porte du bar de l'Hôtel du Loup, et une marquise vous accueille avec un air froid et un clin d'œil vers les gardes armés postés à l'entrée. "Ah, bienvenue, beau voyageur. Qu'est-ce que je peux pour toi ?" Vous apercevez des types sombres dans les coins, buvant leur eau-de-vie ou discutant à voix basse.
+
+Le maître d'hôtel s'approche de vous : "Je vous conseille la chambre 17. C'est là que vous trouverez ce que vous cherchez, mais... soyez prudent."
+
+**Joueur·euse**
+Je propose à des hommes de me suivre pour une quête. Ensuite je vais à la chambre 17
+
+**Jeu**
+Vous commencez à parcourir les lieux de l'Hôtel du Loup en proposant votre proposition aux différents hommes qui vous croisent. L'un d'eux, un grand garçon maigre avec une tignasse ébouriffée, semble intéressé. "Je m'appelle Gauthier, et j'ai un peu d'expérience dans l'aventure. Qu'est-ce que c'est que cette quête dont tu parles ?" Il vous regarde avec un air curieux.
+
+D'un autre côté, vous repoussez des hommes qui semblent plus intéressés par les jeux de dés et le jeu du bar que par une quête aventureuse.
+
+Une fois votre proposition faite à plusieurs individus, vous décidez d'aller à la chambre 17. Vous gravis l'escalier sombre et sale, votre poignard en main. La marquise vous sourit quand vous passez devant elle : "Ah, vous voulez vraiment aller là-haut, hein ? Bon courage."
+
+La porte de la chambre 17 est légèrement entrouverte. Vous pouvez entendre des voix à l'intérieur, qui discutent dans un murmure urgent.
+
+**Joueur·euse**
+J'entre avec mon poignard en main, prêt à en découdre
+
+**Jeu**
+Vous entrez dans la chambre 17 avec votre poignard à la main, prêt à affronter tout ce qui s'y trouve. Vous apercevez une douzaine de types sombres qui discutent et s'agitent autour d'une table de cartes, tandis qu'un grand individu maigre avec un visage émacié est assis dans le coin, fumant une pipe en tournant la tête pour vous regarder. Gauthier, que vous aviez croisé plus tôt, se trouve également là-dedans.
+
+"Ah, bonjour ! Bienvenue chez nous !" dit l'homme au visage émacié avec un sourire qui n'a rien d'enchanté. "Je m'appelle Moullet, et je suis ravi de faire votre connaissance. Je suppose que vous cherchez à rejoindre notre petite... entreprise ?" Les autres individus commencent à se rapprocher de vous, leur visage sombre illuminé par une intensité qu'il vaut mieux ne pas ignorer.
+
+**Joueur·euse**
+C'est quoi votre entreprise ?
+
+**Jeu**
+Moullet prend une gorgée de sa pipe avant de répondre : "Nous sommes une... société de mercenaires, qui propose nos services à ceux qui ont besoin d'une aide spéciale." Il vous regarde avec un air calculateur. "Nous pouvons vous aider à récupérer les artefacts que vous cherchez, mais cela coûtera. Et puis, bien sûr, il y a la question de... loyauté." Gauthier parle dans le dos de Moullet, en basse : "T'es sûr qu'on peut lui faire confiance ?" Les autres individus commencent à murmurer entre eux, leur regard fixé sur vous.
+
+**Joueur·euse**
+Je  promets des richesses à ceux qui me permettront de récupérer les artefacts.
+
+**Jeu**
+Moullet se laisse aller dans son siège, une lueur de cupidité dans les yeux. "Ah, maintenant on parle ! Des richesses, vous dites ? Eh bien, je pense que nous pourrions être intéressés par... votre proposition." Il désigne Gauthier, qui a approché à vos côtés : "Celui-là sera notre garde du corps. Les autres... auront chacun leur rôle à jouer."
+
+L'homme maigre avec la pipe fait un geste vers les autres individus. "Nous sommes prêts à discuter des détails, si vous êtes prêt à nous faire connaître ce que vous avez à offrir." Gauthier se place près de vous, son regard scrutateur sur votre visage.
+
+**Joueur·euse**
+Je leur dit qu'on parlera plus tard et nous nous mettons à la recherche des artefacts
+
+**Jeu**
+Vous leur annoncez que vous souhaitiez poursuivre la discussion plus tard, après avoir réfléchi aux détails de l'entreprise proposée. Moullet semble un peu déçu, mais Gauthier s'esclaffe : "Pas étonnant, on ne peut pas toujours faire confiance à qui veut bien se joindre à notre groupe." Les autres individus se mettent à rire et à badiner entre eux.
+
+Vous décidez de partir avec Gauthier en vous promettant d'en discuter plus tard. Vous quittez la chambre 17, descendez l'escalier et sortez dans la nuit calme de la ville. Le froid nocturne vous frappe comme un coup de poing au visage.
+
+Vous êtes seul avec votre garde du corps Gauthier. Il a une expression grave sur le visage : "Il y en a qui ne voudront pas nous suivre, et il y a d'autres dangers à ce métier. Sachez que vous devez vous faire confiance, ou vous serez morts demain matin."
+
+**Joueur·euse**
+Je veux que les plus braves. Où sont les artefacts ?
+
+**Jeu**
+Gauthier hoche la tête en réponse. "Les plus braves, c'est moi, toi et deux autres individus qui se trouvent dans l'Hôtel du Loup. Nous avons trois possibilités pour récupérer les artefacts : le Château Mauret, la Tour Noire ou le Puits de l'Enfer. Mais attention, ce sont des lieux dangereux, remplis d'obstacles et de créatures terribles."
+
+Il dégaine une carte de sa poche et l'étale sur son bras. "Voici les trois lieux où se trouvent les artefacts : le Château Mauret est juste à la sortie du quartier ; la Tour Noire est cachée derrière un énorme bâtiment dans le centre-ville ; et le Puits de l'Enfer, eh bien... je suppose qu'il s'appelle comme ça parce que c'est vraiment le fond des enfers."
+
+Gauthier regarde autour de lui, puis se penche vers toi. "Je dirai juste cela : si tu veux les artefacts, il te faudra affronter ton propre destin."
+
+**Joueur·euse**
+Je vais chercher les deux autres individus à l'hôtel du Loup et nous nous dirigeons vers le Château Mauret
+
+**Jeu**
+Vous partez avec Gauthier pour rejoindre les deux autres individus qui vous ont été proposés par Moullet. Vous entrez dans l'Hôtel du Loup, où vous repérez immédiatement les deux hommes que vous cherchez. L'un d'eux est un grand type costaud avec une barbe épaisse, nommé Jacques ; et l'autre est un petit homme agile avec des yeux ronds, appelé François.
+
+Vous leur expliquez que vous avez décidé de partir pour le Château Mauret. Ils sont tous les trois d'accord, et après quelques minutes de préparatifs, vous quittez l'Hôtel du Loup en direction du Château Mauret.
+
+Le Château Mauret est un grand bâtiment sombre qui se dresse au bout d'une rue étroite. Les portes sont closes, mais un petit homme grassouillet en survêtement est assis sur le perron, et il vous regarde avec des yeux inquiétants.
+
+"Ah, les nouveaux", dit-il. "Bienvenue à la propriété de Mauret. Vous êtes venus pour récupérer... comment s'appellent-ils ? Ah oui ! Les artefacts ! Eh bien, vous trouverez trois portes derrière moi. Chacune des portes mène à un endroit différent, et chacun d'eux a son propre danger. Choisissez la bonne porte, et vous obtiendrez l'artefact que vous cherchez."
+
+Le petit homme vous regarde de manière sérieuse. "Mais si vous faites une erreur... Vous comprendrez ce que je veux dire en quelques heures."
+
+**Joueur·euse**
+Je sors une arme et je menace le petit homme grassouillet pour qu'il me dise quelle est la bonne porte
+
+**Jeu**
+Le petit homme gras semble prendre votre menaces au sérieux. Il fait un geste de crainte, puis commence à parler d'une voix tremblante.
+
+"Non, non, non ! Pas si vous voulez avoir une chance de réussir ! La bonne porte... C'est la troisième porte à droite. Mais je vous avertis, les autres sont très dangereuses." Il prend un temps pour reprendre son souffle. "Cependant, il y a quelque chose que vous devez savoir... Mauret est un magicien, et il a placé des sortilèges sur chaque porte. Si vous ne savez pas le mot d'ordre, les portes resteront closes."
+
+Il vous regarde avec des yeux inquiétants. "Et maintenant, si vous voulez bien m'épargner la torture... Je vais vous donner un conseil : choisissez vite et choisissez une bonne porte !"
+
+**Joueur·euse**
+Je prends la troisième porte à droite
+
+**Jeu**
+Vous prenez votre courage à deux mains et ouvrez la troisième porte à droite. La porte s'ouvre sur un grand hall sombre, avec des murs en pierre qui semblent peser lourdement au-dessus de vous. Le sol est recouvert d'une épaisse couche de poussière, et les onlys sont plongés dans une pénombre qui semble presque palpable.
+
+A mesure que vos yeux s'habituent à la lumière réduite, vous remarquez trois objets situés dans le hall. Le premier est un énorme tableau qui représente Mauret lui-même, souriant d'un air insouciant. Le deuxième est une statue de pierre qui semble représenter une femme aux formes élégantes, mais avec une expression sinistre. Et enfin, il y a le troisième objet : un coffre en bois sombre, orné de symboles mystérieux.
+
+Mais ce que vous remarquez le plus, c'est qu'il n'y a pas de porte qui mène à l'extérieur du hall. Les portes sont toutes closes, et il semble que vous êtes prisonnier dans ce lieu.
+
+Soudain, une voix s'échappe des ténèbres. "Bienvenue, les nouveaux", dit-elle. "Vous avez choisi la troisième porte à droite... mais maintenant, vous devez trouver le coffre qui contient l'artefact que vous cherchez."
+
+**Joueur·euse**
+J'ouvre le coffre en bois sombre
+
+**Jeu**
+Vous ouvrez le coffre en bois sombre, et un bruit de ferraille sec se fait entendre. Le coffre s'ouvre, révélant un espace vide à l'intérieur. Mais tout d'un coup, une main surgit du coffre et vous attrape le bras.
+
+La main est froide comme la glace, et elle semble avoir été enfermée dans le coffre pendant des siècles. Vous sentez une énergie malefique qui sort de la main, et vous commencez à vous sentir mal à l'aise.
+
+Une voix d'apparence féminine s'échappe de la main, mais sa tonalité est sinistre. "Vous avez choisi le coffre... mais maintenant, vous devez payer pour votre audace." La main vous serre avec force, et vous sentez que vous êtes prisonnier dans ce lieu.
+
+Soudain, une lumière faible éclaire l'endroit. Vous voyez une femme aux cheveux noirs et aux yeux rouges se tenir debout près du coffre. Elle est vêtue d'une robe sombre qui semble être faite de la même matière que le coffre.
+
+"Bonjour", dit-elle en souriant. "Je suis la Dame Noire. Et vous êtes maintenant mon prisonnier."
+
+**Joueur·euse**
+Que me voulez vous ?
+
+**Jeu**
+La Dame Noire rit, et sa voix est comme un glas qui résonne dans votre esprit. "Ah, vous voulez savoir ce que je veux ?", dit-elle en faisant une pause théâtrale. "Je veux que vous me conduisiez à l'artefact que vous cherchez. Et pour cela, vous devrez me faire un petit... sacrifice."
+
+Elle sourit encore, et ses yeux rouges semblent briller d'un éclat sinistre. "Vous verrez, ce sera une petite corvée pour toi. Un peu de sang, et tout sera réglé." Elle s'approche de vous, et son souffle glacé fait frissonner votre peau.
+
+"Le choix est vôtre", dit-elle en lui montrant la statue de pierre qui se trouve dans le hall. "Acceptez-vous de me faire ce sacrifice ?"
+
+**Joueur·euse**
+Sacrifice de quoi ?
+
+**Jeu**
+La Dame Noire rit encore, et sa voix devient plus haute. "Ah, vous ne comprenez pas ? Ah, bien ! Je vais vous expliquer... L'artefact que vous cherchez se trouve dans la statue de pierre qui se trouve devant nous. Mais pour l'examiner, il faut faire un petit sacrifice... Une pièce de votre vie."
+
+Elle approche de la statue et la touche doucement. "Cette statue est enchantée", dit-elle en regardant le coffre que vous avez ouvert plus tôt. "Et si vous voulez examiner l'artefact, il faut donner à l'enchantement une petite partie de votre vie." Elle sourit encore et continue : "Ne serait-ce pas un sacrifice délicieux ?"
+
+**Joueur·euse**
+Vas-y on fait le sacrifice
+
+**Jeu**
+Vous sentez que vous êtes contraints d'accepter la proposition de la Dame Noire. Vous approchez de la statue de pierre, et comme si par magie, une section de votre mémoire est coupée. Votre souvenir des deux individus qui vous ont été proposés par Moullet disparaît instantanément.
+
+La Dame Noire rit à nouveau, cette fois avec un air de satisfaction. "Excellent ! Maintenant, vous êtes prêts à examiner l'artefact." Elle s'approche de la statue et fait apparaître une petite fente dans la pierre. "L'artefact se trouve dedans", dit-elle en indiquant le petit compartiment.
+
+Vous approchez de la fente et examinez attentivement les empreintes qui sont gravées sur les parois de la statue. Vous constatez que ces empreintes correspondent à une petite clé. Soudain, vous vous souvenez d'avoir vu cette clé chez Moullet... Mais pas tout à fait comme cela se présentait...

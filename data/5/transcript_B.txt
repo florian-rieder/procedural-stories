@@ -1,0 +1,230 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Se déguiser en mendiant et aller au marché
+
+**Jeu**
+Vous vous déguisez en un vieil homme à demi-nu, les cheveux sale et l'âge apparent sur votre visage. Vous vous approchez du marché animé de Royaume de la Lumière, où les commerçants exposent leurs marchandises colorées et les senteurs des aliments grillés envahissent l'air.
+
+Les gens vous évitent avec méfiance, pensant que vous êtes un mendiant qui viendrez demander l'aumône. Vous vous rendez toutefois à une petite stalle vendant des bougies et des objets de lumière, où vous espérez pouvoir glaner quelques informations sur la Pierre de Lumière.
+
+La femme d'affaires, bien que surprise par votre déguisement, accourt avec un sourire gêné : "Pardon, monsieur... qu'est-ce que je peux faire pour vous ?"
+
+**Joueur·euse**
+Avoir l'air fou et lui demander si elle a une pierre lumineuse magique
+
+**Jeu**
+La femme d'affaires se crispe, manifestant un mélange de peur et de dégoût. "Ah, non, non, monsieur... Je crois que vous êtes victime de quelque chose. La Pierre de Lumière n'est pas une marchandise qu'on peut trouver ici, ni ailleurs dans le royaume, pour ce que j'en sais du moins."
+
+Elle prend une respiration profonde, tout en se gardant d'un geste trop évident qui pourrait alerter les autorités. "Dites-moi, est-ce que vous êtes... venu ici à cause de quelque chose ? Un message, peut-être ?"
+
+**Joueur·euse**
+Insister
+
+**Jeu**
+La femme d'affaires commence à s'inquiéter davantage, tout en essayant de conserver un ton poli. "Je comprends que vous cherchez quelque chose... Mais il faut bien que je vous dise, monsieur, que la Pierre de Lumière est... protégée. Et je ne pense pas qu'il soit sage de continuer à... insister dans cette voie-ci."
+
+Elle jette un coup d'œil autour d'elle, comme pour s'assurer qu'on n'écoute pas leur conversation. "Si vous voulez mon avis, vous devriez aller parler à Lady Lirien. Elle est... une sage et une mère pour beaucoup dans le royaume. Peut-être qu'elle peut vous aider."
+
+**Joueur·euse**
+Lui faire un sourire édenté
+
+**Jeu**
+La femme d'affaires recule, manifestant une nouvelle fois de la crainte et de l'inquiétude. "Non, non, monsieur... Je ne pense pas que cela soit nécessaire. Votre... sourire, il me semble, est un peu trop édenté pour être... convaincant."
+
+Elle se rapproche rapidement d'un client qui s'apprêtait à la questionner sur le prix d'une bougie, tout en vous lançant une œuvre de sous-entendus : "Je crois que j'ai des affaires à régler avec mon autre client, je vous laisse... profiter du marché."
+
+**Joueur·euse**
+Partir en faisant la roue
+
+**Jeu**
+Vous vous éloignez rapidement, les bras oscillants et une démarche étrange, comme si vous étiez un homme ivre. La femme d'affaires se retrouve en proie à un mélange de soulagement et de gêne. "Ah... Bonne chance, monsieur... Je suppose."
+
+Vous quittez le marché, les gens se tournant vers vous avec une mixte de curiosité et de méfiance. Vous continuez votre route, laissant derrière vous l'agitation du marché. Vous traversez un quartier sombre et étroit, les maisons s'allongeant comme des tombes lugubres.
+
+Enfin, vous atteignez une petite place calme, où se trouve Lady Lirien, assise sur un banc, les mains jointes et le regard perdu dans la distance. Elle semble attendre quelque chose ou quelqu'un...
+
+**Joueur·euse**
+Retrouver mon apparence de chevalier séduisant et aller s'asseoir à côté de Lady Lirien. Lui dire une banalité sur la nuit étoilée
+
+**Jeu**
+Vous retrouvez votre aplomb et votre charme, vous rapprochez doucement de Lady Lirien et prenez place à son côté sur le banc. Elle vous regarde avec un sourire calme, comme si elle avait anticipé votre arrivée.
+
+"Ah, monsieur Thorne," dit-elle d'une voix suave, "vous êtes vraiment un homme qui a la capacité de se faire oublier dans une foule, n'est-ce pas ? Et maintenant, vous admirez les étoiles nocturnes avec moi."
+
+Elle regarde le ciel, les yeux mi-clos. "La nuit est vraiment splendide aujourd'hui, n'est-elle pas ? Les étoiles semblent scintiller comme autant d'éclats de lumière dans l'obscurité..."
+
+Elle se tourne vers vous, et son regard s'attarde un instant sur le vôtre. "Mais il est temps pour nous deux de réfléchir à autre chose, je crois."
+
+**Joueur·euse**
+Lui dire "oui, je cherche une autre lumière que celle de vos yeux"
+
+**Jeu**
+Lady Lirien sourit, mais ce n'est pas un sourire ordinaire. C'est comme si elle avait anticipé cette réponse et était prête à en faire usage. Elle regarde le vôtre avec un air d'intelligence, comme si elle pesait les mots que vous venez de prononcer.
+
+"Ah, monsieur Thorne," dit-elle doucement, "vous êtes vraiment un homme qui sait comment utiliser une phrase pour exprimer exactement ce qu'il veut dire... et pour faire sentir à l'autre personne qu'elle est en train de se trahir."
+
+Elle rit, mais c'est un rire suave et mélancolique. "Je pense que je comprends ce que vous cherchez, monsieur Thorne. Et je pense que je peux vous aider... mais pas maintenant. Pour l'instant, il est temps pour moi de retourner à mes tâches. Il y a quelqu'un d'autre qui attend ma présence."
+
+Elle se lève et regarde autour d'elle comme pour s'assurer qu'il n'y a personne d'autre que vous dans le coin. "Je reviendrai demain, peut-être. Mais à partir de maintenant, je serai très occupée."
+
+**Joueur·euse**
+Retourner chez moi et regarder dans ma boule de cristal pour découvrir où est la pierre de lumière
+
+**Jeu**
+Vous vous débarrassez des regards curieux des habitants du royaume et retrouvez votre chemin vers votre demeure, une maison discrète mais confortable. Vous y pénérez, refermez la porte derrière vous et vous dirigez vers un coin de votre bibliothèque où se trouve votre boule de cristal.
+
+Vous prenez place devant l'orbe et commencez à la contempler avec attention. La lumière qui s'en échappe est d'une intensité étourdissante, mais elle semble... fluctuer ? Non, c'est plus fort que cela. C'est comme si elle se concentrait sur une seule chose, un seul lieu.
+
+Soudain, les visions commencent à apparaître dans la boule de cristal. Vous voyez des images fugitives, des visages qui disparaissent et des paysages qui changent rapidement. Mais l'une d'elles vous frappe particulièrement : une statue de pierre, un temple antique et... une ombre, qui se déplace à travers le bâtiment comme s'il était animé.
+
+La vision disparait abruptement, laissant derrière elle un silence inquiet. Vous sentez que quelque chose a été révélé, mais vous n'êtes pas sûr de quoi exactement. La pierre de lumière ? Non... C'est autre chose...
+
+**Joueur·euse**
+regarder ce que fait lady lirien
+
+**Jeu**
+Vous décidez d'observer Lady Lirien discrètement pour voir s'il y a quelque chose qui attire votre attention. Vous vous cachez derrière un pilier et regardez par-dessus.
+
+Lady Lirien est en train de se diriger vers une petite porte cachée derrière un rideau, dans le même quartier où elle a eu votre conversation précédente. Elle murmure quelque chose à voix basse avant d'ouvrir la porte et de disparaître à l'intérieur.
+
+La porte s'est refermée presque immédiatement, laissant à peine un éclair de lumière. Vous avez l'impression qu'elle a fait quelque chose que les autres ne devaient pas savoir... ou qu'elle ne devrait pas faire en public.
+
+Une petite inscription sur le mur attire votre attention : "Guilde des Ombres".
+
+**Joueur·euse**
+qu'est-ce que la guilde des ombres?
+
+**Jeu**
+Vous vous demandez ce que peut être la Guilde des Ombres, et si c'est lié à l'air de mystère qui entoure Lady Lirien. Vous réfléchissez un instant avant de décider d'enquêter de plus près.
+
+La carte du royaume que vous avez dans votre inventaire mentionne une zone réservée au nord de la ville, marquée "Zone interdite - Guilde des Ombres". Il semblerait que c'est là que se trouve le quartier de Lady Lirien, et que les habitants du royaume sont peu enclins à s'y aventurer.
+
+Vous vous demandez si cela pourrait être lié à la pierre de lumière, mais également à quelque chose de plus profondément mystérieux...
+
+**Joueur·euse**
+enchanter mon armure pour la rendre invincible et se reposer jusqu'au lendemain
+
+**Jeu**
+Vous décidez d'enchanter votre armure pour en faire une vraie protection impénéable. Vous cherchez un endroit tranquille où vous pouvez utiliser vos connaissances magiques sans être dérangé.
+
+Vous trouvez un coin calme dans votre demeure, loin de tout regard curieux, et commencez à réciter les incantations nécessaires pour enchanter votre armure. Les mots magiques vous sortent spontanément de la bouche, tandis que vos doigts tapotent rapidement le sol pour canaliser l'énergie.
+
+L'air autour de vous semble vibrer de puissance, et vous pouvez sentir la magie pénétrer dans chaque maille de votre armure. La vue du résultat vous fait sourire, car vous savez désormais que votre armure est absolument invincible.
+
+Avec cette satisfaction, vous décidez de vous reposer pour la journée, étourdi par l'effort d'enchanter votre armure. Vous vous allongez sur votre lit, les yeux fermés, et laissez la fatigue prendre le haut du pavé.
+
+Pour demain, c'est-à-dire pour le lendemain... Vous n'aviez pas prévu de sortir ce soir-là, mais une conversation avec Guillaume vous vient à l'esprit.
+
+**Joueur·euse**
+Qui est Guillaume?
+
+**Jeu**
+Guillaume est un forgeron réputé du Royaume de la Lumière. Il est connu pour sa capacité à créer des armes et des armures de haute qualité, ainsi que pour ses connaissances en matière d'acier et de métallurgie.
+
+Vous avez rencontré Guillaume à plusieurs reprises dans le marché de la ville, où il vendait des articles variés qui pourraient être utiles aux aventuriers. Il vous a paru être un homme honnête et prêt à échanger des informations ou des objets en fonction de vos besoins.
+
+Vous vous demandez s'il serait opportun d'aller le trouver demain, peut-être avec l'intention de lui poser quelques questions sur la Pierre de Lumière...
+
+**Joueur·euse**
+Aller voir lady lirien
+
+**Jeu**
+Vous décidez d'aller retrouver Lady Lirien, maintenant que vous avez eu un aperçu de sa relation avec la Guilde des Ombres. Vous vous dirigez vers le quartier réservé où elle vivait, et vous demandez à quelqu'un qui passe par là où on peut trouver cette "Madame".
+
+Personne ne veut répondre directement à votre question, mais un vieil homme qui boit dans une taverne près de la zone interdite lance un regard furtif vers le coin avant de dire : "C'est là-bas... Mais il y a peut-être quelque chose que vous devriez savoir avant d'aller frapper à sa porte."
+
+Il se penche sur vous et dit à voix basse : "Ne demandez pas la porte que je vais montrer. Demandez celle qui n'est pas marquée."
+
+**Joueur·euse**
+suivre les instructions du vieil homme
+
+**Jeu**
+Vous décidez de suivre les instructions du vieil homme, vous refusant à croire qu'il essaye de vous faire perdre votre temps ou même vous mettre en danger. Vous cherchez un peu partout jusqu'à ce que vous ayez trouvé une porte qui ne semblait pas être celle marquée comme appartenant à Lady Lirien.
+
+Vous frappez doucement à la porte, et après un moment de silence, vous entendez les bruits de quelqu'un s'approchant. La porte s'ouvre légèrement, révélant une petite personne mince avec des cheveux noirs serrés et un regard qui semble vous voir en dessous.
+
+"Madame Lirien n'est pas disponible actuellement", dit-elle d'une voix basse. "Puis-je savoir ce que vous voulez ?"
+
+**Joueur·euse**
+Répondre "je suis un vieil ami des étoiles, nous avions rendez-vous aujourd'hui... Si elle n'est pas trop occupée"
+
+**Jeu**
+La petite personne mince regarde autour d'elle pour s'assurer qu'il ne se trouve personne d'autre dans le coin avant de lever légèrement les sourcils. "Je ne crois pas que je vous ai jamais vu, mais Madame Lirien a bien sûr un agenda très chargé...", dit-elle avec un ton léger de doute.
+
+Après une pause, elle ajoute : "Attendez ici un moment, je vais aller voir si elle est disponible pour discuter..."
+
+Elle s'éloigne rapidement, vous laissant seuls dans le petit vestibule. Vous entendez des bruits provenant du fond du chemin de moquette et bientôt la petite personne reparaît avec une mine plus calme.
+
+"Madame Lirien est prête à vous recevoir", dit-elle. "Veuillez poursuivre."
+
+**Joueur·euse**
+la suivre en se remémorant ce que je sais de la pierre de lumière
+
+**Jeu**
+Vous suivez Lady Lirien dans un long couloir jusqu'à une grande pièce qui donne sur le jardin du château. La pièce est éclairée par des lumières douces qui semblent provenir d'une source naturelle, plutôt que de la lumière artificielle.
+
+Madame Lirien s'assoit dans un fauteuil confortable, en vous invitant à vous asseoir également. Elle fait quelques gestes pour que vous vous sentiez à l'aise, puis commence :
+
+"Je vois que vous avez apporté le problème de la pierre de lumière au premier plan...".
+
+Elle s'interrompt, fixant un regard dans le vide comme si elle cherchait quelque chose. "C'est bien... Je crois qu'il est temps que je vous disse quelque chose."
+
+**Joueur·euse**
+écouter madame lirien en la poussant à dire le plus de choses possible
+
+**Jeu**
+Lady Lirien vous regarde attentivement, comme si elle cherchait à mesurer votre réaction avant de continuer. "La pierre de lumière...", dit-elle doucement, "est un objet très précieux pour notre communauté. Mais il y a une raison pour laquelle je ne puisse pas vous en dire plus à ce stade."
+
+Elle s'arrête, regardant autour d'elle comme si elle était nerveuse de continuer. "Je crois que vous devez comprendre que les secrets que je vais partager avec vous maintenant sont confidents et risquent de mettre des vies en danger s'ils tombent dans les mauvaises mains."
+
+Elle prend une profonde inspiration, puis commence à parler d'une voix basse et rapide : "La pierre de lumière est un artefact qui peut être utilisé pour...". Elle s'arrête brusquement, levant la main comme si elle essayait de contenir quelque chose.
+
+"Attendez...", dit-elle. "Je ne devrais pas vous dire ça maintenant."
+
+**Joueur·euse**
+Lui dire que la situation est désp
+
+**Jeu**
+Vous la regardez avec sérieux et dites : "Madame Lirien, je comprends que la situation soit grave, mais je sens que vous me cachez quelque chose qui pourrait mettre le communauté entière en danger. Je dois savoir ce qu'il se passe avec la pierre de lumière."
+
+Vous prenez une profonde inspiration avant de continuer : "Je suis prêt à prendre des risques pour protéger notre communauté, et je pense que vous avez plus d'informations que vous ne le dites. S'il vous plaît, Madame Lirien, dites-moi la vérité."
+
+Lady Lirien vous regarde avec une expression grave, puis se lève lentement de son fauteuil. "Je vais vous dire quelque chose...", dit-elle doucement, comme si elle était sur le point de révéler un secret terrible. "Mais vous devez promettre de ne jamais répéter ce que je vais dire à quiconque."
+
+Elle vous fixe avec une intensité qui semble glacée : "La pierre de lumière est...".
+
+**Joueur·euse**
+Promettre de ne rien dire
+
+**Jeu**
+Vous faites un serment solennel et disiez : "Je promets sur ma parole d'honneur que je ne répéterai jamais ce que vous alliez me dire, Madame Lirien. Je suis prêt à prendre les risques pour protéger notre communauté."
+
+Lady Lirien semble satisfaite de votre promesse et continue doucement : "La pierre de lumière est en danger d'être prise par le Seigneur des Ténèbres. Il a des agents secrets qui recherchent activement l'artefact pour l'utiliser à ses propres fins sombres."
+
+Elle se rapproche de vous, comme si elle craignait d'être entendue : "Je ne devais pas vous dire ça ici, mais je sens que je peux vous faire confiance. Vous devez être prudent et bien garder le secret pour sauver notre communauté."
+
+Vous sentez un frisson glacé descendre votre dos à l'écoute de ces mots. La situation est plus grave qu'elle ne semblait au début.
+
+**Joueur·euse**
+Continuer à écouter
+
+**Jeu**
+Madame Lirien continue à parler d'une voix basse et urgente : "Il faut que vous preniez la Pierre de Lumière loin du Seigneur des Ténèbres, avant qu'il ne soit trop tard. J'ai entendu dire que le maître Armand, notre mage de l'ordre, possède une théorie qui pourrait vous aider à localiser la pierre et à protéger la communauté."
+
+Elle se rapproche encore plus de vous, comme si elle craignait d'être dérangée : "Vous devez aller trouver maître Armand le plus vite possible. Il sait ce qu'il fait, mais il sera difficile pour lui de faire... (elle s'arrête, regardant autour d'elle avec anxiété) ...difficile pour lui de faire une chose qui pourrait sauver la communauté."
+
+Elle vous fixe dans les yeux, comme si elle essayait à vous transmettre un message crucial : "Allez-y, vite. Le sort de notre communauté est entre vos mains."
+
+**Joueur·euse**
+Embrasser madame lirien et aller voir armand
+
+**Jeu**
+Vous embrassez Madame Lirien avec sincérité, en essayant à vous exprimer votre gratitude et votre engagement à protéger la communauté. Elle vous retourne un baiser rapide, puis se recule pour permettre d'aller poursuivre votre conversation.
+
+"Allez-y, Eryndor," dit-elle doucement, "Maître Armand attend probablement dans son petit bâtiment derrière l'école de la communauté. Soyez prudent."
+
+Vous quittez le petit espace où vous étiez avec Madame Lirien et vous dirigez vers l'endroit qu'elle a mentionné. Vous passez devant quelques bâtiments, puis arrivez à un joli petit bâtiment avec des tuiles rouges et une petite tour dans le coin. Un signe suspendu au-dessus de la porte indique que c'est bien là que Maître Armand habite.
+
+Vous frappez doucement à la porte et entendez une voix qui vous appelle d'intérieur : "Entrez, Eryndor !"

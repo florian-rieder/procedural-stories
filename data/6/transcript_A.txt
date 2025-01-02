@@ -1,0 +1,133 @@
+**Jeu**
+Commençons l'aventure !
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Je me rends à la taverne locale pour glâner des informations
+
+**Jeu**
+Vous entrez dans la taverne, le bruit de la conversation et du rire vous enveloppe aussitôt. Vous cherchez un visage familier parmi les clients, mais il semble que la plupart d'entre eux soient des inconnus. Un serveur à barbaude énorme s'approche de vous et demande : "Qu'est-ce qui peut me faire plaisir ?"
+
+**Joueur·euse**
+mettez moi un triple sec, et auriez vous eu vent d'une rumeur concernant un artefact magique ?
+
+**Jeu**
+Le serveur yousse des verres avec une grimace amusée. Le triple sec arrive sous peu. Puis, en trottinant vers le fond de la salle, il dit à voix basse : "Oh, vous voulez parler de la pierre lumineuse ? Eh bien... certaines personnes disent qu'elle se trouve dans les cryptes de l'église abbatiale, mais je n'ai pas confirmé moi-même..." Il vous lance un regard inquiet avant de poursuivre rapidement à servir un autre client.
+
+**Joueur·euse**
+Je descend mon verre et me rends dans un des bâtiments de la guilde pour essayer de recruter des compagnons d'aventure
+
+**Jeu**
+Vous entrez dans le bâtiment de la Guilde des Aventuriers, vous êtes immédiatement accueilli par le bruit de conversations et de rires. Le greffier de la guilde, un homme en robe sombre avec un air de gravité, s'approche de vous et dit : "Ah, vous voulez rejoindre nos rangs ? Nous avons besoin d'aventuriers courageux pour affronter les dangers qui menacent notre royaume. Je vais appeler une réunion d'embauches immédiatement." Il sonne un petit gong posé sur le comptoir et un des guildeurs vous invite à suivre.
+
+**Joueur·euse**
+je le suis
+
+**Jeu**
+Vous êtes conduit dans une grande salle où se trouvent plusieurs personnes qui semblent prêtes à entendre votre demande. Un guildeur au regard percutant s'adresse à la réunion : "Alors, qu'est-ce que vous avez à offrir ?" Il regarde un autre guildeur en faisant un signe et celui-ci vous dit : "Nous avons besoin d'aventuriers capables de s'emparer des artefacts magiques. Nous avons trois postes disponibles, mais je ne vois pas comment vous allez vous démarquer des autres... à moins que..." Il secoue la tête avant de laisser la phrase inachevée.
+
+**Joueur·euse**
+à moins que ? ...
+
+**Jeu**
+Le guildeur semble hésiter avant de poursuivre : "À moins que vous ayez une raison spécifique pour vouloir récupérer l'une des trois pierres magiques." Il s'arrête, le regardant attentivement pour voir comment vous réagissez.
+
+**Joueur·euse**
+Je souhaite sauver le royaume
+
+**Jeu**
+Le guildeur fronce les sourcils, puis un petit sourire se forme sur ses lèvres. "Ah, une quête personnelle, c'est... nouveau pour nous. Très bien, vous avez gagné votre chance. Les trois postes sont disponibles : une aventurière surnommée 'La Fougueuse', un guerrier nommé 'Le Lourd', et un mage connu sous le nom de 'L'Inconnu'. Qui choisissez-vous comme compagnon ?"
+
+**Joueur·euse**
+je vais engager le mage
+
+**Jeu**
+"Ah, L'Inconnu ! Un choix audacieux. Il a... une réputation étrange. Mais il est vrai qu'il possède des pouvoirs impressionnants. Vous pouvez l'engager pour 500 pièces d'or, mais attention, il vous avertit que ses 'excès de langage' peuvent être... perturbants." Un petit guildeur s'avance et dit à voix basse : "Attention, si vous embauchez L'Inconnu, vous devrez également accepter d'être son apprenti. Il pense que vous avez besoin d'être 'éclairé'."
+
+**Joueur·euse**
+Je ne possède pas l'argent, mais je promet de lui donner 50% de la récompense que nous versera le roi lorsque nous auront terminé la quête
+
+**Jeu**
+Le guildeur vous regarde avec une expression dubitative. "Ah, vous voulez faire une proposition à L'Inconnu ? Eh bien, c'est une chose... inédite. Mais il est vrai que les récompenses royales sont souvent considérables." Il appelle le mage qui était assis dans un coin de la salle et dit : "L'Inconnu, cet aventurier vous souhaite engager à ses côtés pour votre quête. Et vous propose une proposition particulière : 50% des récompenses royales... Qu'en dites-vous ?" L'Inconnu se lève, boit un verre de liqueur et dit en regardant fixement devant lui : "Je suis prêt à accepter cette proposition, mais seulement si vous pouvez me promettre une chose..."
+
+**Joueur·euse**
+Oui ?
+
+**Jeu**
+L'Inconnu se met à parler d'une voix songeuse, comme s'il était en train de réfléchir à un problème délicat. "Si nous sommes victimes d'un... 'inconfortable accident', je veux que vous me promettiez de prendre soin de ma collection de livres anciens... C'est tout."
+
+**Joueur·euse**
+Une assurance vie donc ?!
+
+**Jeu**
+L'Inconnu éclate d'un rire qui fait trembler la salle, ses yeux brillent de mirth et il dit : "Oh non, non, non ! C'est plus que cela... mais moins que vous le pensez. Disons simplement que je veux être enterré avec ces livres."
+
+**Joueur·euse**
+Okay
+
+**Jeu**
+Le guildeur semble satisfait de cette discussion et approuve d'un signe du menton. "Très bien, c'est entendu ! L'Inconnu accepte votre proposition. Vous avez donc un mage pour vous accompagner dans votre quête." Il s'approche d'une étagère où sont disposés des plans de la ville et dit : "Désormais que vos affaires sont réglées, il est temps de parler affaire sérieuse. Le roi a reçu une nouvelle qui indique que l'un des trois artefacts magiques se trouve dans le château abandonné de Malakar... Mais attention, ce lieu est censé être hanté."
+
+**Joueur·euse**
+Je vois, mais pour le moment nouss allons nous concentrer sur la crypte, merci de l'information cependant
+
+**Jeu**
+Le guildeur vous regarde avec une expression dubitative. "Ah, vous voulez aller à Malakar avant la crypte ? C'est... un choix étrange. Mais si cela vous amène à vos fins, je suppose que c'est votre affaire. Le château de Malakar est situé au nord de la ville, il faudra traverser le marché pour y arriver." Il vous tend un plan de la ville avec les différents quartiers et les rues principales. "Pensez à prendre garde aux... 'vendeurs' qui ont une réputation pour être... persuasifs."
+
+**Joueur·euse**
+Non, je souhaite aller récupérer l'artefact de la crypte avant d'affronter le chateau de malakaar
+
+**Jeu**
+Le guildeur semble satisfaire de votre choix. "Ah, oui bien sûr ! La crypte est un bon point de départ pour une quête comme la vôtre. Elle se trouve sous l'église du Sauveur, juste à côté de là où vous vous trouvez actuellement. Mais attention, les cryptes sont souvent gardées par des... 'intérêts' qui ne veulent pas que vous récupériez l'artefact."
+
+**Joueur·euse**
+On m'a dit qu'elle se trouvait sous l'église abbatiale, non sous celle du sauve
+
+**Jeu**
+Le guildeur rougit légèrement et corrige sa phrase. "Ah, oui bien sûr ! La crypte de l'artefact est effectivement située sous l'église abbatiale, juste en face de là où vous vous trouvez actuellement. Je suppose que c'est une information plus... précise qui m'a été donnée." Il se tut et regarda autour de lui, comme s'il vérifiait que personne ne les écoutait.
+
+**Joueur·euse**
+Merci, pour les renseignements, nous allons nous mettre en route vers cette crypte !
+
+**Jeu**
+"À vos souhaits ! L'église abbatiale est juste à côté de ce marché. Vous pouvez la voir derrière le dernier étal de fromage que vous voyez là-bas." Un boulanger vous regarde avec un regard méfiant, comme s'il savait quelque chose que vous ne saviez pas. "Mais attention, il y a eu des... 'problèmes' récemment sous l'église abbatiale. Je suppose que c'est normal, mais il vaudrait mieux être prudent."
+
+**Joueur·euse**
+quels genre de problèmes ?
+
+**Jeu**
+Le boulanger baisse la voix et dit : "Des bruits étranges sont venus d'en dessous de l'église. Des cris, des pleurs... et même une fois ou deux, on a entendu les pas de quelqu'un qui courait..." Il se ravise et continue à surveiller le marché avec un air inquiet. "Mais comme je disais, il vaut mieux être prudent."
+
+**Joueur·euse**
+Nous faisons fi de son avertissement et nous rendons vers l'église avant de pénétrer dans la crype
+
+**Jeu**
+Vous arrivez devant l'église abbatiale, un grand bâtiment sombre qui domine le marché. L'entrée est sous une arcade gothique qui semble menaçante. Une femme âgée, probablement la gardienne de l'église, vous observe depuis la porte. "Ah, vous devez être venu pour les exhumations, je suppose ?" Elle s'efface pour permettre à deux personnages mystérieux d'entrer derrière elle dans le chœur.
+
+**Joueur·euse**
+C'est à dire ?
+
+**Jeu**
+La femme âgée vous regarde avec une expression inquisiteuse. "Les exhumations... des tombes, bien sûr ! La crypte se trouve sous l'église, comme il a été dit. Mais, si je puis me permettre, je recommanderais de demander au frère Érasme la permission d'entrer dans la crypte..."
+
+**Joueur·euse**
+mais pourquoi exhumer les tombes ?
+
+**Jeu**
+La femme âgée vous regarde avec une expression un peu confuse. "Oh, non, non, non ! Je m'y trompe probablement... Les exhumations sont pour... eh bien, ce n'est pas très important. Le plus important est que vous ayez la permission du frère Érasme avant de descendre dans la crypte..." Elle fait mine de s'éloigner, mais puis revient et murmure : "Dites-lui que j'ai parlé... si c'est possible."
+
+**Joueur·euse**
+Je crie, l'inconnu, je te choisis, attaqu éclair !
+
+**Jeu**
+Un homme inquiet qui se tenait à quelques pas derrière vous pousse un cri de surprise et recule vivement. "Mon dieu, quoi ?!" Il s'éloigne rapidement, bousculant les gens qui passaient dans la rue.
+
+La femme âgée vous regarde avec une expression troublée. "Ah, pardonnez-moi... je crois que vous n'êtes pas ici pour jouer aux jeux de rôle... Frère Érasme !" Elle appelle un homme vêtu d'un simple manteau noir qui se tenait derrière elle.
+
+Frère Érasme s'avance vers vous, son regard grave et sérieux. "Qu'est-ce que c'est que cette commotion ?"
+
+**Joueur·euse**
+Je lance un dé 20
+
+**Jeu**
+Le résultat est... un 18 ! Frère Érasme regarde votre geste avec une expression perplexe, mais il semble moins méfiant que l'instant d'avant. "Ah, bien... Eh bien, je suppose que vous n'êtes pas là pour faire du mal. Je peux vous donner la permission de descendre dans la crypte..." Il se racle la gorge et ajoute : "Mais, avec une petite condition, naturellement."

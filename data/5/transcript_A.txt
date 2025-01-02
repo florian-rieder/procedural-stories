@@ -1,0 +1,129 @@
+**Jeu**
+Commençons l'aventure !
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+aller dans une taverne
+
+**Jeu**
+Vous entrez dans la taverne "L'Aigle Noir", une enseigne réputée pour abriter les plus courageux chevaliers et les plus mystérieux mages de la ville. La musique est envoûtante, des flûtes jouent un air mélancolique tandis que le maître de l'âge éclaire la scène avec ses harpes sonores.
+
+**Joueur·euse**
+Qui est dans la taverne?
+
+**Jeu**
+Un vieil homme barbu et bedonnant, en compagnie d'un jeune garçon mal rasé, sieste en un coin, près du feu qui brûle doucement ; une dame de beauté inquiétante s'adonne à jouer aux dés avec un chevalier dont le visage est encore marqué par les cicatrices de la bataille.
+
+**Joueur·euse**
+Demander au vieil homme s'il a remarqué quelque chose de bizarre ces derniers temps
+
+**Jeu**
+L'homme bedonnant s'éveille d'un sommeil paisible, et en regardant à travers ses lunettes déformées, il vous répond : "Ah, des bizarres ? Oh oui, j'ai bien senti que la magie est dans l'air. Les rires et les chansons ont changé de ton, et les gens sont plus inquiets qu'ils ne le devraient..."
+
+**Joueur·euse**
+Est-ce qu'il a vu passer des gens à l'air louche?
+
+**Jeu**
+Le vieil homme éclate en une série de couinements rauques, et dit : "Ah, oui ! La nuit dernière, j'ai vu trois hommes vêtus de noir qui sont entrés dans la taverne. Ils semblaient des... (il fait un signe du menton) ...des choses que vous ne voulez pas croiser en chemin d'un bois sombre."
+
+**Joueur·euse**
+où sont-ils allés?
+
+**Jeu**
+Le vieil homme fait mine de réfléchir, puis dit : "Ils se sont dirigés vers la cour intérieure de l'hôtel des rois. Mais je ne sais pas quoi faire du reste... (il secoue la tête) J'ai eu le sentiment qu'ils ne voulaient pas être vus..."
+
+**Joueur·euse**
+Décrire l'hôtel des rois
+
+**Jeu**
+L'hôtel des rois est un bâtiment imposant, avec des murs de pierre grise et une toiture de tuiles rouges qui brille au soleil. Le portail d'entrée est gardé par deux chevaliers qui arborent les armes du roi, et la cour intérieure est pavée de granit noir qui résonne des pas des courtisans qui se pressent. Les fenêtres sont ornées de jalousies en métal doré, et les corniches sont sculptées dans un style gothique élégant. Une cloche suspendue au-dessus de la grande porte sonne le temps, et une petite fontaine murmurante apporte un doux murmure à l'air nocturne...
+
+**Joueur·euse**
+demander au vieil homme s'il sait où l'on peut acheter un charme d'invisibilité
+
+**Jeu**
+Le vieil homme vous regarde avec des yeux étonnés, et en baissant la voix, il dit : "Un charme d'invisibilité ? Ah, vous cherchez les services de Madame Émilie, la marchande de secrets. Elle a un commerce dans l'allée des Étoiles, au bout du Pont-Rouge..."
+
+**Joueur·euse**
+Aller chez madame Emilie
+
+**Jeu**
+Vous traversez le Pont-Rouge et vous arrivez dans l'allée des Étoiles, une ruelle étroite où les marchands vendent leurs biens sous prétexte de nécessité. Vous trouvez la boutique de Madame Émilie entre un éventaire de bijoux et un magasin d'antiques. La marquise vous accueille avec un sourire enchanteresse, et vous lui demandez directement : "Madame Émilie, j'ai entendu dire que vous pouviez m'aider... ?"
+
+**Joueur·euse**
+Demander à Madame Emilie de garder le secret sur nos échanges
+
+**Jeu**
+Madame Émilie se fend d'un rire coquet et répond avec un regard langoureux : "Ah, bien sûr, monsieur. Tout ce qui se dit dans mes locaux est protégé par les secrets des dieux... pour peu que vous payiez l'impôt de la discrétion."
+
+**Joueur·euse**
+Combien ai-je d'argent sur moi?
+
+**Jeu**
+Vous vérifiez votre poche et constatez qu'il reste encore 10 pièces d'or et quelques billets de cuivre que vous avez gagnés en jouant aux dés avec les soldats la veille. Mais ça ne suffira pas pour payer le prix demandé par Madame Émilie...
+
+**Joueur·euse**
+J'explique à Madame Emilie d'où je viens, et que je suis en route pour une quête dangereuse qui me mènera sans doute aux quatre coins du royaume, et à la rencontre de secrets très bien gardés. Pour la mener à bien, j'aurai besoin de quelques charmes d'invisibilités, mais je n'ai pas tant d'argent que ça... En échange, je peux revenir lui conter mes avnetures et les secrets que j'aurai découvert, ou lui rapporter quelques objets glanés sur le chemin... Ou elle peut venir avec moi, si elle se sent l'âme d'une aventurière
+
+**Jeu**
+Madame Émilie regarde autour d'elle comme pour s'assurer qu'ils sont bien seuls dans la ruelle, puis, avec un regard éclairé et une voix basse, elle répond : "Ah, vous êtes de ceux qui osent aller voir les yeux de l'Ours ? Et que cherchez-vous ? Les secrets des dieux ou les trésors cachés du royaume ? Je suis prête à vous écouter... mais je ne partirai pas seule vers ces dangers."
+
+**Joueur·euse**
+Je cherche à vaincre les Ténèbres et à sauver le royaume du danger qui le menace. Je cherche de l'aide partout où je peux en trouver... Mais pour l'instant, je cherche à m'introduire discrètement dans l'hôtel des rois. Avec vous, si l'aventure vous démange comme moi
+
+**Jeu**
+Madame Émilie se fend d'un sourire en coin et dit : "Je suppose que notre conversation est trop longue pour ce moment... Je vais vous aider à entrer discrètement dans l'hôtel des rois, mais pas sans une petite compensation. Je veux un objet unique de votre quête qui me rendra compte de vos aventures... et si nous survivons, je vous retrouverai peut-être à la Cour Royale." Elle se lève et commence à mettre dans sa robe des poignées d'herbes sèches et des grains de couleur. "Allons-y. Mais pas par l'entrée principale... C'est par les toits que nous allons entrer..."
+
+**Joueur·euse**
+Suivre madame emilie
+
+**Jeu**
+Vous suivez Madame Émilie à travers les ruelles étroites de la ville, vous menez jusqu'à une maison qui semble abandonnée. Mais au deuxième étage, une fenêtre est légèrement entrouverte, et un filet tendu permet d'accéder à la toiture de la maison voisine, celle où se trouve l'hôtel des rois. Madame Émilie vous fait signe d'aller plus vite, tandis qu'elle grimpe sur le toit avec une facilité qui vous surprend...
+
+**Joueur·euse**
+décrire madame emilie
+
+**Jeu**
+Madame Émilie est une femme d'une quarantaine d'années, aux cheveux noirs et brillants comme la nuit. Elle a les yeux bruns profonds, avec des pupilles vertes qui semblent voir à travers vous. Son visage est rond et lisse, avec une peau sombre que le soleil n'a pas encore touchée. Elle porte un chignon serré sous son bonnet, et ses doigts sont délicatement parés de bagues en argent et en or. Ses vêtements sont élégants et discrètement luxueux, avec des broderies et des dentelles qui laissent deviner sa richesse et son goût pour les secrets...
+
+**Joueur·euse**
+Grimper sur le toit à la suite de madame Emilie
+
+**Jeu**
+Vous grimpez sur le toit en suivant Madame Émilie, vos pieds vous trahissant sur l'assez fine couverture de chaume et de sciure. La fumée s'échappe des cheminées de l'hôtel des rois, tandis que les lanternes des chambres créent une lumière bleutée qui réfléchie par le ciel. Madame Émilie vous fait signe de vous coucher à plat ventre, et elle se met à ramper vers un endroit où la toiture est moins inclinée...
+
+**Joueur·euse**
+suivre madame emilie
+
+**Jeu**
+Vous suivez Madame Émilie sur le toit, vos yeux s'écarquillant tandis que vous observez les gargouilles et les grotesques qui décorent la façade de l'hôtel. Elle parvient à une lucarne entrouverte et fait signe à l'intérieur avec sa main. Vous poussez la fenêtre et passez votre tête pour voir ce qu'elle fait, mais c'est juste temps de voir un groupe d'employés de l'hôtel se disputer à voix basse...
+
+**Joueur·euse**
+écouter les employés en restant hors de vue
+
+**Jeu**
+Vous vous tenez à la lucarne et écoutez les employés discuter à voix basse. Ils semblent être des serviteurs, car ils portent des robes de couleur sombre avec un insigne doré sur leur poitrine. L'un d'eux parle tout bas : "J'ai entendu dire que le roi a convoqué une réunion secrète dans l'antichambre cette nuit... à laquelle se trouveront les plus hauts personnages du royaume." L'autre serviteur répond d'une voix hésitante : "Je ne sais pas, mais je crois qu'il y aura aussi un groupe de chevaliers qui viennent d'être recrutés dans le nord... ils ont l'air d'être des mousquetaires de la reine."
+
+**Joueur·euse**
+demander à madame emilie si elle connaît bien l'intérieur de l'hôtel des rois
+
+**Jeu**
+Madame Émilie se tourne vers vous avec un sourire froid et dit : "Ah, les intérieurs de l'hôtel des rois ? Je les connais comme ma poche, cher aventurier. J'ai passé nombre de nuits dans ce lieu, souvent sous forme d'une lumière qui éclaire la route aux autres... Je sais où se trouvent les passages secrets, les chambres secrètes et les couloirs abandonnés. Mais sachez que je ne vous suivrai pas en tout cas jusqu'à la réunion du roi. Ma présence là-bas pourrait compromettre votre mission..."
+
+**Joueur·euse**
+lui demander le chemin jusqu'à l'antichambre
+
+**Jeu**
+Madame Émilie secoue la tête avec un geste de refus, mais ajoute : "D'accord, je vous donnerai les informations que vous cherchez... L'antichambre est accessible par une porte discrète qui se trouve dans le couloir des serviteurs. C'est une porte qui ressemble à une armoire, avec un panneau de bois qui cache l'intérieur. Vous trouverez cette porte juste après avoir traversé la cour intérieure et passé devant les fenêtres du grand salon... Mais n'oubliez pas que vous êtes sur votre propre responsabilité si vous tentez d'y accéder."
+
+**Joueur·euse**
+Est-ce qu'on peut espionner cette salle?
+
+**Jeu**
+Madame Émilie secoue la tête avec un geste de refus et dit : "Je crains que ce soit impossible. L'antichambre est protégée par des gardes qui font le tour de la cour intérieure tous les quarts d'heure. De plus, les portes sont faites de bois épais et ont une serrure solide... Et puis il y a les miroirs. Les espions du roi ont placé des miroirs magiques à l'intérieur de l'antichambre pour surveiller les conversations qui s'y déroulent. Si vous essayez d'espionner, vous risquez de tomber sous leur écran et être vu par tous..."
+
+**Joueur·euse**
+Comment faire alors pour savoir ce qu'il s'y dit?
+
+**Jeu**
+Madame Émilie se penche vers vous avec un air mystérieux et dit : "Je connais quelqu'un qui pourrait vous aider à obtenir des informations... Un certain 'Pierre le Fou', un écervelé qui travaille dans la cuisine de l'hôtel. Il est souvent absent et s'amuse à glaner des informations parmi les restes des plats. Je pourrais vous introduire à lui, mais il faudrait être prudent, car son esprit est... enflammable."

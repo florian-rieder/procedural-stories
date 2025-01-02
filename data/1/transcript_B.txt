@@ -1,0 +1,182 @@
+**Jeu**
+Commençons l'aventure !
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Je cherche l'artefact
+
+**Jeu**
+Vous vous dirigez vers la place centrale du Royaume de la Lumière, où se trouve un grand marché animé. Des marchands vendent toutes sortes d'objets et des mages pratiquent leurs sorts dans les airs. Vous remarquez que beaucoup de gens parlent entre eux en chuchotant, comme s'ils parlaient d'un sujet confidentiel.
+
+Maître Armand, un vieil homme à la barbe blanche, vous fait signe depuis l'autre côté de la place. Il semble savoir quelque chose sur la Pierre de Lumière...
+
+**Joueur·euse**
+Je vais parler avec Maître Armand
+
+**Jeu**
+"Ah, Eryndor Thorne, je vois que vous cherchez la Pierre de Lumière. Oui, c'est un artefact très précieux et très dangereux. Les Ténèbres veulent l'obtenir pour se servir de son pouvoir. Mais les gardiens de la Pierre sont redoutables... Vous devrez montrer votre courage et votre intelligence si vous voulez l'atteindre."
+
+**Joueur·euse**
+Où est-elle cette Pierre de Lumière ?
+
+**Jeu**
+Maître Armand vous regarde avec une expression grave. "La Pierre de Lumière se trouve dans la Cité des Eaux, mais n'allez pas y aller sans être prêt. La cité est gardée par des créatures étranges et dangereuses. Vous devrez également faire face à la garde du château... et peut-être même affronter le seigneur des Ténèbres lui-même."
+
+**Joueur·euse**
+Que dois-je faire pour être prêt ? Où dois-je aller ?
+
+**Jeu**
+Vous pouvez vous rendre au Château si vous pensez que cela vous aidera à préparer. Vous pourriez également visiter la Cité des Eaux, mais soyez prudent, car les rues sont truffées de dangers cachés.
+
+De toute façon, vous avez déjà entendu parler du port cosmopolite et de ses habitants... peut-être que cela pourrait être un bon point de départ pour votre aventure. 
+
+Note : Le Château est décrit comme "Un bastion fortifié qui abrite les quartiers nobles et gouvernementaux de la Cité des Eaux, avec des murs hauts et étroits qui protègent ses habitants de l'extérieur. Il s'agit d'un lieu d'affaires importantes et de séries politiques... mais il est également censé être un refuge sûr pour les aventuriers."
+
+ Le port cosmopolite a été mentionné précédemment, dans votre dialogue initial avec le parser.
+
+**Joueur·euse**
+Je me rends au Château
+
+**Jeu**
+Vous vous dirigez vers le quai et demandez à Kael le Maréchal de vous accompagner sur un navire qui puisse vous emmener jusqu'au Château du Seigneur des Ténèbres. Il hésite une fraction de seconde avant d'accepter votre demande, lui faisant remarquer que l'aventure qui s'ouvre pour vous ne sera pas facile et que les risques sont réels.
+
+"Je vais prévenir le capitaine du navire", dit Kael, "mais sachez que la navigation sera dangereuse. Les eaux autour du Château des Ténèbres sont empoisonnées et les créatures qui habitent ces zones sont féroces."
+
+Une fois le détail pris en charge par Kael, vous pouvez embarquer sur un navire hivernal avec à son bord un équipage résistant. Le voyage sera long et l'attente sera pénible mais enfin vous atteindrez le but de votre errance.
+
+Château du Seigneur des Ténèbres est donc bien maintenant votre destination. C'est aussi là que se trouvent une femme captive, un gardien très cruel et un prince des ténèbres qui ne peut qu'abuser de ses pouvoirs.
+
+**Joueur·euse**
+Je vais au Château avec le navire
+
+**Jeu**
+Vous décidez de partir vers le Château du Seigneur des Ténèbres à bord de votre navire. Kael le Maréchal vous adresse quelques mots : "Prenez garde, voyageur... les eaux qui entourent le château sont réputées être empoisonnées."
+
+Vous arrivez au Château du Seigneur des Ténèbres après une navigation périlleuse. Le bâtiment sombre et imposant se dresse devant vous, protégé par des créatures terrifiantes et des pièges mortels.
+
+Que voulez-vous faire maintenant ?
+
+**Joueur·euse**
+Ai-je des armes ?
+
+**Jeu**
+Dans votre saconnerie, vous avez un poignard léger qui pourrait être utile en cas de combat. Vous pouvez le sortir et l'utiliser comme arme.
+
+Vous pouvez aussi demander à Kael le Maréchal si on vous a donné des armes ou si les autres ont la possibilité de se défendre avant d'abord de partir pour aller au château du Seigneur Arin.
+
+**Joueur·euse**
+Je demande à Kael de me donner des armes et des hommes pour combattre
+
+**Jeu**
+Kael le Maréchal secoue la tête : "Désolé, voyageur... mais vous n'avez pas donné l'ordre d'équipement avant de partir. Je n'ai donc pas pensé à vous donner des armes ou un équipage. Mais je peux peut-être vous donner quelques conseilles..."
+
+Il se tourne vers son homme et lui dit : "Prenez-y garde, mais vous pouvez avoir 3 hommes qui veulent accompagner ce voyageur jusqu'au château... pour les raisons que chacun aura bien sûr..."
+
+Vous avez maintenant à votre disposition :
+
+Un poignard léger
+3 hommes (je suppose qu'il est pas besoin de demander leur nom, ni pourquoi ils suivent un inconnu...)
+
+**Joueur·euse**
+Est-ce que les 3 hommes sont armés ?
+
+**Jeu**
+Les trois hommes qui vous ont offert leur compagnie sont équipés d'une épée, d'un arc et de quelques flèches, ainsi qu'un poignard à chaque main. Ils semblent être des guerriers expérimentés, mais ils semblent également être plus prudents que Kael le Maréchal.
+
+L'un d'eux, qui semble être le chef, vous demande : "Alors, voyageur, quel est notre but ici ?"
+
+**Joueur·euse**
+On va rentrer dans le château
+
+**Jeu**
+Vous pénétrez dans le château du Seigneur Arin avec vos hommes à votre côté. Les portes sont fermées mais elles s'ouvrent naturellement pour vous laisser entrer.
+
+Une fois à l'intérieur, vous constatez que le château est désert et qu'il y a une atmosphère lugubre qui pèse sur tout. Vous pouvez entendre les bruits de pas des soldats du Seigneur Arin mais ils semblent être en train de patrouiller autour du château.
+
+Vous vous dirigez vers l'entrée, un grand hall sombre et majestueux où se trouve une statue imposante du Seigneur Arin. Mais votre attention est attirée par une porte à droite qui semble être un peu moins gardée que les autres.
+
+Que voulez-vous faire maintenant ?
+
+**Joueur·euse**
+Tuer tous les gardes
+
+**Jeu**
+Vous décidez de tuer tous les gardes du château pour vous assurer une entrée libre. Vous vous approchez silencieusement d'un groupe de soldats qui sont postés à l'entrée d'une des salles.
+
+D'une main rapide, vous attrapez un homme et l'étouffez avant qu'il ne puisse crier. Les autres soldats sont pris au dépourvu et sont rapidement neutralisés par vos hommes.
+
+Mais alors que vous êtes en train de terminer le dernier gardien, vous entendez des bruits de pas derrière vous. Un groupe d'autres gardes arrive à la charge et ils semblent être bien plus nombreux que ceux que vous avez tués jusqu'à présent.
+
+Le chef de vos hommes s'approche de vous et murmure : "On a une sacrée embuscade, monsieur... Nous sommes loin d'être suffisamment armés pour affronter tout le château."
+
+Que voulez-vous faire maintenant ?
+
+**Joueur·euse**
+On cherche des armes
+
+**Jeu**
+Vous décidez de chercher des armes dans le château pour vous préparer à l'attaque qui approche. Vous et vos hommes commencez à fouiller les lieux, mais il est clair que le Seigneur Arin a fait en sorte de ne pas laisser d'armes à portée de main.
+
+Cependant, après quelques recherches, vous découvrez un petit arsenal caché derrière une armoire. Il contient des épées, des poignards et même un archet avec quelques flèches.
+
+Le chef de vos hommes sourit en regardant les armes que vous avez trouvées : "C'est mieux ça, monsieur. On pourra peut-être tenir le choc maintenant."
+
+Juste comme il a fini de parler, vous entendez des bruits de pas derrière la porte qui donne sur l'escalier. Les gardes sont arrivés.
+
+Que voulez-vous faire maintenant ?
+
+**Joueur·euse**
+On rentre dans le tas et on les massacre
+
+**Jeu**
+Vous et vos hommes chargez impétueusement vers la porte, épées à la main, prêts à affronter l'armée du Seigneur Arin. Vous entrez dans un corridor où vous trouvez une horde de soldats qui cherchent à vous attaquer.
+
+La bataille est intense et brève. Les soldats sont bien armés, mais ils sont également nombreux et vous avez l'avantage d'être malins et aguerris. Vous commencez à faire des ravages parmi les rangs ennemis, taillant dans la confusion et la panique.
+
+Au bout de quelques minutes, le combat s'est terminé et vous vous trouvez face à face avec un groupe de soldats blessés ou morts. Vous avez gagné ce round, mais il est clair que les gardes ne sont pas les seuls soldats du Seigneur Arin à être déployés pour vous stopper.
+
+Vous entendez des bruits de pas qui arrivent d'en haut et que la situation s'aggrave. Le chef de vos hommes approche de vous, couvert de sang et de sueur : "Monsieur, il ne nous reste plus beaucoup de temps... Il faut trouver une façon de gagner ou tout va se terminer très mal..."
+
+Que voulez-vous faire maintenant ?
+
+**Joueur·euse**
+On fait une embuscade
+
+**Jeu**
+Vous décidez d'organiser une embuscade pour intercepter les soldats du Seigneur Arin qui arrivent depuis en haut. Vous et vos hommes vous cachez dans un couloir adjacent, armés jusqu'aux dents.
+
+Bientôt, vous entendez des bruits de pas et les soldats apparaissent à l'angle du corridor, prêts à attaquer. Mais ils ne s'attendent pas à ce que vous soyez déjà là, et ils sont donc pris au piège dans votre embuscade.
+
+La bataille est rapide et féroce, mais vous avez le haut du pavé et vos hommes suivent bien vos ordres. Bientôt, les soldats ennemis sont neutralisés et le corridor est à nouveau libre de tout danger.
+
+Mais, alors que vous vous préparez à avancer, vous entendez une voix derrière vous : "Ah-ah, je vois que vous avez appris quelques leçons de combat." Vous tournez la tête pour voir qui a parlé, et vous voyez un homme grand et imposant, avec des yeux d'un bleu glacial. Il est armé d'une épée élégante et il sourit avec une expression mélancolique.
+
+"Je suis Maître Armand", dit-il. "Et je pense que nous allons avoir une conversation... qui va vous faire changer les choses."
+
+Que voulez-vous faire maintenant ?
+
+**Joueur·euse**
+On parle avec Maître Arman
+
+**Jeu**
+Vous décidez de parler avec Maître Armand, qui s'approche de vous avec un air décontracté. "Enchanté, Monsieur... je suppose que vous êtes le célèbre Eryndor Thorne", dit-il avec une légère ironie.
+
+"Oui, c'est moi", répondez-vous. "Et vous ? Quel est votre rôle ici dans tout cela ?"
+
+Maître Armand sourit à nouveau et commence à expliquer : "Je suis un... conseiller du Seigneur Arin. Et je pense que j'ai une mission spéciale pour vous, Monsieur Thorne."
+
+Il s'arrête et regarde autour de lui avec une expression prudente avant de continuer : "Vous savez sûrement que le Seigneur Arin est à la recherche de l'autre Pierre de Lumière ? Eh bien, je pense que j'ai trouvé un moyen pour vous obtenir... en échange d'une faveur personnelle, bien sûr."
+
+Maître Armand vous regarde avec des yeux intelligents et vous sentez une certaine pression pour faire quelque chose qui n'est peut-être pas du meilleur goût.
+
+Que voulez-vous faire maintenant ?
+
+**Joueur·euse**
+C'est quoi cette faveur personnelle ?
+
+**Jeu**
+Maître Armand sourit à nouveau, comme s'il appréciait votre prudence. "Ah, c'est simple, Monsieur Thorne. Le Seigneur Arin voudrait que vous... vous aidez Lyra la Captive à échapper du donjon où elle est emprisonnée. En échange de cela, il sera désireux d'entamer des négociations avec vous pour l'autre Pierre de Lumière."
+
+Il prend une pause, comme s'il attendait votre réponse avant de continuer : "Bien sûr, je ne suis pas en mesure de garantir que Lyra acceptera cette offre... mais je pense qu'elle pourrait être intéressée par l'idée d'échapper."
+
+Que voulez-vous faire maintenant ?

@@ -1,0 +1,174 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+"Allons directement au château!"
+
+**Jeu**
+Vous vous sentez un peu hésitant à se rendre dans le cœur du territoire des Ténèbres. Cependant, l'excitation de la bataille à venir ne peut pas être contenue et vous décidez d'y aller directement.
+
+ Vous vous dirigez vers la porte de la ville qui mène au Château du Seigneur des Ténèbres. Les gens qui voient votre départ les regardent avec un mixte de sympathie et de peur, comme si ils comprenaient que vous êtes sur le point d'entrer dans une aventure qui pourrait changer la destinée de leur royaume.
+
+Devant vous, se trouve la route qui conduit au Château du Seigneur des Ténèbres. Vous pouvez aussi voir, en éloignant, les forêts sombres qui entourent le château, où certains disent que des créatures des ténèbres grouillent.
+
+Les gardes à la porte de la ville vous observent, mais ne s'interposent pas. Ils savent que c'est votre destin qui vous mène vers ce chemin et qu'ils ne pourraient probablement rien faire pour l'empêcher.
+
+Vous pouvez continuer sur la route en direction du Château du Seigneur des Ténèbres, ou prendre un moment pour réfléchir à votre choix.
+
+**Joueur·euse**
+"Nullement besoin de réfléchir, taillaut!"
+
+**Jeu**
+Vous vous sentez une détermination farouche et vous décidez d'aller directement au château pour affronter le Seigneur des Ténèbres.
+
+Vous marchez rapidement sur la route en direction du Château du Seigneur des Ténèbres, les arbres sombres de la forêt s'écartant autour de vous comme si ils vous donnaient une place dans leur ténèbre. 
+
+Après quelques minutes de marche, vous arrivez devant le château. Il est encore plus imposant que vous ne l'aviez imaginé et les créatures des ténèbres qui le gardent sont bien réelles. Des griffes acérées et des yeux lumineux vous observent de la muraille.
+
+Vous pouvez entrer dans le château en traversant la grande porte ou chercher d'autres façons d'y entrer.
+
+**Joueur·euse**
+"Passons directement par la grande porte ! Il n'y a que les lâches qui n'osent pas aller en avant du danger!" L'épée en main, je me dirige vaillamment en direction du château.
+
+**Jeu**
+Vous poussez la grande porte du château avec force et elle s'ouvre brusquement, révélant un vestibule sombre et silencieux. Les créatures des ténèbres à l'extérieur du château vous regardent froidement mais ne bougent pas.
+
+Une fois dans le vestibule, vous voyez une grande salle avec un plafond de pierre. La pièce est sombre et peu éclairée par les torches allumées sur les murs. Seigneur Arin, le maître des Ténèbres, vous attend assis sur son trône à l'autre bout de la salle. Il vous regarde avec un sourire sinistre.
+
+A votre gauche, il y a une grande statue de pierre d'un guerrier aux cheveux longs et au visage dur, mais malgré cela elle semble...familière ?
+
+Vous pouvez vous approcher du trône ou vous diriger vers la statue.
+
+**Joueur·euse**
+Je me dirige vers la statue afin de mieux l'identifier.
+
+**Jeu**
+Alors que vous approchez de la statue, vous réalisez avec surprise qu'il s'agit d'un portrait en pied de votre propre père, le grand chevalier Thorne. La statue est détaillée et ressemble tellement à votre père que vous avez presque l'impression de le voir debout devant vous.
+
+La lumière des torches joue sur la sculpture et vous remarquez que les yeux du chevalier sont percés d'une pierre précieuse qui brille doucement. La statue a été manifestement confectionnée avec grand soin et égard à l'art.
+
+Soudain, vous entendez derrière vous la voix de Seigneur Arin, qui parle d'un ton glacial :
+
+"Ah, Thorne. Enfin, tu es arrivé. Je pensais que tu avais oublié notre promesse."
+
+Vous pouvez vous retourner et faire face à Seigneur Arin, ou continuer à examiner la statue pour en savoir plus.
+
+Notez que le poignard de chasseur dans votre main a glissé doucement hors de son fourreau...
+
+**Joueur·euse**
+Vous vous approchez doucement du visage de la statue afin de prendre la pierre ayant pris la place d'un oeil. "Mon Seigneur, ou devrais-je dire peut-être, votre Majesté, je suis heureux que vous m'accueillez gracieusement dans votre château. Cependant, je crois avoir ouï que vous m'aviez appelé Thorne?"
+
+**Jeu**
+Vous posez doucement la main sur le visage de la statue et prenez la pierre qui remplace l'œil du guerrier. Elle est froide au toucher et semble avoir été polie pour ne pas laisser d'empreinte de votre peau.
+
+Seigneur Arin se tient immobile, comme si vous aviez coupé les fils qui faisaient tourner sa machine à réflexes. Lorsque vous mentionnez son erreur sur votre nom, il pousse un soupir de frustration et ses traits s'assombrissent encore plus.
+
+"Ah, pardonnez-moi, Thorne... je disais que ton nom était prononcé avec un certain 'délai'. Mais, oui, c'est bien ça. Je t'avais appelé ainsi, puisque tu es issu de la lignée de chevaliers qui ont toujours été nos alliés dans les temps anciens."
+
+Ses paroles sont étrangement calmes et vous sentez que la tension dans l'air est palpable. Il continue, comme si son dernier mot ne signifiait rien :
+
+"Maintenant, Thorne... viens ici, je t'ai réservé une place spécialle à mon table."
+
+**Joueur·euse**
+Je glisse la pierre dans une de mes poches et m'approche doucement de lui, sans m'asseoir à sa table. "Vous devez vous sentir seul dans votre château. Oh et avec toutes ces toiles d'araignées et ces monstres, vous devriez peut-être penser à engager du personnel pour vous en débarrasser."
+
+**Jeu**
+Seigneur Arin ricane doucement et son visage se détend légèrement. "Ah, je vois que tu as un sens de l'humour, Thorne. Oui, cela peut être fastidieux de vivre ici parfois, surtout avec ces créatures qui pullulent dans les recoins de mon château."
+
+Il marque une pause et regarde autour de la salle comme s'il cherchait quelque chose ou quelqu'un.
+
+"Mais tu as raison, je suppose. Je devrais peut-être engager quelques personnes pour prendre soin de cet endroit. Dommage que cela ne soit pas aussi simple que ça. Il y a certaines choses qui... se sont passées ici, et je crains qu'elles ne puissent jamais être effacées."
+
+Soudain, ses yeux se posent sur la porte du château, comme s'il attendait quelqu'un ou quelque chose. "Pardonne-moi, Thorne, mais je crois que notre conversation devra attendre encore un peu. Il y a... d'autres affaires qui prennent de l'importance en ce moment."
+
+Vous pouvez vous demander à quoi il fait référence, ou regarder autour de la salle pour voir s'il y a quelque chose qui vous échappe.
+
+**Joueur·euse**
+"De quoi parlez-vous? Vous savez, le mystère n'est intéressant qu'un court instant, mais elle perd de sa saveur avec le temps."
+
+**Jeu**
+Seigneur Arin sourit à nouveau, cette fois avec un air de connivence qui vous fait sentir que vous êtes dans son confidence. "Ah, tu as raison encore une fois, Thorne. Le mystère n'est pas toujours nécessairement intéressant en soi, mais c'est souvent la chose suivante après le mystère qui est vraiment important."
+
+Il regarde à nouveau autour de la salle, comme s'il vérifait qu'ils sont seuls. "Je suis désolé, je ne peux pas discuter ici ou maintenant. Mais... si tu veux savoir pourquoi tu es venu ici, et ce que tu cherches à trouver, peut-être devrais-tu parler avec Lyra la Captive. Elle sait certaines choses que tu devras bien connaître pour avancer."
+
+Il marque une pause, comme s'il pesait ses mots. "Et puis il y a les... créatures qui se déplacent dans le château en ce moment. Je te conseille de rester à l'abri et de ne pas t'aventurer trop loin. Au moins, pour l'instant."
+
+**Joueur·euse**
+"Très bien, j'accepte de vous suivre. Cependant, je m'interroge sur cette Lyra. Qui est-elle et pourquoi se trouve-t-elle ici?
+
+**Jeu**
+Seigneur Arin sourit à nouveau, mais cette fois avec une expression qui semble plus profonde. "Ah, Lyra... Elle est une jeune femme, voilà tout ce que je peux te dire pour le moment. Mais elle connaît certaines choses qui pourront t'aider dans ta quête."
+
+Il se lève de son fauteuil et vous invite à suivre. "Venez, je vais vous la montrer. Mais soyez prêt, Thorne. Lyra... est prisonnière ici, et elle n'est pas très... détendue."
+
+**Joueur·euse**
+Je le suis jusqu'à cette fameuse "captive".
+
+**Jeu**
+Vous arrivez dans une pièce sombre et froide, avec des murs de pierre qui semblent lourds et oppressants. Lyra la Captive est attachée à un mur, les mains et les pieds liés par des chaînes solides. Elle regarde Seigneur Arin avec une expression méfiante, mais ses yeux se fixent sur vous avec intérêt.
+
+"Ah, Thorne," dit-elle d'une voix qui est aussi froide que l'air de la pièce. "Je suis ravie de te rencontrer. Je suppose que Seigneur Arin t'a envoyé pour me... interroger?"
+
+Sa voix est douce mais avec une pointe d'ironie, et vous sentez qu'elle essaie de cacher quelque chose derrière sa façade calme.
+
+**Joueur·euse**
+"Vous interroger?" Je regarde le Seigneur Arin, suspicieux. "Madame, je crois qu'il y a peut-être une méprise à mon sujet. Je ne suis pas venu pour vous interroger."
+
+**Jeu**
+Lyra la Captive sourit, un petit sourire qui se lit comme de l'ironie ou de la surprise. "Ah, non, bien sûr. Je me souviens maintenant. Vous êtes venu pour me... sauver, je suppose."
+
+Elle regarde Seigneur Arin avec une expression qui semble dire : "Vous n'aviez pas l'intention de me rendre ma liberté, hein?"
+
+Seigneur Arin se tourne vers vous avec un air innocent, mais vous pouvez voir une pointe de culpabilité dans ses yeux. "Ah, non, non, je suppose que j'ai oublié de te dire cela, Thorne. Lyra la Captive est prisonnière ici depuis des semaines, et nous pensions qu'elle... s'était rendue compte de sa situation."
+
+La clé de donjon pendent au mur à côté d'Elle, brillante dans la lumière faible qui éclaire la pièce.
+
+**Joueur·euse**
+"Je peux?" Vous prenez la clé et libérez Lyra. "Gente mademoiselle, j'espère que vous ne souffrez point trop de la faim et de la soif." Vous lui tendez votre gourde.  "Vous souvenez-vous du pourquoi de votre présence en ces lieux?"
+
+**Jeu**
+Lyra la Captive prend la clé et se libère des chaînes, un soupir de soulagement sortant de ses lèvres. Elle secoue sa tête pour effacer les cheveux qui lui tombent dans les yeux, puis boit à votre gourde avec gratitude.
+
+"Merci, merci... C'est longtemps que je n'ai pas bu de quoi me rafraîchir," dit-elle en reniflant l'air. "Ah, oui... Je me souviens maintenant. J'étais emprisonnée pour avoir essayé de fuir les forces des Ténèbres."
+
+Elle regarde Seigneur Arin avec une expression qui semble dire : "Et vous saviez que je savais trop, n'est-ce pas?"
+
+La pièce devient silencieuse, et seule la bruyère qui bourdonne à l'extérieur du château casse le silence.
+
+**Joueur·euse**
+"Mais Monseigneur est un ami à moi. Je suis sûr qu'il sera d'accord de vous laissez partir."
+
+**Jeu**
+Seigneur Arin secoue la tête avec un air contrarié, ses yeux se plissant légèrement. "Ah, non, Thorne... Mon ami ?" Il hésite un instant avant de continuer : "Je crains que cela ne soit pas tout à fait exact. Je suis responsable du château, et il est mon devoir de protéger ses occupants, quels qu'ils soient."
+
+Il prend une profonde inspiration avant de continuer, son ton se durissant légèrement : "Et vous, Thorne... vous êtes venu ici pour... des raisons que je ne connais pas encore. Je crains que vous ne puissiez pas partir aussi facilement."
+
+**Joueur·euse**
+"Attendez, Monseigneur. Je ne comprends pas tout à fait le problème. Vous savez, tout se négocie dans la vie. Vous pouvez avoir l'argent du beurre, le beurre et moi la crémière."
+
+**Jeu**
+Lyra la Captive intervient avec un petit sourire : "Ah, je crois que vous avez là une excellente idée, Thorne... Mais je pense que Seigneur Arin n'est pas intéressé par une telle transaction."
+
+Seigneur Arin secoue la tête, son expression durcie. "Non, non... Je crains que cela ne soit pas possible. Vous voyez, Thorne, il y a des questions plus importantes en jeu ici... Et je ne pense pas que vous soyez encore au courant de tout."
+
+Il fait un geste vers une autre pièce du château : "Vous devriez peut-être aller voir à propos de cela. Mon secrétaire est là pour vous recevoir."
+
+**Joueur·euse**
+"Peut-être un autre jour? Lyra est encore affaiblie, et des soins supplémentaires seraient nécessaires vous ne croyez pas? Cela dit, je me ferai un plaisir de revenir vous voir vous et votre secrétaire!"
+
+**Jeu**
+Seigneur Arin hésite une seconde avant de répondre : "Ah, non... Je crains que cela soit impossible. Les temps sont compliqués ici, Thorne... Et je ne suis pas sûr que nous ayons encore besoin de vous dans notre château."
+
+Il fait un geste vers les gardes qui stationnent à l'entrée de la pièce : "Je pense que c'est le moment pour toi de partir, Lyra. Tu es libre de t'en aller... Et je souhaite que tu sois prudente sur ton chemin."
+
+Les gardes s'avancent, leurs yeux se fixant sur vous avec une expression de menace. Il semble que votre temps ici est bientôt arrivé à son terme.
+
+**Joueur·euse**
+"Asta la vista, Lyra !"
+
+**Jeu**
+Lyra sourit faiblement et prend votre main dans la sienne. "Fais attention, Thorne... Et n'oublie pas de venir me visiter bientôt." Elle lâche votre main et se dirige vers les gardes qui la attendent.
+
+Avant d'être emportée par les hommes en noir, elle vous lance un regard sérieux : "Thorne... Si tu veux vraiment m'aider, trouve-leur ce qu'ils cherchent. C'est le seul moyen de nous sauver tous."
+
+La porte se ferme derrière elle et vous êtes maintenant face à Seigneur Arin et ses gardes, qui semblaient plus nombreux que jamais. L'heure est venue pour vous de partir...
