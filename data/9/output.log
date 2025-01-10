@@ -277,3 +277,56 @@ Player message: "Il me faut un dragon domestique pour voler dans les montagnes"
 
 **Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
 Output:
+Move intent output: none
+PLAYER MESSAGE: Il me faut un dragon domestique pour voler dans les montagnes
+GAME RESPONSE: Vous pensez que l'assistance d'un dragon domestique serait utile pour ce voyage. C'est vrai, il s'agit d'une bonne idée. Mais pour cela, vous devrez aller voir Dragonias, le maître des dragons qui habite à proximité de ce château. Il est un ami et conseiller du roi, et il possède plusieurs dragons qui lui appartiennent.
+
+Vous pouvez maintenant partir à la recherche de Dragonias et de ses dragons, mais vous devez être prudents car les dragons sont animaux puissants et difficiles à contrôler...
+INVENTORY ACTIONS: [{'action': 'create', 'item': 'dragon domestique'}]
+Error extracting inventory actions: 'description'
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Eryndor Thorne', 'description': '... et qui cherche désormais un dragon domestique pour voler dans les montagnes.'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Village des Nains", "Forêt Ténébreuse", "Château du Seigneur des Ténèbres"
+
+Previous game response: "Vous pensez que l'assistance d'un dragon domestique serait utile pour ce voyage. C'est vrai, il s'agit d'une bonne idée. Mais pour cela, vous devrez aller voir Dragonias, le maître des dragons qui habite à proximité de ce château. Il est un ami et conseiller du roi, et il possède plusieurs dragons qui lui appartiennent.
+
+Vous pouvez maintenant partir à la recherche de Dragonias et de ses dragons, mais vous devez être prudents car les dragons sont animaux puissants et difficiles à contrôler..."
+Player message: "Je me rend chez Dragonias et lui demande un dragon domestique nain, pour qu'il soit moins dangereux"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Je me rend chez Dragonias et lui demande un dragon domestique nain, pour qu'il soit moins dangereux
+GAME RESPONSE: Dragonias, un vieil homme aux cheveux blancs, vous regarde avec un air de sagesse. "Un dragon domestique nain, dis-tu ? Hmm... Je pense que je peux vous aider là-dessus. Mais il faudra que vous preniez soin de lui, car même les dragons nains sont capables d'accomplir des choses étonnantes." Il réfléchit un moment avant de continuer. "Je connais justement un petit dragon qui pourrait convenir à vos besoins. Mais il faudra que vous alliez voir le maître nain des dragons, Niamon, pour lui demander son aide. C'est là-bas qu'on peut trouver votre prochain voyage."
+INVENTORY ACTIONS: [{'action': 'create', 'item': 'map', 'description': "A map of the area where you'll find Niamon and the dragon domestic nain."}]
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Dragonias', 'description': "... (**keep most of the original description**), and now knows about Eryndor Thorne's request for a dragon domestique nain."}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Village des Nains", "Forêt Ténébreuse", "Château du Seigneur des Ténèbres"
+
+Previous game response: "Dragonias, un vieil homme aux cheveux blancs, vous regarde avec un air de sagesse. "Un dragon domestique nain, dis-tu ? Hmm... Je pense que je peux vous aider là-dessus. Mais il faudra que vous preniez soin de lui, car même les dragons nains sont capables d'accomplir des choses étonnantes." Il réfléchit un moment avant de continuer. "Je connais justement un petit dragon qui pourrait convenir à vos besoins. Mais il faudra que vous alliez voir le maître nain des dragons, Niamon, pour lui demander son aide. C'est là-bas qu'on peut trouver votre prochain voyage.""
+Player message: "T'as pas des dragons ici ?"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: T'as pas des dragons ici ?
+GAME RESPONSE: Dragonias vous sourit et dit : "Ah, oui ! Je suis fier de dire que j'ai quelques petits dragons qui ont grandi sous ma garde. L'un d'eux est un petit dragon domestique nain nommé Kragnir... Il est plutôt calme et raisonnable pour son espèce. Mais s'il vous convient, je peux peut-être l'envoyer avec vous..."
+INVENTORY ACTIONS: [{'action': 'claim', 'item': "None: A map of the area where you'll find Niamon and the dragon domestic nain"}]
+Error extracting inventory actions: object of type 'NoneType' has no len()
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Kragnir', 'description': "... (**keep most of the original description**), and now knows about Eryndor Thorne's request for a dragon domestique nain."}, {'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Dragonias'}, {'action': 'change_description', 'subject': 'Kragnir', 'description': '... (**keep most of the original description**), and is now known to be a small dragon domestic nain.'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Village des Nains", "Forêt Ténébreuse", "Château du Seigneur des Ténèbres"
+
+Previous game response: "Dragonias vous sourit et dit : "Ah, oui ! Je suis fier de dire que j'ai quelques petits dragons qui ont grandi sous ma garde. L'un d'eux est un petit dragon domestique nain nommé Kragnir... Il est plutôt calme et raisonnable pour son espèce. Mais s'il vous convient, je peux peut-être l'envoyer avec vous...""
+Player message: "J'achète !"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: J'achète !
+GAME RESPONSE: Dragonias sourit de satisfaction. "C'est une bonne décision ! Kragnir sera un excellent compagnon pour vous dans votre voyage. Je vais prévenir Niamon, et il viendra vous chercher en ce moment même avec le petit dragon." Il fait un geste à l'un des serviteurs qui se précipite pour aller chercher Niamon.
+
+Kragnir, le petit dragon domestique nain, se trouve maintenant dans la pièce, il est mignon et calme. Il vous regarde avec des yeux curieux, prêt à partir à vos côtés.
+INVENTORY ACTIONS: [{'action': 'create', 'item': 'map', 'description': "A map of the area where you'll find Niamon and the dragon domestic nain."}]
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Kragnir', 'description': '... (**keep most of the original description**), and is now known to be a small dragon domestic nain.'}, {'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Niamon'}]
+Switching to trivial mode (B/A)

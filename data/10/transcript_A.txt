@@ -1,0 +1,140 @@
+**Jeu**
+Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester.
+
+**Joueur·euse**
+Je veux aller à un des marchés
+
+**Jeu**
+Vous vous rendez au Marché de l'Ouest, un endroit animé où se trouvent toutes sortes d'épiciers, de teinturiers et de commerçants. La foule est dense et les parfums de fruits et de fleurs emplissent l'air, mais vous avez remarqué que certaines gens semblent hésiter à parler ou font preuve d'un comportement suspect. Un vendeur de fromages vous a jeté un regard curieux, mais vous n'en savez pas trop d'où il venait.
+
+**Joueur·euse**
+Je veux parler au vendeur de fromages
+
+**Jeu**
+"Ah, bonjour monsieur... je ne sais pas si je devrais vous parler franchement ici, mais je suppose que c'est sans danger... Je connais un type qui cherche une pierre lumineuse, et il a mentionné quelque chose à propos d'une légende sur la famille de votre père. Vous n'en savez rien, bien sûr..." Le vendeur de fromages vous regarde avec des yeux inquiets, en surveillant l'entourage.
+
+**Joueur·euse**
+Non, j'en sais rien. Pouvez-vous m'en parler davantage ?
+
+**Jeu**
+"Ah... non, je ne pense pas que cela soit prudent ici... Mais... (il se rapproche de vous et baisse la voix) ...dites à votre oncle Guillaume que le Fromager du Roi a des informations. C'est tout..." Le vendeur de fromages jette un coup d'œil autour, puis s'éloigne rapidement, rentrant dans sa étalade pour surveiller les acheteurs.
+
+**Joueur·euse**
+Je veux aller chez mon oncle
+
+**Jeu**
+Vous vous rendez au manoir de votre oncle Guillaume, situé à l'autre bout de la ville, près du château royal. Lorsque vous arrivez, vous êtes accueilli par un serviteur qui vous fait entrer dans le grand salon. Votre oncle Guillaume, un chevalier âgé et expérimenté, se lève pour vous saluer. "Ah, bonjour frère ! Je suis content de te voir. S'il vous plaît, asseyez-vous, je t'ai préparé un verre..."
+
+**Joueur·euse**
+le Fromager du Roi  m'a demandé de te dire qu'il a des informations
+
+**Jeu**
+"Ah... Ah oui, le Fromager du Roi ! Oui, je sais qui il est. (Il se penche vers vous) Écoute, frère, j'ai entendu parler d'une affaire un peu étrange concernant la pierre lumineuse que tu cherches. Je connais quelqu'un qui pourrait te l'aider... mon ami le Maître de la Vieille Tour est peut-être en mesure de t'informer."
+
+**Joueur·euse**
+Tu me conseilles d'aller le voir directement ? Ou tu as d'autres informations concernant la pierre lumineuse ?
+
+**Jeu**
+"Ah, non, pas directement... (Il se racle la gorge) ...mais il y a quelque chose que je devrais te dire. Il semblerait que la pierre lumineuse soit cachée dans la Tour de l'Aube, un endroit abandonné qui fait partie des anciens lieux de pouvoir du royaume... Mais attention, frère, la Tour de l'Aube est hantée..."
+
+**Joueur·euse**
+Tu penses que je ne devrais pas y aller directement ?
+
+**Jeu**
+"Non, non, je n'ai pas dit ça ! Je pense que c'est là qu'il faut aller chercher. Mais il faudra être prudent... il y a des rumeurs que la Tour de l'Aube est occupée par une créature sombre qui protège la pierre... et si tu ne sors pas avant le coucher du soleil, ce sera encore plus dangereux..."
+
+**Joueur·euse**
+D'accord, donc je vais aller à la tour de l'aube tout de suite
+
+**Jeu**
+Vous quittez le manoir de votre oncle Guillaume et vous dirigez vers la Tour de l'Aube, qui se trouve en bordure de la forêt. Lorsque vous arrivez près de l'entrée, vous sentez une atmosphère étrange, comme si quelque chose regardait vos arrières. La tour est grande et sombre, ses fenêtres étant fermées à l'intérieur avec des volets de bois pourries. Un écriteau a été planté sur la porte : "Défense de pénétrer sans ordre préalable".
+
+**Joueur·euse**
+Je frappe à la porte
+
+**Jeu**
+La porte s'ouvre lentement, révélant une personne élégante mais avec des yeux sombres et inquiétants. "Ah, vous devez être le héros qui cherche la pierre lumineuse", dit-elle d'une voix calme mais menaçante. "Je m'appelle La Lune Noire, et je suis ici pour... veiller sur cette tour. Qu'est-ce que vous venez faire ici ?"
+
+**Joueur·euse**
+Je viens justement pour la pierre lumineuse
+
+**Jeu**
+La Lune Noire sourit légèrement, mais ses yeux restent froids. "Ah, je vois. Eh bien, il paraît que la pierre lumineuse se trouve... au fond de la tour. Vous pouvez l'avoir si vous acceptez de jouer un petit jeu avec moi."
+
+**Joueur·euse**
+Oui, vas-y
+
+**Jeu**
+"Très bien... je vais vous poser une question. Si vous répondez correctement, vous pourrez passer à l'intérieur de la tour et chercher la pierre lumineuse. Mais si vous faîtes fausse route... (elle rit doucement) ...nous devrons nous occuper de vos problèmes, hein ?"
+
+**Joueur·euse**
+D'accord
+
+**Jeu**
+La Lune Noire se recoiffa et dit: "Alors voici ma question : Quel est l'animal qui a des yeux comme des étoiles ?"
+
+**Joueur·euse**
+Un chat ?
+
+**Jeu**
+"S'il vous plaît, pas si vite... Un chat n'a pas exactement des yeux comme des étoiles. (Elle secoue la tête) La bonne réponse est : un lynx de nuit..."
+
+**Joueur·euse**
+Okay, donc j'ai donné une fausse réponse
+
+**Jeu**
+"Ahah ! Oui... vous avez bien essayé, mais malheureusement, votre réponse n'était pas la bonne. (La Lune Noire prend un ton plus grave) Vous devrez maintenant payer le prix de votre erreur..."
+
+**Joueur·euse**
+Quel prix ?
+
+**Jeu**
+"Eh bien... je vais enlever votre épée, celle que vous portez à votre côté. Elle est très jolie, et je suis sûre qu'elle vous a été un fidèle compagnon jusque-là... (Elle s'approche de vous avec un geste rapide) Mais maintenant, il va falloir que vous me la donniez..."
+
+**Joueur·euse**
+Non, je ne veux pas, je vais me défendre
+
+**Jeu**
+"Ahah ! Alors c'est la guerre ! (La Lune Noire esquisse un sourire cruel) Bienvenue dans ma salle de combat... où vous allez faire face à mes deux gardes. Et si vous pensez que vous êtes fort avec votre épée, eh bien... je vais vous montrer ce que sont vraiment des armes et des hommes!"
+
+**Joueur·euse**
+Commencer  le combat
+
+**Jeu**
+"En garde ! (Les deux gardes avancent vers vous, l'un brandissant une lance et l'autre une épée.) Le premier gardien est un grand gaillard au visage barbu. Il se tient à l'abri derrière sa lance, prêt à frapper. L'autre est plus rapide, mais moins fort... il essaie de vous atteindre avec son poignard, mais il a peur d'être touché en retour."
+
+**Joueur·euse**
+Je dupe le premier garde et je lui coupe la tête
+
+**Jeu**
+"Hé ! Pas si vite ! (La Lune Noire intervient, surprise par votre brutalité.) Vous voulez vous débarrasser des gardes comme ça ? Eh bien... il paraît que c'est effectivement possible ! Le premier gardien s'effondre au sol, sans tête. Mais l'autre... l'autre est déjà à votre gorge avec son poignard !"
+
+**Joueur·euse**
+Pardonnez-moi
+
+**Jeu**
+"Non, non, non ! (La Lune Noire a un geste de recul.) C'est bien, je vois que vous êtes un guerrier redoutable... mais pas nécessairement une personne très discrète. (Elle regarde le corps du premier gardien avec intérêt.) Enfin, il paraît que les dégâts ont été faits. Mais maintenant, l'autre garde est vraiment prêt à vous tuer... et votre épée n'est plus dans sa gaine ! Qu'allez-vous faire ?"
+
+**Joueur·euse**
+Je vais lui couper la tête aussi
+
+**Jeu**
+"Hé ! Arrêtez ! (La Lune Noire se tord les mains, scandalisée.) Ah, mon dieu, vous êtes un véritable tueur de gardes ! (Elle regarde le deuxième garde avec pitié.) Eh bien... il paraît que vous l'avez eu. Le corps gît maintenant au sol, sans tête. Mais savez-vous ce qu'il est arrivé à votre épée ? Elle s'est égarée dans la salle, pendant que vous... (Elle fait un geste vague, comme pour indiquer une tragédie.) Je ne sais pas quoi faire..."
+
+**Joueur·euse**
+Peut-être maintenant vous pouvez m'aider à chercher la pierre lumineuse ?
+
+**Jeu**
+"Ahah ! Vous voulez passer à autre chose ? (La Lune Noire a un sourire démonstratif.) Eh bien, je suppose que c'est raisonnable. Après tout, vous avez maintenant la... (Elle se corrige) Ah non, attendez, les trois gardes qui ont été tués dans cette salle ne sont peut-être pas exactement les types de personnes que l'on retrouve facilement à la recherche de pierres lumineuses... Mais je peux vous aider. Je connais un mage qui est chargé de protéger la pierre lumineuse. Il vit au sommet d'une tour qui se trouve dans le quartier des savants..."
+
+**Joueur·euse**
+Mais ce n'est pas dans cette tour où se trouve la pierre ?
+
+**Jeu**
+"Hmmm... (La Lune Noire a un air de concentration.) Ah oui, je me souviens maintenant. La pierre lumineuse est bien cachée dans la tour des savants, mais elle n'est pas facilement accessible. Elle est protégée par une série de pièges et de riddles que seul un mage ou un aventurier très expérimenté peut résoudre... Mais il y a autre chose qui pourrait vous aider à trouver la pierre. Un jeune apprenti de mage, qui se trouve dans le quartier des artisans, est soupçonné d'avoir aidé quelqu'un à pénétrer dans la tour des savants sans être découvert... (Elle sourit malicieusement.) Je suis sûr qu'il serait ravi de vous aider... si vous savez comment le trouver, bien entendu."
+
+**Joueur·euse**
+Mais on m'a dit que la pierre était dans la tour de l'aube (donc ici), non ?
+
+**Jeu**
+"Ahah ! Vous êtes plus informé que je ne pensais... (La Lune Noire a un air surpris.) Oui, en effet, la pierre lumineuse se trouve bien ici, dans la tour de l'Aube. Mais il paraît que la situation est encore plus complexe que cela... (Elle baisse la voix.) La pierre est gardée par un être puissant et secret qui n'est pas nécessairement enclin à laisser partir celui qui cherche à la trouver..."

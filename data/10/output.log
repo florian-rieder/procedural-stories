@@ -1,0 +1,180 @@
+Loading local model...
+Local model loaded.
+Watching for changes...
+Starting with story mode (B/A)
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Château du Seigneur des Ténèbres", "Forêt Ténébreuse"
+
+Previous game response: "Vous vous trouvez dans la ville royale, au cœur d'un royaume médiéval fantastique où les chevaliers et les mages règnent en maîtres. Vous êtes un aventurier courageux et déterminé, issu d'une famille de chevaliers, avec une quête personnelle de sauver le monde des Ténèbres. Une force obscure s'est levée, menaçant de détruire l'équilibre du monde, et vous avez appris qu'il existe trois artefacts anciens capables de vaincre cette menace. L'un de ces artefacts, une pierre lumineuse, se trouve quelque part dans la ville, gardée par des dangers et des mystères. Vous ressentez un fort sentiment de responsabilité et de devoir envers votre famille et votre royaume, et vous êtes prêt à affronter les défis qui vous attendent pour récupérer ces artefacts et sauver le monde des Ténèbres. La ville royale est en effervescence, les marchés sont animés et les tavernes bruyantes, mais vous savez que vous devez agir vite, car la nuit tombe déjà et les forces des ténèbres ne tarderont pas à se manifester."
+Player message: "C'est compris"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: C'est compris
+GAME RESPONSE: Vous êtes Eryndor Thorne, un aventurier courageux et déterminé, dans le Royaume de la Lumière. Vous vous trouvez dans la grand-place animée du royaume, avec des marchés colorés et des tavernes bruyantes autour de vous. La Pierre de Lumière est supposément cachée quelque part ici.
+
+Que souhaitez-vous faire ?
+INVENTORY ACTIONS: [{'action': 'claim', 'item': 'Pierre de Lumière'}, {'action': 'claim', 'item': 'Bougie enchantée'}]
+CHARACTER ACTIONS: []
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Château du Seigneur des Ténèbres", "Forêt Ténébreuse"
+
+Previous game response: "Vous êtes Eryndor Thorne, un aventurier courageux et déterminé, dans le Royaume de la Lumière. Vous vous trouvez dans la grand-place animée du royaume, avec des marchés colorés et des tavernes bruyantes autour de vous. La Pierre de Lumière est supposément cachée quelque part ici.
+
+Que souhaitez-vous faire ?"
+Player message: "Je voudrais aller chercher la pierre dans une des tavernes"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Je voudrais aller chercher la pierre dans une des tavernes
+GAME RESPONSE: Vous entrez dans l'une des tavernes les plus bruyantes du royaume, où les bardes jouent de la musique et les compagnons d'aventure partagent leurs histoires. La lumière tamisée et les odeurs de bière vous enveloppent, tandis que vous cherchez une information sur la Pierre de Lumière.
+
+"Un pot de bière pour monsieur, s'il vous plaît", dit le serveur, en regardant votre poignard. "Et qu'est-ce qui vous amène ici ce soir ?"
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Maître Armand'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Château du Seigneur des Ténèbres", "Forêt Ténébreuse"
+
+Previous game response: "Vous entrez dans l'une des tavernes les plus bruyantes du royaume, où les bardes jouent de la musique et les compagnons d'aventure partagent leurs histoires. La lumière tamisée et les odeurs de bière vous enveloppent, tandis que vous cherchez une information sur la Pierre de Lumière.
+
+"Un pot de bière pour monsieur, s'il vous plaît", dit le serveur, en regardant votre poignard. "Et qu'est-ce qui vous amène ici ce soir ?""
+Player message: "Je cherche la Pierre de Lumière. Vous en avez entendu ?"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Je cherche la Pierre de Lumière. Vous en avez entendu ?
+GAME RESPONSE: Le serveur se met à rire et secoue la tête, avant de faire un signe discret au barman, qui s'approche pour vous glisser quelques mots à l'oreille : "Ne cherchez pas trop fort, aventurier. La Pierre est protégée... et les gardes du roi ne sont pas très gentils en ce moment."
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Maître Armand'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Château du Seigneur des Ténèbres", "Forêt Ténébreuse"
+
+Previous game response: "Le serveur se met à rire et secoue la tête, avant de faire un signe discret au barman, qui s'approche pour vous glisser quelques mots à l'oreille : "Ne cherchez pas trop fort, aventurier. La Pierre est protégée... et les gardes du roi ne sont pas très gentils en ce moment.""
+Player message: "Mais vous savez où elle peut être ? Pourriez-vous me donner quelques indices ?"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Mais vous savez où elle peut être ? Pourriez-vous me donner quelques indices ?
+GAME RESPONSE: Le barman a un regard circulaire, comme s'il vérifiait que personne n'entendait leur conversation. "Disons que la Pierre de Lumière pourrait être... cachée dans une tour ancienne, au bord du château. Mais il y a un problème, le Seigneur des Ténèbres en garde les alentours."
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'now_knows', 'subject': 'Maître Armand', 'object': 'Eryndor Thorne'}, {'action': 'change_description', 'subject': 'Seigneur des Ténèbres', 'description': 'Il est le Seigneur des Ténèbres et garde les alentours de la tour ancienne où se trouve la Pierre de Lumière.'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Château du Seigneur des Ténèbres", "Forêt Ténébreuse"
+
+Previous game response: "Le barman a un regard circulaire, comme s'il vérifiait que personne n'entendait leur conversation. "Disons que la Pierre de Lumière pourrait être... cachée dans une tour ancienne, au bord du château. Mais il y a un problème, le Seigneur des Ténèbres en garde les alentours.""
+Player message: "Je vais y aller avec une équipe des chevaliers"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: Château du Seigneur des Ténèbres
+MOVE INTENT: story_poptest70b_fantasy.ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres
+PLAYER MESSAGE: Je vais y aller avec une équipe des chevaliers
+GAME RESPONSE: Les soldats du roi se regroupent autour de vous, prêts à partir. "Alors, Eryndor Thorne, qu'est-ce que tu attends ? La bataille pour la Pierre de Lumière attend ! Le commandant des gardes du roi, Guillaume le Vaillant, te souhaite bonne chance et te propose d'emmener une escorte jusqu'à la tour."
+
+Tu voies plusieurs chevaliers prêts à partir, chacun équipé d'un lance et protégé par un bouclier. "Je compte sur toi pour libérer la Pierre de Lumière", dit le roi en vous serrant la main.
+
+**Tu peux maintenant commander tes troupes pour aller attaquer la tour du château des Ténèbres. La situation est ainsi :**
+
+*   8 chevaliers, commandés par Guillaume le Vaillant
+*   Une dizaine de soldats de la garde du roi
+
+**Tu peux décider si tu veux rester à Rois avec une autre équipe ou aller avec celle-ci au château.
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'become_friends', 'subject': 'Eryndor Thorne', 'object': 'Guillaume le Vaillant'}, {'action': 'now_knows', 'subject': 'Maître Armand', 'object': 'Eryndor Thorne'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Cité des Eaux", "Château du Seigneur des Ténèbres", "Forêt Ténébreuse"
+
+Previous game response: "Les soldats du roi se regroupent autour de vous, prêts à partir. "Alors, Eryndor Thorne, qu'est-ce que tu attends ? La bataille pour la Pierre de Lumière attend ! Le commandant des gardes du roi, Guillaume le Vaillant, te souhaite bonne chance et te propose d'emmener une escorte jusqu'à la tour."
+
+Tu voies plusieurs chevaliers prêts à partir, chacun équipé d'un lance et protégé par un bouclier. "Je compte sur toi pour libérer la Pierre de Lumière", dit le roi en vous serrant la main.
+
+**Tu peux maintenant commander tes troupes pour aller attaquer la tour du château des Ténèbres. La situation est ainsi :**
+
+*   8 chevaliers, commandés par Guillaume le Vaillant
+*   Une dizaine de soldats de la garde du roi
+
+**Tu peux décider si tu veux rester à Rois avec une autre équipe ou aller avec celle-ci au château."
+Player message: "Je veux aller au château"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: Château du Seigneur des Ténèbres
+MOVE INTENT: story_poptest70b_fantasy.ch%C3%A2teau%20du%20seigneur%20des%20t%C3%A9n%C3%A8bres
+Move confirmed by the LLM
+PLAYER MESSAGE: Je veux aller au château
+GAME RESPONSE: Vous vous dirigez vers le Château du Seigneur des Ténèbres. La route serpente à travers les bois et les collines, s'élève en pente douce pour atteindre les portes sombres du château. Les sentinelles qui gardent l'accès aux portes vous regardent avec méfiance.
+
+À votre gauche, vous apercevez un bouquet d'arbres étranges dont les branches semblent s'être tordues en une forme sinistre. La forêt semble reculer devant le château comme si elle avait peur de son ombre. Un panneau indique la présence d'une rivière proche, que vous pourriez suivre vers la Cité des Eaux.
+
+Vous pouvez aller dans les bois, près du ruisseau ou simplement essayer de pénétrer au château.
+
+<CONFIRM_MOVE>
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'now_knows', 'subject': 'Eryndor Thorne', 'object': 'Korvus le Gardien'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Montagnes de la Pierre", "Cité des Eaux", "Forêt Ténébreuse", "Royaume de la Lumière"
+
+Previous game response: "Vous vous dirigez vers le Château du Seigneur des Ténèbres. La route serpente à travers les bois et les collines, s'élève en pente douce pour atteindre les portes sombres du château. Les sentinelles qui gardent l'accès aux portes vous regardent avec méfiance.
+
+À votre gauche, vous apercevez un bouquet d'arbres étranges dont les branches semblent s'être tordues en une forme sinistre. La forêt semble reculer devant le château comme si elle avait peur de son ombre. Un panneau indique la présence d'une rivière proche, que vous pourriez suivre vers la Cité des Eaux.
+
+Vous pouvez aller dans les bois, près du ruisseau ou simplement essayer de pénétrer au château."
+Player message: "Une question, le serveur pourrait nous rejoindre ? Nous avons besoin de monde"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Une question, le serveur pourrait nous rejoindre ? Nous avons besoin de monde
+GAME RESPONSE: Le serveur vous regarde d'un air distrait, avant de hocher la tête et de demander : "Ah oui, bien sûr ! Je peux te rendre service. Mais que dirais-tu si je disais qu'il y a un problème... avec le serveur ? C'est-à-dire que celui-ci pourrait être piégé à l'intérieur du château des Ténèbres, alors que la connection est en train de se couper."
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'become_enemies', 'subject': 'Eryndor Thorne', 'object': 'Seigneur Arin'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Montagnes de la Pierre", "Cité des Eaux", "Forêt Ténébreuse", "Royaume de la Lumière"
+
+Previous game response: "Le serveur vous regarde d'un air distrait, avant de hocher la tête et de demander : "Ah oui, bien sûr ! Je peux te rendre service. Mais que dirais-tu si je disais qu'il y a un problème... avec le serveur ? C'est-à-dire que celui-ci pourrait être piégé à l'intérieur du château des Ténèbres, alors que la connection est en train de se couper.""
+Player message: "Okay, oublions le serveur. Je veux pénétrer le château"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Okay, oublions le serveur. Je veux pénétrer le château
+GAME RESPONSE: Vous vous approchez des portes sombres et grinçantes du château. Les sentinelles qui gardent l'accès s'immobilisent, leurs yeux se braquant sur vous comme si elles voulaient en savoir plus.
+
+"Qui va là ?" demande une d'elles dans un ton glacial. La lumière de la bougie vous éclaire le visage mais les ombres projetées font croire que c'est une ombre qui parle.
+
+Tu peux expliquer qui tu es ou faire autre chose...
+INVENTORY ACTIONS: []
+CHARACTER ACTIONS: [{'action': 'become_enemies', 'subject': 'Korvus le Gardien', 'object': 'Eryndor Thorne'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Montagnes de la Pierre", "Cité des Eaux", "Forêt Ténébreuse", "Royaume de la Lumière"
+
+Previous game response: "Vous vous approchez des portes sombres et grinçantes du château. Les sentinelles qui gardent l'accès s'immobilisent, leurs yeux se braquant sur vous comme si elles voulaient en savoir plus.
+
+"Qui va là ?" demande une d'elles dans un ton glacial. La lumière de la bougie vous éclaire le visage mais les ombres projetées font croire que c'est une ombre qui parle.
+
+Tu peux expliquer qui tu es ou faire autre chose..."
+Player message: "Je suis juste un paysan"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
+Move intent output: none
+PLAYER MESSAGE: Je suis juste un paysan
+GAME RESPONSE: La sentinelles se sourient l'une à l'autre puis vous demandent : "Un paysan, vraiment ? Et qu'est-ce que tu fais là avec ton poignard et ta carte du royaume alors ?"
+
+Tu peux expliquer ta présence ici ou essayer de vous faire passer pour quelqu'un d'autre...
+INVENTORY ACTIONS: [{'action': 'claim', 'item': 'poignard de chasseur'}, {'action': 'claim', 'item': 'Carte du royaume'}]
+CHARACTER ACTIONS: [{'action': 'change_description', 'subject': 'Korvus le Gardien', 'description': 'Un gardien du château chargé de surveiller les remparts et les tours de garde, qui semble soupçonneux envers Eryndor Thorne.'}, {'action': 'change_description', 'subject': 'Lyra la Captive', 'description': 'Une jeune femme capturée par les forces des Ténèbres et emprisonnée dans les donjons du château, qui pourrait fournir des informations précieuses sur les défenses du château et les plans du Seigneur des Ténèbres.'}]
+Human: Please analyze the player's message and determine if they **explicitly** intend to move to a nearby location **immediately**.
+Nearby locations: "Montagnes de la Pierre", "Cité des Eaux", "Forêt Ténébreuse", "Royaume de la Lumière"
+
+Previous game response: "La sentinelles se sourient l'une à l'autre puis vous demandent : "Un paysan, vraiment ? Et qu'est-ce que tu fais là avec ton poignard et ta carte du royaume alors ?"
+
+Tu peux expliquer ta présence ici ou essayer de vous faire passer pour quelqu'un d'autre..."
+Player message: "Expliquer qui je suis"
+
+**Please output only the *exact location name* or 'none' with ABSOLUTELY no additional explanation, notes or details. If it doesn't fit, output 'none'**
+Output:
