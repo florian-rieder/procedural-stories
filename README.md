@@ -10,17 +10,27 @@ This project explores the generation of interactive fiction using Large Language
 - **Story World Generation**: Automated creation of rich, consistent story worlds using LLMs
 - **Interactive Interface**: Available through both Discord bot, Jupyter notebook (legacy) and CLI interfaces
 
-## Key Components
 
-- [`world_generation.ipynb`](world_generation.ipynb): Core notebook for generating story worlds
-- [`chat.ipynb`](chat.ipynb): Interactive interface for testing and development
-- [`story_world_ontology.rdf`](story_world_ontology.rdf): Base ontology for structuring story worlds
-- [`bot.py`](bot.py): Discord bot implementation
-- [`story.py`](story.py): Core story generation and management logic
+### Key Components
+
+- **`ontology/`**: Contains the foundational ontology that defines the structure and rules for all story worlds
+- **`world_generation/`**: Tools and notebooks for creating new story worlds using LLMs
+- **`generator/`**: Core conversation systems implementing different interaction modes:
+  - `story/`: Story-aware system that uses the ontology and world model
+  - `trivial/`: Basic conversation system for baseline comparison
+- **Interfaces**:
+  - `cli.py`: Main command-line interface for interacting with the system
+  - `bot.py` & `cogs/`: Discord bot implementation for running experiments
+  - `chat.ipynb`: Legacy notebook interface (may be outdated)
+- **`analysis/`**: Tools for analyzing and visualizing results
+- **`data/`**: Experimental data and results
+
+Note: While `chat.ipynb` was initially used to develop the interactive gameplay loop, this functionality has since been moved to `generator/story/converse.py` and `generator/trivial/converse.py`. The notebook may be outdated.
+
 
 ## Installation
 
-The installation script will create a virtual environment and install all dependencies with poetry:
+The installation script will create a virtual environment and install all dependencies with poetry. Python 3.11 is required.
 
 ```bash
 bash install.sh
@@ -43,7 +53,7 @@ FIREWORKS_API_KEY=your_fireworks_api_key
 
 ### Option 1: Discord Bot
 
-1. Create a discord bot account with the Discord Developer Portal and get the token
+1. Create a discord bot account with the [Discord Developer Portal](https://discord.com/developers/applications) and get the token
 2. Add to your `.env` file:
 ```
 DISCORD_TOKEN=your_discord_token
@@ -114,19 +124,3 @@ The system uses a hybrid approach combining semantic web technologies with LLMs:
 ├── chat.ipynb                    # Interactive notebook interface (legacy)
 └── world_generation.ipynb        # Main notebook for world generation
 ```
-
-### Key Components
-
-- **`ontology/`**: Contains the foundational ontology that defines the structure and rules for all story worlds
-- **`world_generation/`**: Tools and notebooks for creating new story worlds using LLMs
-- **`generator/`**: Core conversation systems implementing different interaction modes:
-  - `story/`: Story-aware system that uses the ontology and world model
-  - `trivial/`: Basic conversation system for baseline comparison
-- **Interfaces**:
-  - `cli.py`: Main command-line interface for interacting with the system
-  - `bot.py` & `cogs/`: Discord bot implementation for running experiments
-  - `chat.ipynb`: Legacy notebook interface (may be outdated)
-- **`analysis/`**: Tools for analyzing and visualizing results
-- **`data/`**: Experimental data and results
-
-Note: While `chat.ipynb` was initially used to develop the interactive gameplay loop, this functionality has since been moved to `generator/story/converse.py` and `generator/trivial/converse.py`.
