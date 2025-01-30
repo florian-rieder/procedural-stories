@@ -10,7 +10,6 @@ python = "^3.12"
 langchain = "^0.3.7"
 langchain-community = "^0.3.7"
 langchain-fireworks = "^0.2.5"
-mlx-lm = "^0.19.3"
 owlready2 = "^0.47"
 discord = "^2.3.2"
 ipykernel = "^6.29.5"
@@ -23,6 +22,8 @@ langchain-ollama = "^0.2.1"
 pandas = "^2.2.3"
 seaborn = "^0.13.2"
 pyperclip = "^1.9.0"
+jinja2 = "^3.1.5"
+certifi = "^2024.12.14"
 
 
 [build-system]

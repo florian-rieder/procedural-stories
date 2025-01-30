@@ -1,0 +1,7 @@
+.venv/
+analysis/
+.DS_Store
+_*/
+.idea/
+.vscode/
+.pytest_cache/

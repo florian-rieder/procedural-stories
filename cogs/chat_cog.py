@@ -17,7 +17,7 @@ class ChatCog(commands.Cog):
         self.bot = bot
         self.started = False
         self.setting = "Un jeu de rôle médiéval fantastique, dans la veine de Zork."
-        self.start_ontology_file = "story_poptest70b_fantasy.rdf"
+        self.start_ontology_file = "worlds/story_world_fantasy_used_for_testing.rdf"
         self.language = "french"
         self.first_message = first_message
         self.current_chain = None
@@ -80,7 +80,7 @@ class ChatCog(commands.Cog):
 
         # Record the model order in the user's data directory
         with open(f"data/{ctx.channel.name}/model_order.txt", "w") as f:
-            f.write(f'{'A/B' if self.is_trivial_mode else 'B/A'}')
+            f.write(f"{'A/B' if self.is_trivial_mode else 'B/A'}")
 
         self.started = True
 

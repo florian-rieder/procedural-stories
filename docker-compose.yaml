@@ -9,4 +9,23 @@ services:
     restart: unless-stopped
     volumes:
       - ./data:/app/data
-    platform: linux/arm64  # Specify ARM64 platform
+    platform: linux/arm64
+    depends_on:
+      - ollama
+    networks:
+      - ai-network
+
+  ollama:
+    image: ollama/ollama:latest
+    platform: linux/arm64
+    volumes:
+      - ~/.ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+    networks:
+      - ai-network
+
+networks:
+  ai-network:
+    driver: bridge
