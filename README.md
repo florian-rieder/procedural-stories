@@ -1,6 +1,6 @@
 # Procedural Stories
 
-This repository contains the code and implementation for my master's thesis on "Generating Interactive Fictions with LLMs", conducted under the supervision of Isaac Pante (ISH, SLI, UNIL) and Davide Picca (ISH, SLI, UNIL).
+This repository contains the code and implementation for my master's thesis titled "Machines à Histoires: Les LLM comme partenaires en fiction interactive", conducted under the supervision of Isaac Pante (ISH, SLI, UNIL) and Davide Picca (ISH, SLI, UNIL).
 
 ## Overview
 
